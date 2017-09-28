@@ -204,7 +204,7 @@
                                 <button class="btn btn-primary btn-block btn-lg dropdown-toggle" id="currencySwitch1" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="true">
                                     <span class="exchange-tools__selected" 
-                                          id="defaultSymbolA" data-name="AUD" data-symbol="$">AUD 澳元</span>
+                                          id="defaultSymbolA" data-name="AUD" data-symbol="$">AUD <span class="hidden-xs">澳元</span></span>
                                 <span class="caret">
                     <i class="icon icon-down -white">
                       <svg role="img">
@@ -218,7 +218,7 @@
                             <div class="clearfix"></div>
                         </div>
                         <input class="exchange-tools__input" type="text" value="10001">
-                        <div class="exchange-tools__currency"><span class="exchange-tools__rate">1 USD = 6.8385 CNY</span><span class="exchange-tools__chart"><i
+                        <div class="exchange-tools__currency"><span class="exchange-tools__rate" id="defaultRateA">1 USD = 6.8385 CNY</span><span class="exchange-tools__chart"><i
                             class="icon icon-sparkline-up ">
                             <svg role="img">
                               <use xlink:href="#icn-sparkline-up"></use>
@@ -236,15 +236,14 @@
                             <div class="btn-group" role="group">
                                 <button class="btn btn-primary btn-block btn-lg dropdown-toggle" id="currencySwitch2" data-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="true"><span
-                                    class="exchange-tools__selected" data-name="CNY"
+                                    class="exchange-tools__selected" 
+                                     id="defaultSymbolB" data-name="CNY"
                                     data-symbol="¥">CNY<span>&nbsp;人民币</span></span><span class="caret"><i
                                     class="icon icon-down -white">
                                 <svg role="img">
                                   <use xlink:href="#icn-down"></use>
                                 </svg></i></span></button>
                                 <ul class="dropdown-menu" aria-labelledby="currencySwitch2" id="symbolListB">
-                                    <li><a data-name="EU" data-symbol="€">EU 欧元</a></li>
-                                    <li><a data-name="USD" data-symbol="$">USD 美元</a></li>
                                     <li><a data-name="CNY" data-symbol="¥">CNY 人民币</a></li>
                                 </ul>
                             </div>
@@ -922,7 +921,7 @@
                 info.Ask = Ask;
             }
             CreateSymbolA();
-            CreateSymbolB('AUD','澳元');
+            CreateSymbolB('AUD', '澳元');
         }
 
         function CreateSymbolA() {
@@ -937,18 +936,14 @@
                 if (symbolList.indexOf(SymbolA) === -1) {
                     symbolList.push(SymbolA);
                     var DollarIcon = CreateCurrencySymbol(SymbolA);
-                    $select.append(`<li onclick="CreateSymbolB('${SymbolA}','${NameA}');"><a data-name="${SymbolA}" data-symbol="${DollarIcon}">${SymbolA} ${NameA}</a></li>`);
+                    $select.append(`<li onclick="CreateSymbolB('${SymbolA}','${NameA}','A');"><a data-name="${SymbolA}" data-symbol="${DollarIcon}">${SymbolA} ${NameA}</a></li>`);
                 }
             }
         }
 
-        function CreateSymbolB(Symbol, Name) {
+        function CreateSymbolB(Symbol, Name, elm) {
             // change default CCY
-            $('#defaultSymbolA')
-                .text(`${Symbol} ${Name}`)
-                .attr('data-name', Symbol)
-                .attr('data-symbol', CreateCurrencySymbol(Symbol));
-
+            GetDefaultSymbol(Symbol, Name, elm);
             var $select = $("#symbolListB");
             var list = FindObject(SymbolInfo, "SymbolA", Symbol);
             symbolList = new Array();
@@ -959,10 +954,16 @@
                 var SymbolB = info["SymbolB"];
                 var NameB = info["NameB"];
                 var DollarIcon = CreateCurrencySymbol(SymbolB);
-                $select.append(`<li><a data-name="${SymbolB}" data-symbol="${DollarIcon}">${SymbolB} ${NameB}</a></li>`);
+                $select.append(`<li onclick="GetDefaultSymbol('${SymbolB}','${NameB}','B')"><a data-name="${SymbolB}" data-symbol="${DollarIcon}">${SymbolB} ${NameB}</a></li>`);
             }
         }
-
+        function GetDefaultSymbol(Symbol, Name, elm) {
+            console.log()
+            $('#defaultSymbol' + elm)
+                .html(`${Symbol}<span class="hidden-xs"> ${Name}</span>`)
+                .attr('data-name', Symbol)
+                .attr('data-symbol', CreateCurrencySymbol(Symbol));
+        }
         function CreateCurrencySymbol(Symbol) {
             switch (Symbol) {
                 case "CHF":
