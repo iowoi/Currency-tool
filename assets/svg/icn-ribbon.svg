@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>ui/icn-ribbon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="26.9433415%" y1="65.6152399%" x2="78.0600157%" y2="18.5980301%" id="linearGradient-1">
+            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="ui/icon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ui/icn-ribbon">
+            <g transform="translate(28.000000, 5.000000)">
+                <polygon id="Fill-1" fill="#F79447" points="28.2639219 41.3485016 37.0410158 52.4211841 0.204950018 89.6020769 0.204950018 69.856282"></polygon>
+                <polygon id="Fill-2" fill="url(#linearGradient-1)" opacity="0.468636775" points="25.3668411 44.2880637 34.7020571 54.7946254 17.7308761 71.8333499 8.62761848 61.3267882"></polygon>
+                <polygon id="Fill-4" fill="#F79447" points="0.2046834 19.9961501 34.6074074 54.90545 44.3407743 45.0289976 0.2046834 0.248577678"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
