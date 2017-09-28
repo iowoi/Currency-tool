@@ -917,8 +917,6 @@
     }
 
     function CreateSymbolB(Symbol, Name, elm) {
-      // change default CCY
-      GetDefaultSymbol(Symbol, Name, elm);
       var $select = $("#symbolListB");
       var list = FindObject(SymbolInfo, "SymbolA", Symbol);
       symbolList = new Array();
@@ -931,16 +929,25 @@
         var DollarIcon = CreateCurrencySymbol(SymbolB);
         $select.append(`<li onclick="GetDefaultSymbol('${SymbolB}','${NameB}','B')"><a data-name="${SymbolB}" data-symbol="${DollarIcon}">${SymbolB} ${NameB}</a></li>`);
       }
+      GetDefaultSymbol(Symbol, Name, elm);
     }
 
     function GetDefaultSymbol(Symbol, Name, elm) {
-      console.log()
       $('#defaultSymbol' + elm)
         .html(`${Symbol}<span class="hidden-xs"> ${Name}</span>`)
         .attr('data-name', Symbol)
         .attr('data-symbol', CreateCurrencySymbol(Symbol));
+              GetDefaultRate();
+
     }
-    
+
+    function GetDefaultRate() {
+      var SymbolA = $('#defaultSymbolA').data('name');
+      var SymbolB = $('#defaultSymbolB').data('name');
+      $('#defaultRateA').html(`1 ${SymbolA} = 6.8385 ${SymbolB}`)
+      $('#defaultRateB').html(`1 ${SymbolB} = 6.8385 ${SymbolA}`)
+    }
+
     function CreateCurrencySymbol(Symbol) {
       switch (Symbol) {
         case "CHF":
