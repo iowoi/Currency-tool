@@ -225,12 +225,20 @@
               </div>
               <div class="clearfix"></div>
             </div>
-            <input class="exchange-tools__input" type="text" value="10001">
-            <div class="exchange-tools__currency"><span class="exchange-tools__rate" id="defaultRateA">1 USD = 6.8385 CNY</span><span class="exchange-tools__chart"><i
-                            class="icon icon-sparkline-up ">
-                            <svg role="img">
-                              <use xlink:href="#icn-sparkline-up"></use>
-                            </svg></i></span><span><span class="exchange-tools__detail">价格走势图</span></span>
+            <input class="exchange-tools__input" type="text" value="1000">
+            <div class="exchange-tools__currency"><span class="exchange-tools__rate" id="defaultRateA"></span>
+              <span class="exchange-tools__chart">
+                <i class="icon icon-sparkline-up">
+                  <svg role="img">
+                    <use xlink:href="#icn-sparkline-up"></use>
+                  </svg>
+                  </i>
+                
+                </span>
+              <span>
+                  <span class="exchange-tools__detail">价格走势图</span
+                            >
+              </span>
             </div>
           </div>
           <div class="pull-left exchange-tools__switch"><i class="icon icon-switch -orange">
@@ -257,7 +265,7 @@
               <div class="clearfix"></div>
             </div>
             <input class="exchange-tools__input" type="text" value="67801">
-            <div class="exchange-tools__currency"><span class="exchange-tools__rate">1 CNY = 0.1462 USD</span><span class="exchange-tools__chart"><i class="icon icon-sparkline-down ">
+            <div class="exchange-tools__currency"><span class="exchange-tools__rate" id="defaultRateB">1 CNY = 0.1462 USD</span><span class="exchange-tools__chart"><i class="icon icon-sparkline-down ">
                             <svg role="img">
                               <use xlink:href="#icn-sparkline-down"></use>
                             </svg></i></span><span><span class="exchange-tools__detail">价格走势图</span></span>
@@ -869,67 +877,71 @@
         success: LoadCurrencyList_finish
       });
     })
-
     function LoadCurrencyList_finish(info) {
       if (info.code !== "0") {
         alert(info.message);
         return (false);
       }
       SymbolInfo = info.returnValue.list;
-      for (var i = 0; i < SymbolInfo.length; i++) {
-        var info = SymbolInfo[i];
-        var Mid = (info.Bid + info.Ask) / 2;
-        var Bid = Mid - (info.Spread / 2);
-        var Ask = Mid + (info.Spread / 2);
-
-        Mid = Math.floor(Mid * Math.pow(10, info.Digits));
-        Mid = Mid / Math.pow(10, info.Digits);
-
-        Bid = Math.floor(Bid * Math.pow(10, info.Digits));
-        Bid = Bid / Math.pow(10, info.Digits);
-
-        Ask = Math.floor(Ask * Math.pow(10, info.Digits));
-        Ask = Ask / Math.pow(10, info.Digits);
-
-        info.Mid = Mid;
-        info.Bid = Bid;
-        info.Ask = Ask;
-      }
-      CreateSymbolA();
-      CreateSymbolB('AUD', '澳元');
+      DefautSymbolA();
+      CreateSymbolB('AUD', '澳元', 'B');
     }
 
-    function CreateSymbolA() {
+    function DefautSymbolA() {
       var $select = $("#symbolListA");
       var symbolList = [];
 
       $select.html("");
       for (var i = 0; i < SymbolInfo.length; i++) {
         var info = SymbolInfo[i];
-        var SymbolA = info["SymbolA"];
-        var NameA = info["NameA"];
-        if (symbolList.indexOf(SymbolA) === -1) {
-          symbolList.push(SymbolA);
-          var DollarIcon = CreateCurrencySymbol(SymbolA);
-          $select.append(`<li onclick="CreateSymbolB('${SymbolA}','${NameA}','A');"><a data-name="${SymbolA}" data-symbol="${DollarIcon}">${SymbolA} ${NameA}</a></li>`);
+        var symbolA = info["SymbolA"];
+        var nameA = info["NameA"];
+        if (symbolList.indexOf(symbolA) === -1) {
+          symbolList.push(symbolA);
+          var dollarIcon = CreateCurrencySymbol(symbolA);
+          $select.append(`<li onclick="CreateSymbolB('${symbolA}','${nameA}','B');"><a data-name="${symbolA}" data-symbol="${dollarIcon}">${symbolA} ${nameA}</a></li>`);
         }
       }
     }
 
+    function CreateSymbolA(Symbol, Name, elm) {
+      var $select = $("#symbolListA");
+      var list = FindObject(SymbolInfo, "SymbolB", Symbol);
+      var SymbolB = $('#defaultSymbolA').data('name');
+
+      //$select.html("");
+      // for (var i = 0; i < list.length; i++) {
+      //   var info = list[i];
+      //   var symbolA = info["SymbolA"];
+      //   var nameA = info["NameA"];
+      //   var dollarIcon = CreateCurrencySymbol(symbolA);
+      //   $select.append(`<li onclick="CreateSymbolB('${symbolA}','${nameA}','B');"><a data-name="${symbolA}" data-symbol="${dollarIcon}">${symbolA} ${nameA}</a></li>`);
+      //   GetDefaultSymbol(list[0].SymbolA, list[0].NameA, 'A');
+      // }
+      GetDefaultSymbol(Symbol, Name, 'B');
+      GetDefaultRate(Symbol, SymbolB, elm);
+    }
+
     function CreateSymbolB(Symbol, Name, elm) {
       var $select = $("#symbolListB");
+            console.log(Symbol, Name, elm)
+
       var list = FindObject(SymbolInfo, "SymbolA", Symbol);
-      symbolList = new Array();
+            console.log(list)
+
+      var SymbolB = $('#defaultSymbolB').data('name');
 
       $select.html("");
       for (var i = 0; i < list.length; i++) {
         var info = list[i];
-        var SymbolB = info["SymbolB"];
-        var NameB = info["NameB"];
-        var DollarIcon = CreateCurrencySymbol(SymbolB);
-        $select.append(`<li onclick="GetDefaultSymbol('${SymbolB}','${NameB}','B')"><a data-name="${SymbolB}" data-symbol="${DollarIcon}">${SymbolB} ${NameB}</a></li>`);
+        var symbolB = info["SymbolB"];
+        var nameB = info["NameB"];
+        var dollarIcon = CreateCurrencySymbol(symbolB);
+        $select.append(`<li onclick="CreateSymbolA('${symbolB}','${nameB}','A')"><a data-name="${symbolB}" data-symbol="${dollarIcon}">${symbolB} ${nameB}</a></li>`);
+        GetDefaultSymbol(list[0].SymbolB, list[0].NameB, 'B');
       }
-      GetDefaultSymbol(Symbol, Name, elm);
+      GetDefaultSymbol(Symbol, Name, 'A');
+      GetDefaultRate(Symbol, SymbolB, elm);
     }
 
     function GetDefaultSymbol(Symbol, Name, elm) {
@@ -937,15 +949,26 @@
         .html(`${Symbol}<span class="hidden-xs"> ${Name}</span>`)
         .attr('data-name', Symbol)
         .attr('data-symbol', CreateCurrencySymbol(Symbol));
-              GetDefaultRate();
-
     }
 
-    function GetDefaultRate() {
-      var SymbolA = $('#defaultSymbolA').data('name');
-      var SymbolB = $('#defaultSymbolB').data('name');
-      $('#defaultRateA').html(`1 ${SymbolA} = 6.8385 ${SymbolB}`)
-      $('#defaultRateB').html(`1 ${SymbolB} = 6.8385 ${SymbolA}`)
+    function GetDefaultRate(SymbolA, SymbolB, elm) {
+      console.log(SymbolA, SymbolB, elm)
+      // var SymbolB = $('#defaultSymbolB').data('name');
+
+      // if (elm === 'B') {
+      //   SymbolB = $('#defaultSymbolA').data('name');
+      //   $('#defaultRateA').html(`1 ${SymbolB} = ${defaultRate2} ${Symbol}`)
+      //   $('#defaultRateB').html(`1 ${Symbol} = ${defaultRate1} ${SymbolB}`)
+      // }
+
+      // var defaultRate1 = FindObject(SymbolInfo, "Symbol", Symbol + SymbolB)[0].Bid;
+      // var defaultRate2 = FindObject(SymbolInfo, "Symbol", SymbolB + Symbol)[0].Bid;
+      // $('#defaultRateA').html(`1 ${Symbol} = ${defaultRate1} ${SymbolB}`)
+      // $('#defaultRateB').html(`1 ${SymbolB} = ${defaultRate2} ${Symbol}`)
+
+      console.log(FindObject(SymbolInfo, "Symbol", Symbol + SymbolB))
+      console.log(FindObject(SymbolInfo, "Symbol", SymbolB + Symbol))
+
     }
 
     function CreateCurrencySymbol(Symbol) {
