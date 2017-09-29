@@ -225,7 +225,7 @@
               </div>
               <div class="clearfix"></div>
             </div>
-            <input class="exchange-tools__input" type="text" value="1000">
+            <input class="exchange-tools__input" type="text" value="1000" id="exchangeInput1">
             <div class="exchange-tools__currency"><span class="exchange-tools__rate" id="defaultRateA"></span>
               <span class="exchange-tools__chart">
                 <i class="icon icon-sparkline-up">
@@ -236,12 +236,12 @@
                 
                 </span>
               <span>
-                  <span class="exchange-tools__detail">价格走势图</span
+                  <span class="exchange-tools__detail" data-wrap="A">价格走势图</span
                             >
               </span>
             </div>
           </div>
-          <div class="pull-left exchange-tools__switch"><i class="icon icon-switch -orange">
+          <div class="pull-left exchange-tools__switch" onclick="SwitchSymbol();"><i class="icon icon-switch -orange">
                         <svg role="img">
                           <use xlink:href="#icn-switch"></use>
                         </svg></i>
@@ -264,11 +264,11 @@
               </div>
               <div class="clearfix"></div>
             </div>
-            <input class="exchange-tools__input" type="text" value="67801">
-            <div class="exchange-tools__currency"><span class="exchange-tools__rate" id="defaultRateB">1 CNY = 0.1462 USD</span><span class="exchange-tools__chart"><i class="icon icon-sparkline-down ">
+            <input class="exchange-tools__input" type="text" id="exchangeInput2">
+            <div class="exchange-tools__currency"><span class="exchange-tools__rate" id="defaultRateB"></span><span class="exchange-tools__chart"><i class="icon icon-sparkline-down ">
                             <svg role="img">
                               <use xlink:href="#icn-sparkline-down"></use>
-                            </svg></i></span><span><span class="exchange-tools__detail">价格走势图</span></span>
+                            </svg></i></span><span><span class="exchange-tools__detail" data-wrap="B">价格走势图</span></span>
             </div>
           </div>
           <div class="clearfix"></div>
@@ -861,22 +861,90 @@
       </div><img src="{{chart}}">
     </div>
   </script>
+
   <script src="./assets/js/vendor.bundle.js"></script>
   <script src="./assets/js/main.bundle.js"></script>
-  <script type="text/javascript" src="https://media.kvbkunlun.com/js/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://media.kvbkunlun.com/js/Fundation.js"></script>
   <script type="text/javascript" src="https://code.highcharts.com/stock/highstock.js"></script>
   <script type="text/javascript" src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+  <script type="text/javascript" src="assets/js/common.js"></script>
+
   <!-- <script src="../js/chart.js"></script> -->
   <script type="text/javascript">
+    var _defautSymbolA = $('#defaultSymbolA').attr("data-name");
+    var _defautSymbolB = $('#defaultSymbolB').attr("data-name");
+
     $(function () {
       $.ajax({
-        url: 'https://api.kvbgc.com/api/RealTimePriceGC/List',
+        url: 'https://api.kvbgc.com/api/RealTimePriceGC/List?token=095334BD-F90F-4750-8D30-28EA006FC1E2',
         jsonp: "callback",
         dataType: "jsonp",
         success: LoadCurrencyList_finish
       });
+
+      $('#exchangeInput1').keyup(function () {
+        $('#exchangeInput2').val(
+          formatFloat(parseInt(this.value.replace(',', '')) * $(this).data('rate'), 1)
+        )
+      })
+
+      $(".exchange-tools__detail").popover({
+        html: '<div>text</div>',
+        trigger: "hover",
+        content: function () {
+          var wrap = $(this).attr('data-wrap');
+          var info;
+          $.ajax({
+            url: 'https://media.kvbkunlun.com/api/RealTimePrice/Index?Symbol=' + _defautSymbolA + _defautSymbolB,
+            jsonp: "callback",
+            dataType: "jsonp",
+            success: function (result) {
+              if (result.code !== "0") {
+                alert(result.message);
+                return (false);
+              }
+              console.log(result)
+              info = result.returnValue.PriceInfo[0]
+              
+             
+            }
+          });
+           var t = {
+                from: wrap === 'A' ? _defautSymbolA : _defautSymbolB,
+                to: wrap === 'A' ? _defautSymbolB : _defautSymbolA,
+                rising: info.flag,
+                bid: info.Bid,
+                ask: info.Ask,
+                current: 1.1408,
+                rate: info.Change,
+                percentage: info.Percent,
+                date: "As of 11:20 PM EDT 7/2/2017"
+              };
+              return Handlebars.compile(
+                $("#exchangeToolsPopover").html()
+              )(t)
+          // var t = {
+          //   from: wrap === 'A' ? _defautSymbolA : _defautSymbolB,
+          //   to: wrap === 'A' ? _defautSymbolB : _defautSymbolA,
+          //   rising: info.flag,
+          //   bid: info.Bid,
+          //   ask: info.Ask,
+          //   current: 1.1408,
+          //   rate: info.Change,
+          //   percentage: info.Percent,
+          //   date: "As of 11:20 PM EDT 7/2/2017"
+          // };
+          // return Handlebars.compile(
+          //   $("#exchangeToolsPopover").html()
+          // )(t)
+        }
+      })
     })
+
+    function getRealTimePrice() {
+
+    }
+
     function LoadCurrencyList_finish(info) {
       if (info.code !== "0") {
         alert(info.message);
@@ -904,32 +972,18 @@
       }
     }
 
-    function CreateSymbolA(Symbol, Name, elm) {
-      var $select = $("#symbolListA");
+    function GetCurrentInfo(Symbol, Name, elm) {
       var list = FindObject(SymbolInfo, "SymbolB", Symbol);
-      var SymbolB = $('#defaultSymbolA').data('name');
+      var SymbolB = $('#defaultSymbolA').attr("data-name");
 
-      //$select.html("");
-      // for (var i = 0; i < list.length; i++) {
-      //   var info = list[i];
-      //   var symbolA = info["SymbolA"];
-      //   var nameA = info["NameA"];
-      //   var dollarIcon = CreateCurrencySymbol(symbolA);
-      //   $select.append(`<li onclick="CreateSymbolB('${symbolA}','${nameA}','B');"><a data-name="${symbolA}" data-symbol="${dollarIcon}">${symbolA} ${nameA}</a></li>`);
-      //   GetDefaultSymbol(list[0].SymbolA, list[0].NameA, 'A');
-      // }
       GetDefaultSymbol(Symbol, Name, 'B');
       GetDefaultRate(Symbol, SymbolB, elm);
     }
 
     function CreateSymbolB(Symbol, Name, elm) {
       var $select = $("#symbolListB");
-            console.log(Symbol, Name, elm)
-
       var list = FindObject(SymbolInfo, "SymbolA", Symbol);
-            console.log(list)
-
-      var SymbolB = $('#defaultSymbolB').data('name');
+      var SymbolB;
 
       $select.html("");
       for (var i = 0; i < list.length; i++) {
@@ -937,8 +991,9 @@
         var symbolB = info["SymbolB"];
         var nameB = info["NameB"];
         var dollarIcon = CreateCurrencySymbol(symbolB);
-        $select.append(`<li onclick="CreateSymbolA('${symbolB}','${nameB}','A')"><a data-name="${symbolB}" data-symbol="${dollarIcon}">${symbolB} ${nameB}</a></li>`);
+        $select.append(`<li onclick="GetCurrentInfo('${symbolB}','${nameB}','A')"><a data-name="${symbolB}" data-symbol="${dollarIcon}">${symbolB} ${nameB}</a></li>`);
         GetDefaultSymbol(list[0].SymbolB, list[0].NameB, 'B');
+        SymbolB = list[0].SymbolB;
       }
       GetDefaultSymbol(Symbol, Name, 'A');
       GetDefaultRate(Symbol, SymbolB, elm);
@@ -952,23 +1007,33 @@
     }
 
     function GetDefaultRate(SymbolA, SymbolB, elm) {
-      console.log(SymbolA, SymbolB, elm)
-      // var SymbolB = $('#defaultSymbolB').data('name');
+      var defaultRate1 = FindObject(SymbolInfo, "Symbol", SymbolA + SymbolB)[0].Bid;
+      var defaultRate2 = FindObject(SymbolInfo, "Symbol", SymbolB + SymbolA)[0].Bid;
 
-      // if (elm === 'B') {
-      //   SymbolB = $('#defaultSymbolA').data('name');
-      //   $('#defaultRateA').html(`1 ${SymbolB} = ${defaultRate2} ${Symbol}`)
-      //   $('#defaultRateB').html(`1 ${Symbol} = ${defaultRate1} ${SymbolB}`)
-      // }
+      if (elm === 'A') {
+        $('#defaultRateB').html(`1 ${SymbolA} = ${defaultRate1} ${SymbolB}`)
+        $('#defaultRateA').html(`1 ${SymbolB} = ${defaultRate2} ${SymbolA}`)
+      } else {
+        $('#defaultRateA').html(`1 ${SymbolA} = ${defaultRate1} ${SymbolB}`)
+        $('#defaultRateB').html(`1 ${SymbolB} = ${defaultRate2} ${SymbolA}`)
+      }
+      $('#exchangeInput1').attr('data-rate', defaultRate1);
+      $('#exchangeInput2').val(formatFloat(1000 * defaultRate1, 1))
+    }
 
-      // var defaultRate1 = FindObject(SymbolInfo, "Symbol", Symbol + SymbolB)[0].Bid;
-      // var defaultRate2 = FindObject(SymbolInfo, "Symbol", SymbolB + Symbol)[0].Bid;
-      // $('#defaultRateA').html(`1 ${Symbol} = ${defaultRate1} ${SymbolB}`)
-      // $('#defaultRateB').html(`1 ${SymbolB} = ${defaultRate2} ${Symbol}`)
+    function SwitchSymbol() {
+      console.log('in SwitchSymbol')
+      $('#defaultSymbolA').data('name');
+      $('#defaultSymbolA').data('symbol');
+      $('#defaultSymbolB').data('name');
+      $('#defaultSymbolB').data('symbol');
+      console.log($('#defaultSymbolA').data('name'))
 
-      console.log(FindObject(SymbolInfo, "Symbol", Symbol + SymbolB))
-      console.log(FindObject(SymbolInfo, "Symbol", SymbolB + Symbol))
+      // var htmlA = $('#exchangeBoxA').children().clone();
+      // var htmlB = $('#exchangeBoxB').children().clone();
 
+      // $('#exchangeBoxA').html(htmlB);
+      // $('#exchangeBoxB').html(htmlA);
     }
 
     function CreateCurrencySymbol(Symbol) {
