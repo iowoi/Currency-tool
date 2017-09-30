@@ -210,18 +210,19 @@
             <div class="btn-group exchange-tools__select">
               <div class="btn-group" role="group">
                 <button class="btn btn-primary btn-block btn-lg dropdown-toggle" id="currencySwitch1" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="true">
-                                    <span class="exchange-tools__selected" 
-                                          id="defaultSymbolA" data-name="AUD" data-symbol="$">AUD <span class="hidden-xs">澳元</span></span>
-                                <span class="caret">
+                  aria-expanded="true" onclick="GetSymbolListA('symbolSelectorA');">
+                  <span class="exchange-tools__selected" id="defaultSymbolA" data-name="AUD" data-symbol="$">AUD 
+                    <span class="hidden-xs">澳元</span>
+                  </span>
+                  <span class="caret">
                     <i class="icon icon-down -white">
                       <svg role="img">
                         <use xlink:href="#icn-down"></use>
                       </svg>
                     </i>
                   </span>
-                            </button>
-                <ul class="dropdown-menu" aria-labelledby="currencySwitch1" id="symbolListA"></ul>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="currencySwitch1" id="symbolSelectorA"></ul>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -645,17 +646,17 @@
             <div class="btn-group exchange-modal__selection">
               <div class="btn-group">
                 <button class="btn btn-primary--outline btn-lg btn-block dropdown-toggle" id="currencyFrom" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="true"><span
-                                    class="exchange-tools__selected" data-name="USD" data-symbol="$">USD 美元</span><span
-                                    class="caret"><i class="icon icon-down -blue">
-                            <svg role="img">
-                              <use xlink:href="#icn-down"></use>
-                            </svg></i></span></button>
-                <ul class="dropdown-menu" aria-labelledby="currencyFrom">
-                  <li><a data-name="EU" data-symbol="€">EU 欧元</a></li>
-                  <li><a data-name="USD" data-symbol="$">USD 美元</a></li>
-                  <li><a data-name="CNY" data-symbol="¥">CNY 人民币</a></li>
-                </ul>
+                  aria-expanded="true" onclick="GetSymbolListA('symbolSelectorB');">
+                  <span class="exchange-tools__selected" id="defaultSymbolC"  data-name="AUD" data-symbol="$">AUD 澳元</span>
+                  <span class="caret">
+                    <i class="icon icon-down -blue">
+                      <svg role="img">
+                        <use xlink:href="#icn-down"></use>
+                      </svg>
+                    </i>
+                  </span>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="currencyFrom" id="symbolSelectorB"></ul>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -665,7 +666,7 @@
                 <button class="btn btn-primary--outline btn-lg btn-block dropdown-toggle" id="currencyTo" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="true"><span
                                     class="exchange-tools__selected" data-name="CNY" data-symbol="¥">CNY 人民币</span><span
-                                    class="caret"><i class="icon icon-down -blue"Ｆ
+                                    class="caret"><i class="icon icon-down -blue">
                             <svg role="img">
                               <use xlink:href="#icn-down"></use>
                             </svg></i></span></button>
@@ -871,9 +872,6 @@
 
   <!-- <script src="../js/chart.js"></script> -->
   <script type="text/javascript">
-    var _defautSymbolA = $('#defaultSymbolA').attr("data-name");
-    var _defautSymbolB = $('#defaultSymbolB').attr("data-name");
-
     $(function () {
       $.ajax({
         url: 'https://api.kvbgc.com/api/RealTimePriceGC/List?token=095334BD-F90F-4750-8D30-28EA006FC1E2',
@@ -887,62 +885,60 @@
           formatFloat(parseInt(this.value.replace(',', '')) * $(this).data('rate'), 1)
         )
       })
-
-      $(".exchange-tools__detail").popover({
-        html: '<div>text</div>',
-        trigger: "hover",
-        content: function () {
-          var wrap = $(this).attr('data-wrap');
-          var info;
-          $.ajax({
-            url: 'https://media.kvbkunlun.com/api/RealTimePrice/Index?Symbol=' + _defautSymbolA + _defautSymbolB,
-            jsonp: "callback",
-            dataType: "jsonp",
-            success: function (result) {
-              if (result.code !== "0") {
-                alert(result.message);
-                return (false);
-              }
-              console.log(result)
-              info = result.returnValue.PriceInfo[0]
-              
-             
-            }
-          });
-           var t = {
-                from: wrap === 'A' ? _defautSymbolA : _defautSymbolB,
-                to: wrap === 'A' ? _defautSymbolB : _defautSymbolA,
-                rising: info.flag,
-                bid: info.Bid,
-                ask: info.Ask,
-                current: 1.1408,
-                rate: info.Change,
-                percentage: info.Percent,
-                date: "As of 11:20 PM EDT 7/2/2017"
-              };
+      //价格走势图
+      $(".exchange-tools__detail").hover(function () {
+        var e = $(this);
+        var wrap = $(this).attr('data-wrap');
+        getRealTimePrice(wrap, function (data) {
+          console.log("data1", data)
+          $(".exchange-tools__detail").popover({
+            html: !0,
+            trigger: "hover",
+            content: function () {
+              console.log("data", data)
               return Handlebars.compile(
                 $("#exchangeToolsPopover").html()
-              )(t)
-          // var t = {
-          //   from: wrap === 'A' ? _defautSymbolA : _defautSymbolB,
-          //   to: wrap === 'A' ? _defautSymbolB : _defautSymbolA,
-          //   rising: info.flag,
-          //   bid: info.Bid,
-          //   ask: info.Ask,
-          //   current: 1.1408,
-          //   rate: info.Change,
-          //   percentage: info.Percent,
-          //   date: "As of 11:20 PM EDT 7/2/2017"
-          // };
-          // return Handlebars.compile(
-          //   $("#exchangeToolsPopover").html()
-          // )(t)
-        }
+              )(data)
+            }
+          })
+        });
       })
     })
 
-    function getRealTimePrice() {
+    function getRealTimePrice(wrap, returnOutput) {
+      var symbolA = GetCurrentSymbol().symbolA;
+      var symbolB = GetCurrentSymbol().symbolB;
+      var currentSymbols = "";
 
+      wrap === 'A' ? currentSymbols = symbolA + symbolB : currentSymbols = symbolB + symbolA
+      var currentSymbolInfo = FindObject(SymbolInfo, "Symbol", currentSymbols)[0];
+      var API_URL = `https://media.kvbkunlun.com/api/RealTimePrice/Index?Symbol=${currentSymbols}`
+      
+      $.ajax({
+        url: API_URL,
+        jsonp: "callback",
+        dataType: "jsonp",
+        success: function (result) {
+          if (result.code !== "0") {
+            alert(result.message);
+            return (false);
+          }
+          info = result.returnValue.PriceInfo[0]
+          data = {
+            from: wrap === 'A' ? symbolA : symbolB,
+            to: wrap === 'A' ? symbolB : symbolA,
+            rising: !0,
+            bid: info.Bid,
+            ask: info.Ask,
+            current: currentSymbolInfo.Bid,
+            rate: info.Change,
+            percentage: info.Percent,
+            date: currentSymbolInfo.UpdatedTime
+          };
+          console.log("APIdata,", data)
+          returnOutput(data);
+        }
+      });
     }
 
     function LoadCurrencyList_finish(info) {
@@ -951,14 +947,13 @@
         return (false);
       }
       SymbolInfo = info.returnValue.list;
-      DefautSymbolA();
       CreateSymbolB('AUD', '澳元', 'B');
     }
 
-    function DefautSymbolA() {
-      var $select = $("#symbolListA");
+    function GetSymbolListA(elm) {
+      var $select = $("#" + elm);
       var symbolList = [];
-
+      console.log(elm)
       $select.html("");
       for (var i = 0; i < SymbolInfo.length; i++) {
         var info = SymbolInfo[i];
@@ -973,6 +968,7 @@
     }
 
     function GetCurrentInfo(Symbol, Name, elm) {
+      console.log('GetCurrentInfo.....')
       var list = FindObject(SymbolInfo, "SymbolB", Symbol);
       var SymbolB = $('#defaultSymbolA').attr("data-name");
 
@@ -981,6 +977,7 @@
     }
 
     function CreateSymbolB(Symbol, Name, elm) {
+      console.log('CreateSymbolB.....')
       var $select = $("#symbolListB");
       var list = FindObject(SymbolInfo, "SymbolA", Symbol);
       var SymbolB;
@@ -1000,6 +997,7 @@
     }
 
     function GetDefaultSymbol(Symbol, Name, elm) {
+      console.log('GetDefaultSymbol.....')
       $('#defaultSymbol' + elm)
         .html(`${Symbol}<span class="hidden-xs"> ${Name}</span>`)
         .attr('data-name', Symbol)
@@ -1023,11 +1021,8 @@
 
     function SwitchSymbol() {
       console.log('in SwitchSymbol')
-      $('#defaultSymbolA').data('name');
-      $('#defaultSymbolA').data('symbol');
-      $('#defaultSymbolB').data('name');
-      $('#defaultSymbolB').data('symbol');
-      console.log($('#defaultSymbolA').data('name'))
+
+      console.log(GetCurrentSymbol())
 
       // var htmlA = $('#exchangeBoxA').children().clone();
       // var htmlB = $('#exchangeBoxB').children().clone();
@@ -1051,6 +1046,14 @@
         default:
           return "$"
       }
+    }
+
+    function GetCurrentSymbol() {
+      var obj = {
+        symbolA: $('#defaultSymbolA').attr("data-name"),
+        symbolB: $('#defaultSymbolB').attr("data-name")
+      }
+      return (obj);
     }
   </script>
 </body>
