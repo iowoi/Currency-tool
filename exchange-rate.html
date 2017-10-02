@@ -222,7 +222,7 @@
                     </i>
                   </span>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="currencySwitch1" id="symbolSelectorA"></ul>
+                <ul class="dropdown-menu" aria-labelledby="currencySwitch1" id="symbolSelectorA" data-triggleElm="symbolSelectorB" data-defaultElm="defaultSymbol"></ul>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -259,8 +259,8 @@
                                 <svg role="img">
                                   <use xlink:href="#icn-down"></use>
                                 </svg></i></span></button>
-                <ul class="dropdown-menu" aria-labelledby="currencySwitch2" id="symbolListB">
-                  <li><a data-name="CNY" data-symbol="¥">CNY 人民币</a></li>
+                <ul class="dropdown-menu" aria-labelledby="currencySwitch2" id="symbolSelectorB" data-defaultElm="defaultSymbolB">
+                  <!-- <li><a data-name="CNY" data-symbol="¥">CNY 人民币</a></li> -->
                 </ul>
               </div>
               <div class="clearfix"></div>
@@ -646,8 +646,8 @@
             <div class="btn-group exchange-modal__selection">
               <div class="btn-group">
                 <button class="btn btn-primary--outline btn-lg btn-block dropdown-toggle" id="currencyFrom" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="true" onclick="GetSymbolListA('symbolSelectorB');">
-                  <span class="exchange-tools__selected" id="defaultSymbolC"  data-name="AUD" data-symbol="$">AUD 澳元</span>
+                  aria-expanded="true" onclick="GetSymbolListA('realTimeSelectorA');">
+                  <span class="exchange-tools__selected" id="realTimeDefaultSymbolA" data-name="AUD" data-symbol="$">AUD 澳元</span>
                   <span class="caret">
                     <i class="icon icon-down -blue">
                       <svg role="img">
@@ -656,7 +656,7 @@
                     </i>
                   </span>
                 </button>
-                <ul class="dropdown-menu" aria-labelledby="currencyFrom" id="symbolSelectorB"></ul>
+                <ul class="dropdown-menu" aria-labelledby="currencyFrom" id="realTimeSelectorA" data-triggleElm="realTimeSelectorB" data-defaultElm="realTimeDefaultSymbol"></ul>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -665,16 +665,12 @@
               <div class="btn-group">
                 <button class="btn btn-primary--outline btn-lg btn-block dropdown-toggle" id="currencyTo" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="true"><span
-                                    class="exchange-tools__selected" data-name="CNY" data-symbol="¥">CNY 人民币</span><span
+                                    class="exchange-tools__selected" id="realTimeDefaultSymbolB" data-name="CNY" data-symbol="¥">CNY 人民币</span><span
                                     class="caret"><i class="icon icon-down -blue">
                             <svg role="img">
                               <use xlink:href="#icn-down"></use>
                             </svg></i></span></button>
-                <ul class="dropdown-menu" aria-labelledby="currencyTo">
-                  <li><a data-name="EU" data-symbol="€">EU 欧元</a></li>
-                  <li><a data-name="USD" data-symbol="$">USD 美元</a></li>
-                  <li><a data-name="CNY" data-symbol="¥">CNY 人民币</a></li>
-                </ul>
+                <ul class="dropdown-menu" aria-labelledby="currencyTo" id="realTimeSelectorB"></ul>
               </div>
               <div class="clearfix"></div>
             </div>
@@ -913,7 +909,7 @@
       wrap === 'A' ? currentSymbols = symbolA + symbolB : currentSymbols = symbolB + symbolA
       var currentSymbolInfo = FindObject(SymbolInfo, "Symbol", currentSymbols)[0];
       var API_URL = `https://media.kvbkunlun.com/api/RealTimePrice/Index?Symbol=${currentSymbols}`
-      
+
       $.ajax({
         url: API_URL,
         jsonp: "callback",
@@ -923,7 +919,8 @@
             alert(result.message);
             return (false);
           }
-          info = result.returnValue.PriceInfo[0]
+          info = result.returnValue.PriceInfo[0];
+          console.log
           data = {
             from: wrap === 'A' ? symbolA : symbolB,
             to: wrap === 'A' ? symbolB : symbolA,
@@ -947,13 +944,16 @@
         return (false);
       }
       SymbolInfo = info.returnValue.list;
-      CreateSymbolB('AUD', '澳元', 'B');
+      CreateSymbolB('AUD', '澳元', 'symbolSelectorB');
     }
 
     function GetSymbolListA(elm) {
       var $select = $("#" + elm);
       var symbolList = [];
-      console.log(elm)
+      var triggerElm = $select.attr('data-triggleElm')
+      var defaultElm = $select.attr('data-defaultElm')
+
+      console.log(triggerElm)
       $select.html("");
       for (var i = 0; i < SymbolInfo.length; i++) {
         var info = SymbolInfo[i];
@@ -962,23 +962,23 @@
         if (symbolList.indexOf(symbolA) === -1) {
           symbolList.push(symbolA);
           var dollarIcon = CreateCurrencySymbol(symbolA);
-          $select.append(`<li onclick="CreateSymbolB('${symbolA}','${nameA}','B');"><a data-name="${symbolA}" data-symbol="${dollarIcon}">${symbolA} ${nameA}</a></li>`);
+          $select.append(`<li onclick="CreateSymbolB('${symbolA}','${nameA}','${triggerElm}','${defaultElm}');"><a data-name="${symbolA}" data-symbol="${dollarIcon}">${symbolA} ${nameA}</a></li>`);
         }
       }
     }
 
     function GetCurrentInfo(Symbol, Name, elm) {
-      console.log('GetCurrentInfo.....')
+      console.log('GetCurrentInfo.....',elm)
       var list = FindObject(SymbolInfo, "SymbolB", Symbol);
       var SymbolB = $('#defaultSymbolA').attr("data-name");
 
-      GetDefaultSymbol(Symbol, Name, 'B');
+      GetDefaultSymbol(Symbol, Name,  elm+'A');
       GetDefaultRate(Symbol, SymbolB, elm);
     }
 
-    function CreateSymbolB(Symbol, Name, elm) {
-      console.log('CreateSymbolB.....')
-      var $select = $("#symbolListB");
+    function CreateSymbolB(Symbol, Name, triggerElm ,defaultElm) {
+      console.log('CreateSymbolB.....', defaultElm)
+      var $select = $('#' + triggerElm);
       var list = FindObject(SymbolInfo, "SymbolA", Symbol);
       var SymbolB;
 
@@ -987,21 +987,29 @@
         var info = list[i];
         var symbolB = info["SymbolB"];
         var nameB = info["NameB"];
+
         var dollarIcon = CreateCurrencySymbol(symbolB);
-        $select.append(`<li onclick="GetCurrentInfo('${symbolB}','${nameB}','A')"><a data-name="${symbolB}" data-symbol="${dollarIcon}">${symbolB} ${nameB}</a></li>`);
-        GetDefaultSymbol(list[0].SymbolB, list[0].NameB, 'B');
+        $select.append(`<li onclick="GetCurrentInfo('${symbolB}','${nameB}','defaultSymbolB')"><a data-name="${symbolB}" data-symbol="${dollarIcon}">${symbolB} ${nameB}</a></li>`);
+        GetDefaultSymbol(list[0].SymbolB, list[0].NameB, defaultElm+'B');
         SymbolB = list[0].SymbolB;
       }
-      GetDefaultSymbol(Symbol, Name, 'A');
-      GetDefaultRate(Symbol, SymbolB, elm);
+      GetDefaultSymbol(Symbol, Name, defaultElm+'A');
+      GetDefaultRate(Symbol, SymbolB, triggerElm);
     }
 
     function GetDefaultSymbol(Symbol, Name, elm) {
-      console.log('GetDefaultSymbol.....')
-      $('#defaultSymbol' + elm)
-        .html(`${Symbol}<span class="hidden-xs"> ${Name}</span>`)
-        .attr('data-name', Symbol)
-        .attr('data-symbol', CreateCurrencySymbol(Symbol));
+      console.log("GetDefaultSymbol",elm)
+      if (elm === 'defaultSymbolA' || elm === 'defaultSymbolB' ) {
+        $('#'+elm)
+          .html(`${Symbol}<span class="hidden-xs"> ${Name}</span>`)
+          .attr('data-name', Symbol)
+          .attr('data-symbol', CreateCurrencySymbol(Symbol));
+      } else {
+        $('#'+elm)
+          .html(`${Symbol} ${Name}`)
+          .attr('data-name', Symbol)
+          .attr('data-symbol', CreateCurrencySymbol(Symbol));
+      }
     }
 
     function GetDefaultRate(SymbolA, SymbolB, elm) {
