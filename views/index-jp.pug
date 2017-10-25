@@ -10,12 +10,14 @@ block content
 			div.container
 				div.main-slider__content
 					h1.main-slider__name 金融サービス・ワンストップソリューション
-					p.main-slider__description KVB Kunlun Global Capital
-		div.main-slider__slide(style=`background-image: url(${imgPath}/carousel/dark-sky.jpg)`)
+					//p.main-slider__description KVB Kunlun Global Capital
+					h1.main-slider__name Kunlun Global Capital
+		div.main-slider__slide(style=`background-image: url(${imgPath}/carousel/light-building.jpg)`)
 			div.container
 				div.main-slider__content
 					h1.main-slider__name 金融サービス・ワンストップソリューション
-					p.main-slider__description KVB Kunlun Global Capital
+					//p.main-slider__description KVB Kunlun Global Capital
+					h1.main-slider__name Kunlun Global Capital
 	div.highlight
 		div.container
 			div.clearfix
@@ -59,37 +61,37 @@ block content
 		div.container.exchange-rate__content
 			+styledHeading('トレンドを見つけだし、お取引の有利なタイミングを見極めるためにご活用ください', true)
 			div.exchange-rate__list
-				each val in [1, 2, 3, 4]
-					div.exchange-brief.exchange-brief--fall
-						div.exchange-brief__info
-							h6.exchange-brief__target EUR - USD
-							div.exchange-brief__compare
-								span.exchange-brief__name BID
-								span.exchange-brief__number 1.116
-							div.exchange-brief__compare
-								span.exchange-brief__name ASK
-								span.exchange-brief__number 1.11164
-							div.exchange-brief__summary
-								span.exchange-brief__percentage
-									| 0.151%
-									+icon('down-rate', 'red')
-								span.exchange-brief__chart
-									+icon('sparkline-down')
-					div.exchange-brief.exchange-brief--rising
-						div.exchange-brief__info
-							h6.exchange-brief__target EUR - USD
-							div.exchange-brief__compare
-								span.exchange-brief__name BID
-								span.exchange-brief__number 1.116
-							div.exchange-brief__compare
-								span.exchange-brief__name ASK
-								span.exchange-brief__number 1.11164
-							div.exchange-brief__summary
-								span.exchange-brief__percentage
-									| 30.11%
-									+icon('up-rate', 'green')
-								span.exchange-brief__chart
-									+icon('sparkline-up')
+				//- each val in [1, 2, 3, 4]
+				//- 	div.exchange-brief.exchange-brief--fall
+				//- 		div.exchange-brief__info
+				//- 			h6.exchange-brief__target EUR - USD
+				//- 			div.exchange-brief__compare
+				//- 				span.exchange-brief__name BID
+				//- 				span.exchange-brief__number 1.116
+				//- 			div.exchange-brief__compare
+				//- 				span.exchange-brief__name ASK
+				//- 				span.exchange-brief__number 1.11164
+				//- 			div.exchange-brief__summary
+				//- 				span.exchange-brief__percentage
+				//- 					| 0.151%
+				//- 					+icon('down-rate', 'red')
+				//- 				span.exchange-brief__chart
+				//- 					+icon('sparkline-down')
+				//- 	div.exchange-brief.exchange-brief--rising
+				//- 		div.exchange-brief__info
+				//- 			h6.exchange-brief__target EUR - USD
+				//- 			div.exchange-brief__compare
+				//- 				span.exchange-brief__name BID
+				//- 				span.exchange-brief__number 1.116
+				//- 			div.exchange-brief__compare
+				//- 				span.exchange-brief__name ASK
+				//- 				span.exchange-brief__number 1.11164
+				//- 			div.exchange-brief__summary
+				//- 				span.exchange-brief__percentage
+				//- 					| 30.11%
+				//- 					+icon('up-rate', 'green')
+				//- 				span.exchange-brief__chart
+				//- 					+icon('sparkline-up')
 			div.exchange-rate__tools
 				+exchangeTools--jp()
 			div.exchange-rate__caption
@@ -232,3 +234,61 @@ block content
 										+icon('mail', 'blue')
 										span.current-city__contact-info Eメール：#{city.email}
 										span.clearfix
+block templates
+	script#sliderItems(type="text/x-handlebars-template")
+		| {{#if rising}}
+		div.exchange-brief.exchange-brief--rising
+			div.exchange-brief__info
+				h6.exchange-brief__target {{symbolCN}}
+				div.exchange-brief__compare
+					span.exchange-brief__name BID
+					span.exchange-brief__number {{bid}}
+				div.exchange-brief__compare
+					span.exchange-brief__name ASK
+					span.exchange-brief__number {{ask}}
+				div.exchange-brief__summary
+					span.exchange-brief__percentage
+						| {{percentage}}
+						+icon('up-rate', 'green')
+					span.exchange-brief__chart
+						+icon('sparkline-up')
+						| {{^}}
+		div.exchange-brief.exchange-brief--fall
+			div.exchange-brief__info
+				h6.exchange-brief__target {{symbolCN}}
+				div.exchange-brief__compare
+					span.exchange-brief__name BID
+					span.exchange-brief__number {{bid}}
+				div.exchange-brief__compare
+					span.exchange-brief__name ASK
+					span.exchange-brief__number {{ask}}
+				div.exchange-brief__summary
+					span.exchange-brief__percentage
+						| {{percentage}}
+						+icon('down-rate', 'red')
+					span.exchange-brief__chart
+						+icon('sparkline-down')
+						| {{/if}}
+	script#exchangeToolsPopover(type="text/x-handlebars-template")
+		div.exchange-tools__popover
+			div.exchange-tools__popover-title {{from}} - {{to}}
+			// status up or down
+			| {{#if rising}}
+			div.exchange-tools__brief(data-status="up")
+				+icon('rate-up')
+				div.exchange-tools__current {{current}}
+				div.exchange-tools__brief-ratio
+					div {{rate}}
+					div {{percentage}}
+				div.clearfix
+			| {{^}}
+			div.exchange-tools__brief(data-status="down")
+				+icon('rate-down')
+				div.exchange-tools__current {{current}}
+				div.exchange-tools__brief-ratio
+					div {{rate}}
+					div {{percentage}}
+				div.clearfix
+			| {{/if}}	
+			div.exchange-tools__time {{date}}
+	

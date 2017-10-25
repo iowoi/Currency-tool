@@ -15,8 +15,9 @@ const $toRate = $exchangeTo.find('.exchange-tools__rate')
 const $fromList = $exchangeFrom.find('.dropdown-menu')
 const $toList = $exchangeTo.find('.dropdown-menu')
 
+//if (window.location.pathname === '/' || window.location.pathname === '/exchange-rate') {
 
-if (window.location.pathname === '/' || window.location.pathname === '/exchange-rate') {
+if (window.location.pathname.indexOf('/index') > -1 || window.location.pathname.indexOf('/exchange-rate') > -1) {
 	const fmtFromCurrencyInput =
 		new Cleave('.exchange-tools__from .exchange-tools__input', {
 			numeral: true,
@@ -45,10 +46,14 @@ if (window.location.pathname === '/' || window.location.pathname === '/exchange-
 		const SymbolA = $fromSelected.attr('data-name'),
 			SymbolB = $toSelected.attr('data-name'),
 			RateA = $fromSelected.attr('data-rate'),
-			RateB = $toSelected.attr('data-rate')
+			RateB = $toSelected.attr('data-rate'),
+			currentHost = location.href
 
 		$fromRate.text(`1 ${SymbolA} = ${RateA} ${SymbolB}`)
 		$toRate.text(`1 ${SymbolB} = ${RateB} ${SymbolA}`)
+		if (currentHost.indexOf('en') > -1 || currentHost.indexOf('jp') > -1) {
+			$('.exchange-tools__selected .hidden-xs').hide();
+		}
 	}
 
 	const getDefaultRate = (SymbolA, SymbolB) => {
@@ -150,7 +155,6 @@ if (window.location.pathname === '/' || window.location.pathname === '/exchange-
 
 		createSymbolB(_SymbolInfo, 'AUD');
 		$fromSelected.attr(('data-rate'), getDefaultRate('AUD', 'CNY'));
-
 		for (let i = 0; i < _SymbolInfo.length; i++) {
 			const info = _SymbolInfo[i];
 			const symbolA = info["SymbolA"];
@@ -161,6 +165,7 @@ if (window.location.pathname === '/' || window.location.pathname === '/exchange-
 				$fromList.append(`<li><a data-name="${symbolA}" data-symbol="${dollarIcon}"">${symbolA} <span class="hidden-xs">${nameA}</span></a></li>`);
 			}
 		}
+
 		changeCurrencyInfo()
 	}
 

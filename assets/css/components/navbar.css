@@ -493,6 +493,13 @@
 }
 /*EN-site*/
 .en-site {
+	& .navbar {
+		& .navbar__link {
+			& .navbar__text {
+				font-family: var(--font-tungsten);
+			}
+		}
+	}
 	& .sub-navbar__item {
 		letter-spacing: 0;
 		font-size: 17px;

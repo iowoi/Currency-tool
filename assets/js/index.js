@@ -11,6 +11,7 @@ import './pages'
 // Force scroll to top
 $(document).ready(function () {
 	$(this).scrollTop(0)
+
 })
 
 const url = location.href
@@ -30,7 +31,7 @@ $('.nabvbar__lang .dropdown-menu a').click(function (e) {
 	const lang = $(this).data('lang')
 	const newUrl = `${currentHost}/${lang}/${currentPage}`
 	const failUrl = `${currentHost}/${lang}/index.html`
-
+	console.log(newUrl,failUrl)
 	$
 		.get(newUrl, res => { location.href = res ? newUrl : failUrl })
 		.fail(() => { location.href = failUrl })

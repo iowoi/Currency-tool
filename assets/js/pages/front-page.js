@@ -57,7 +57,7 @@ $('.city').click(function () {
  */
 
 $(function () {
-	if (window.location.pathname === '/') {
+	if (window.location.pathname.indexOf('/index') > -1 ) {
 		_Fn.getRealTimePriceList(LoadCurrencyList_finish);
 	}
 })
@@ -94,6 +94,7 @@ const LoadCurrencyList_finish = (info) => {
 		symbolEN: "USDSGD",
 		symbolCN: "美元 / 新加坡元"
 	}]
+	const checkWebLang = $('body').attr('class')
 
 	for (let i = 0; i < commonSymbols.length; i++) {
 		const SymbolA = commonSymbols[i].symbolEN.substr(0, 3);
@@ -108,7 +109,7 @@ const LoadCurrencyList_finish = (info) => {
 			const info = JSON.parse(request.responseText).returnValue.PriceInfo[0];
 
 			const obj = {
-				symbolCN: commonSymbols[i].symbolCN,
+				symbolCN: checkWebLang ? `${SymbolA} / ${SymbolB}` : commonSymbols[i].symbolCN,
 				rising: info.flag === "+" ? true : false,
 				bid: info.Bid,
 				ask: info.Ask,

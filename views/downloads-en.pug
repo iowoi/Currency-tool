@@ -3,13 +3,13 @@ extends layout-en
 include helpers/mixins
 include helpers/mixins-en
 
-mixin downloadItem(name, location, size)
+mixin downloadItem(name, location, size, link)
 	div.downloads__item
 		div.downloads__name #{name}
 		div.downloads__info
 			div.downloads__location(data-location=location) #{location}
 			div.downloads__size PDF #{size} MB
-		a.downloads__link(href="#" title="download")
+		a.downloads__link(href=link title="download" target="_blank")
 			span Resources Download
 			+icon('download', 'blue')
 
@@ -40,10 +40,10 @@ block content
 				li: a(data-target="Global Wealth Management") Global Wealth Management
 				li: a(data-target="Fund, Insurance and Physical Gold") Fund, Insurance and Physical Gold
 		div.container
-			div.row.downloads__content.mobile-dropdown__content(data-target="Global Payment")
+			div.row.downloads__content.mobile-dropdown__content(data-target="国際決済")
 				div.col-md-offset-1.col-md-10
 					div.total-result Total
-						strong 15
+						strong 8
 						| files
 					div.dropdown.downloads__filter
 						button#downloadFilter.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
@@ -56,19 +56,19 @@ block content
 							li: a All
 					div.clearfix
 					div.downloads__list
-						+downloadItem('KVB Global Markets Pty Bank Account Information', 'Australia', 3.16)
-						+downloadItem('KVB Global Markets Pty PDS and FSG', 'Australia', 3.16)
-						+downloadItem('KVB Global Markets Ltd PDS', 'New Zealand', 3.16)
-						+downloadItem('KVB Global Markets Ltd Bank Account Information', 'New Zealand', 3.16)
-						+downloadItem('KVB Kunlun Canada Inc. Bank Account Information', 'Canada', 3.16)
-						+downloadItem(' KVB Kunlun Canada Inc. Commercial Account Opening Form', 'Canada', 3.16)
-						+downloadItem(' KVB Kunlun Canada Inc. Individual Account Opening – English/Chinese', 'Canada', 3.16)
-						+downloadItem('Canada: KVB Kunlun Canada Inc. Individual Account Opening - Japanese', 'Canada', 3.16)
-					+pagination(3)
-			div.row.downloads__content.mobile-dropdown__content(data-target=" Corporate FX Management" style='display: none')
+						+downloadItem('KVB Global Markets Pty Bank Account Information', 'Australia', 3.16, 'https://www.kvbgc.com//assets/DownloadFiles/AccountDetail-EN-AU.pdf')
+						+downloadItem('KVB Global Markets Pty PDS and FSG', 'Australia', 3.16, 'https://www.kvbgc.com//assets/Uploads/GCC233-KVB-Global-Markets-Pty-Ltd-PDS-Oct-2016.pdf')
+						+downloadItem('KVB Global Markets Ltd PDS', 'New Zealand', 3.16, 'https://www.kvbgc.com//assets/Uploads/NZ-AccountDetails2017v4.pdf')
+						+downloadItem('KVB Global Markets Ltd Bank Account Information', 'New Zealand', 3.16, 'https://www.kvbgc.com/assets/Uploads/GCC232-KVB-Global-Markets-Ltd-PDS-Oct-2016.pdf')
+						+downloadItem('KVB Kunlun Canada Inc. Bank Account Information', 'Canada', 3.16, 'https://www.kvbgc.com//assets/DownloadFiles/AccountDetail-EN-CA.pdf')
+						+downloadItem(' KVB Kunlun Canada Inc. Commercial Account Opening Form', 'Canada', 3.16, 'https://www.kvbgc.com/assets/Uploads/CommercialAccountApplicationCA-EN.pdf')
+						+downloadItem(' KVB Kunlun Canada Inc. Individual Account Opening – English/Chinese', 'Canada', 3.16 ,'https://www.kvbgc.com/assets/Uploads/AC-OPENING-APPLICATION-FORM-INDIVIDUAL-JOINTChinese-revised-2014.pdf')
+						+downloadItem('Canada: KVB Kunlun Canada Inc. Individual Account Opening - Japanese', 'Canada', 3.16, '/assets/Uploads/AC-OPENING-APPLICATION-FORM-INDIVIDUAL-JOINTJapanese-revised-2014.pdf')
+					//+pagination(3)
+			div.row.downloads__content.mobile-dropdown__content(data-target="法人為替取引" style='display: none')
 				div.col-md-offset-1.col-md-10
 					div.total-result Total
-						strong 2
+						strong 0
 						| files
 					div.dropdown.downloads__location-filter
 						button#downloadFilter.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
@@ -81,8 +81,8 @@ block content
 							li: a All
 					div.clearfix
 					div.downloads__list
-						+downloadItem('KVB Global Markets Ltd Bank Account Information', 'Australia', 3.16)
-						+downloadItem('KVB Global Markets Ltd Product Disclosure Statement and Financial Services Guide', 'Australia', 3.16)
+						//+downloadItem('KVB Global Markets Ltd Bank Account Information', 'Australia', 3.16)
+						//+downloadItem('KVB Global Markets Ltd Product Disclosure Statement and Financial Services Guide', 'Australia', 3.16)
 			div.row.downloads__content.mobile-dropdown__content(data-target="Cross-Border e-Commerce Solution" style='display: none')
 				div.col-md-offset-1.col-md-10
 					div.downloads__empty

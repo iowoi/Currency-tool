@@ -6,16 +6,13 @@ mixin exchangeTools--jp
 				div.btn-group.exchange-tools__select
 					div.btn-group(role="group")
 						button#currencySwitch1.btn.btn-primary.btn-block.btn-lg.dropdown-toggle(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
-							span.exchange-tools__selected(data-name="USD" data-symbol="$") USD
+							span.exchange-tools__selected(data-name="AUD" data-symbol="$") AUD
 							span.caret: +icon('down', 'white')
 						ul.dropdown-menu(aria-labelledby="currencySwitch1")
-							li: a(data-name="EU" data-symbol="€") EU
-							li: a(data-name="USD" data-symbol="$") USD
-							li: a(data-name="CNY" data-symbol="¥") CNY
 					div.clearfix
 				input.exchange-tools__input(type="text" value="1000")
 				div.exchange-tools__currency
-					span.exchange-tools__rate 1 USD = 6.8385 CNY
+					span.exchange-tools__rate
 					span.exchange-tools__chart
 						+icon('sparkline-up')
 					span
@@ -29,13 +26,10 @@ mixin exchangeTools--jp
 							span.exchange-tools__selected(data-name="CNY" data-symbol="¥") CNY
 							span.caret: +icon('down', 'white')
 						ul.dropdown-menu(aria-labelledby="currencySwitch2")
-							li: a(data-name="EU" data-symbol="€") EU
-							li: a(data-name="USD" data-symbol="$") USD
-							li: a(data-name="CNY" data-symbol="¥") CNY
 					div.clearfix
-				input.exchange-tools__input(type="text" value="67801")
+				input.exchange-tools__input(type="text" value="")
 				div.exchange-tools__currency
-					span.exchange-tools__rate 1 CNY = 0.1462 USD
+					span.exchange-tools__rate 
 					span.exchange-tools__chart
 						+icon('sparkline-down')
 					span

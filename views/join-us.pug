@@ -2,38 +2,84 @@ extends layout
 
 include helpers/mixins
 
-mixin joinUs(label, parentId, title, subtitle)
 	div.panel.panel-default.join-us__block
-		div.panel-heading(id=label role='tab')
+		//- div.panel-heading(id=label role='tab')
+		//- 	h4.panel-title
+		//- 		a(role='button' data-toggle='collapse' data-parent=parentId href=`#${label}Collapse` aria-expanded='false' aria-controls=`${label}Collapse`)
+		//- 			span.main-title #{title}
+		//- 			div.sub-title #{subtitle}
+		//- 			+icon('down-rate', 'black')
+		//- 			+icon('up-rate', 'black')
+		div.panel-heading(id='join1' role='tab')
 			h4.panel-title
-				a(role='button' data-toggle='collapse' data-parent=parentId href=`#${label}Collapse` aria-expanded='false' aria-controls=`${label}Collapse`)
-					span.main-title #{title}
-					div.sub-title #{subtitle}
+				a(role='button' data-toggle='collapse' data-parent=parentId href=`#join1Collapse` aria-expanded='false' aria-controls=`join1Collapse`)
+					span.main-title Assistant Risk Manager
+					div.sub-title Hong Kong
 					+icon('down-rate', 'black')
 					+icon('up-rate', 'black')
-		div.panel-collapse.collapse(id=`${label}Collapse` role='tabpanel' aria-labelledby=label)
+		div.panel-collapse.collapse(id=`join1Collapse` role='tabpanel' aria-labelledby=label)
 			div.panel-body.join-us__body
 				div.position__outline
 					div.position__title
 						+icon('briefcase', 'blue')
 						div.title Responsibilities:
 					ul.position__des
-						li Provide first-line local and global support for trading applications
-						li Monitor SLA metrics according to customers’ agreements and internal regulation
-						li Escalate technical issues to application support for troubleshooting
-						li Provide technical training, end-user training, and perform system administration
-						li Identify requirements, analyze and offer solutions to end-users
-						li Perform system installation, patch installation and system upgrade during non-trading hours
-						li Plan, execute and support the implementation activities such as assisting user acceptance test and pre-implementation trial, conducting user training, performing system installation, data conversion & cutover activities
-						li Work with on-shore and off-shore developers to design, develop, test and deploy financial applications
+						li Establish systems and procedures relating to risk identification, measurement, control and monitoring of different risk and provide early warning to senior management for our FX Business
+						li Review and Monitor the internal risk limits for the group
+						li Ensure the risks of the group remains within the boundaries established by the BOD
+						li Review and Identify operational loss events through analysis of data and policies
+						li Review new products/ business and provide advice for minimizing risks
+						li Supervise and manage the risk reporting tasks. Review the operation processes, roles, and responsibilities and ensure the process are implemented in accordance with the Group’s operational standard and requirements
+						li Establish, implement and manage the group’s risk management process
 				div.position__outline
 					div.position__title
 						+icon('fountain-pen', 'blue')
 						div.title Requirements:
 					ul.position__des
-						li University graduate in Computer Science/Information technology
-						li Minimum of 3 years of IT experience
-						li Working experience with Microsoft SQL server
+						li Holder of a Bachelor Degree in Finance or CFA Preferred
+						li At least 5-6 years’ experience in financial risk management, ideally in operation risk and FX field
+						li Direct working experience in risk reporting and risk management
+						li Proactive and able to work independently to plan and execute work
+						li Analytical and detail oriented; Excellent interpersonal, presentation and communication skills
+						li Strong relationship management skills and able to interact with senior management
+						li Excellent communication skills with fluency in English and Mandarin
+				div.position__bottom
+					div.position__intro We offer 5-day workweek, career prospects and attractive package for the right candidate.  If you would like to take the challenge to stretch your ability and form part of our team, please send your full career details, together with your current and expected salary by e-mail to: hr_nonfg@kvbkunlun.com.
+					div.position__warning Information provided will be treated in the strictest confidence and used only for recruitment related purposes. All applications will be destroyed after 6 months. Only short listed candidates will be contacted.
+				div.position__apply
+						button.apply__button APPLY
+		div.panel-heading(id='join2' role='tab')
+			h4.panel-title
+				a(role='button' data-toggle='collapse' data-parent=parentId href=`#join2Collapse` aria-expanded='false' aria-controls=`join2Collapse`)
+					span.main-title SAP System Analyst
+					div.sub-title Hong Kong
+					+icon('down-rate', 'black')
+					+icon('up-rate', 'black')
+		div.panel-collapse.collapse(id=`join2Collapse` role='tabpanel' aria-labelledby=label)
+			div.panel-body.join-us__body
+				div.position__outline
+					div.position__title
+						+icon('briefcase', 'blue')
+						div.title Responsibilities:
+					ul.position__des
+						li Configure and customize SAP BW to meet business requirements
+						li Maintain generic/enhanced Data Sources, Info-Cube, Multi-Provider, DSO, Transfer rules, Update rules, Transformation, Info-Set, Info-Sources, and Process Chain in the system
+						li Design & develop queries using BEx Analyzer, Query Designer and Web Application Designer
+						li Work with other project team members to deliver total data solutions for business operations (cross-platform)
+						li Provide daily support and periodic training to users when required
+				div.position__outline
+					div.position__title
+						+icon('fountain-pen', 'blue')
+						div.title Requirements:
+					ul.position__des
+						li Degree holder in Computer Science/ Finance/ Accounting or related disciplines
+						li At least 4years of experience in SAP BW implementation. HANA experience is preferred but not required
+						li Experience in SAP BPC is a definite advantage
+						li Experience in data migration for SAP or non-SAP systems
+						li Familiar with ABAP and SQL programming languages
+						li Good team player with strong interpersonal and communication skills
+						li Able to work independently and under pressure
+						li Good command of written and spoken Cantonese, Mandarin and English with ability to express complex business concept in technical terms
 				div.position__bottom
 					div.position__intro We offer 5-day workweek, career prospects and attractive package for the right candidate.  If you would like to take the challenge to stretch your ability and form part of our team, please send your full career details, together with your current and expected salary by e-mail to: hr_nonfg@kvbkunlun.com.
 					div.position__warning Information provided will be treated in the strictest confidence and used only for recruitment related purposes. All applications will be destroyed after 6 months. Only short listed candidates will be contacted.
@@ -51,10 +97,83 @@ block content
 		div.container
 			div.join-us__heading 现有以下职位正在招聘
 			div.panel-group.joinUs__group(id='joinUs' role='tablist' aria-multiselectable='true')
-				+joinUs('join1', '#joinUs', 'Application Support Analyst', 'Hong Kong')
-				+joinUs('join2', '#joinUs', 'Dealing Manager (FX)', 'Hong Kong')
-				+joinUs('join3', '#joinUs', 'Dealer (FX)', 'Hong Kong')
-				+joinUs('join4', '#joinUs', 'Sales Manager / Business Development Manager', 'Canada')
-				+joinUs('join5', '#joinUs', 'Sales Executive/Assistant Sales Executive', 'Canada')
-				+joinUs('join6', '#joinUs', 'Investment Sales Manager', 'New Zealand')
-				+joinUs('join7', '#joinUs', 'Sr. Settlement Officer', 'New Zealand')
+				div.panel.panel-default.join-us__block
+					//- div.panel-heading(id=label role='tab')
+					//- 	h4.panel-title
+					//- 		a(role='button' data-toggle='collapse' data-parent=parentId href=`#${label}Collapse` aria-expanded='false' aria-controls=`${label}Collapse`)
+					//- 			span.main-title #{title}
+					//- 			div.sub-title #{subtitle}
+					//- 			+icon('down-rate', 'black')
+					//- 			+icon('up-rate', 'black')
+					div.panel-heading(id='join1' role='tab')
+						h4.panel-title
+							a(role='button' data-toggle='collapse' data-parent=parentId href=`#join1Collapse` aria-expanded='false' aria-controls=`join1Collapse`)
+								span.main-title Assistant Risk Manager
+								div.sub-title Hong Kong
+								+icon('down-rate', 'black')
+								+icon('up-rate', 'black')
+					div.panel-collapse.collapse(id=`join1Collapse` role='tabpanel' aria-labelledby=label)
+						div.panel-body.join-us__body
+							div.position__outline
+								div.position__title
+									+icon('briefcase', 'blue')
+									div.title Responsibilities:
+								ul.position__des
+									li Provide first-line local and global support for trading applications
+									li Monitor SLA metrics according to customers’ agreements and internal regulation
+									li Escalate technical issues to application support for troubleshooting
+									li Provide technical training, end-user training, and perform system administration
+									li Identify requirements, analyze and offer solutions to end-users
+									li Perform system installation, patch installation and system upgrade during non-trading hours
+									li Plan, execute and support the implementation activities such as assisting user acceptance test and pre-implementation trial, conducting user training, performing system installation, data conversion & cutover activities
+									li Work with on-shore and off-shore developers to design, develop, test and deploy financial applications
+							div.position__outline
+								div.position__title
+									+icon('fountain-pen', 'blue')
+									div.title Requirements:
+								ul.position__des
+									li University graduate in Computer Science/Information technology
+									li Minimum of 3 years of IT experience
+									li Working experience with Microsoft SQL server
+							div.position__bottom
+								div.position__intro We offer 5-day workweek, career prospects and attractive package for the right candidate.  If you would like to take the challenge to stretch your ability and form part of our team, please send your full career details, together with your current and expected salary by e-mail to: hr_nonfg@kvbkunlun.com.
+								div.position__warning Information provided will be treated in the strictest confidence and used only for recruitment related purposes. All applications will be destroyed after 6 months. Only short listed candidates will be contacted.
+							div.position__apply
+									button.apply__button APPLY
+					div.panel-heading(id='join2' role='tab')
+						h4.panel-title
+							a(role='button' data-toggle='collapse' data-parent=parentId href=`#join2Collapse` aria-expanded='false' aria-controls=`join2Collapse`)
+								span.main-title SAP System Analyst
+								div.sub-title Hong Kong
+								+icon('down-rate', 'black')
+								+icon('up-rate', 'black')
+					div.panel-collapse.collapse(id=`join2Collapse` role='tabpanel' aria-labelledby=label)
+						div.panel-body.join-us__body
+							div.position__outline
+								div.position__title
+									+icon('briefcase', 'blue')
+									div.title Responsibilities:
+								ul.position__des
+									li Provide first-line local and global support for trading applications
+									li Monitor SLA metrics according to customers’ agreements and internal regulation
+									li Escalate technical issues to application support for troubleshooting
+									li Provide technical training, end-user training, and perform system administration
+									li Identify requirements, analyze and offer solutions to end-users
+									li Perform system installation, patch installation and system upgrade during non-trading hours
+									li Plan, execute and support the implementation activities such as assisting user acceptance test and pre-implementation trial, conducting user training, performing system installation, data conversion & cutover activities
+									li Work with on-shore and off-shore developers to design, develop, test and deploy financial applications
+							div.position__outline
+								div.position__title
+									+icon('fountain-pen', 'blue')
+									div.title Requirements:
+								ul.position__des
+									li University graduate in Computer Science/Information technology
+									li Minimum of 3 years of IT experience
+									li Working experience with Microsoft SQL server
+							div.position__bottom
+								div.position__intro We offer 5-day workweek, career prospects and attractive package for the right candidate.  If you would like to take the challenge to stretch your ability and form part of our team, please send your full career details, together with your current and expected salary by e-mail to: hr_nonfg@kvbkunlun.com.
+								div.position__warning Information provided will be treated in the strictest confidence and used only for recruitment related purposes. All applications will be destroyed after 6 months. Only short listed candidates will be contacted.
+							div.position__apply
+									button.apply__button APPLY
+							//- +joinUs('join1', '#joinUs', 'Assistant Risk Manager', 'Hong Kong')
+							//- +joinUs('join2', '#joinUs', 'SAP System Analyst', 'Hong Kong')

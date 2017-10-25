@@ -1,6 +1,5 @@
 /* eslint-disable */
 const API_URL = 'https://media.kvbkunlun.com/api/News/List?lang=cn&type=CompanyNews'
-			console.log('~~~~~~~~~~')
 
 $.ajax({
 		url: API_URL,
@@ -12,37 +11,32 @@ $.ajax({
 				return false;
 			}
 
-			console.log(result)
 		}
 	});
 let inputData = [];
-let news1 = {date: "2012/11/15",
-						 title: "KVB昆仑国际之夜 上演“妹”力永恒",
-						 des: "2017年3月26日，国内规模最大的电商专业展 — 2017 IEBE（广州）国际电子商务博览会在广州开幕，KVB昆仑国际环球资本集团受邀参展。",
-						 background: "background-image: url(img/company-news/news-tile-2.jpg);"
+let news1 = {date: "2015年9月28日",
+						 title: "KVB昆仑国际出战第七届澳洲总商会羽毛球团体赛，晋级团队四强，个人赛季军",
+						 des: "2015年5月23日，由澳洲中国总商会举办的第六届羽毛球团体赛在悉尼活力开赛。KVB昆仑国际代表队与中国银行，工商银行，农业银行，建设银行，绿地集团，中海集团...",
+						 background: "background-image: url(https://www.kvbgc.com/assets/Uploads/news/images/_resampled/SetWidth810-2015-5-2.jpg);"
 					 }
-let news2 = {date: "2012/11/15",
-						 title: "中国企业亟须发展外汇管理软实力",
-						 des: "在刚刚过去的两个新春周末，澳洲悉尼车士活市Chatswood猴年农历春节庆典和墨尔本中国年庆典热烈举办，两地华人社团、政商名人齐聚，共祝新春。",
-						 background: "background-image: url(img/company-news/news-tile-2.jpg);"
+let news2 = {date: "2015年9月28日",
+						 title: "KVB昆仑国际助力PD龙舟队，卫冕荣誉，勇夺双冠！",
+						 des: "南半球最大的竞渡赛事 — 悉尼市政府年度龙舟赛，于2月28日在达令港（Darling Harbour）举行，来自全澳各地数以千计的参赛者齐聚竞渡赛事现场，展现勃勃的生机和倒海的力量...",
+						 background: "background-image: url(https://www.kvbgc.com//assets/Uploads/news/images/_resampled/SetWidth810-2015-3.1-2.jpg);"
 					 }
-let news3 = {date: "2012/11/15",
-						 title: "KVB昆仑国际之夜 上演“妹”力永恒",
-						 des: "中国企业亟须发展外汇管理软实力",
-						 background: "background-image: url(img/company-news/news-tile-3.jpg);"
+let news3 = {date: "2015年9月24日",
+						 title: "纽澳共贺新禧 书写福运羊年 – KVB昆仑国际联合纽澳两地公司向全球华人新春拜年",
+						 des: "2015新春羊年之际，奥克兰ASB Showground新春花市同乐日、悉尼车士活市羊年农历春节庆典、2015海外欢乐春节澳大利亚庆典，以及墨尔本BOX HILL中国年庆典...",
+						 background: "background-image: url(https://www.kvbgc.com/assets/Uploads/news/images/_resampled/SetWidth810-1.jpg);"
 					 }
-let news4 = {date: "2012/11/15",
-						 title: "中国企业亟须发展外汇管理软实力",
-						 des: "2017年3月26日，国内规模最大的电商专业展 — 2017 IEBE（广州）国际电子商务博览会在广州开幕，KVB昆仑国际环球资本集团受邀参展。",
+let news4 = {date: "2015年9月24日",
+						 title: "KVB昆仑国际成功引入中信证券成为新的战略控股股东",
+						 des: "2015年1月30日，昆仑国际金融集团有限公司(股份代码：8077)通过港交所网站和其上市公司网站发布公告...",
 						 background: "background-image: url(img/company-news/news-tile-4.jpg);"
 					 }
-let news5 = {date: "2012/11/15",
-						 title: "KVB昆仑国际之夜 上演“妹”力永恒",
-						 des: "在刚刚过去的两个新春周末，澳洲悉尼车士活市Chatswood猴年农历春节庆典和墨尔本中国年庆典热烈举办，两地华人社团、政商名人齐聚，共祝新春。",
-						 background: "background-image: url(img/company-news/news-tile-3.jpg);"
-					 }
 
-inputData.push(news1, news2, news3, news3, news2, news4, news1, news2, news3, news4, news2);
+
+inputData.push(news1, news2, news3, news4);
 $('.loading-more__btn').click(function(){
 function makeLongCard(longCard) {
 	if(longCard.length % 3 == 0){
@@ -65,6 +59,7 @@ function makeLongCard(longCard) {
 		cellHeight: 376
 		});
 	}
+	$('.loading-more__area').hide();
 }
 function bundleCard(result) {
 	for(let i = 0; i < result.length; i++){

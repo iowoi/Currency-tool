@@ -750,6 +750,7 @@
 		}
 	}
 }
+
 /*EN-site*/
 .en-site {
 	& * {
@@ -765,6 +766,12 @@
 		& .media-heading {
 			font-size: 18px;
 		}
+	}
+	& .navbar__text {
+		font-size: 18px;
+	}
+	& .exchange-tools__switcher .dropdown-menu .hidden-xs {
+		display: none !important;
 	}
 }
 /*JP-site*/
@@ -786,5 +793,8 @@
 		& .highlight__block {
 			padding: 0 12px;
 		}
+	}
+	& .exchange-tools__switcher .dropdown-menu .hidden-xs {
+		display: none !important;
 	}
 }

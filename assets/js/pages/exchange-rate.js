@@ -59,8 +59,7 @@ const toggleMobileChart = $target => {
 }
 
 $('.dashboard__list').on('click', '.dashboard__item', function () {
-	_currentSymbol = $(this).find('.dashboard__currency').text().split(' - ');
-
+	_currentSymbol = $.trim($(this).find('.dashboard__currency').text()).split(' - ');
 	$(this).siblings().removeClass('active')
 	$(this).addClass('active')
 	toggleMobileChart($(this))
@@ -150,6 +149,7 @@ const saveSymbolList = (SymbolsType) => {
 }
 
 const getCurrentSymbolInfo = (_currentSymbol, custom) => {
+	console.log(_currentSymbol)
 	_Fn.getRealTimePrice(_currentSymbol[0], _currentSymbol[1], function (info) {
 		const obj = {
 			from: info.SymbolA,
@@ -195,7 +195,7 @@ $(function () {
 		commonSymbols = ["AUDUSD", "NZDUSD", "EURUSD", "USDJPY", "GBPUSD", "USDCAD", "USDHKD", "USDCNH", "USDCHF", "USDSGD"]
 	customSymbols ? customSymbols = customSymbols.split(",") :
 		commonSymbols
-	if (window.location.pathname === '/exchange-rate') {
+	if (window.location.pathname.indexOf('/exchange-rate') > -1) {
 		LoadCurrencyList_finish();
 	}
 
