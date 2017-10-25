@@ -14,18 +14,7 @@ html(lang="en")
 		include components/navbar
 		block content
 		include components/footer
-		script#exchangeToolsPopover(type="text/x-handlebars-template")
-			div.exchange-tools__popover
-				div.exchange-tools__popover-title {{from}} - {{to}}
-				// status up or down
-				div.exchange-tools__brief(data-status="down")
-					+icon('rate-down')
-					div.exchange-tools__current {{current}}
-					div.exchange-tools__brief-ratio
-						div {{rate}}
-						div {{percentage}}
-					div.clearfix
-				div.exchange-tools__time {{date}}
+	
 		block templates
 		if(isDev)
 			script(src="vendor.bundle.js")

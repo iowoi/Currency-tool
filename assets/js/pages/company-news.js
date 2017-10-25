@@ -1,5 +1,20 @@
 /* eslint-disable */
+const API_URL = 'https://media.kvbkunlun.com/api/News/List?lang=cn&type=CompanyNews'
+			console.log('~~~~~~~~~~')
 
+$.ajax({
+		url: API_URL,
+		jsonp: "callback",
+		dataType: "json",
+		success: function (result) {
+			if (result.code !== "0") {
+				alert(result.message);
+				return false;
+			}
+
+			console.log(result)
+		}
+	});
 let inputData = [];
 let news1 = {date: "2012/11/15",
 						 title: "KVB昆仑国际之夜 上演“妹”力永恒",

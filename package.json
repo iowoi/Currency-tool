@@ -64,9 +64,11 @@
     "cleave.js": "^1.0.1",
     "gridstack": "^0.3.0",
     "handlebars": "^4.0.10",
+    "highcharts": "^6.0.2",
     "jquery": "^3.2.1",
     "jquery-placeholder": "^2.3.1",
     "mixitup": "^3.2.1",
+    "moment": "^2.19.1",
     "packery": "^2.1.1",
     "slick-carousel": "^1.7.1",
     "sortablejs": "^1.6.1"

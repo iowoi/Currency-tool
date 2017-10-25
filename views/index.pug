@@ -58,37 +58,37 @@ block content
 		div.container.exchange-rate__content
 			+styledHeading('通过汇率转换及报价工具，了解您的潜在兑换需求', true)
 			div.exchange-rate__list
-				each val in [1, 2, 3, 4]
-					div.exchange-brief.exchange-brief--fall
-						div.exchange-brief__info
-							h6.exchange-brief__target 欧元 / 美元
-							div.exchange-brief__compare
-								span.exchange-brief__name BID
-								span.exchange-brief__number 1.116
-							div.exchange-brief__compare
-								span.exchange-brief__name ASK
-								span.exchange-brief__number 1.11164
-							div.exchange-brief__summary
-								span.exchange-brief__percentage
-									| 0.151%
-									+icon('down-rate', 'red')
-								span.exchange-brief__chart
-									+icon('sparkline-down')
-					div.exchange-brief.exchange-brief--rising
-						div.exchange-brief__info
-							h6.exchange-brief__target 欧元 / 美元
-							div.exchange-brief__compare
-								span.exchange-brief__name BID
-								span.exchange-brief__number 1.116
-							div.exchange-brief__compare
-								span.exchange-brief__name ASK
-								span.exchange-brief__number 1.11164
-							div.exchange-brief__summary
-								span.exchange-brief__percentage
-									| 30.11%
-									+icon('up-rate', 'green')
-								span.exchange-brief__chart
-									+icon('sparkline-up')
+				//- each val in [1, 2, 3, 4]
+				//- 	div.exchange-brief.exchange-brief--fall
+				//- 		div.exchange-brief__info
+				//- 			h6.exchange-brief__target 欧元 / 美元
+				//- 			div.exchange-brief__compare
+				//- 				span.exchange-brief__name BID
+				//- 				span.exchange-brief__number 1.116
+				//- 			div.exchange-brief__compare
+				//- 				span.exchange-brief__name ASK
+				//- 				span.exchange-brief__number 1.11164
+				//- 			div.exchange-brief__summary
+				//- 				span.exchange-brief__percentage
+				//- 					| 0.151%
+				//- 					+icon('down-rate', 'red')
+				//- 				span.exchange-brief__chart
+				//- 					+icon('sparkline-down')
+				//- 	div.exchange-brief.exchange-brief--rising
+				//- 		div.exchange-brief__info
+				//- 			h6.exchange-brief__target 欧元 / 美元
+				//- 			div.exchange-brief__compare
+				//- 				span.exchange-brief__name BID
+				//- 				span.exchange-brief__number 1.116
+				//- 			div.exchange-brief__compare
+				//- 				span.exchange-brief__name ASK
+				//- 				span.exchange-brief__number 1.11164
+				//- 			div.exchange-brief__summary
+				//- 				span.exchange-brief__percentage
+				//- 					| 30.11%
+				//- 					+icon('up-rate', 'green')
+				//- 				span.exchange-brief__chart
+				//- 					+icon('sparkline-up')
 			div.exchange-rate__tools
 				+exchangeTools()
 			div.exchange-rate__caption
@@ -119,7 +119,7 @@ block content
 		+card-2-1(1, 4, '产品及服务', '金融科技', 'left', null, 'fintech')(style=`background-image: url(${imgPath}/grid-wall/06.jpg)`)
 			p.description.grid-stack__description
 				| 透过领先金融科技，打造企业核心竞争力及企业软实力，以智能化及电子化突破传统业务瓶颈。
-	- var cities = [{ en: 'Auckland', ch: '奥克兰', ltd: 'KVB Global Markets Ltd', addressEn: 'Level 10, Tower 1, 205 Queen Street', addressCh: '奥克兰 新西兰', operator: '+64 9 359 8988', phone: '(9:00am–5:00pm)：+64 9 359 8985', fax: '+64 9 359 8989', email: 'akl_gc@kvbkunlun.com'}, { en: 'Sydney', ch: '悉尼', ltd: 'KVB Global Markets Pty Ltd, KVB Kunlun Wealth Management Pty Ltd', addressEn: 'Level 18, Citigroup Centre, 2 Park Street, Sydney, NSW 2000', addressCh: '悉尼 澳大利亚', operator: '1300 668 120（仅澳洲适用)', phone: ' (9:00am–5:00pm)：+61 2 8263 0185', fax: '+61 2 8263 0189', email: 'info@kvbkunlun.com' }, { en: 'Melbourne', ch: '墨尔本', ltd: 'KVB Global Markets Pty Ltd, KVB Kunlun Wealth Management Pty Ltd', addressEn: 'Level 38, 120 Collins Street, Melbourne, VIC 3000', addressCh: '墨尔本 澳大利亚', operator: '1300 668 120（仅澳洲适用）', phone: '(9:00am–5:00pm)：+61 3 9660 1885', fax: '+61 3 9660 1889', email: 'melcs@kvbkunlun.com' }, { en: 'Toronto', ch: '多伦多', ltd: 'KVB Kunlun Canada Inc.', addressEn: 'Suite 3600, Level 36, Exchange Tower, 130 King St. West, Toronto, M5X 1B1 Ontario', addressCh: '多伦多 加拿大', operator: '+1 416 646 9188', phone: '+1 416 646 9185', fax: '+1 416 646 9199', email: 'tor_gc@kvbkunlun.com' }, { en: 'Hong Kong', ch: '香港', ltd: 'KVB Kunlun Trading (Hong Kong) Limited, KVB Capital Markets Ltd', addressEn: 'Suite 6801, 68/F, International Commerce Centre, 1 Austin Road West, Kowloon', addressCh: '香港 中国', operator: '+852 3701 8188', phone: '', fax: '+852 3701 8100', email: 'hk_gc@kvbkunlun.com' }, { en: 'Beijing', ch: '北京', ltd: '', addressEn: 'KVB昆仑国际上市公司北京代表处', addressCh: '北京市新源南路8号北京启皓中心西塔9层902', operator: '+86 10 5922 2088', phone: '', fax: '', email: 'bjinfo@kvbkunlun.com' }, { en: 'Taipei', ch: '台北', ltd: 'Banclogix System Co.,Ltd', addressEn: '', addressCh: '台北市信义区忠孝东路五段68号36楼', operator: '+886 2 7710 9888', phone: '', fax: '+886 2 7710 9889', email: '' }]
+	- var cities = [{ en: 'Auckland', ch: '奥克兰', ltd: 'KVB Global Markets Ltd', addressEn: 'Level 10, Tower 1, 205 Queen Street', addressCh: '奥克兰 新西兰', operator: '+64 9 359 8988', phone: '(9:00am–5:00pm)：+64 9 359 8985', fax: '+64 9 359 8989', email: 'akl_gc@kvbkunlun.com'}, { en: 'Sydney', ch: '悉尼', ltd: 'KVB Global Markets Pty Ltd, KVB Kunlun Wealth Management Pty Ltd', addressEn: 'Level 33, Governor Macquarie Tower, 1 Farrer Place, NSW 2000 Australia', addressCh: '悉尼 澳大利亚', operator: '1300 668 120（仅澳洲适用)', phone: ' (9:00am–5:00pm)：+61 2 8263 0185', fax: '+61 2 8263 0189', email: 'info@kvbkunlun.com' }, { en: 'Melbourne', ch: '墨尔本', ltd: 'KVB Global Markets Pty Ltd, KVB Kunlun Wealth Management Pty Ltd', addressEn: 'Level 38, 120 Collins Street, Melbourne, VIC 3000', addressCh: '墨尔本 澳大利亚', operator: '1300 668 120（仅澳洲适用）', phone: '(9:00am–5:00pm)：+61 3 9660 1885', fax: '+61 3 9660 1889', email: 'melcs@kvbkunlun.com' }, { en: 'Toronto', ch: '多伦多', ltd: 'KVB Kunlun Canada Inc.', addressEn: 'Suite 3600, Level 36, Exchange Tower, 130 King St. West, Toronto, M5X 1B1 Ontario', addressCh: '多伦多 加拿大', operator: '+1 416 646 9188', phone: '+1 416 646 9185', fax: '+1 416 646 9199', email: 'tor_gc@kvbkunlun.com' }, { en: 'Hong Kong', ch: '香港', ltd: 'KVB Kunlun Trading (Hong Kong) Limited, KVB Capital Markets Ltd', addressEn: 'Suite 6801, 68/F, International Commerce Centre, 1 Austin Road West, Kowloon', addressCh: '香港 中国', operator: '+852 3701 8188', phone: '', fax: '+852 3701 8100', email: 'hk_gc@kvbkunlun.com' }, { en: 'Beijing', ch: '北京', ltd: '', addressEn: 'KVB昆仑国际上市公司北京代表处', addressCh: '北京市新源南路8号北京启皓中心西塔9层902', operator: '+86 10 5922 2088', phone: '', fax: '', email: 'bjinfo@kvbkunlun.com' }, { en: 'Taipei', ch: '台北', ltd: 'Banclogix System Co.,Ltd', addressEn: '', addressCh: '台北市信义区忠孝东路五段68号36楼', operator: '+886 2 7710 9888', phone: '', fax: '+886 2 7710 9889', email: '' }]
 	section.section.section--no-spacing.visible-sm.visible-xs
 		div#accordion.panel-group.current-city--tablet(role='tablist' aria-multiselectable='true')
 			div.panel.panel-default
@@ -231,3 +231,61 @@ block content
 										+icon('mail', 'blue')
 										span.current-city__contact-info 邮箱：#{city.email}
 										span.clearfix
+block templates
+	script#sliderItems(type="text/x-handlebars-template")
+		| {{#if rising}}
+		div.exchange-brief.exchange-brief--rising
+			div.exchange-brief__info
+				h6.exchange-brief__target {{symbolCN}}
+				div.exchange-brief__compare
+					span.exchange-brief__name BID
+					span.exchange-brief__number {{bid}}
+				div.exchange-brief__compare
+					span.exchange-brief__name ASK
+					span.exchange-brief__number {{ask}}
+				div.exchange-brief__summary
+					span.exchange-brief__percentage
+						| {{percentage}}
+						+icon('up-rate', 'green')
+					span.exchange-brief__chart
+						+icon('sparkline-up')
+						| {{^}}
+		div.exchange-brief.exchange-brief--fall
+			div.exchange-brief__info
+				h6.exchange-brief__target {{symbolCN}}
+				div.exchange-brief__compare
+					span.exchange-brief__name BID
+					span.exchange-brief__number {{bid}}
+				div.exchange-brief__compare
+					span.exchange-brief__name ASK
+					span.exchange-brief__number {{ask}}
+				div.exchange-brief__summary
+					span.exchange-brief__percentage
+						| {{percentage}}
+						+icon('down-rate', 'red')
+					span.exchange-brief__chart
+						+icon('sparkline-down')
+						| {{/if}}
+	script#exchangeToolsPopover(type="text/x-handlebars-template")
+		div.exchange-tools__popover
+			div.exchange-tools__popover-title {{from}} - {{to}}
+			// status up or down
+			| {{#if rising}}
+			div.exchange-tools__brief(data-status="up")
+				+icon('rate-up')
+				div.exchange-tools__current {{current}}
+				div.exchange-tools__brief-ratio
+					div {{rate}}
+					div {{percentage}}
+				div.clearfix
+			| {{^}}
+			div.exchange-tools__brief(data-status="down")
+				+icon('rate-down')
+				div.exchange-tools__current {{current}}
+				div.exchange-tools__brief-ratio
+					div {{rate}}
+					div {{percentage}}
+				div.clearfix
+			| {{/if}}	
+			div.exchange-tools__time {{date}}
+	
