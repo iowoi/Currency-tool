@@ -1,0 +1,45 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	+banner(`${imgPath}/fintech/Fintech-herobanner.jpg`, 'Fin-Tech Solution')
+	+pageIntro
+		p.description Besides traditional financial services, KVB has devoted significant amount of resources into developing financial technologies over the years. As early as 2011, our first generation online FX trading platform was developed with sophisticated risk analytics and automated payment interfaces. Our platform has enabled us from achieving better trading efficiency to increased customer satisfaction. Our automated control mechanism also provided better response time in interacting with market fluctuation.
+	section.section.fintech__platform--outline.reverse(style=`background-image: url(${imgPath}/fintech/forex-bg.jpg)`)
+		div.container
+			div.row
+				div.col-sm-4.col-sm-offset-1.fintech__img
+					img.fintech__platform--img(src=`${imgPath}/fintech/imac.png` alt="")
+				div.col-sm-7
+					+styledHeading('Online Electronic FX Trading Platform: eFX 2.0')
+					p.basic-paragraph Unlike other market offering, KVB’s online electronic FX trading platform has combined both the convenience of real-time trading with actual cash flow management capacity. Our eFX and KVBPay platform intelligently joins two process together by giving our customers a straight-through using experience.
+					p.basic-paragraph Our commercial and individual users can achieve 24 hours deal lodging, trading, and settlement instruction through eFX system, where they can also monitor their live positions as well as create their customized reports. Our supported products on this platform include spot, forward, swap and orders.
+	section.side-img-section.clearfix
+		div.side-img-section__img-wrap
+			div.side-img-section__img(style=`background-image: url(${imgPath}/fintech/tile-forexstar.jpg)`)
+		div.side-img-section__container
+			div.side-img-section__container-wrap
+				+styledHeading('Corporate Stand-alone Management Platform: Dealing Manager')
+				p.basic-paragraph We understand some corporations have more advanced management need to cater their multi-presence dealing and management requirement. Dealing Manager is designed precisely in this way so that corporations can set different roles to different entities and users. Whether is trading between mother company and its subsidiaries, or between its subsidiaries and their customers, Dealing Manager is able to extend KVB’s long accumulated dealing management experience as prime broker to its corporate users. Its straight-through process ensures any information exchange between entities is transparent and efficient.
+				p.basic-paragraph If corporations have already acquired market liquidity providers, Dealing Manager is also capable of updating transaction records through automated API interface so that trades can be consolidated and managed across different platforms. This will reduce the hassle of logging into different counterparty platform to download trading history or making customized reports. Dealing Manager is able to pool together such information to create easier user experience.
+	section.section.fintech__data--outline(style=`background-image: url(${imgPath}/fintech/multiplatform-bg.jpg)`)
+		div.container
+			div.row
+				div.col-sm-4.fintech__img
+					img.fintech__platform--img(src=`${imgPath}/fintech/multidevice.png` alt="")
+				div.col-sm-7.col-sm-offset-1
+					+styledHeading('Cross-platform Data Feed')
+					p.basic-paragraph KVB is licensed and capable of making a market so this give us a unique advantage in providing market rates to other financial market participants. Our filtering and calculation methodology are industry-leading in both its accuracy as well as consistency. We also provide different market analysis, event forecasts, as well as R&D reports comprised by our professional advisory team as well as dealing room experts.
+	section.side-img-section.reverse.img-long.clearfix
+		div.side-img-section__img-wrap
+			div.side-img-section__img(style=`background-image: url(${imgPath}/fintech/light.jpg)`)
+		div.side-img-section__container
+			div.side-img-section__container-wrap
+				+styledHeading('Advanced System: KVB Treasury')
+				p.basic-paragraph Our Treasury Management System Offering (TMSO) enables customer to automate their ledger booking, settlement through electronic SWIFT messages, reconcile of accounts, risk analytics, mark-to-market revaluations, etc. It is designed for entities who concentrate on managing their cash liquidity as well as cash transparency by resolving complexities on cross time zone, cross location, cross currencies, cross companies, along with management in foreign exchange, interest rates, profit and loss, and revaluation controlling.
+				div.fintech__system--down
+					p.basic-paragraph KVB’s TMSO is a complex but effective tool to elevate your business operational efficiency.  By understanding your business, we will provide you with leading treasury solution including:
+					+checkList(['access to comprehensive asset classes including foreign exchange, interest rates, money markets, securities and fixed income products.', 'Straight-through-processing (STP)','SWIFT integration', 'Automated Accounting Ledgers', 'Accounting ERP Integration', 'Multi-tiered Approval Matrix', 'MT940 Account Information Sweeping for Cash Transparency and Forecasts', 'Customized Risk Analytics', 'Cloud based implementation with KVB back-end system support', '24x5 trading and customer service enabled if using KVB as a liquidity provider', 'Other customized advisory services'], 'blue')
+	+contactArea--en

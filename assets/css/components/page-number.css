@@ -1,0 +1,72 @@
+@import '_vars';
+
+.page-num__group {
+	list-style: none;
+	margin: 64px auto 0;
+	width: 320px;
+	padding-left: 0;
+	text-align: center;
+	vertical-align: middle;
+	@media (--below-tablet) {
+		margin-top: 16px;
+	}
+	& .page-num__btn {
+		padding: 0;
+		transition: all 0.3s linear;
+		@media (--above-desktop) {
+			&:hover {
+				& .icon {
+					fill: var(--blue-darker);
+				}
+			}
+		}
+	}
+	& li {
+		vertical-align: middle;
+		display: inline-block;
+		font-size: 16px;
+		transition: all 0.3s linear;
+		@media (--above-desktop) {
+			&:hover {
+				background-color: var(--gray);
+			}
+		}
+		&:first-child {
+			margin-right: 16px;
+		}
+		&:last-child {
+			margin-left: 16px;
+		}
+		& .icon {
+			width: 16px;
+		}
+		& a {
+			width: 32px;
+			height: 32px;
+			display: inline-block;
+			color: var(--gray-darker);
+			vertical-align: middle;
+			padding: 8px;
+			line-height: 1em;
+			transform: translateY(1px);
+			transition: all 0.3s linear;
+			@media (--above-desktop) {
+				&:hover {
+					color: var(--blue);
+				}
+			}
+		}
+	}
+	& .disable {
+		pointer-events: none;
+		& .icon {
+			fill: var(--gray-darker);
+		}
+	}
+	& .active {
+		background-color: var(--blue);
+		& a {
+			color: var(--gray);
+		}
+	}
+}

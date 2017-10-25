@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>icn-pricetag</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="2_Product" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icn-pricetag">
+            <g id="Group-13" transform="translate(5.000000, 4.000000)">
+                <g id="price-tag" transform="translate(36.250000, 8.750000)" stroke="#4286C6" fill-rule="nonzero">
+                    <path d="M14.375,42.5 C6.4485163,42.5 0,48.9485163 0,56.875 C0,64.8014837 6.4485163,71.25 14.375,71.25 C22.3014837,71.25 28.75,64.8014837 28.75,56.875 C28.75,48.9485163 22.3014837,42.5 14.375,42.5 Z" id="Shape"></path>
+                    <path d="M30.625,0 C28.2126015,0 26.25,1.96271056 26.25,4.375 C26.25,6.78739846 28.2127106,8.75 30.625,8.75 C33.0372894,8.75 35,6.78728944 35,4.375 C35,1.96271056 33.0372894,0 30.625,0 Z" id="Shape"></path>
+                </g>
+                <text id="$" transform="translate(43.980970, 34.230970) rotate(45.000000) translate(-43.980970, -34.230970) " font-family="NotoSansCJKtc-Thin, Noto Sans CJK TC" font-size="29" font-style="condensed" font-weight="300" letter-spacing="1.8125" fill="#4286C6">
+                    <tspan x="35.5202204" y="46.7309704">$</tspan>
+                </text>
+                <polyline id="Path-8" stroke="#4286C6" points="43.75 66.2095617 49.1949535 72.2921868 58.6691345 61.25"></polyline>
+                <polyline id="Path-7" stroke="#4286C6" points="30.4808936 74.807612 0 44.3267184 42.8793505 2.27373675e-13 78.7828813 2.27373675e-13 78.7828813 35.4339791 65.6617728 48.93531"></polyline>
+            </g>
+        </g>
+    </g>
+</svg>

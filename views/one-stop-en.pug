@@ -1,0 +1,74 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, 'Corporate FX Management')
+	+subNavbar--en(1)
+	+pageIntro
+		p.description KVB Kunlun Global Capital Limited uses corporate foreign exchange management as its service foundation. With the help of continued investment into fin-tech it has created a one-stop foreign exchange management solution for its global customers. Our aim is to assist companies with hedging need to reduce their account exposures and to increase efficiency in its cash flow management.
+	section.section
+		div.container
+			+styledHeading('One-Stop Corporate FX Management Solution', true)
+			div.timeline.row
+				div.timeline__body.clearfix
+					div.timeline__square.col-sm-4
+						div.timeline__box Customer Requirement
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/first.png`, alt="1")
+						div.timeline__title Global Payment
+						div.timeline__icon--international
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title Payment Window
+							div.timeline__card--des KVB provides professional hedging recommendation KVB offers diversified financial tools to increase management flexibility
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title Settlement of Funds
+							div.timeline__card--des  KVB provides ultra-fast international settlement of currencies Our global payment network creates a fast, secure payment eco-system
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/second.png`, alt="2")
+						div.timeline__title Comprehensive Advisory
+						div.timeline__icon--international
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title Currency Conversion
+							div.timeline__card--des KVB offers commercial foreign exchange with competitive rates.Our customized solutions and tools will assist customers to better control their costs
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title Market Watch
+							div.timeline__card--des  KVB offers live market watch for key information alerts 24 hours dealing room market surveillance that provides commercial customers retrospective review as well as future recommendation
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/third.png`, alt="3")
+						div.timeline__title Advanced Fin-tech
+						div.timeline__icon--international
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title Enhanced Financials
+							div.timeline__card--des KVB offers CorpVision engine that assists customer with ERP integration    Locking down key risk exposures, increase cash flow efficiency, creating better cost analytics and enhance internal data communication.
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title Corporate Management
+							div.timeline__card--des KVB offers industrial standard treasury platform     Enhanced business process, setting up benchmarks, and increase treasury functions by providing key advisory
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/fourth.png`, alt="4")
+						div.timeline__title Leading Overseas Investment
+						div.timeline__icon--international.single
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title Portfolios
+							div.timeline__card--des KVB offers global wealth management service Customized wealth planning that gives both commercial and individual customers sustained financial growth at different stages of their life
+				div.timeline__body.clearfix
+					div.timeline__square.col-sm-4
+						div.timeline__box  A comprehensive Corporate FX Management Solution
+	+foreignExchangeProduct--en
+	+contactArea--en

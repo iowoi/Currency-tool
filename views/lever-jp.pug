@@ -1,0 +1,187 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, '法人外国為替取引コンサルティング')
+	+subNavbar--jp(4)
+	+pageIntro
+		p.description 法人顧客は種々の外貨取引リスクに晒され、交換レートの思わぬ変動により利益が大幅に削られる恐れがあります。外貨取引のコストを節減し交換レートによるリスクを抑えられれば、営業の効率も上がり利益率も拡大します。
+	section.section.lever__outline.section--special(style=`background-image: url(${imgPath}/lever/forex-trading-feature-bg.png)`)
+		div.container
+			+styledHeading('レバレッジを用いた外貨取引のヘッジ ', true)
+			div.lever__features
+				div.feature__card
+					+icon('geometric-variety', 'green')
+					div.feature__title 多様な商品
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 当社は、20倍までのレバレッジを使用した先渡取引により法人顧客を支援し、従来の商品に比べて証拠金を4分の1にまで減らすことが出来ます。
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 香港をベースとする中国企業は、当社提供のレバレッジオフショア人民元商品を使い、海外で得た所得にヘッジを掛けることが出来ます。
+				div.feature__card
+					+icon('geometric-layers', 'green')
+					div.feature__title 他通貨アカウント
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 顧客は、ニーズに合わせて異なる通貨を自由に選び、レバレッジを用いた取引を行うことが出来ます。（詳しくは当社の香港支社カスタマーサービスまでお問い合わせください。）
+				div.feature__card
+					+icon('geometric-circles', 'green')
+					div.feature__title 最低取引額と基準通貨
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 最低ロットは1ロットで、米ドル換算で50,000ドルです。なお、0.01ロット単位まで取引可能です。
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 当社の基準通貨は米ドルです。証拠金率も米ドル換算です。
+				div.feature__card
+					+icon('geometric-hexagon', 'green')
+					div.feature__title 安全性
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 当社は、個別分離口座への入金を唯一の条件として香港証券先物委員会より事業認可を得ております。当社のシステムは、暗号化と厳格なファイアウォールにより取引と資金の安全性が担保されております。
+	section.section
+		div.container
+			div.lever__trade-board--title 低スプレッド
+			table.table.table-striped.lever__trade-board--table
+				thead
+					tr
+						th 通貨ペア
+						th 1週
+						th 2週
+						th 3週
+						th 4週
+						th オーバーナイトスワップ
+				tbody
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td USDHKD
+						td -
+						td -
+						td -
+						td -
+						td -
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+			div.lever__trade-board--notice （注）上記の数字はベーシスポイント表示です。主要通貨のスプレッドとオーバーナイトスワップは、参考情報に過ぎません。数字は市場変化により上下に変動することがあります。この市場変化は、流動性低下・地合い・リスク織り込み度を含みますが、これに限定するものではありません。
+	section.section.section--gray
+		div.container
+			div.lever__trade-process
+				div.trade__time
+					div.trade__open
+						div.trade__intro
+							+icon('calendar', 'blue')
+							div.trade__title 取引時間
+						div.trade__weekday
+							div.tarde__title
+								div.trade__title--des 取引いたします：
+							div.weekday__block
+								div.block__week
+									div.block__week--top Mon. 月曜日
+									div.block__week--bottom 香港時間</br>05:00
+								div.block__week--dash
+								div.block__week
+									div.block__week--top Sat. 土曜日
+									div.block__week--bottom 香港時間</br>05:00
+					div.trade__close
+						div.tarde__title
+							div.trade__title--des
+								| 大部分の国が祝日
+								span.trade__highlight に休止となります
+								| ：
+						div.holiday__block
+							div.block__nyd
+								div.block__nyd--top 1 Jan.
+								div.block__nyd--bottom 元旦
+							div.block__xmas
+								div.block__xmas--left
+									div.xmas__date 25 Dec.
+									div.xmas__name びクリスマス
+								div.block__xmas--right
+									div.xmas__start 12月25日</br>13:00:00
+									div.xmas__dash
+									div.xmas__end 12月26日</br>23:59:59
+				div.clearfix
+					div.trade__platform.col-sm-6
+						div.trade__intro
+							+icon('award', 'blue')
+							div.trade__title 最先端の取引</br>プラットフォーム
+						div.trade__des 当社の取引プラットフォームは操作が簡単で、最新チャートツールを備えております。また、詳細な日次リポートをご指定のメールアドレスに毎日送信いたします。
+					div.trade__risk-management.col-sm-6
+						div.trade__intro
+							+icon('protect', 'blue')
+							div.trade__title リスク管理</br>強化ツール
+						div.trade__des 当社の顧客は、取引口座に常時リアルタイムでアクセスできます。顧客は、利益確定及び損切りの設定によりトレードの利益を確保することが可能です。
+				div.trade__money-out
+					div.trade__intro
+						+icon('withdraw', 'blue')
+						div.trade__title 出金
+					div.trade__step
+						div.row
+							div.money-out__step.col-md-4
+								h3.gradient-heading step 1.
+								div.trade__des 資金残高の引き出しを希望される場合は、KVB Capital Market Ltdの専用ウェブサイトから「出金申請」という書類をダウンロードの上、ご記入願います。
+							div.money-out__step.col-md-4
+								h3.gradient-heading step 2.
+								div.trade__des 記入が終わり署名後にスキャンし、コピーを当社宛てにメールかファックスにてお送りください。
+							div.money-out__step.col-md-4
+								h3.gradient-heading step 3.
+								div.trade__des 当社のカスタマーサービスが早急に出金手続きを行います。なお、書類の到着が当社取引銀行の営業時間を過ぎますと、翌営業日の取り扱いとなります。
+				div.trade__money-in
+					div.trade__intro
+						+icon('deposit', 'blue')
+						div.trade__title 入金
+					div.trade__step
+						div.row
+							div.money-in__step.col-md-4
+								h3.gradient-heading step 1.
+								div.trade__des 顧客は、ご希望に応じて銀行送金が可能です。この場合、送金手続きが完了次第KVBのカスタマーサービス宛てに確認のため送金完了証をお送りください。
+							div.money-in__step.col-md-4
+								h3.gradient-heading step 2.
+								div.trade__des 入金を確認次第、顧客のアカウントに振り替えます。顧客は、トレードシステムから振替通知を受けることになります。
+							div.money-in__step.col-md-4
+								h3.gradient-heading step 3.
+								div.trade__des 万一、振替額に差異が認められる場合は、直ちに当社のカスタマーサービス宛てにご連絡ください。
+	+foreignExchangeProduct--jp
+	+contactArea--jp

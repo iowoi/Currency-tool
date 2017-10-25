@@ -1,0 +1,234 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	- var imgPath = isDev ? 'img' : './assets/img'
+	div.main-slider
+		div.main-slider__slide(style=`background-image: url(${imgPath}/carousel/dark-sky.jpg)`)
+			div.container
+				div.main-slider__content
+					h1.main-slider__name 金融サービス・ワンストップソリューション
+					p.main-slider__description KVB Kunlun Global Capital
+		div.main-slider__slide(style=`background-image: url(${imgPath}/carousel/dark-sky.jpg)`)
+			div.container
+				div.main-slider__content
+					h1.main-slider__name 金融サービス・ワンストップソリューション
+					p.main-slider__description KVB Kunlun Global Capital
+	div.highlight
+		div.container
+			div.clearfix
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('member', 'blue')
+							div.media-body
+								div.media-heading.media__heading オンライン口座開設
+								span.media__subheading 口座開設
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('payclick', 'blue')
+							div.media-body
+								div.media-heading.media__heading eFXログイン
+								span.media__subheading オンライン送金取引
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('outpay', 'blue')
+							div.media-body
+								div.media-heading.media__heading KVBPay Login
+								span.media__subheading 入金/出金
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('downloadapp', 'blue')
+							div.media-body
+								div.media-heading.media__heading アプリダウンロード
+								span.media__subheading 携帯電話用アプリ
+	section.section.section--gray.exchange-rate
+		div.container.exchange-rate__content
+			+styledHeading('トレンドを見つけだし、お取引の有利なタイミングを見極めるためにご活用ください', true)
+			div.exchange-rate__list
+				each val in [1, 2, 3, 4]
+					div.exchange-brief.exchange-brief--fall
+						div.exchange-brief__info
+							h6.exchange-brief__target EUR - USD
+							div.exchange-brief__compare
+								span.exchange-brief__name BID
+								span.exchange-brief__number 1.116
+							div.exchange-brief__compare
+								span.exchange-brief__name ASK
+								span.exchange-brief__number 1.11164
+							div.exchange-brief__summary
+								span.exchange-brief__percentage
+									| 0.151%
+									+icon('down-rate', 'red')
+								span.exchange-brief__chart
+									+icon('sparkline-down')
+					div.exchange-brief.exchange-brief--rising
+						div.exchange-brief__info
+							h6.exchange-brief__target EUR - USD
+							div.exchange-brief__compare
+								span.exchange-brief__name BID
+								span.exchange-brief__number 1.116
+							div.exchange-brief__compare
+								span.exchange-brief__name ASK
+								span.exchange-brief__number 1.11164
+							div.exchange-brief__summary
+								span.exchange-brief__percentage
+									| 30.11%
+									+icon('up-rate', 'green')
+								span.exchange-brief__chart
+									+icon('sparkline-up')
+			div.exchange-rate__tools
+				+exchangeTools--jp()
+			div.exchange-rate__caption
+				p.exchange-rate__description ご注意ください：表示されているレートは参照レートであり、実際のお取引に適用されるものではございません。お取引に適用されるレートについては当社のカスタマーサービスにお尋ねください。
+				+link('exchange-rate-jp', 'チャートを開く')(class="btn btn-default btn-lg btn-primary--outline exchange-rate__btn")
+	+cardSection('gray-dark')(class="index-grids")
+		+card-2-2--jp('商品とサービス', '外国送金', 'international-pay-jp')(style=`background-image: url(${imgPath}/grid-wall/01.jpg)`)
+			p.description.grid-stack__description
+				| 独自の国際決済ネットワークを有し、顧客に対し迅速で安全な外国送金サービスを提供しています。
+		+card-1-1--jp(2, 0, '商品とサービス', '法人外貨取引管理', null, 'foreign-exchange-process-jp')(class='grid-stack__simple' style='background-color: #56E0E6')
+			p.description.description--ellipsis.grid-stack__description
+				| より多様で洗練された投資ニーズに対応したオルタナティブ投資や仕組債
+		+card-1-1--jp(2, 1, '商品とサービス', '金融テクノロジー', null, 'international-pay-jp')(class='grid-stack__simple' style='background-color: #267DC7')
+			p.description.description--ellipsis.grid-stack__description
+				| 次世代の金融テクノロジーを用いることで業務の効率をアップします。
+		+card-2-1--jp(0, 2, '商品とサービス', '国際Ｅコマース', 'right', null, 'join-us-jp')(style=`background-image: url(${imgPath}/grid-wall/02.jpg)`)
+			p.description.grid-stack__description
+				| 複数の通貨による送金、為替予約、オプション、スワップなど国際的なEコマースに適した支払いソリューションをご提案いたします。
+		+card-1-1--jp(2, 2, '商品とサービス', '資産運用',  null, 'wealth-management-jp')(style=`background-image: url(${imgPath}/grid-wall/03.jpg)`)
+			p.description.grid-stack__description
+				| 投資計画から資産運用に及ぶ総合的なソリューションを提供いたします。
+		+card-1-2--jp(0, 3, '商品とサービス', '投資信託、保険商品、金現物取引', null, null, 'foreign-exchange-process-jp')(style=`background-image: url(${imgPath}/grid-wall/04.jpg)`)
+			p.description.grid-stack__description
+				| より多様で洗練された投資ニーズに対応したオルタナティブ投資や仕組債
+		+card-2-1--jp(1, 3, '商品とサービス', '法人外貨取引管理', 'right', null, 'foreign-exchange-process-jp')(style=`background-image: url(${imgPath}/grid-wall/05.jpg)`)
+			p.description.grid-stack__description
+				| 必要なヘッジを提案し、資金のリスクを減らすとともにキャッシュフロー管理の効率をアップします。
+		+card-2-1--jp(1, 4, '商品とサービス', '金融テクノロジー', 'left', null, 'fintech')(style=`background-image: url(${imgPath}/grid-wall/06.jpg)`)
+			p.description.grid-stack__description
+				| 次世代の金融テクノロジーを用いることで業務の効率をアップします。
+	- var cities = [{ en: 'Auckland', jp: 'オークランド', ltd: 'KVB Global Markets Ltd', addressEn: 'Level 10, Tower 1, 205 Queen Street', addressCh: '奥克兰 新西兰', operator: '+64 9 359 8988', phone: '(9:00am–5:00pm)：+64 9 359 8985', fax: '+64 9 359 8989', email: 'akl_gc@kvbkunlun.com'}, { en: 'Sydney', jp: 'シドニー', ltd: 'KVB Global Markets Pty Ltd, KVB Kunlun Wealth Management Pty Ltd', addressEn: 'Level 18, Citigroup Centre, 2 Park Street, Sydney, NSW 2000', addressCh: '悉尼 澳大利亚', operator: '1300 668 120（仅澳洲适用)', phone: ' (9:00am–5:00pm)：+61 2 8263 0185', fax: '+61 2 8263 0189', email: 'info@kvbkunlun.com' }, { en: 'Melbourne', jp: 'メルボルン', ltd: 'KVB Global Markets Pty Ltd, KVB Kunlun Wealth Management Pty Ltd', addressEn: 'Level 38, 120 Collins Street, Melbourne, VIC 3000', addressCh: '墨尔本 澳大利亚', operator: '1300 668 120（仅澳洲适用）', phone: '(9:00am–5:00pm)：+61 3 9660 1885', fax: '+61 3 9660 1889', email: 'melcs@kvbkunlun.com' }, { en: 'Toronto', jp: 'トロント', ltd: 'KVB Kunlun Canada Inc.', addressEn: 'Suite 3600, Level 36, Exchange Tower, 130 King St. West, Toronto, M5X 1B1 Ontario', addressCh: '多伦多 加拿大', operator: '+1 416 646 9188', phone: '+1 416 646 9185', fax: '+1 416 646 9199', email: 'tor_gc@kvbkunlun.com' }, { en: 'Hong Kong', jp: '香港', ltd: 'KVB Kunlun Trading (Hong Kong) Limited, KVB Capital Markets Ltd', addressEn: 'Suite 6801, 68/F, International Commerce Centre, 1 Austin Road West, Kowloon', addressCh: '香港 中国', operator: '+852 3701 8188', phone: '', fax: '+852 3701 8100', email: 'hk_gc@kvbkunlun.com' }, { en: 'Beijing', jp: '北京', ltd: '', addressEn: 'KVB昆仑国际上市公司北京代表处', addressCh: '北京市新源南路8号北京启皓中心西塔9层902', operator: '+86 10 5922 2088', phone: '', fax: '', email: 'bjinfo@kvbkunlun.com' }, { en: 'Taipei', jp: '台北', ltd: 'Banclogix System Co.,Ltd', addressEn: '', addressCh: '台北市信义区忠孝东路五段68号36楼', operator: '+886 2 7710 9888', phone: '', fax: '+886 2 7710 9889', email: '' }]
+	section.section.section--no-spacing.visible-sm.visible-xs
+		div#accordion.panel-group.current-city--tablet(role='tablist' aria-multiselectable='true')
+			div.panel.panel-default
+				div#auckland.panel-heading(role='tab' style=`background-image: url(${imgPath}/location/mobile/auckland.jpg)`)
+					h4.panel-title
+						a(role='button' data-toggle='collapse' data-parent='#accordion' href='#aucklandCollapse' aria-expanded='true' aria-controls='aucklandCollapse')
+								span Auckland オークランド
+				div#aucklandCollapse.panel-collapse.collapse.in(role='tabpanel' aria-labelledby='auckland')
+					div.panel-body
+						div.current-city__content
+							div.current-city__detail
+								+icon('checkin', 'blue')
+								div.current-city__info
+									p.current-city__ltd KVB Global Markets Ltd
+									p.current-city__address Level 10, Tower 1, 205 Queen Street
+									p.current-city__address.current-city__county オークランド  新西兰
+							div.current-city__contact
+								ul.list-unstyled
+									li
+										+icon('phone', 'blue')
+										span.current-city__contact-info カスタマーサービス：+64 9 359 8988
+										span.clearfix
+									li
+										+icon('message', 'blue')
+										span.current-city__contact-info 日本語ライン（9:00am-5:00pm）：+64 9 359 8985
+										span.clearfix
+									li
+										+icon('fax', 'blue')
+										span.current-city__contact-info ファックス：+64 9 359 8989
+										span.clearfix
+									li
+										+icon('mail', 'blue')
+										span.current-city__contact-info Eメール：akl_gc@kvbkunlun.com
+										span.clearfix
+
+			each city in cities.slice(1)
+				- var name = city.en.toLowerCase().replace(' ', '')
+				- var imgUrl = `${imgPath}/location/mobile/${name}.jpg`
+				div.panel.panel-default
+					div.panel-heading(id=name role='tab' style=`background-image: url(${imgUrl})`)
+						h4.panel-title
+							a.collapsed(role='button' data-toggle='collapse' data-parent='#accordion' href=`#${name}Collapse` aria-expanded='false' aria-controls=`${name}Collapse`)
+								span #{city.en} #{city.jp}
+					div.panel-collapse.collapse(id=`${name}Collapse` role='tabpanel' aria-labelledby=name)
+						div.panel-body
+							div.current-city__content
+								div.current-city__detail
+									+icon('checkin', 'blue')
+									div.current-city__info
+										p.current-city__ltd #{city.ltd}
+										p.current-city__address #{city.addressEn}
+								div.current-city__contact
+									ul.list-unstyled
+										li
+											+icon('phone', 'blue')
+											span.current-city__contact-info カスタマーサービス：#{city.operator}
+											span.clearfix
+										li
+											+icon('message', 'blue')
+											span.current-city__contact-info 日本語ライン #{city.phone}
+											span.clearfix
+										li
+											+icon('fax', 'blue')
+											span.current-city__contact-info ファックス：#{city.fax}
+											span.clearfix
+										li
+											+icon('mail', 'blue')
+											span.current-city__contact-info Eメール：#{city.email}
+											span.clearfix
+	section.section.section--no-spacing.hidden-xs.hidden-sm
+		div.cities.cities__slide
+			each city, idx in cities
+				- var classes = (idx === 0) ? 'active' : ''
+				- var imgUrl = `${imgPath}/location/${city.en.toLowerCase().replace(' ', '')}.jpg`
+				div.city(class=classes data-target=city.en style=`background-image: url(${imgUrl})`)
+					div.city__content
+						div.city__name
+							div.city__en #{city.en}
+							div.city__jp #{city.jp}
+		each city, idx in cities
+			- var mapUrl = `${imgPath}/location/maps-${city.en.toLowerCase().replace(' ', '')}.jpg`
+			div.clearfix.no-gutters.row--same-height.current-city(data-target=city.en style=(idx ? 'display: none' : ''))
+				div.col-lg-4.col-md-5.current-city__map(style=`background-image: url(${mapUrl})`)
+				div.col-lg-8.col-md-7
+					div.current-city__content
+						h1.current-city__name
+							+icon('checkin', 'blue')
+							| #{city.en} #{city.jp}
+						div.clearfix
+							div.col-lg-5.col-md-12.current-city__detail
+								p.current-city__ltd #{city.ltd}
+								p.current-city__address #{city.addressEn}
+								p.current-city__address
+							div.col-lg-7.col-md-12.current-city__contact
+								ul.list-unstyled
+									li
+										+icon('phone', 'blue')
+										span.current-city__contact-info カスタマーサービス：#{city.operator}
+										span.clearfix
+									li
+										+icon('message', 'blue')
+										span.current-city__contact-info 日本語ライン #{city.phone}
+										span.clearfix
+									li
+										+icon('fax', 'blue')
+										span.current-city__contact-info ファックス：#{city.fax}
+										span.clearfix
+									li
+										+icon('mail', 'blue')
+										span.current-city__contact-info Eメール：#{city.email}
+										span.clearfix

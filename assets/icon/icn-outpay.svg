@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>ui/icn-outpay</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="ui/icn-outpay" fill-rule="nonzero" >
+            <g id="Icons-/-Glyph-/-outpay" transform="translate(5.000000, 5.000000)">
+                <path d="M88.5,19.725 L1.5,19.725 C0.6,19.725 0,20.325 0,21.225 L0,30.225 L0,43.725 L0,67.725 C0,68.625 0.6,69.225 1.5,69.225 L88.5,69.225 C89.4,69.225 90,68.625 90,67.725 L90,43.725 L90,30.225 L90,21.225 C90,20.325 89.4,19.725 88.5,19.725 Z M87,22.725 L87,28.725 L3,28.725 L3,22.725 L87,22.725 L87,22.725 Z M87,42.225 L3,42.225 L3,31.725 L87,31.725 L87,42.225 Z M3,66.225 L3,45.225 L87,45.225 L87,66.225 L3,66.225 Z" id="Shape"></path>
+                <path d="M75.75,72.525 L73.8,74.775 L79.65,79.725 L6,79.725 L6,82.725 L79.35,82.725 L73.8,87.225 L75.6,89.625 L84.6,82.425 C85.05,82.125 85.2,81.675 85.2,81.225 C85.2,80.775 84.9,80.325 84.6,80.025 L75.75,72.525 Z" id="Shape"></path>
+                <path d="M6.6,10.125 L15.45,17.625 L17.4,15.075 L12.15,10.725 L85.5,10.725 L85.5,7.725 L11.25,7.725 L17.4,2.625 L15.45,0.375 L6.6,7.725 C6.15,8.025 6,8.475 6,8.925 C6,9.375 6.15,9.825 6.6,10.125 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>

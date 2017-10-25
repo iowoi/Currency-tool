@@ -1,0 +1,309 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+mixin fixedInvestment
+	section.section.section--gray-dark.fixed-investment.mobile-dropdown__content(data-panel="fixed-investment" data-target="fixed-investment")
+		div.container
+			div.row
+				div.col-lg-10.col-lg-offset-1
+					div.row.fixed-investment__intro
+						div.col-md-6
+							h2.comprehensive-intro__heading 債券投資信託
+							h3.comprehensive-intro__subheading 債券は本来ディフェンシブ（防御的）な投資商品です。
+							div.row
+								div.col-sm-6.fixed-investment__workflow
+									div.fixed-investment__content
+										div.fixed-investment__workflow-start 確定した満期日
+										+icon('l-arrow-down', 'blue')
+										div.fixed-investment__workflow-process
+											div.fixed-investment__workflow-cell 確定した満期日
+												br
+												| に額面を払い戻し　
+										+icon('l-arrow-down', 'blue')
+										div.fixed-investment__workflow-end 満期日では元本保証
+								div.col-sm-6.fixed-investment__workflow
+									div.fixed-investment__content
+										div.fixed-investment__workflow-start 確定した支払日
+										+icon('l-arrow-down', 'blue')
+										div.fixed-investment__workflow-process
+											div.fixed-investment__workflow-cell 満期日では元本保証
+												br
+												| 定期的にクーポンの受け取り
+										+icon('l-arrow-down', 'blue')
+										div.fixed-investment__workflow-end 満期日までの確定した収入
+						div.col-md-6
+							div.fixed-investment__right-panel
+								h2.comprehensive-intro__heading 当社は、債権ポートフォリオについては
+								h3.comprehensive-intro__subheading 諸要素を勘案した投資を行います
+								div.row.fixed-investment__portfolio
+									div.col-xs-6
+										div.fixed-investment__portfolio-block
+											+icon('tick', 'blue')
+											span.fixed-investment__portfolio-type 債権
+									div.col-xs-6
+										div.fixed-investment__portfolio-block
+											+icon('tick', 'blue')
+											span.fixed-investment__portfolio-type 通貨
+									div.col-xs-6
+										div.fixed-investment__portfolio-block
+											+icon('tick', 'blue')
+											span.fixed-investment__portfolio-type 業種
+									div.col-xs-6
+										div.fixed-investment__portfolio-block
+											+icon('tick', 'blue')
+											span.fixed-investment__portfolio-type 満期日など
+					div.side-img-section.section--white.side-img-section--small.clearfix
+						div.side-img-section__img-wrap
+							div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/advantage.jpg)`)
+						div.side-img-section__container
+							div.side-img-section__container-wrap
+								h2.side-img-section__heading 債券商品への投資の利点
+								+checkList(['定期預金と比較し高い利益。', ' 投資リスクは株式を大幅に下回る。', '様々なタイプの債券に投資することで、変動あるいは固定利率・インフレに対する防衛など異なる投資ニーズに対応。', ' 発行体による元本保証 – 満期日には元本を払い戻し。', '流動性-満期前に債権を売却することによりキャピタルゲインの可能性も。', 'キャッシュフローの透明性と予測可能性―定期的なクーポンの受け取りによりインフレを相殺'])
+mixin longternInvestment
+	section.section.section--gray-dark.longtern-investment.mobile-dropdown__content(data-panel="longtern-investment" data-target="longtern-investment" style="display: none")
+		div.container
+			div.row
+				div.col-lg-10.col-lg-offset-1
+					h2.comprehensive-intro__heading 元本保証あるいは値下がり防止
+					div.side-img-section.section--white.side-img-section--small.clearfix
+						div.side-img-section__img-wrap
+							div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/stairs.jpg)`)
+						div.side-img-section__container
+							div.side-img-section__container-wrap
+								div.longtern-investment__item
+									div.longtern-investment__label 商品タイプ
+									div.longtern-investment__info 20のオーストラリア優良企業株を参照資産とした元本保証商品
+								div.longtern-investment__item
+									div.longtern-investment__label 投資期間
+									div.longtern-investment__info 4年間
+								div.longtern-investment__item
+									div.longtern-investment__label ROI
+									div.longtern-investment__info 4 年後の累積利益率は上限32％　参照株価が始値投資開始時の値を下回れば元本返金
+								div.longtern-investment__item
+									div.longtern-investment__label 過去の利益率
+									div.longtern-investment__info バックテストによる過去5年間の累積利益率は35％超
+					div.side-img-section.section--white.side-img-section--small.reverse.clearfix
+						div.side-img-section__img-wrap
+							div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/account.jpg)`)
+						div.side-img-section__container
+							div.side-img-section__container-wrap
+								h2.side-img-section__heading 仕組債投資商品の利点
+								div.longtern-investment__intro オーストラリアおよび外国株式市場への受動的な投資：　KVBは下記のような投資目的をもった方に、カスタマイズされた外国株式投資商品をお届けします。
+								ul.check-icon-list.row
+									li.check-icon-list__item.col-md-6
+										+icon('tick', 'blue')
+										p.basic-paragraph 外国株式市場投資に関心がある
+									li.check-icon-list__item.col-md-6
+										+icon('tick', 'blue')
+										p.basic-paragraph カスタマイズされた投資サービスを好む
+									li.check-icon-list__item.col-md-6
+										+icon('tick', 'blue')
+										p.basic-paragraph 定期的な利益を確保したい
+									li.check-icon-list__item.col-md-6
+										+icon('tick', 'blue')
+										p.basic-paragraph 短期の株式市場変動を回避する
+									li.check-icon-list__item.col-md-6
+										+icon('tick', 'blue')
+										p.basic-paragraph 短期の投資機会を得たい
+					div.side-img-section.section--white.side-img-section--small.clearfix
+						div.side-img-section__img-wrap
+							div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/success.jpg)`)
+						div.side-img-section__container
+							div.side-img-section__container-wrap
+								h2.side-img-section__heading 過去の事例　年率10％の利益を実現
+								div.longtern-investment__table
+									div.longtern-investment__table-row
+										div.longtern-investment__label 名称
+										div.longtern-investment__info KVB Apex 3
+									div.longtern-investment__table-row
+										div.longtern-investment__label タイプ
+										div.longtern-investment__info ASX上場の5優良企業株を参照資産とした仕組債
+									div.longtern-investment__table-row
+										div.longtern-investment__label 標的
+										div.longtern-investment__info ASX上場5優良企業
+									div.longtern-investment__table-row
+										div.longtern-investment__label 発行体
+										div.longtern-investment__info オーストラリア最大級の 投資銀行
+									div.longtern-investment__table-row
+										div.longtern-investment__label 満期までの計算
+										div.longtern-investment__info 元金X ( 1 + 10.0% )
+									div.longtern-investment__table-row
+										div.longtern-investment__label 期間
+										div.longtern-investment__info 12 ヶ月 (クローズドエンド型)
+mixin ipo
+	section.section.section--gray-dark.ipo.mobile-dropdown__content(data-panel="ipo" data-target="ipo" style="display: none")
+		div.container
+			div.row
+				div.col-lg-10.col-lg-offset-1
+					h2.comprehensive-intro__heading 過去の事例
+					div.ipo__group
+						div.ipo__title 1. 発行市場金融機関キャピタルノート
+						div.ipo__case
+							div.ipo__case-name
+								div
+									div.ipo__name-en
+										span NAB Capital Note
+							div.ipo__case-content
+								div.ipo__heading
+									+icon('checkboard')
+									| 結果
+								ul.ipo__list
+									li 2016年10月に発行
+									li 額面100ドで年率6.7%ターン
+									li 半年間で価格106ドを超え、半年ターン9％
+						div.ipo__case
+							div.ipo__case-name
+								div
+									div.ipo__name-en
+										span Westpac Capital Note
+							div.ipo__case-content
+								div.ipo__heading
+									+icon('checkboard')
+									| 結果
+								ul.ipo__list
+									li 2016年9月に発行
+									li 額面100ドで年率6.75%ターン
+									li 半年間で価格106ド超え、半年ターン9%
+					div.ipo__group
+						div.ipo__title 2. 一级市场新股发行
+						div.ipo__block--outline
+							div.ipo__case
+								div.ipo__case-name
+									div.ipo__name-en
+										span OOh Media
+								div.ipo__case-content
+									div.ipo__heading
+										+icon('checkboard')
+										| 結果
+									ul.ipo__list
+										li 2014年12月に株式公開
+										li 上場初値 1.93ド
+										li 1 年後株価2.33ド超え、ターン120%超
+							div.ipo__case
+								div.ipo__case-name
+									div.ipo__name-en
+										span IDP Education
+								div.ipo__case-content
+									div.ipo__heading
+										+icon('checkboard')
+										| 結果
+									ul.ipo__list
+										li 2015年11月に株式公開
+										li 上場初値 2.65ド, 上場日に 30% 近い上昇
+										li 現在株価4.44ド, 1 年ターン60%超
+
+mixin siv
+	section.siv.mobile-dropdown__content(data-panel="siv" data-target="siv" style="display: none")
+		section.section.section--gray-dark.siv__about
+			div.container
+				div.row
+					div.col-lg-10.col-lg-offset-1
+						h2.comprehensive-intro__heading 高額投資移住ビザ（SIV）
+						div.side-img-section.section--white.side-img-section--small.clearfix
+							div.side-img-section__img-wrap
+								div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/sydney-opera-house.jpg)`)
+							div.side-img-section__container
+								div.side-img-section__container-wrap
+									h2.side-img-section__heading 大きな資産をお持ちの方に優れた投資移住機会を提供
+									ul.siv__list
+										li 大きな資産をお持ちの方がオーストラリアで永住権を取得する近道
+										li 適格投資ポートフォリオに500万豪ドルを4年間投資
+										li ビザの要件に年齢あるいは言語の制約はない
+						div.side-img-section.section--white.side-img-section--small.clearfix
+							div.side-img-section__img-wrap
+								div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/consulting.jpg)`)
+							div.side-img-section__container
+								div.side-img-section__container-wrap
+									h2.side-img-section__heading 高額投資移住ビザ（SIV）ポリシーの変更 (2015年7月1日発効)
+									ul.siv__list
+										li 資金全額を低リスクの国債やMMFへ投資するができなくなりました。
+										li 投資用不動産に対して第二抵当権を設定することができなくなりました。
+										li 中型株・小型株投資信託及びプライベートエクイティ・ベンチャーキャピタルへの投資を含むことを求めらるようになりました。
+		section.section.siv__plan
+			div.container
+				div.side-img-section.section--white.side-img-section--small.box-shadow.clearfix
+					div.side-img-section__img-wrap
+						div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/invest＿plan.jpg)`)
+					div.side-img-section__container
+						div.side-img-section__container-wrap
+							h2.side-img-section__heading KVB は理想的なSIV投資プランを提示
+							ul.siv__list
+								li 最新のSIV投資要件に準拠
+								li SIV投資の実績があり、信頼できる優れたチーム
+								li 元本保証の可能性が高く比較的安定したポートフォリオ
+								li 投資移住のワンストップソリューションにより手続きすべてが簡素化
+		section.section.section--gray-dark.siv__issue
+			div.container
+				h2.comprehensive-intro__heading 500万豪ドル投資区分- SIV実例
+				div.row
+					div.col-md-6
+						div.siv__issue-card
+							div.siv__issue-date
+								div
+									div.siv__issue-month 9 月
+									div.siv__issue-year 2016
+							div.siv__issue-workflow
+								ul.siv__issue-step
+									li L氏は500万豪ドル投資を考え、初めて移住コンサルタントに面会
+									li ビザ要件と申請手順につき説明を受ける
+					div.col-md-6
+						div.siv__issue-card
+							div.siv__issue-date
+								div
+									div.siv__issue-month 10 月
+									div.siv__issue-year 2016
+							div.siv__issue-workflow
+								ul.siv__issue-step
+									li L氏は KVB と面談し
+									li SIV申請のためカスタマイズされた投資プランの採用を決定
+					div.col-md-6
+						div.siv__issue-card
+							div.siv__issue-date
+								div
+									div.siv__issue-month 11 月
+									div.siv__issue-year 2016
+							div.siv__issue-workflow
+								ul.siv__issue-step
+									li L氏は投資の勧告を受け
+									li 500万豪ドルを指定の投資銀行口座に振り込み手配
+					div.col-md-6
+						div.siv__issue-card
+							div.siv__issue-date
+								div
+									div.siv__issue-month 12 月
+									div.siv__issue-year 2016
+							div.siv__issue-workflow
+								ul.siv__issue-step
+									li 投資手続き完了
+									li L氏は10日後に、家族と共に条件付き永住ビザを取得
+
+block content
+	+banner(`${imgPath}/comprehensive/wealth-management-herobanner.jpg`, '過去のポートフォリオ例')
+	section.section.section--gray.section--no-bottom-spacing.comprehensive__section
+		+styledHeading('総合資産運用商品・サービス', true)
+		div.container.hidden-xs
+			div.comprehensive-tabs.row
+				div.col-sm-3
+					button.tab.active(data-category="fixed-investment") 社債
+				div.col-sm-3
+					button.tab(data-category="longtern-investment") 中長期仕組債
+				div.col-sm-3
+					button.tab(data-category="ipo") 海外新規公開株投資
+				div.col-sm-3
+					button.tab(data-category="siv") 高額投資移住スキーム
+		div.dropdown.mobile-tabs.mobile-tabs--white.visible-xs
+			button#mobileTabs.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+				span.contact-form__selected 債券投資信託
+				span.caret: +icon('down', 'gray-darker')
+			ul.dropdown-menu(aria-labelledby="mobileTabs")
+				li: a(data-target="fixed-investment") 債券投資信託
+				li: a(data-target="longtern-investment") 中長期仕組債投資商品
+				li: a(data-target="ipo") 外国市場新規公開株購入サービス
+				li: a(data-target="siv") 高額投資移住ビザ（SIV）
+	+fixedInvestment
+	+longternInvestment
+	+ipo
+	+siv
+	+contactArea--jp

@@ -1,0 +1,56 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	+banner(`${imgPath}/product/FundsGolds-herobanner.jpg`, 'Fund, Insurance and Physical Gold')
+	+pageIntro
+		p.description KVB Kunlun Canada Branch has now launched Yong Ming (Sunlife Financial) dividend life insurance, serious illness insurance and other investment products. Among them, Yongming(Sunlife Financial) dividend life insurance combines asset value-added, asset preservation, risk management, tax planning and inheritance planning all into one product. As an alternative to your prudential investment objectives, it also pays more attention to the diversification of assets, where it can be used as one of your overseas asset allocation tool, so you have the opportunity to enjoy the dividend payment steadily returning on your initial investment.
+	+cardSection('gray', 'Key Advantage of KVB’s Insurance Offering')(class="product-card grid-stack--basic-mobile en-site")
+		+card-2-1(0, 0, '', 'Product Advantages', 'right')(style=`background-image: url(${imgPath}/grid-wall/05.jpg)`)
+			+checkList(['Preservation of the value of wealth, optimizing asset allocation', 'Preferential tax savings, planning a worry-free life','Maximizing the value of wealth inheritance'])
+		+card-2-1(0, 1, '', 'For people who', 'left')(style=`background-image: url(${imgPath}/grid-wall/02.jpg)`)
+			+checkList(['Seeking diversification of their assets and tax-free transfer of wealth', 'Wishing to maximize their family assets and wealth for the beneficiary.', 'With a retirement plan and hope to use the policy to generate steady income to enjoy retirement life.'])
+		+card-1-2(2, 0, '', 'Partner')(style=`background-image: url(${imgPath}/grid-wall/04.jpg)`)
+			p.description Yong Ming (Sunlife Financial) has a strong track record in Canada's financial services sector. Managed by its dividend account investment specialists, the Company has generated steady income with leading ROI ratio. Its dividend insurance products focus on long-term investment strategy and portfolio diversification, investment categories, including bonds, stocks, private fixed income and commercial real-estate.
+	section.section.product
+		div.container
+			div.product__heading Through KVB’s physical gold product and services
+			div.product__subheading our customers can enjoy the following unique benefits
+			div.row.product__item.product__item--content-left
+				div.product__index
+					img(src=`${imgPath}/product/1.png` alt="1")
+				div.col-md-6.col-md-offset-1.product__intro
+					div.product__mask
+					div.product__title Trading of physical gold and silver in many countries around the world through our online platform.
+					div.product__des  All physical metals come from world’s renowned refineries so you will enjoy the highest liquidity in the market.
+			div.row.product__item.product__item--content-right.product__item--bg-blue
+				div.col-md-1.col-md-offset-4.product__index
+					img(src=`${imgPath}/product/2.png` alt="2")
+				div.col-md-6.product__intro
+					div.product__mask
+					div.product__title Secured storage service that clearly puts all physical holding under your personal ownership.
+					div.product__des Full replacement insurance has been purchased for the duration of your preferred storage.
+			div.row.product__item.product__item--content-left
+				div.product__index
+					img(src=`${imgPath}/product/3.png` alt="3")
+				div.col-md-6.col-md-offset-1.product__intro
+					div.product__mask
+					div.product__title Leading global armored delivery service
+					div.product__des You can also choose to physically deliver all gold and silver coins/bars to your designated home address or office address. We contract with leading global armored delivery service companies to ensure utmost security.
+			div.row.product__item.product__item--content-right.product__item--bg-green
+				div.col-md-1.col-md-offset-4.product__index
+					img(src=`${imgPath}/product/4.png` alt="4")
+				div.col-md-6.product__intro
+					div.product__mask
+					div.product__title Audited annually by famous audit firm
+					div.product__des Your holdings in the secured storage is audited annually for its accuracy, weight and fineness to ensure nothing is tempered with.
+			div.row.product__item.product__item--content-left
+				div.product__index
+					img(src=`${imgPath}/product/5.png` alt="5")
+				div.col-md-6.col-md-offset-1.product__intro
+					div.product__mask
+					div.product__title Global secured storage service
+					div.product__des You can enjoy secured storage (vaulting) service in any of our Toronto, Sydney, Melbourne, Hong Kong, Singapore and London site.
+	+contactArea--en

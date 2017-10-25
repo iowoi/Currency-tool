@@ -1,0 +1,143 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	- var imgPath = isDev ? 'img' : './assets/img'
+	+banner(`${imgPath}/about/herobanner.jpg`, att, '当社について')
+	section.section.section--no-bottom-spacing
+		div.container
+			+styledHeading('について', false)
+	section.section.section--narrow.section--two-blocks.media-section.section--two-blocks-reverse
+		div.container
+			div.section__left-block
+				img(src=`${imgPath}/about/discussion.jpg` alt="")
+			div.section__right-block
+				h1.section__heading Comprehensive Financial Services Framework
+				p.description KVB Kunlun Global Capital Ltdはアジア地域に提供する多様な金融商品に特化した金融サービスです。当社の商品は、為替取引、世界規模の決済、資産管理、資金管理、流動性ソリューションなどを扱っております。当社は、複数の海外地点で営業免許を取得し、ニュージーランドのオークランド、オーストラリアのシドニー及びメルボルン、さらに香港に事務所を開設しました。当社は、1日24時間のオンライン取引を行い、顧客に対し真に世界規模のサービスを提供しております。
+				p.description KVB Kunlun Groupは、世界でも数少ない多国籍で非銀行部門の金融機関であり、世界中の金融監督当局から認可されて株式市場に上場されております。KVB Kunlun Groupは、長年にわたり大洋州地域で人民元の国際化に向けて取り組んでいる先駆者です。またKVB Kunlun Global Capital Ltdは、KVB Kunlun Group傘下の完全子会社です。
+			div.clearfix
+	section.section.section--narrow-top.section--two-blocks.media-section
+		div.container
+			div.section__left-block
+				img(src=`${imgPath}/about/trustworthy-brand.jpg` alt="")
+			div.section__right-block
+				h1.section__heading Your Trusted Brand
+				p.description 当社KVB Kunlun Global Capital Ltdは、KVB Kunlun Groupの三大企業の一角を占め、その事業基盤は120を超える世界の通貨を扱うという実績に支えられております。当社は、誰よりも先に中国の「一帯一路」経済政策に対応しております。当社は、長年にわたり金融テクノロジーに多大のリソースを投資し、これらリソースを通して、顧客がワンストップですべての金融サービスを受けることが可能な効率の良いシステムを作り提供します。当社は、地球規模の決済・支払であれ、越境eコマースであれ、金融テクノロジーであれ、資産管理であれ、世界規模の財産管理であれ、健全で安全、便利で他に劣らない業界最高のソリューションを提供することが出来ます。
+			div.clearfix
+	section.magazine
+		div.container.clearfix
+			div.magazine__display-stand.col-md-4.col-sm-5
+				div.magazine__spotlight
+					img.magazine__cover(src=`${imgPath}/about/catalog.jpg` alt="magazine")
+					button.btn.btn-default.btn-lg.btn-block.btn-default--outline.magazine__download PDFのダウンロード
+			div.magazine__info.col-md-8.col-sm-7
+				div.magazine__info-content
+					+styledHeading('15th Year Anniversary Brochure of KVB Kunlun', false)
+					p.description.magazine__description Since 2001, KVB’s foresight on Chinese RMB Internationalization and Chinese Offshore Market Development had proven to be ahead of its time. Establishing advanced financial services tools and service concepts, we have come up with our unique branding and specialization in this industry with avant-garde models and innovative trading systems. We have been proudly serving our global Asian customer base ever since then.
+				div.magazine__btn
+					+readmore('ウェブで閲覧')
+	section.section.section--gray.kvb-history
+		div.container
+			div.clearfix.row--same-height
+				div.col-md-4.kvb-history__group
+					img(src=`${imgPath}/about/innocation.jpg` alt="innocation")
+					h3.kvb-history__heading 革新的事業
+					dl.kvb-history__content
+						dt.kvb-history__year 2005
+						dd.kvb-history__info 大洋州地域にてモバイル取引プラットフォームForexStarを初の立ち上げ
+						dt.kvb-history__year 2006
+						dd.kvb-history__info 業界で初めてオフショア人民元を使ったNZD/AUD交換取引を開始
+						dt.kvb-history__year 2008
+						dd.kvb-history__info 香港証券取引を開始
+						dt.kvb-history__year 2010
+						dd.kvb-history__info KVB初のホワイトラベル金融機関がニュージーランドで事業開始
+						dt.kvb-history__year 2012
+						dd.kvb-history__info 海外においてプライベートバンキングのサービス提供のためCITIC Bankと戦略的同盟
+						dt.kvb-history__year 2013
+						dd.kvb-history__info 大洋州地域市場初のオフショア人民元にて物理的決済可能な商品を売り出す
+						dt.kvb-history__year 2015
+						dd.kvb-history__info オーストラリアでSignificant Investment Visa関連金融サービス開始に成功
+						dt.kvb-history__year 2016
+						dd.kvb-history__info 外貨取引プラットフォームeFXの設立に成功
+						dt.kvb-history__year 2016
+						dd.kvb-history__info 商用為替取引管理コンソールCorpVisionの立ち上げに成功
+				div.col-md-4.kvb-history__group
+					img(src=`${imgPath}/about/footprint.jpg` alt="footprint")
+					h3.kvb-history__heading 歴史
+					dl.kvb-history__content
+						dt.kvb-history__year 2001
+						dd.kvb-history__info 世界に先駆けニュージーランドのオークランドに支社開設
+						dt.kvb-history__year 2002
+						dd.kvb-history__info オーストラリアのシドニーに支社開設
+						dt.kvb-history__year 2005
+						dd.kvb-history__info 香港支社及びメルボルン支社が事業開始
+						dt.kvb-history__year 2006
+						dd.kvb-history__info 北京駐在員事務所を開設
+						dt.kvb-history__year 2007
+						dd.kvb-history__info カナダのトロント支社が事業開始
+						dt.kvb-history__year 2013
+						dd.kvb-history__info KVB Kunlun Financial Group  Limitedが香港株式市場に上場
+						dt.kvb-history__year 2015
+						dd.kvb-history__info KVB Kunlun Financial Group Limitedが Citic 証券を主要株主とする
+						dt.kvb-history__year 2016
+						dd.kvb-history__info 台北支社を開設
+						dt.kvb-history__year 2017
+						dd.kvb-history__info 香港証券先物委員会の外貨レバレッジ取引免許を取得
+				div.col-md-4.kvb-history__group
+					img(src=`${imgPath}/about/influence.jpg` alt="influence")
+					h3.kvb-history__heading 影響力
+					dl.kvb-history__content
+						dt.kvb-history__year 2006
+						dd.kvb-history__info 集KVB Kunlun Groupの役員が中国・国務省主催の第57回ナショナルデイ記念日に招待さる
+						dt.kvb-history__year 2007
+						dd.kvb-history__info 中国中央テレビと共同で文化遺産・地球規模金融業務の特集番組を編集
+						dt.kvb-history__year 2008
+						dd.kvb-history__info 著名な経済学者Shusong Baと共同で「オフショア市場研究―世界的傾向と中国の進路」を出版
+						dt.kvb-history__year 2009
+						dd.kvb-history__info 香港オーストラリア商業組合の「2009年最優秀ビジネス賞」受賞の栄誉 KVB Kunlun Groupの役員が中国・国務省主催の第60回ナショナルデイ記念日に招待さる
+						dt.kvb-history__year 2013
+						dd.kvb-history__info ニュージーランド中国商業組合の「最優秀ビジネス賞」を受賞
+						dt.kvb-history__year 2014
+						dd.kvb-history__info 習近平主席のオーストラリア公式訪問中に著名な海外在住・中国実業家として招待さる
+						dt.kvb-history__year 2016
+						dd.kvb-history__info IEBEより「最優秀越境eコマース・サービスプロバイダー賞」を受賞
+						dt.kvb-history__year 2016
+						dd.kvb-history__info Phoenixテレビと共同で特別番組Forex Digestを制作
+						dt.kvb-history__year 2017
+						dd.kvb-history__info IEBEより 再び「最優秀越境eコマース・サービスプロバイダー賞」を受賞
+	section.section.section--gray.section--no-top-spacing.promising
+		+styledHeading('顧客がKVBを選ぶ理由は？', true)
+		div.container.promising__container
+			div.row
+				div.col-md-4.col-sm-6.promising__block
+					+icon('trustworthy')
+					div.promising__content
+						h4.text-center 信頼できるブランド
+						p.text-center.description 当社は世界で最も著名な金融サービスのブランドの中に位置し、16年を超えてアジア地域社会に貢献している外貨取引業界の真のリーダーです。
+				div.col-md-4.col-sm-6.promising__block
+					+icon('earthglobal')
+					div.promising__content
+						h4.text-center ライセンスを受けた金融機関
+						p.text-center.description 当社は、それぞれの支社の所在国で金融事業ライセンスを取得しており、基本的な商品から複雑な商品まで多様な金融商品を提供しています。
+				div.col-md-4.col-sm-6.promising__block
+					+icon('analytics')
+					div.promising__content
+						h4.text-center 総合的な決済方法
+						p.text-center.description 当社は多様な決済方法を提供します。例えば、電信送金、現金、小切手、携帯電話による支払い(Wechat/Alipay)、デビットカードなどです。当社の地球規模の銀行取引網は間違いなく顧客の世界規模のニーズを満足させることでしょう。
+				div.col-md-4.col-sm-6.promising__block
+					+icon('exchange')
+					div.promising__content
+						h4.text-center 他に劣らない交換レート
+						p.text-center.description 当社は、極めて有利な卸売り交換レートを提示し、顧客のコストを下げ利益を伸ばします。
+				div.col-md-4.col-sm-6.promising__block
+					+icon('security')
+					div.promising__content
+						h4.text-center 安全性の確保
+						p.text-center.description 当社の事業は全分野にわたり監査を受け是正されています。当社は国際的に著名な関係機関と提携し、世界の四大監査法人の監査を受けています。
+				div.col-md-4.col-sm-6.promising__block
+					+icon('handshake')
+					div.promising__content
+						h4.text-center プロに相応しい助言サービス
+						p.text-center.description 当社のプロ集団チームは世界中で60名を超える業界トップの専門家から成ります。当社は、北京語・英語・広東語・日本語のうち、個々の顧客の希望する言語を使い助言いたします。

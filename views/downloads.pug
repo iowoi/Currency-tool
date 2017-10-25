@@ -1,0 +1,107 @@
+extends layout
+
+include helpers/mixins
+
+mixin downloadItem(name, location, size)
+	div.downloads__item
+		div.downloads__name #{name}
+		div.downloads__info
+			div.downloads__location(data-location=location) #{location}
+			div.downloads__size PDF #{size} MB
+		a.downloads__link(href="#" title="download")
+			span 下载文档
+			+icon('download', 'blue')
+
+block content
+	- var imgPath = isDev ? 'img' : './assets/img'
+	+banner(`${imgPath}/banner/downloads.jpg`, '文档下载')
+	+pageIntro
+		p.description 这里可以找到我们常用的表格以及信息。您可以下载这些 PDF 格式的文件予以使用。请注意，可能需要您通过支持 PDF 格式的软件才能查看。
+	section.section.section--gray-dark.section--no-top-spacing.downloads
+		div.downloads__tabs.hidden-xs
+			div.container
+				div.downloads__tabs-content
+					div.downloads__tab.active(data-target="国际结算与支付") 国际结算与支付
+					div.downloads__tab(data-target="企业外汇管理") 企业外汇管理
+					div.downloads__tab(data-target="跨境电商外汇解决方案") 跨境电商外汇解决方案
+					div.downloads__tab(data-target="金融科技") 金融科技
+					div.downloads__tab(data-target="全球资产与财富管理") 全球资产与财富管理
+					div.downloads__tab(data-target="基金、保险及黄金") 基金、保险及黄金
+		div.dropdown.mobile-tabs.visible-xs
+			button#mobileTabs.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+				span.contact-form__selected 国际结算与支付
+				span.caret: +icon('down', 'gray-darker')
+			ul.dropdown-menu(aria-labelledby="mobileTabs")
+				li: a(data-target="国际结算与支付") 国际结算与支付
+				li: a(data-target="企业外汇管理") 企业外汇管理
+				li: a(data-target="跨境电商外汇解决方案") 跨境电商外汇解决方案
+				li: a(data-target="金融科技") 金融科技
+				li: a(data-target="全球资产与财富管理") 全球资产与财富管理
+				li: a(data-target="基金、保险及黄金") 基金、保险及黄金
+		div.container
+			div.row.downloads__content.mobile-dropdown__content(data-target="国际结算与支付")
+				div.col-md-offset-1.col-md-10
+					div.total-result 共
+						strong 15
+						| 笔资料
+					div.dropdown.downloads__filter
+						button#downloadFilter.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+							span.contact-form__selected 国家或地区
+							span.caret: +icon('down', 'gray-darker')
+						ul.dropdown-menu(aria-labelledby="downloadFilter")
+							li: a 澳大利亚
+							li: a 新西兰
+							li: a 加拿大
+							li: a 全部
+					div.clearfix
+					div.downloads__list
+						+downloadItem('KVB Global Markets Ltd 银行帐户', '澳大利亚', 3.16)
+						+downloadItem('KVB Global Markets Ltd 产品披露声明和金融服务指南', '澳大利亚', 3.16)
+						+downloadItem('KVB Global Markets Ltd 银行帐户', '澳大利亚', 3.16)
+						+downloadItem('KVB Global Markets Ltd 产品披露声明', '新西兰', 3.16)
+						+downloadItem('KVB Global Markets Ltd 银行帐户', '新西兰', 3.16)
+						+downloadItem('KVB Global Markets Ltd 商业开户申请', '加拿大', 3.16)
+						+downloadItem('KVB Global Markets Ltd 个人开户申请 - 中英文', '加拿大', 3.16)
+						+downloadItem('KVB Global Markets Ltd 个人开户申请 - 日文', '加拿大', 3.16)
+						+downloadItem('KVB Global Markets Ltd 个人开户申请 - 中英文', '加拿大', 3.16)
+						+downloadItem('KVB Global Markets Ltd 个人开户申请 - 日文', '加拿大', 3.16)
+					+pagination(3)
+			div.row.downloads__content.mobile-dropdown__content(data-target="企业外汇管理" style='display: none')
+				div.col-md-offset-1.col-md-10
+					div.total-result 共
+						strong 2
+						| 笔资料
+					div.dropdown.downloads__location-filter
+						button#downloadFilter.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+							span.contact-form__selected 国家或地区
+							span.caret: +icon('down', 'gray-darker')
+						ul.dropdown-menu(aria-labelledby="downloadFilter")
+							li: a 澳大利亚
+							li: a 新西兰
+							li: a 加拿大
+							li: a 全部
+					div.clearfix
+					div.downloads__list
+						+downloadItem('KVB Global Markets Ltd 银行帐户', '澳大利亚', 3.16)
+						+downloadItem('KVB Global Markets Ltd 产品披露声明和金融服务指南', '澳大利亚', 3.16)
+			div.row.downloads__content.mobile-dropdown__content(data-target="跨境电商外汇解决方案" style='display: none')
+				div.col-md-offset-1.col-md-10
+					div.downloads__empty
+						+icon('file-empty', 'gray-darker')
+						span 尚无文件资料
+			div.row.downloads__content.mobile-dropdown__content(data-target="金融科技" style='display: none')
+				div.col-md-offset-1.col-md-10
+					div.downloads__empty
+						+icon('file-empty', 'gray-darker')
+						span 尚无文件资料
+			div.row.downloads__content.mobile-dropdown__content(data-target="全球资产与财富管理" style='display: none')
+				div.col-md-offset-1.col-md-10
+					div.downloads__empty
+						+icon('file-empty', 'gray-darker')
+						span 尚无文件资料
+			div.row.downloads__content.mobile-dropdown__content(data-target="基金、保险及黄金" style='display: none')
+				div.col-md-offset-1.col-md-10
+					div.downloads__empty
+						+icon('file-empty', 'gray-darker')
+						span 尚无文件资料
+	+contactArea

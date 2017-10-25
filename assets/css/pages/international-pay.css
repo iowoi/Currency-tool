@@ -1,0 +1,123 @@
+.international-pay {
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	& .styled-heading {
+		margin-top: -16px;
+		color: white;
+	}
+
+	& .international-pay__heading,
+	& .international-pay__subheading {
+		color: white;
+	}
+
+	& .international-pay__heading {
+		margin: 40px 0 16px;
+		font-size: 24px;
+		font-weight: var(--font-normal);
+		line-height: 1.8em;
+		letter-spacing: 4px;
+		text-indent: 4px;
+		@media (--below-tablet) {
+			font-size: 18px;
+			line-height: 1.8em;
+			margin: 0 0 16px;
+			letter-spacing: 2px;
+		}
+	}
+
+	& .international-pay__subheading {
+		margin-bottom: 40px;
+		font-size: 18px;
+		font-weight: var(--font-light);
+		letter-spacing: 2px;
+		text-indent: 2px;
+	}
+
+	& .international-pay__card {
+		min-height: 272px;
+		padding: 40px 48px;
+		background: white;
+		@media (--below-desktop) {
+			min-height: 326px;
+			padding: 32px;
+		}
+		@media (--below-small) {
+			margin-bottom: 20px;
+			min-height: 380px;
+		}
+		@media (--below-tablet) {
+			padding: 24px;
+			min-height: auto;
+		}
+	}
+
+	& .international-pay__card-title {
+		font-size: 16px;
+		font-weight: var(--font-normal);
+		letter-spacing: 2px;
+		line-height: 1.8em;
+	}
+
+	& .international-pay__card-list {
+		padding-top: 16px;
+	}
+
+	& .international-pay__card-item {
+		& + .international-pay__card-item {
+			padding-top: 8px;
+		}
+
+		& .icon {
+			width: 18px;
+			height: 18px;
+			margin: 1px 20px 0 0;
+			vertical-align: top;
+		}
+	}
+
+	& .international-pay__text {
+		width: calc(100% - 48px);
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 16px;
+		letter-spacing: 1px;
+		line-height: 1.5em;
+	}
+}
+
+.service {
+	margin-top: 80px;
+	color: white;
+	text-align: center;
+	@media (--below-tablet) {
+		margin-top: 40px;
+	}
+	& .service__title {
+		margin: 0 0 16px;
+		font-size: 24px;
+		font-weight: var(--font-normal);
+		letter-spacing: 2px;
+		text-indent: 2px;
+	}
+
+	& .service__des {
+		font-size: 18px;
+	}
+
+	& .service__btn {
+		width: 272px;
+		margin-top: 24px;
+		border: 1px solid white;
+		padding: 23px 0;
+		font-size: 16px;
+		letter-spacing: 2px;
+		text-indent: 2px;
+		text-align: center;
+		@media (--below-tablet) {
+			width: 100%;
+			padding: 16px 0;
+		}
+	}
+}

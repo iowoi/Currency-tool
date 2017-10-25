@@ -1,0 +1,163 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+mixin contactBlock
+	div.contact__block
+		block
+
+mixin contactMain
+	div.contact__col.contact__main
+		+icon('checkin', 'blue')
+		div.contact__addresss
+			block
+
+mixin contactDetail
+	div.contact__col.contact__detail
+		div.current-city__contact
+			ul.list-unstyled
+				block
+
+mixin contactItem(icon, text)
+	li
+		+icon(icon, 'blue')
+		span.current-city__contact-info #{text}
+		span.clearfix
+
+mixin contactQrCode(location, name, code)
+	div.contact__col.contact__qrcode
+		- var imgPath = isDev ? 'img/contact/qr-' : './assets/img/contact/qr-'
+		img(src=`${imgPath + location + '.png'}` alt='qrcode')
+		div #{name}
+		div #{code}
+		div.clearfix
+
+block content
+	+banner(`${imgPath}/contact/contact-us-herobanner.jpg`, 'お問い合わせ')
+	+pageIntro
+		p.description 皆様のご質問やご意見が私たちの商品やサービスをよりよいものします。皆様からのご連絡をお待ちしております。
+	section.section.section--gray.section--mobile-white.contact
+		div.container
+			+styledHeading('各店舗', true)
+			+contactBlock
+				+contactMain
+					div.contact__address-name オークランド
+					div.contact__company
+						div KVB Global Markets Ltd
+					div.contact__address-detail Level 10, Tower 1, 205 Queen Street
+				+contactDetail
+					+contactItem('phone', 'Operator：+64 9 359 8988')
+					+contactItem('message', '日本語ライン（9:00am-5:00pm）：+64 9 359 8985')
+					+contactItem('fax', 'ファックス：+64 9 359 8989')
+					+contactItem('mail', 'Eメール：akl_gc@kvbkunlun.com')
+			+contactBlock
+				+contactMain
+					div.contact__address-name シドニー
+					div.contact__company
+						div KVB Global Markets Pty Ltd
+						div KVB Kunlun Wealth Management Pty Ltd
+					div.contact__address-detail Level 18, Citigroup Centre, 2 Park Street, Syndney, NSW 2000
+				+contactDetail
+					+contactItem('phone', '日本語ライン：1300 668 120（Only for Australia）')
+					+contactItem('earth-oversea', 'ファックス：+61 2 8263 0188')
+					+contactItem('message', 'Mandarin Hotline（9:00am-5:00pm）：+61 2 8263 0184')
+					+contactItem('phone', 'Wealth Management Hotline（9:00am-5:00pm）：+61 2 8263 0164')
+					+contactItem('fax', 'Fax：+61 2 8263 0189')
+					+contactItem('mail', 'Eメール：akl_gc@kvbkunlun.com')
+			+contactBlock
+				+contactMain
+					div.contact__address-name メルボルン
+					div.contact__company
+						div KVB Global Markets Pty Ltd
+						div KVB Kunlun Wealth Management Pty Ltd
+					div.contact__address-detail Level 38, 120 Collins Street, Melbourne, VIC 3000
+				+contactDetail
+					+contactItem('phone', 'Operator：1300 668 120（Only for Australia）')
+					+contactItem('earth-oversea', 'カスタマーサービス：+61 3 9660 1888')
+					+contactItem('message', 'Mandarin Hotline（9:00am-5:00pm）：+61 3 9660 1885')
+					+contactItem('phone', 'Wealth Management Hotline（9:00am-5:00pm）：+61 3 9660 1891')
+					+contactItem('fax', 'ファックス：+61 3 9660 1889')
+					+contactItem('mail', 'Eメール：melcs@kvbkunlun.com')
+			+contactBlock
+				+contactMain
+					div.contact__address-name トロント
+					div.contact__company
+						div KVB Kunlun Canada Inc.
+					div.contact__address-detail Suite 3600, Level 36, Exchange Tower, 130 King St. West, Toronto, M5X 1B1 Ontario
+				+contactDetail
+					+contactItem('phone', 'カスタマーサービス：+1 416 646 9188')
+					+contactItem('message', 'ファックス：+1 416 646 9185')
+					+contactItem('fax', 'Fax：+1 416 646 9199')
+					+contactItem('mail', 'Eメール：tor_gc@kvbkunlun.com')
+			+contactBlock
+				+contactMain
+					div.contact__address-name Hong Kong
+					div.contact__company
+						div KVB Kunlun Trading (Hong Kong) Limited, KVB Capital Markets Ltd
+					div.contact__address-detail Suite 6801, 68/F, International Commerce Centre, 1 Austin Road West, Kowloon
+				+contactDetail
+					+contactItem('phone', 'カスタマーサービス：+852 3701 8188')
+					+contactItem('fax', 'ファックス：+852 3701 8100')
+					+contactItem('mail', 'Eメール：hk_gc@kvbkunlun.com')
+			+contactBlock
+				+contactMain
+					div.contact__address-name Beijing
+					div.contact__company
+						div KVB Kunlun Beijing Representative Office
+					div.contact__address-detail 902, 9/F, Qihao Beijing, No.8 Xin Yuan Nan Road, Chaoyang District, Beijing
+				+contactDetail
+					+contactItem('phone', 'カスタマーサービス：+86 19 5922 2088')
+					+contactItem('mail', 'Eメール：bjinfo@kvbkunlun.com')
+			+contactBlock
+				+contactMain
+					div.contact__address-name Taipei
+					div.contact__company
+						div Banclogix System Co., Ltd
+					div.contact__address-detail 36F, Cathay Landmark, No.68, Sec. 5, Zhongxiao E. Rd., Xinyi Dist., Taipei
+				+contactDetail
+					+contactItem('phone', 'カスタマーサービス：+886 2 7710 9888')
+					+contactItem('fax', 'ファックス：+886 2 7710 9889')
+	section.section.contact-section.contact-form
+		div.container
+			h2.contact-section__heading We are dedicated to providing you the best service.
+			p.description 当社よりご返事いたしますので、今しばらくお待ちください。
+			div.row
+				div.col-xs-12.col-sm-6.col-md-3
+					div.form-group
+						input.form-control(type="text" placeholder="姓")
+					div.form-group
+						div.dropdown
+							button#productSelect.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+								span.contact-form__selected おたずねの商品およびサービス
+								span.caret: +icon('down', 'white')
+							ul.dropdown-menu(aria-labelledby="productSelect")
+								li: a Global Payment
+								li: a Corporate FX Advisory
+								li: a Cross-border e-Commerce Solution
+								li: a Fin-Tech Solution
+								li: a Global Wealth Management
+								li: a Fund, Insurance and Physical Gold
+					div.form-group
+						input.form-control(type="text" placeholder="ご連絡先電話番号 ")
+				div.col-xs-12.col-sm-6.col-md-3
+					div.form-group
+						input.form-control(type="text" placeholder="名称")
+					div.form-group
+						div.dropdown
+							button#officeSelect.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+								span.contact-form__selected おたずねの店舗
+								span.caret: +icon('down', 'white')
+							ul.dropdown-menu(aria-labelledby="officeSelect")
+								li: a Auckland
+								li: a Sydney
+								li: a Melbourne
+								li: a Toronto
+								li: a Hong Kong
+					div.form-group
+						input.form-control(type="text" placeholder="ご連絡先Eメール")
+				div.col-sm-12.col-md-6.col-xs-12
+					div.form-group.contact-form--area
+						label ご質問
+						textarea.form-control(row="6")
+			div.btn.btn-middle.btn-default--outline.contact-section__btn 送信

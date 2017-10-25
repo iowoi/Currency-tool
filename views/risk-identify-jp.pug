@@ -1,0 +1,26 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, '法人リスク分析')
+	+subNavbar--jp(2)
+	+pageIntro
+		p.description 当社は15年にわたり一貫して法人顧客を支援し可能な限り市場リスクの回避に努めて来ました。当社は、その過程で貴重な実務体験を蓄積し、異なる事業分野ごとに実用に即したモデルを開発しました。例えば、支払期間・取引通貨・リスク選好度・決済緊急度を変更した場合の比較です。当社は分析ツールCorpVisionを使用して、顧客がリスクに晒される機会を減らせるよう助言するとともに、ヘッジ戦略も提示しました。
+	section.section
+		div.container
+			+styledHeading('法人リスク分析', true)
+			div.risk.row
+				img(src=`${imgPath}/risk-identify/forex-trading-infographic-japanese.png` alt="risk-infography").col-md-6.risk__img
+				div.risk__intro.col-md-6
+					div.risk__intro--top
+						div.risk__title
+							|
+							span.risk__title--english CorpVision
+						div.risk__des CorpVision は分析用のツール・プラットフォームで、実際の発注と付随する外貨交換リスクを管理します。CorpVision はERP統合を実現し、実際に商品が発注された場合に、自動的に外貨交換リスクを割り出します。また内蔵のロジックを使い、発注商品と入手予定見込みに基づく助言を行います。当社は、この過程で時価コストを注意深く追跡します。また、外貨交換が執行され支払い要請が受理されたら、当該商品のコストを明示し利益損失予想を立てます。当社の法人顧客は、単なる額面価格だけでなく外貨交換レートを考慮した実際のコストに基づき当該商品の将来価格を容易に決定できます。
+					div.risk__intro--bottom
+						div.risk__title 主要な利得は?
+						div.risk__des 当社のリスク分析法は、多面的なアプローチを持つことで高い実用性を有しています。市場に出回っている分析法は単一分析であることが多いですが、当社の分析法は、外国為替取引の主要なブローカーとしての能力に根差していますので、網羅性でも正確度でも、これらに優ります。当社のリスク分析法は、季節特性・長期トレンド・短期市場動向予測を取り入れています。当社は、これらのファクターを重要度に応じで調整し分析精度を高めています。当社が見たところでは、多くの企業は外貨交換レートに起因するリスクをさほど気にかけません。しかしながら、2015年のスイスフラン危機、2016年のイギリスのEU脱退、2017年のアメリカ大統領選挙などすべてご覧のように、十分な知識に裏付けられたツールを使ってヘッジをかければ、ある程度まで損失を抑えることが出来ます。当社は、法人顧客にとって外貨交換リスクの管理を始めることが肝要であると信じます。過去およそ30年間に及ぶ当社の観察によると、業界で事業の拡大のみならず利益の確保に努めた企業は、終局的に各々の市場分野を制しています。
+	+foreignExchangeProduct--jp
+	+contactArea--jp

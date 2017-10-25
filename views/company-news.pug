@@ -1,0 +1,37 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/company-news/banner-market-insight.jpg`, '公司新闻')(class="with-dropdown")
+		div.dropdown
+			button#yearSelect.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+				span.contact-form__selected 2017 年
+				span.caret: +icon('down', 'white')
+			ul.dropdown-menu(aria-labelledby="yearSelect")
+				li: a 2016 年
+				li: a 2015 年
+				li: a 2014 年
+	div.news
+		+cardSection('gray')(class="grid-stack--basic-mobile")
+			+card-2-1(0, 0, '2017年3月30日', 'KVB昆仑国际受邀广州IEBE电商盛会','right')(style=`background-image: url(${imgPath}/company-news/news-tile-１.jpg)`)
+				p.description.grid-stack__description
+					| 2017年3月26日，国内规模最大的电商专业展 — 2017 IEBE（广州）国际电子商务博览会在广州开幕，KVB昆仑国际环球资本集团受邀参展。
+			+card-2-1(0, 1, '2016年4月9日', 'KVB昆仑国际之夜 上演“妹”力永恒','left')(style=`background-image: url(${imgPath}/company-news/news-tile-3.jpg)`)
+				p.description.grid-stack__description
+					| KVB昆仑国际之夜 - 张惠妹乌托邦悉尼演唱会于4月8日在悉尼奥林匹克中心上演。超过三小时的“妹”力风暴，近2万华人全场KTV式...
+			+card-1-2(2, 0, '2017年2月14日', '百舸争流勇为先！悉尼情人港水上竞渡点燃海外新春')(style=`background-image: url(${imgPath}/company-news/news-tile-2.jpg)`)
+				p.description.grid-stack__description
+					| 2017年2月11日，澳洲悉尼情人港聚集了全澳顶级龙舟赛队伍，100场水上竞渡，吸引了全澳逾3000名选手参赛...
+			+card-1-2(0, 2, '2016年2月20日', '中国企业亟须发展外汇管理软实力')(style=`background-image: url(${imgPath}/company-news/news-tile-5.jpg)`)
+				p.description.grid-stack__description
+					| 进入2016年，随着中国经济结构调整、GDP增速放缓，市场上充斥着许多关于中国经济的危机论，有些声音认为中国经济将进入寒冬...
+			+card-2-1(1, 2, '2016年2月15日', '昆仑贺新年 百猴闹新春','right')(style=`background-image: url(${imgPath}/company-news/news-tile-6.jpg)`)
+				p.description.grid-stack__description
+					| 在刚刚过去的两个新春周末，澳洲悉尼车士活市Chatswood猴年农历春节庆典和墨尔本中国年庆典热烈举办，两地华人社团、政商名人齐聚，共祝新春。
+			+card-2-1(1, 3, '2016年4月9日', 'KVB昆仑国际之夜 上演“妹”力永恒','left')(style=`background-image: url(${imgPath}/company-news/news-tile-7.jpg)`)
+				p.description.grid-stack__description
+					| KVB昆仑国际之夜 - 张惠妹乌托邦悉尼演唱会于4月8日在悉尼奥林匹克中心上演。超过三小时的“妹”力风暴，近2万华人全场KTV式...
+	section.section.section--gray.loading-more__outline
+		div.loading-more__area
+			button.loading-more__btn 载入更多

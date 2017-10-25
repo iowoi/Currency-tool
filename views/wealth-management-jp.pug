@@ -1,0 +1,80 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	+banner(`${imgPath}/wealth-management/wealth-management-herobanner.jpg`, '資産運用')
+	+pageIntro
+		p.description KVBは、専門の金融サービス会社として、法人、リテールに関わらず、投資計画から資産運用に及ぶ総合的なソリューションを提供いたします。
+	section.section.section--gray
+		+styledHeading('多様なサービス', true)
+		div.container
+			div.row.row--same-height
+				div.col-sm-6
+					div.service-card
+						div.service-card__img(style=`background-image: url(${imgPath}/wealth-management/tile-wealth-manage-business.jpg)`)
+							div.service-card__title
+								img(src=`${imgPath}/numbers/1.png` alt="1")
+								h3.service-card__heading 法人資産運用
+						div.service__down
+							div.service__arrow-up
+							div.service__list
+								div.service__list--title 外貨預金
+								div.service__list--des 代表的な5大通貨の外貨預金を競争力の高い金利と共に提供します。
+							div.service__list
+								div.service__list--title 交換レート投資
+								div.service__list--des デュアルカレンシー預金と交換レート連動預金を提供します。
+							div.service__list
+								div.service__list--title 債権
+								div.service__list--des オーストラリア国債及び信用力の高い外国の社債及び銀行債 を提供します。
+							div.service__list
+								div.service__list--title 株式投資
+								div.service__list--des オーストラリアの高成長企業に対するカスタマイズされた株式投資機会を提供します。
+							div.service__list
+								div.service__list--title 海外株式を担保とした融資
+								div.service__list--des 競争力の高い利率により資金流動性を高めます。
+				div.col-sm-6
+					div.service-card
+						div.service-card__img(style=`background-image: url(${imgPath}/wealth-management/tile-wealth-manage-personal.jpg)`)
+							div.service-card__title
+								img(src=`${imgPath}/numbers/2.png` alt="2")
+								h3.service-card__heading 個人資産運用
+						div.service__down
+							div.service__arrow-up
+							div.service__list
+								div.service__list--title 投資移住計画
+								div.service__list--des 移住要件を満たし新たな海外生活を始める方に現地事情と投資アドバイスの。
+							div.service__list
+								div.service__list--title 国際株式投資
+								div.service__list--des 当社を通して、 アメリカ・オーストラリア・ニュージーランド・香港・シンガポールの株式市場にアクセスできます。
+							div.service__list
+								div.service__list--title 投資信託
+								div.service__list--des REITやその他の不動産投資信託など地域と業種を超えたポートフォリオの管理を行います。
+							div.service__list
+								div.service__list--title 仕組債
+								div.service__list--des カスタマイズされた投資計画を提供し市場リスクのエクスポージャーと取引コストを軽減します。
+							div.service__list
+								div.service__list--title 海外ファミリーファンド
+								div.service__list--des 顧客の家族信託を設立し後世のために資産を守れるよう支援します。
+							div.service__list
+								div.service__list--title プライベートエクイティ
+								div.service__list--des 海外の金融資産・有形資産に対するプライベートエクイティ投資の機会を提供します。
+							div.service__list
+								div.service__list--title 貴金属の現物取引及び保管
+								div.service__list--des 金 や銀の取引および安全な保管、自宅への配送サービスを提供します。
+							div.service__list
+								div.service__list--title 海外金融助言
+								div.service__list--des 海外事業のリサーチ、教育、観光、家探し、留学、慈善事業、芸術品収集集など何であれ、豊富な現地情報と現地専門家のネットワークを駆使して真摯な助言を提供します。
+	section.section.more.section--gray
+		div.container
+			div.more__content
+				+styledHeading('Explore More')
+				div.more__list
+					div.more__item
+						div.more__info
+							h4.text-primary Check Out Our Portfolio Examples
+							p.description.text-muted Please note some services are only applicable in some countries and may only be opened up for “Professional or Sophisticataed Investors” only.
+						+readmore('more', 'blue', true, 'comprehensive-intro-jp')
+						div.clearfix
+	+contactArea--jp

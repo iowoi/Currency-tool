@@ -1,0 +1,53 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	+banner(`${imgPath}/international-pay/corporate-fx-herobanner.jpg`, 'Global Payment')
+	+pageIntro
+		p.description KVB Kunlun Global Capital Limited has its own global remittance network, providing customers with fast and secure foreign currency payment service. We provide settlement to world’s 120 plus different currencies, covering all of the OECD list and One-Belt-One-Road countries. We know how foreign exchange rate fluctuation may adversely affect our clients. Therefore, we have provided a flexible product list such as forward contracts, NDFs, swaps, and other hedged derivatives to cater different business requirements on risk appetite, margin ratio, funding, as well as settlement urgency.
+		p.description At the same time, we are happy to offer you our electronic straight-through-processing trading platform so you can enjoy your trading of currencies, settling of payments, and reviewing your account movement online anytime, anywhere in the world.
+	section.section.international-pay(style=`background-image: url(${imgPath}/international-pay/feature-bg.jpg)`)
+		+styledHeading('Why do our customers choose KVB?', true)
+		div.container
+			div.text-center.international-pay__heading Our professional customer service team will assist you in every step of the way of your business expansion and growth.
+			div.text-center.international-pay__subheading We are your ideal business partner.
+			div.row
+				div.col-sm-6.col-md-6
+					div.international-pay__card
+						div.international-pay__card-title Our eFX online trading platform brings you
+							br
+							| closer to foreign exchange market
+						div.international-pay__card-list
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text Live tradable rates for single click order execution
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text accounts indicating live balance, settlement progress, payment request, and full set of trading history
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text Your access to the market is ensured whenever it is needed
+				div.col-sm-6.col-md-6
+					div.international-pay__card
+						div.international-pay__card-title Our Foreign Exchange industry experts will assist you in understanding how fluctuation in this market will affect your corporate cash flows.
+							br
+							| In the past, we have already assisted our customers on:
+						div.international-pay__card-list
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text faster supply-chain financing using cutting-edge payment tools
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text stronger hedging performance using adequate derivatives to increase profit margin
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text globalized settlement network covering 129 currencies for trading remittance
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text smarter adoption on offshore CNY to hedge and to enjoy benefit of spread differentials.
+			div.service
+				div.text-center.service__title We are dedicated to providing you the best service.
+				div.text-center.description.service__des If you are interested in our offerings, please leave your contact information and we will reach out to you.
+				+link('contact-en', 'Contact Us')(class="btn btn-middle btn-default--outline service__btn")

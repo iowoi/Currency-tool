@@ -1,0 +1,233 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	- var imgPath = isDev ? 'img' : './assets/img'
+	div.main-slider
+		div.main-slider__slide(style=`background-image: url(${imgPath}/carousel/dark-sky.jpg)`)
+			div.container
+				div.main-slider__content
+					h1.main-slider__name 新征程，新未来
+					p.main-slider__description 欢迎使用 KVB 昆仑国际环球资本集团全新网站！
+		div.main-slider__slide(style=`background-image: url(${imgPath}/carousel/dark-sky.jpg)`)
+			div.container
+				div.main-slider__content
+					h1.main-slider__name 新征程，新未来
+					p.main-slider__description 欢迎使用 KVB 昆仑国际环球资本集团全新网站！
+	div.highlight
+		div.container
+			div.clearfix
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('member', 'blue')
+							div.media-body
+								div.media-heading.media__heading 在线开户
+								span.media__subheading 开立您的帐户
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('payclick', 'blue')
+							div.media-body
+								div.media-heading.media__heading eFX 登陆
+								span.media__subheading 在线结算支付
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('outpay', 'blue')
+							div.media-body
+								div.media-heading.media__heading KVBPay 登陆
+								span.media__subheading 帐户入金/出金
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('downloadapp', 'blue')
+							div.media-body
+								div.media-heading.media__heading APP 下载
+								span.media__subheading 移动端应用
+	section.section.section--gray.exchange-rate
+		div.container.exchange-rate__content
+			+styledHeading('通过汇率转换及报价工具，了解您的潜在兑换需求', true)
+			div.exchange-rate__list
+				each val in [1, 2, 3, 4]
+					div.exchange-brief.exchange-brief--fall
+						div.exchange-brief__info
+							h6.exchange-brief__target 欧元 / 美元
+							div.exchange-brief__compare
+								span.exchange-brief__name BID
+								span.exchange-brief__number 1.116
+							div.exchange-brief__compare
+								span.exchange-brief__name ASK
+								span.exchange-brief__number 1.11164
+							div.exchange-brief__summary
+								span.exchange-brief__percentage
+									| 0.151%
+									+icon('down-rate', 'red')
+								span.exchange-brief__chart
+									+icon('sparkline-down')
+					div.exchange-brief.exchange-brief--rising
+						div.exchange-brief__info
+							h6.exchange-brief__target 欧元 / 美元
+							div.exchange-brief__compare
+								span.exchange-brief__name BID
+								span.exchange-brief__number 1.116
+							div.exchange-brief__compare
+								span.exchange-brief__name ASK
+								span.exchange-brief__number 1.11164
+							div.exchange-brief__summary
+								span.exchange-brief__percentage
+									| 30.11%
+									+icon('up-rate', 'green')
+								span.exchange-brief__chart
+									+icon('sparkline-up')
+			div.exchange-rate__tools
+				+exchangeTools()
+			div.exchange-rate__caption
+				p.exchange-rate__description 报价为国际银行同业市场参考报价，仅供参考。KVB 昆仑国际的实际交易汇率会因产品、金额和服务区域等因素而有所不同，请向 KVB 昆仑国际各公司查询。
+				+link('exchange-rate', '打开全部汇率图及工具')(class="btn btn-default btn-lg btn-primary--outline exchange-rate__btn")
+	+cardSection('gray-dark')(class="index-grids")
+		+card-2-2('产品及服务', '国际结算与支付', 'international-pay')(style=`background-image: url(${imgPath}/grid-wall/01.jpg)`)
+			p.description.grid-stack__description
+				| 全球顶尖持牌非银行类金融机构，全球 129 种主要货币的结算至支付。专注服务全球贸易及商业机构十六年，在全球 4 个国家 6 个国际城市网络布局。
+		+card-1-1(2, 0, '专家专栏', '李生论金：金价不破 1228 谈底过早，油价反抽 45.70 布局空', 'Jul 5, 2017', 'expert-columns')(class='grid-stack__simple' style='background-color: #56E0E6')
+			p.description.description--ellipsis.grid-stack__description
+				| 即使生活给你一地鸡毛，你也要将他扎成漂亮的鸡毛撢子，哪怕
+		+card-1-1(2, 1, '公司新闻', '新征程，新未来，隆重介绍 KVB Global Markets 有限公司', 'Sep 1, 2016', 'company-news')(class='grid-stack__simple' style='background-color: #267DC7')
+			p.description.description--ellipsis.grid-stack__description
+				| 在过去 8 年中，我们位于新西兰及澳大利亚的 KVB FX Ltd
+		+card-2-1(0, 2, '产品及服务', '跨境电商外汇解决方案', 'right', null, 'foreign-exchange-solution')(style=`background-image: url(${imgPath}/grid-wall/02.jpg)`)
+			p.description.grid-stack__description
+				| 为您提供从商业到个人的全链条资金规划、家族财富管理和资产配置的一站到位服务，把空全球投资及财富趋势。
+		+card-1-1(2, 2, '产品及服务', '全球资产与财富管理', null, 'wealth-management')(style=`background-image: url(${imgPath}/grid-wall/03.jpg)`)
+			p.description.grid-stack__description
+				| 为您提供从商业到个人的全链条资金规划、家族财富管理和资产配置的一站到位服务，把控全球投资及财富趋势。
+		+card-1-2(0, 3, '产品及服务', '基金、保险及黄金', null, null, 'product')(style=`background-image: url(${imgPath}/grid-wall/04.jpg)`)
+			p.description.grid-stack__description
+				| 多元化另类投资及衍生产品，满足您更加复杂的金融需求。
+		+card-2-1(1, 3, '产品及服务', '企业外汇管理', 'right', null, 'foreign-exchange-process')(style=`background-image: url(${imgPath}/grid-wall/05.jpg)`)
+			p.description.grid-stack__description
+				| 最优化的企业外汇管理方案及流程咨询，帮助更多企业控制资本风险，缓解资金周转压力，抵御汇价波动风险。
+		+card-2-1(1, 4, '产品及服务', '金融科技', 'left', null, 'fintech')(style=`background-image: url(${imgPath}/grid-wall/06.jpg)`)
+			p.description.grid-stack__description
+				| 透过领先金融科技，打造企业核心竞争力及企业软实力，以智能化及电子化突破传统业务瓶颈。
+	- var cities = [{ en: 'Auckland', ch: '奥克兰', ltd: 'KVB Global Markets Ltd', addressEn: 'Level 10, Tower 1, 205 Queen Street', addressCh: '奥克兰 新西兰', operator: '+64 9 359 8988', phone: '(9:00am–5:00pm)：+64 9 359 8985', fax: '+64 9 359 8989', email: 'akl_gc@kvbkunlun.com'}, { en: 'Sydney', ch: '悉尼', ltd: 'KVB Global Markets Pty Ltd, KVB Kunlun Wealth Management Pty Ltd', addressEn: 'Level 18, Citigroup Centre, 2 Park Street, Sydney, NSW 2000', addressCh: '悉尼 澳大利亚', operator: '1300 668 120（仅澳洲适用)', phone: ' (9:00am–5:00pm)：+61 2 8263 0185', fax: '+61 2 8263 0189', email: 'info@kvbkunlun.com' }, { en: 'Melbourne', ch: '墨尔本', ltd: 'KVB Global Markets Pty Ltd, KVB Kunlun Wealth Management Pty Ltd', addressEn: 'Level 38, 120 Collins Street, Melbourne, VIC 3000', addressCh: '墨尔本 澳大利亚', operator: '1300 668 120（仅澳洲适用）', phone: '(9:00am–5:00pm)：+61 3 9660 1885', fax: '+61 3 9660 1889', email: 'melcs@kvbkunlun.com' }, { en: 'Toronto', ch: '多伦多', ltd: 'KVB Kunlun Canada Inc.', addressEn: 'Suite 3600, Level 36, Exchange Tower, 130 King St. West, Toronto, M5X 1B1 Ontario', addressCh: '多伦多 加拿大', operator: '+1 416 646 9188', phone: '+1 416 646 9185', fax: '+1 416 646 9199', email: 'tor_gc@kvbkunlun.com' }, { en: 'Hong Kong', ch: '香港', ltd: 'KVB Kunlun Trading (Hong Kong) Limited, KVB Capital Markets Ltd', addressEn: 'Suite 6801, 68/F, International Commerce Centre, 1 Austin Road West, Kowloon', addressCh: '香港 中国', operator: '+852 3701 8188', phone: '', fax: '+852 3701 8100', email: 'hk_gc@kvbkunlun.com' }, { en: 'Beijing', ch: '北京', ltd: '', addressEn: 'KVB昆仑国际上市公司北京代表处', addressCh: '北京市新源南路8号北京启皓中心西塔9层902', operator: '+86 10 5922 2088', phone: '', fax: '', email: 'bjinfo@kvbkunlun.com' }, { en: 'Taipei', ch: '台北', ltd: 'Banclogix System Co.,Ltd', addressEn: '', addressCh: '台北市信义区忠孝东路五段68号36楼', operator: '+886 2 7710 9888', phone: '', fax: '+886 2 7710 9889', email: '' }]
+	section.section.section--no-spacing.visible-sm.visible-xs
+		div#accordion.panel-group.current-city--tablet(role='tablist' aria-multiselectable='true')
+			div.panel.panel-default
+				div#auckland.panel-heading(role='tab' style=`background-image: url(${imgPath}/location/mobile/auckland.jpg)`)
+					h4.panel-title
+						a(role='button' data-toggle='collapse' data-parent='#accordion' href='#aucklandCollapse' aria-expanded='true' aria-controls='aucklandCollapse')
+								span Auckland 奥克兰
+				div#aucklandCollapse.panel-collapse.collapse.in(role='tabpanel' aria-labelledby='auckland')
+					div.panel-body
+						div.current-city__content
+							div.current-city__detail
+								+icon('checkin', 'blue')
+								div.current-city__info
+									p.current-city__ltd KVB Global Markets Ltd
+									p.current-city__address Level 10, Tower 1, 205 Queen Street
+									p.current-city__address.current-city__county 奥克兰 新西兰
+							div.current-city__contact
+								ul.list-unstyled
+									li
+										+icon('phone', 'blue')
+										span.current-city__contact-info 总机号码：+64 9 359 8988
+										span.clearfix
+									li
+										+icon('message', 'blue')
+										span.current-city__contact-info 中文专线（9:00am-5:00pm）：+64 9 359 8985
+										span.clearfix
+									li
+										+icon('fax', 'blue')
+										span.current-city__contact-info 传真：+64 9 359 8989
+										span.clearfix
+									li
+										+icon('mail', 'blue')
+										span.current-city__contact-info 邮箱：akl_gc@kvbkunlun.com
+										span.clearfix
+
+			each city in cities.slice(1)
+				- var name = city.en.toLowerCase().replace(' ', '')
+				- var imgUrl = `${imgPath}/location/mobile/${name}.jpg`
+				div.panel.panel-default
+					div.panel-heading(id=name role='tab' style=`background-image: url(${imgUrl})`)
+						h4.panel-title
+							a.collapsed(role='button' data-toggle='collapse' data-parent='#accordion' href=`#${name}Collapse` aria-expanded='false' aria-controls=`${name}Collapse`)
+								span #{city.en} #{city.ch}
+					div.panel-collapse.collapse(id=`${name}Collapse` role='tabpanel' aria-labelledby=name)
+						div.panel-body
+							div.current-city__content
+								div.current-city__detail
+									+icon('checkin', 'blue')
+									div.current-city__info
+										p.current-city__ltd #{city.ltd}
+										p.current-city__address #{city.addressEn}
+								div.current-city__contact
+									ul.list-unstyled
+										li
+											+icon('phone', 'blue')
+											span.current-city__contact-info 总机号码：#{city.operator}
+											span.clearfix
+										li
+											+icon('message', 'blue')
+											span.current-city__contact-info 中文专线#{city.phone}
+											span.clearfix
+										li
+											+icon('fax', 'blue')
+											span.current-city__contact-info 传真：#{city.fax}
+											span.clearfix
+										li
+											+icon('mail', 'blue')
+											span.current-city__contact-info 邮箱：#{city.email}
+											span.clearfix
+	section.section.section--no-spacing.hidden-xs.hidden-sm
+		div.cities.cities__slide
+			each city, idx in cities
+				- var classes = (idx === 0) ? 'active' : ''
+				- var imgUrl = `${imgPath}/location/${city.en.toLowerCase().replace(' ', '')}.jpg`
+				div.city(class=classes data-target=city.en style=`background-image: url(${imgUrl})`)
+					div.city__content
+						div.city__name
+							div.city__en #{city.en}
+							div.city__ch #{city.ch}
+		each city, idx in cities
+			- var mapUrl = `${imgPath}/location/maps-${city.en.toLowerCase().replace(' ', '')}.jpg`
+			div.clearfix.no-gutters.row--same-height.current-city(data-target=city.en style=(idx ? 'display: none' : ''))
+				div.col-lg-4.col-md-5.current-city__map(style=`background-image: url(${mapUrl})`)
+				div.col-lg-8.col-md-7
+					div.current-city__content
+						h1.current-city__name
+							+icon('checkin', 'blue')
+							| #{city.en} #{city.ch}
+						div.clearfix
+							div.col-lg-5.col-md-12.current-city__detail
+								p.current-city__ltd #{city.ltd}
+								p.current-city__address #{city.addressEn}
+								p.current-city__address #{city.addressCh}
+							div.col-lg-7.col-md-12.current-city__contact
+								ul.list-unstyled
+									li
+										+icon('phone', 'blue')
+										span.current-city__contact-info 总机号码：#{city.operator}
+										span.clearfix
+									li
+										+icon('message', 'blue')
+										span.current-city__contact-info 中文专线#{city.phone}
+										span.clearfix
+									li
+										+icon('fax', 'blue')
+										span.current-city__contact-info 传真：#{city.fax}
+										span.clearfix
+									li
+										+icon('mail', 'blue')
+										span.current-city__contact-info 邮箱：#{city.email}
+										span.clearfix

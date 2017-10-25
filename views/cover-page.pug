@@ -1,0 +1,60 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/cover-page/newsingle-herobanner.jpg`, 'KVB昆仑国际之夜 上演"妹"力永恒')(class="banner--text-s")
+	section.section.section--gray.cover-page__outline
+		div.container.cover-page__container
+			div.share__block
+				div.share__text 分享
+				a(href='#')
+					+icon('mail-lineal', 'blue')
+				a(href='#')
+					+icon('share', 'blue')
+				div.flip-page__group
+					a.prev-page.disable(href='#')
+						+icon('arrow-left', 'white')
+					a.next-page(href='#')
+						+icon('arrow-right-white', 'white')
+			div.cover-page__content
+				div.cover-page__intro KVB昆仑国际之夜 - 张惠妹乌托邦悉尼演唱会于4月8日在悉尼奥林匹克中心上演。超过三小时的“妹”力风暴，近2万华人全场KTV式的合唱派对，HIGH爆了当晚的悉尼。
+			div.title-photo(style=`background-image: url(${imgPath}/cover-page/pic-big1.jpg)`)
+			div.cover-page__content
+				div.cover-page__des 此次KVB昆仑国际之夜张惠妹演唱会，在名列全球10大演出场馆之一的悉尼奥林匹克中心Allphone Arena上演，两周前，这个场馆刚刚成功举办了流行音乐天后 - 麦当娜的悉尼巡演，而此次亚洲流行音乐天后张惠妹的来临，同样令人期盼。这次演艺盛事，除了悉尼本地华人，也吸引了来自墨尔本、布里斯班、黄金海岸、甚至新加坡和中国远程而来的歌迷。万人狂欢派对，蓄势待发。在演出前一个多小时，位于场地大厅的KVB昆仑国际展位便排起了长龙，工作人员为各地歌迷准备的阿妹签名照片和免费礼物让热情粉丝蜂拥而至，纷纷争先领取，并在现场拍照留念。
+			div.section-photo__outline
+				div.section-photo(style=`background-image: url(${imgPath}/cover-page/pic-medium-left.jpg)`)
+				div.section-photo(style=`background-image: url(${imgPath}/cover-page/pic-medium-right.jpg)`)
+			div.cover-page__content
+				div.cover-page__des--small 当阿妹柔情又略带沙哑的《听海》唱响时，全场顷刻化作万人歌海。《彩虹》的大爱与深情，更令大家抛下所有界限，拥抱和亲吻身边所爱的人。一首首经典的“妹”式情歌，婉转细腻，沙哑动情，像一段柔丝慢慢钻进所有人心里。
+				div.cover-page__des.cover-page__margin-bottom 演出开始之际，当KVB昆仑国际全新广告片 - “决胜千里” 在舞台大荧幕震撼播出时，紧凑动感的配乐将观众情绪推向高点，为接下来的演出带起激昂基调。阿妹一出场，以一首《开门见山》的爆发式开唱，在现场投入一颗“空气炸弹”，瞬间将场馆气氛点燃至热。随后的一连串快歌豪爽痛快，不拖泥带水，让全场观众情不自禁地跟随音乐晃动。演出临近尾声，悉尼歌迷整晚展现出的超高热情，让阿妹惊讶和感动，在鸣谢KVB昆仑国际为演出所做的精彩安排并离开舞台后，又忍不住重登舞台进行返场表演，令悉尼演出成为张惠妹全球38场巡演中仅有的两场返场表演之一。
+			div.cover-page--photo(style=`background-image: url(${imgPath}/cover-page/pic-small.jpg)`)
+			div.cover-page__content
+				div.cover-page__des “活出真我 ，永不放弃” 是张惠妹带给每个歌迷的勉励，从激荡的青春到如今的成熟，阿妹一路用音乐陪伴大家。作为此次张惠妹悉尼演唱会的冠名赞助机构，为了让大家提前感受阿妹演唱会的热烈气氛，KVB昆仑国际更在演唱会前2个月，便鼎力支持多场深入社区的路演，开展不同类型的活动邀请当地华人参与，并免费送出演唱会门票，让歌迷可以一睹偶像风采。
+			div.section-photo__outline
+				div.section-photo(style=`background-image: url(${imgPath}/cover-page/pic-medium-bottom-left.jpg)`)
+				div.section-photo(style=`background-image: url(${imgPath}/cover-page/pic-medium-bottom-right.jpg)`)
+			div.cover-page__content
+				div.cover-page__des--small KVB昆仑国际诚.智相伴海外华人十五年，不仅为海外华人带来国际领先的金融产品和服务，也一直鼎力支持当地高质量的艺术活动，丰富海外华人文化生活。
+				div.cover-page__des 从张学友、费翔、汪峰，再到此晚的张惠妹，透过与这些华语乐坛天王天后的合作，KVB昆仑国际感恩能给大家带来一次又一次的精彩和一个个难忘夜晚。在未来的日子，我们会继续与全球华人一同分享更多国际级高水准演出，为大家制造更多共同欢度的美好时光。
+			div.share__block.share__block--stick-bottom
+						div.share__text
+							a(href='#') 分享
+						+icon('mail-lineal', 'blue')
+						+icon('share', 'blue')
+						div.flip-page__group
+							a.prev-page.disable(href='#')
+								+icon('arrow-left', 'white')
+							a.next-page(href='#')
+								+icon('arrow-right-white', 'white')
+	section.section.section--gray.more
+		div.container
+			div.more__content
+				+styledHeading('相关新闻')
+				div.more__list
+					div.more__item
+						div.more__info
+							h4.text-primary 中华小姐环球大赛澳洲赛事圆满落幕
+							p.description.text-muted 2016年凤凰卫视中华小姐环球大赛澳洲赛区总决赛于7月30日晚在⋯⋯
+						+readmore('详情', 'blue', true)
+						div.clearfix

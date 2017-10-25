@@ -1,0 +1,55 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	- var imgPath = isDev ? 'img' : './assets/img'
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, 'Corporate FX Management')
+	+subNavbar--en(3)
+	+pageIntro
+		p.description We have seen importers/exporters facing evolved market competition due to rapid changing economy and technology. Challenges from traditional product-chain and sales-chain are becoming even fiercer, but core risks from funding, payment as well as foreign exchange management are taking heavier tolls to companies as well. We know your pain points and this is why we take pride to offer you our advanced corporate FX advisory service.
+		p.description No matter you are a MNE or a bilateral commerce company, our advisory service will assist you in finding any shortcuts in turning your cash flow faster by adopting KVB’s global trading and settlement service. Our competitive wholesale pricing will reduce your foreign exchange cost as well as increase profit margins. We have serviced thousands of commercial customers over the past 16 years and continue to expand our radar to more countries and regions.
+	+cardSection('gray', 'Corporate FXAdvisory')(class="grid-stack--basic-mobile process-cards en-site")
+		+card-3-1--en(0, 0, 'Our FX Management Platform Components and Advantage:', 'right')(style=`background-image: url(${imgPath}/grid-wall/05.jpg)`)
+			+checkList(['Electronic trading and FX management platform for corporations', 'Key modules including FX Trading, Counterparty Price Pooling, Dealing Book Analytics, Settlement Approval, Nostro/Vostro Capacity, SWIFT Integration, Accounting Ledgers, Risk Analytics, Revaluation, and Prime Broker Module. We are also a truly reliable global liquidity provider for your international currency settlement and payment need. ', 'Module implementation that caters your phased-requirement to avoid big bang hassle.', 'Provide system security advisory service and implementation assistance.'])
+		+card-1-2--en(0, 1, '', 'Through our services you will enjoy the benefits of:')(style=`background-image: url(${imgPath}/grid-wall/01.jpg)`)
+			+checkList(['reduced impacts from foreign exchange rate fluctuations to your business', 'reduced impacts to unexpected and adverse future market events', 'enhanced cash flow utilization and turn-around speed'])
+		+card-2-1--en(1, 1, '', 'Our Advisory Components and Advantage:', 'right')(style=`background-image: url(${imgPath}/grid-wall/02.jpg)`)
+			+checkList([' Sophisticated System Architect', 'Advanced Fin-tech capacity', 'Experienced Business Analysts','Elite Business Consultants'])
+		+card-2-1--en(1, 2, '', 'We Offer Flexible Management Tools', 'left')(style=`background-image: url(${imgPath}/grid-wall/03.jpg)`)
+			+checkList(['Spot Contract', 'Forward Contract', 'Swap Contract', 'Non-deliverable Forward Contract (NDF)'])
+	section.section.cooperation-case
+		div.container
+			+styledHeading('Actual Examples')
+			div.row
+				div.col-sm-5.col-md-4.cooperation-case__intro
+					div.cooperation-case__card
+						a.cooperation-case__issue(href='#') example1
+						div.cooperation-case__company An Australian Importer of Marine Products
+						div.description.cooperation-case__brief The Company started its operation in 2005 and acquired KVB’s service a year later. Since the intrinsic value of each cargo shipment was quite substantial, any adverse movement in exchange rate could result in huge and unbearable loss to the Company. The question of how to control this seemingly uncontrollable factor had become the Company’s key concern.
+					div.cooperation-case__card
+						a.cooperation-case__issue(href='#') example2
+						div.cooperation-case__company An Australian Office Supplies Provider
+						div.description.cooperation-case__brief Headquartered in Melbourne, the Company specializes in supplying customized orders for bigger conglomerates. The Company imports raw materials from Europe and assembles in its Melbourne and Shanghai warehouses. Its product to market time depends on many factors and often exposed to longer window of exchange rate risks.
+					div.cooperation-case__card
+						a.cooperation-case__issue(href='#') example3
+						div.cooperation-case__company An Australian Importer of Marine Products
+						div.description.cooperation-case__brief The Company started its operation in 2005 and acquired KVB’s service a year later. Since the intrinsic value of each cargo shipment was quite substantial, any adverse movement in exchange rate could result in huge and unbearable loss to the Company. The question of how to control this seemingly uncontrollable factor had become the Company’s key concern.
+					div.cooperation-case__card
+						a.cooperation-case__issue(href='#') example4
+						div.cooperation-case__company An Australian Office Supplies Provider
+						div.description.cooperation-case__brief Headquartered in Melbourne, the Company specializes in supplying customized orders for bigger conglomerates. The Company imports raw materials from Europe and assembles in its Melbourne and Shanghai warehouses. Its product to market time depends on many factors and often exposed to longer window of exchange rate risks.
+				div.col-sm-7.col-md-offset-1.cooperation-case__detail
+					div.cooperation-case__section
+						+icon('checklist', 'white')
+						div.cooperation-case__content
+							div.cooperation-case__title Solution
+							div.description.cooperation-case__description Over the past 10 years, the Company’s directors have been communicating with KVB’s relationship managers almost on a daily basis. Apart from gathering firsthand information on how market moves the   directors also share with KVB their business requirement pertaining to each shipment. Together they formed customized risk hedging strategies using a combination of outright contracts with long term derivatives. This combination of both adequate product selection and personal advisory by truly understanding customer’s business has enable the Company to an organic growth which ultimately brings it to the largest marine importers in Melbourne.
+					div.cooperation-case__section
+						+icon('checkboard', 'white')
+						div.cooperation-case__content
+							div.cooperation-case__title Results
+							div.description.cooperation-case__description Together with the Company’s dedication to this business and KVB’s professional assistance, the Company has soon acquired the biggest percentage of the market share in Melbourne. KVB shall continue to assist the Company to a sustained future growth.
+	+foreignExchangeProduct--en
+	+contactArea--en

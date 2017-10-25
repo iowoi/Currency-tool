@@ -1,0 +1,52 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/international-pay/corporate-fx-herobanner.jpg`, '国际结算与支付')
+	+pageIntro
+		p.description KVB 昆仑国际环球资本应用自有全球汇款网络，为客户提供快速、安全的外币速汇收付服务。结算货币种类囊括了全球十余种主流货币在内的 100 多种货币（如离岸人民币、美元、欧元、日元、英镑、瑞郎、澳元、纽元、加元、港币、新加坡元等）。我们了解外汇市场波动对企业客户之影响，专门提供不同合约日期及金额的敞口锁价合约、外汇远期合约、外汇掉期合约、不交割外汇远期合约等衍生品产品，以满足进出口企业不同的结算、避险以及资金链需求。
+		p.description 同时，KVB 将传统的外汇交易、结算及支付环节全程电子化，联合推出 KVBPay 环球支付电子平台及 eFX 线上交易平台，令您无论何时何地都能享受在线支付和交易的便利。
+	section.section.international-pay(style=`background-image: url(${imgPath}/international-pay/feature-bg.jpg)`)
+		+styledHeading('为什幺选择 KVB 昆仑国际？', true)
+		div.container
+			div.text-center.international-pay__heading 专业客户服务团队，帮您解决问题、扫清障碍！
+			div.text-center.international-pay__subheading KVB 昆仑国际是伴您企业快速成长的有力伙伴！
+			div.row
+				div.col-sm-6.col-md-6
+					div.international-pay__card
+						div.international-pay__card-title eFX 线上交易平台让您
+							br
+							| 随时随地掌握外汇市场脉搏
+						div.international-pay__card-list
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 随时查看市场波动，抓住最佳购汇时机
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 查看多币种账户余额、下单支付货款、查看历史交易记录和付款记录
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 保证您在需要时能够第一时间进入市场
+				div.col-sm-6.col-md-6
+					div.international-pay__card
+						div.international-pay__card-title 货币专家助您了解外汇波动如何影响企业现金流！
+							br
+							| 过去，我们已经帮助客户实现：
+						div.international-pay__card-list
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 通过更快的支付来加快供应链管理
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 充分利用金融避险工具，保障企业利润空间
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 使用129种货币实现全球贸易结算
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 使用离岸人民币结算，节约营商成本
+			div.service
+				div.text-center.service__title 我们竭诚为您服务！
+				div.text-center.description.service__des 若对我们的产品或服务感兴趣请留言，我们将会尽快与您联络。
+				+link('contact', '联系我们')(class="btn btn-middle btn-default--outline service__btn")

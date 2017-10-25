@@ -1,0 +1,116 @@
+include ../helpers/mixins
+include ../helpers/mixins-jp
+
+- var devLink = isDev ? '' : '.html'
+nav.navbar.navbar-default.navbar-fixed-top.navbar-kvb
+	div.container
+		div.navbar-header
+			button.navbar-toggle
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand.hidden-sm.navbar__link(href=(isDev ? '/' : './index.html'))
+				span.navbar__text.navbar__logo
+					+icon('logo', 'white')
+			a.navbar-brand.hidden-xs.hidden-md.hidden-lg.navbar__link(href=(isDev ? '/' : './index.html'))
+				span.navbar__text.navbar__logo
+					+icon('logo-mini', 'white')
+		ul.nav.navbar-nav.navbar-right
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text 企業情報
+						span.caret
+				ul.dropdown-menu
+					li: +link('about-jp', 'KVBについて')
+					li: +link('legal-supervision-jp', '認定ライセンス')
+					li: +link('join-us-jp', '採用情報')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text 商品とサービス
+						span.caret
+				ul.dropdown-menu
+					li: +link('international-pay-jp', '外国送金')
+					li: +link('one-stop-jp', '法人外貨取引管理')
+					li: +link('fintech-jp', '金融テクノロジー')
+					li: +link('wealth-management-jp', '資産運用')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text オンライン取引</br>プラットフォーム
+						span.caret
+				ul.dropdown-menu
+					li: +link('#', 'オンライン口座開設')
+					li: +link('#', 'eFX ログイン')
+					li: +link('#', 'KVBPay ログイン')
+					li: +link('download-app-jp', 'アプリダウンロード')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text KVBリサーチ
+						span.caret
+				ul.dropdown-menu
+					li: +link('#', 'FXワールド')
+					li: +link('monthly-news-jp', 'マーケットダイジェスト誌')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text カスタマーサポート
+						span.caret
+				ul.dropdown-menu
+					li: +link('contact-jp', 'お問い合わせ')
+					li: +link('downloads-jp', '資料ダウンロード')
+					li: +link('faq-jp', 'よくあるご質問')
+			li: a.navbar__link(href="#")
+				span.navbar__text
+					+icon('wechat', 'white')
+			li.dropdown.nabvbar__lang
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aria-expanded="false")
+					span.navbar__text
+						+icon('earth', 'white')
+						span.caret
+						span.navbar__language 日本語
+				ul.dropdown-menu
+					li: a(href="#" data-lang="cn") 简体中文
+					li: a(href="#" data-lang="en") English
+					li: a(href="#" data-lang="jp") 日本語
+		div.mobile-nav-cover
+		div.mobile-nav
+			ul.mobile-nav__list
+				li.mobile-nav__item
+					button.mobile-nav__trigger 企業情報
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('about-jp', 'KVBについて')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('legal-supervision-jp', '認定ライセンス')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('join-us-jp', '採用情報')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger 商品とサービス
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('international-pay-jp', '外国送金')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('one-stop-jp', '法人外貨取引管理')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('fintech-jp', '金融テクノロジー')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('wealth-management-jp', '資産運用')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger オンライン取引プラットフォーム
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('#', 'オンライン口座開設')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('#', 'eFX ログイン')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('#', 'KVBPay ログイン')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('download-app-jp', 'アプリダウンロード')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger KVBリサーチ
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('#', 'FXワールド')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('monthly-news-jp', 'マーケットダイジェスト誌')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger カスタマーサポート
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('contact-jp', 'お問い合わせ')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('downloads-jp', '資料ダウンロード')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('faq-jp', 'よくあるご質問')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					a.mobile-nav__link(href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA5OTA0NzQxMg==&scene=124#wechat_redirect")
+						+icon('wechat')
+				li.mobile-nav__item.nabvbar__lang
+					button.mobile-nav__trigger
+						+icon('earth')
+					ul.mobile-submenu
+						li.mobile-submenu__item: a.mobile-submenu__link(href="#" data-lang="cn") 简体中文
+						li.mobile-submenu__item: a.mobile-submenu__link(href="#" data-lang="en") English
+						li.mobile-submenu__item: a.mobile-submenu__link(href="#" data-lang="jp") 日本語

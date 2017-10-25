@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch -->
+    <title>ui/icn-mail</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="ui/icn-mail" fill-rule="nonzero" >
+            <g id="close-envelope" transform="translate(5.000000, 18.000000)">
+                <path d="M45,44.3333333 L33.8657143,34.732 L2.03142857,61.617 C3.18857143,62.6746667 4.75071429,63.3333333 6.47357143,63.3333333 L83.5264286,63.3333333 C85.2428571,63.3333333 86.7985714,62.6746667 87.9492857,61.617 L56.1342857,34.732 L45,44.3333333 Z" id="Shape"></path>
+                <path d="M87.9685714,1.71633333 C86.8114286,0.652333333 85.2557143,0 83.5264286,0 L6.47357143,0 C4.75714286,0 3.20142857,0.658666667 2.04428571,1.729 L45,38 L87.9685714,1.71633333 Z" id="Shape"></path>
+                <polygon id="Shape" points="0 5.56066667 0 58.178 31.0692857 32.167"></polygon>
+                <polygon id="Shape" points="58.9307143 32.167 90 58.178 90 5.54166667"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>

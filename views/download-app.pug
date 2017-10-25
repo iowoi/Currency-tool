@@ -1,0 +1,35 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	div.banner.app.app__banner(style=`background-image: url('${imgPath}/download-app/first-screen-bg.jpg')`)
+		div.container
+			div.kvb-breadcrumb
+				a.kvb-breadcrumb__link(href="/" title="首页")
+					+icon('home', 'black')
+					span.kvb-breadcrumb__arrow
+						+icon('arrow-right', 'black')
+					span 线上平台
+			span.banner__heading KVB Global Markets
+			div.row.app__intro
+				p.app__des.col-md-8.col-md-offset-2 欢迎下载 KVB Global Markets 手机端应用，APP 集成以下功能于一体，让您随时随地享受在线交易与账户管理的便利：
+			div.app__platform
+				a.app__download(href="#" title="app store")
+					img(src=`${imgPath}/download-app/apple-app-store-icon.png`)
+				a.app__download(href="#" title="google play")
+					img(src=`${imgPath}/download-app/google-appstore-icon.png`)
+	section.section.section--no-top-spacing
+		div.container.download-app__container
+				img.app__feature(src=`${imgPath}/download-app/mobile-featuring.png` alt="big mobile image")
+	section.section.section--gray.coming-soon
+		img.coming-soon__bg-top(src=`${imgPath}/download-app/mobile-layer-top.png` alt="mobile image")
+		img.coming-soon__bg-bottom(src=`${imgPath}/download-app/mobile-layer-buttom.png` alt="mobile image")
+		div.container.coming-soon__content
+			p.coming-soon__heading 更多功能正在完善中
+			p.coming-soon__subheading 敬请关注 iOS 和 Android 系统。
+			div.app__platform
+				a.app__download(href="#" title="app store")
+					img(src=`${imgPath}/download-app/apple-app-store-icon.png`)
+				a.app__download(href="#" title="google play")
+					img(src=`${imgPath}/download-app/google-appstore-icon.png`)

@@ -1,0 +1,134 @@
+.process-cards {
+	@media (--above-tablet) and (max-width: 991px) {
+		& .check-icon-list__item {
+			margin-bottom: 4px;
+		}
+
+		& .basic-paragraph {
+			line-height: 1.5em;
+			font-size: 14px;
+		}
+
+		& .icon {
+			transform: translateY(-5%);
+		}
+	}
+
+	@media (--below-tablet) {
+		& .check-icon-list__item {
+			margin-bottom: 4px;
+		}
+
+		& .basic-paragraph {
+			line-height: 1.5em;
+		}
+
+		& .icon {
+			transform: translateY(-0.5%);
+		}
+	}
+
+	@media (--below-mobile) {
+		& .basic-paragraph {
+			font-size: 14px;
+		}
+
+		& .icon {
+			transform: translateY(-5%);
+		}
+
+		&.grid-stack.grid-stack-one-column-mode.grid-stack--basic-mobile {
+			& .grid-stack__block {
+				height: 460px;
+			}
+
+			& .grid-stack__background {
+				height: 40% !important;
+			}
+
+			& .grid-stack__content {
+				top: 40%;
+				height: 60% !important;
+			}
+
+			& .grid-stack__summary {
+				padding: 16px;
+			}
+		}
+	}
+
+	@media (max-width: 410px) {
+		& .icon {
+			width: 12px;
+			height: 12px;
+			margin-right: 8px;
+			transform: translateY(0);
+		}
+
+		&.grid-stack.grid-stack-one-column-mode.grid-stack--basic-mobile {
+			& .grid-stack__block {
+				height: 520px;
+			}
+
+			& .grid-stack__summary {
+				padding: 16px 8px;
+			}
+		}
+	}
+}
+/*EN-site*/
+.en-site {
+	@media (max-width: 414px) {
+		& .process-cards.grid-stack.grid-stack-one-column-mode.grid-stack--basic-mobile {
+			& .grid-stack__block {
+				height: 680px;
+				&.grid-stack--short {
+					height: 360px;
+				}
+			}
+		}
+	}
+	@media (max-width: 320px) {
+		& .process-cards.grid-stack.grid-stack-one-column-mode.grid-stack--basic-mobile {
+			& .grid-stack__block {
+				height: 760px;
+				&.grid-stack--short {
+					height: 360px;
+				}
+			}
+		}
+	}
+}
+
+/*JP-site*/
+.jp-site {
+	@media (max-width: 414px) {
+		& .process-cards.grid-stack.grid-stack-one-column-mode.grid-stack--basic-mobile {
+			& .grid-stack__block {
+				height: 620px;
+				&.grid-stack--short {
+					height: 360px;
+				}
+			}
+		}
+	}
+	@media (max-width: 320px) {
+		& .process-cards.grid-stack.grid-stack-one-column-mode.grid-stack--basic-mobile {
+			& .grid-stack__block {
+				height: 740px;
+			}
+		}
+	}
+	@media(--above-tablet) {
+		& .sub-navbar__item {
+			font-size: 14px;
+			padding: 0 8px;
+		}
+	}
+	@media(--below-mobile) {
+		& .sub-navbar__item {
+			font-size: 16px;
+			letter-spacing: 0;
+		}
+	}
+}

@@ -1,0 +1,195 @@
+.section.cooperation-case {
+	position: relative;
+
+	&.cooperation-case--without-background {
+		background-color: var(--gray);
+		background-image: none;
+		& .cooperation-case__detail {
+			color: var(--black);
+			@media (--below-tablet) {
+				background-image: none;
+			}
+		}
+	}
+
+	& .styled-heading {
+		margin-bottom: 40px;
+	}
+	@media (--above-tablet) {
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		background-image: url('../img/foreign-exchange-process/forex-trading-case-study-bg.jpg');
+	}
+
+	&::before {
+		content: '';
+		position: absolute 0 false 0 0;
+		width: 40vw;
+		box-shadow: 16px 0 32px rgba(var(--black), 0.16);
+		background: white;
+		@media (--below-desktop) {
+			width: 37vw;
+		}
+
+		@media (--below-small) {
+			width: 42vw;
+		}
+
+		@media (--below-tablet) {
+			display: none;
+		}
+	}
+
+	& .slick-dotted.slick-slider {
+		margin-bottom: 0;
+	}
+
+	& .cooperation-case__card {
+		padding-right: 64px;
+		@media (--below-tablet) {
+			padding-right: 32px;
+		}
+	}
+
+	& .cooperation-case__issue {
+		color: var(--blue);
+		display: inline;
+		border-bottom: 1px solid var(--blue);
+		padding-bottom: 4px;
+		font-size: 18px;
+		font-weight: var(--font-light);
+	}
+
+	& .cooperation-case__company {
+		margin: 16px 0;
+		font-size: 18px;
+		font-weight: var(--font-bold);
+		letter-spacing: 1px;
+		line-height: 1.8em;
+	}
+
+	& .cooperation-case__brief {
+		font-size: 18px;
+		font-weight: var(--font-light);
+		line-height: 1.8em;
+	}
+
+	& .cooperation-case__detail {
+		position: relative;
+		color: white;
+		font-size: 0;
+		& .icon {
+			display: inline-block;
+			width: 64px;
+			height: 64px;
+			margin-top: -8px;
+			vertical-align: top;
+			margin-right: 56px;
+
+			@media (--below-small) {
+				margin-right: 0;
+				margin-bottom: 20px;
+			}
+		}
+
+		@media (--above-tablet) and (--below-small) {
+			padding: 0 16px 32px 32px;
+
+			& .icon {
+				width: 48px;
+				height: 48px;
+				margin-right: 16px;
+			}
+		}
+
+		@media (--below-tablet) {
+			padding: 40px 16px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			background-image: url('../img/foreign-exchange-process/forex-trading-case-study-bg.jpg');
+			margin-top: 40px;
+		}
+	}
+
+	& .cooperation-case__section + .cooperation-case__section {
+		margin-top: 48px;
+	}
+
+	& .cooperation-case__content {
+		display: inline-block;
+		width: calc(100% - 120px);
+
+		@media (--below-small) {
+			width: 100%;
+		}
+	}
+
+	& .cooperation-case__title {
+		font-size: 18px;
+		font-weight: var(--font-normal);
+		margin-bottom: 8px;
+	}
+
+	& .cooperation-case__description {
+		font-size: 16px;
+		font-weight: var(--font-light);
+	}
+
+	& .slick-dots {
+		position: static;
+		margin: 16px 0 0 -12px;
+		text-align: left;
+
+		& li button::before {
+			transform: scale(0.6);
+		}
+
+		& .slick-active button:before {
+			color: var(--orange);
+		}
+	}
+
+	& .slick-next {
+		right: 0;
+		width: 40px;
+		height: 40px;
+
+		&::before {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	@media (max-width: 991px) {
+		& .container {
+			margin: 0;
+			width: 100%;
+		}
+	}
+}
+
+.cooperation__case--dark-background {
+	background-color: var(--gray);
+	& .case__list--intro {
+		color: var(--black);
+	}
+}
+
+.cooperation__case--right {
+	padding-top: 80px;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+
+	& .decorate-triangle {
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 0 0 168px 168px;
+		border-color: transparent transparent white transparent;
+		z-index: 999;
+		position: absolute auto 0 0 595px;
+	}
+}

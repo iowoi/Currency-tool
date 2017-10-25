@@ -1,0 +1,234 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	- var imgPath = isDev ? 'img' : './assets/img'
+	div.main-slider
+		div.main-slider__slide(style=`background-image: url(${imgPath}/carousel/dark-sky.jpg)`)
+			div.container
+				div.main-slider__content
+					h1.main-slider__name One-Stop Overseas Financial Service Hub.
+					p.main-slider__description KVB Kunlun Global Capital.
+		div.main-slider__slide(style=`background-image: url(${imgPath}/carousel/dark-sky.jpg)`)
+			div.container
+				div.main-slider__content
+					h1.main-slider__name One-Stop Overseas Financial Service Hub.
+					p.main-slider__description KVB Kunlun Global Capital.
+	div.highlight
+		div.container
+			div.clearfix
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('member', 'blue')
+							div.media-body
+								div.media-heading.media__heading Online Account Opening
+								span.media__subheading Opening Your Account
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('payclick', 'blue')
+							div.media-body
+								div.media-heading.media__heading eFX Login
+								span.media__subheading Online Trading and Settlement
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('outpay', 'blue')
+							div.media-body
+								div.media-heading.media__heading KVBPay Login
+								span.media__subheading Deposit/Withdrawal
+				div.col-md-3.col-sm-6.col-xs-6.highlight__block
+					div.highlight__media
+						div.media
+							div.media-left.media__img
+								div.media-object.media__icon
+									+icon('downloadapp', 'blue')
+							div.media-body
+								div.media-heading.media__heading App Download
+								span.media__subheading Mobile Apps
+	section.section.section--gray.exchange-rate
+		div.container.exchange-rate__content
+			+styledHeading('Discover currency trends and setting your preferred exchange timing', true)
+			div.exchange-rate__list
+				each val in [1, 2, 3, 4]
+					div.exchange-brief.exchange-brief--fall
+						div.exchange-brief__info
+							h6.exchange-brief__target EUR - USD
+							div.exchange-brief__compare
+								span.exchange-brief__name BID
+								span.exchange-brief__number 1.116
+							div.exchange-brief__compare
+								span.exchange-brief__name ASK
+								span.exchange-brief__number 1.11164
+							div.exchange-brief__summary
+								span.exchange-brief__percentage
+									| 0.151%
+									+icon('down-rate', 'red')
+								span.exchange-brief__chart
+									+icon('sparkline-down')
+					div.exchange-brief.exchange-brief--rising
+						div.exchange-brief__info
+							h6.exchange-brief__target EUR - USD
+							div.exchange-brief__compare
+								span.exchange-brief__name BID
+								span.exchange-brief__number 1.116
+							div.exchange-brief__compare
+								span.exchange-brief__name ASK
+								span.exchange-brief__number 1.11164
+							div.exchange-brief__summary
+								span.exchange-brief__percentage
+									| 30.11%
+									+icon('up-rate', 'green')
+								span.exchange-brief__chart
+									+icon('sparkline-up')
+			div.exchange-rate__tools
+				+exchangeTools--en()
+			div.exchange-rate__caption
+				p.exchange-rate__description Please note: all rates above are indicative in nature and do not represent actual tradable rates. For tradable rates please contact our customer service representative to obtain a live quotation.
+				+link('exchange-rate-en', 'Open All Currency Charts')(class="btn btn-default btn-lg btn-primary--outline exchange-rate__btn")
+	+cardSection('gray-dark')(class="index-grids")
+		+card-2-2--en('Product and Services', 'Global Payment', 'international-pay-en')(style=`background-image: url(${imgPath}/grid-wall/01.jpg)`)
+			p.description.grid-stack__description
+				| A leading licensed financial institution with 129-currencies payment capacity as fast as T+0 process time. Servicing commercial need for 16 years and presence in 6 cities in 4 countries.
+		+card-1-1--en(2, 0, 'Product and Services', 'Cross-Border e-Commerce', null, 'fintech-en')(class='grid-stack__simple' style='background-color: #56E0E6')
+			p.description.description--ellipsis.grid-stack__description
+				| Cross-border currency conversion, T+0 multi-currency payment, forwards, options, swaps, hedging, and ERP integration.
+		+card-1-1--en(2, 1, 'Product and Services', 'Fund, Insurance and Physical Gold', null, 'product-en')(class='grid-stack__simple' style='background-color: #267DC7')
+			p.description.description--ellipsis.grid-stack__description
+				| Alternative investment and structured products for your more diversified and sophisticated investment need.
+		+card-2-1--en(0, 2, 'Product and Services', 'Cross-Border e-Commerce', 'right', null, 'foreign-exchange-solution-en')(style=`background-image: url(${imgPath}/grid-wall/02.jpg)`)
+			p.description.grid-stack__description
+				| Cross-border currency conversion, T+0 multi-currency payment, forwards, options, swaps, hedging, and ERP integration.
+		+card-1-1--en(2, 2, 'Product and Services', 'Wealth Management', null, 'wealth-management-en')(style=`background-image: url(${imgPath}/grid-wall/03.jpg)`)
+			p.description.grid-stack__description
+				| Family wealth planning, global asset allocation, funding-chain advisory, as well as opportunity investment.
+		+card-1-2--en(0, 3, 'Product and Services', 'Fund, Insurance and Physical Gold', null, null, 'product-en')(style=`background-image: url(${imgPath}/grid-wall/04.jpg)`)
+			p.description.grid-stack__description
+				| Alternative investment and structured products for your more diversified and sophisticated investment need.
+		+card-2-1--en(1, 3, 'Product and Services', 'Corporate FX Management', 'right', null, 'foreign-exchange-process-en')(style=`background-image: url(${imgPath}/grid-wall/05.jpg)`)
+			p.description.grid-stack__description
+				| Optimizing FX management process, hedging market risk, reducing cashflow pressure, and control capital exposure.
+		+card-2-1--en(1, 4, 'Product and Services', 'Fin-Tech ', 'left', null, 'fintech')(style=`background-image: url(${imgPath}/grid-wall/06.jpg)`)
+			p.description.grid-stack__description
+				| We offers you the next generation Fin-Tech solution to boost up your company’s soft power and operational efficiency.
+	- var cities = [{ en: 'Auckland', ltd: 'KVB Global Markets Ltd', addressEn: 'Level 10, Tower 1, 205 Queen Street', operator: '+64 9 359 8988', phone: '(9:00am–5:00pm)：+64 9 359 8985', fax: '+64 9 359 8989', email: 'akl_gc@kvbkunlun.com'}, { en: 'Sydney', ltd: 'KVB Global Markets Pty Ltd, KVB Kunlun Wealth Management Pty Ltd', addressEn: 'Level 18, Citigroup Centre, 2 Park Street, Sydney, NSW 2000', operator: '1300 668 120（Only for Australia)', phone: ' (9:00am–5:00pm)：+61 2 8263 0185', fax: '+61 2 8263 0189', email: 'info@kvbkunlun.com' }, { en: 'Melbourne', ltd: 'KVB Global Markets Pty Ltd, KVB Kunlun Wealth Management Pty Ltd', addressEn: 'Level 38, 120 Collins Street, Melbourne, VIC 3000', operator: '1300 668 120（Only for Australia）', phone: '(9:00am–5:00pm)：+61 3 9660 1885', fax: '+61 3 9660 1889', email: 'melcs@kvbkunlun.com' }, { en: 'Toronto', ltd: 'KVB Kunlun Canada Inc.', addressEn: 'Suite 3600, Level 36, Exchange Tower, 130 King St. West, Toronto, M5X 1B1 Ontario', operator: '+1 416 646 9188', phone: '+1 416 646 9185', fax: '+1 416 646 9199', email: 'tor_gc@kvbkunlun.com' }, { en: 'Hong Kong', ltd: 'KVB Kunlun Trading (Hong Kong) Limited, KVB Capital Markets Ltd', addressEn: 'Suite 6801, 68/F, International Commerce Centre, 1 Austin Road West, Kowloon', operator: '+852 3701 8188', phone: '', fax: '+852 3701 8100', email: 'hk_gc@kvbkunlun.com' }, { en: 'Beijing', ltd: '', addressEn: '', operator: '+86 10 5922 2088', phone: '', fax: '', email: 'bjinfo@kvbkunlun.com' }, { en: 'Taipei', ltd: 'Banclogix System Co.,Ltd', addressEn: '' , operator: '+886 2 7710 9888', phone: '', fax: '+886 2 7710 9889', email: '' }]
+	section.section.section--no-spacing.visible-sm.visible-xs
+		div#accordion.panel-group.current-city--tablet(role='tablist' aria-multiselectable='true')
+			div.panel.panel-default
+				div#auckland.panel-heading(role='tab' style=`background-image: url(${imgPath}/location/mobile/auckland.jpg)`)
+					h4.panel-title
+						a(role='button' data-toggle='collapse' data-parent='#accordion' href='#aucklandCollapse' aria-expanded='true' aria-controls='aucklandCollapse')
+								span Auckland
+				div#aucklandCollapse.panel-collapse.collapse.in(role='tabpanel' aria-labelledby='auckland')
+					div.panel-body
+						div.current-city__content
+							div.current-city__detail
+								+icon('checkin', 'blue')
+								div.current-city__info
+									p.current-city__ltd KVB Global Markets Ltd
+									p.current-city__address Level 10, Tower 1, 205 Queen Street
+									p.current-city__address.current-city__county Auckland, New Zealand
+							div.current-city__contact
+								ul.list-unstyled
+									li
+										+icon('phone', 'blue')
+										span.current-city__contact-info Operator：+64 9 359 8988
+										span.clearfix
+									li
+										+icon('message', 'blue')
+										span.current-city__contact-info Chinese Hotline（9:00am-5:00pm）：+64 9 359 8985
+										span.clearfix
+									li
+										+icon('fax', 'blue')
+										span.current-city__contact-info Fax：+64 9 359 8989
+										span.clearfix
+									li
+										+icon('mail', 'blue')
+										span.current-city__contact-info Email：akl_gc@kvbkunlun.com
+										span.clearfix
+
+			each city in cities.slice(1)
+				- var name = city.en.toLowerCase().replace(' ', '')
+				- var imgUrl = `${imgPath}/location/mobile/${name}.jpg`
+				div.panel.panel-default
+					div.panel-heading(id=name role='tab' style=`background-image: url(${imgUrl})`)
+						h4.panel-title
+							a.collapsed(role='button' data-toggle='collapse' data-parent='#accordion' href=`#${name}Collapse` aria-expanded='false' aria-controls=`${name}Collapse`)
+								span #{city.en} #{city.ch}
+					div.panel-collapse.collapse(id=`${name}Collapse` role='tabpanel' aria-labelledby=name)
+						div.panel-body
+							div.current-city__content
+								div.current-city__detail
+									+icon('checkin', 'blue')
+									div.current-city__info
+										p.current-city__ltd #{city.ltd}
+										p.current-city__address #{city.addressEn}
+								div.current-city__contact
+									ul.list-unstyled
+										li
+											+icon('phone', 'blue')
+											span.current-city__contact-info Operator:#{city.operator}
+											span.clearfix
+										li
+											+icon('message', 'blue')
+											span.current-city__contact-info Phone#{city.phone}
+											span.clearfix
+										li
+											+icon('fax', 'blue')
+											span.current-city__contact-info Fax:#{city.fax}
+											span.clearfix
+										li
+											+icon('mail', 'blue')
+											span.current-city__contact-info General Email Enquiry:#{city.email}
+											span.clearfix
+	section.section.section--no-spacing.hidden-xs.hidden-sm
+		div.cities.cities__slide
+			each city, idx in cities
+				- var classes = (idx === 0) ? 'active' : ''
+				- var imgUrl = `${imgPath}/location/${city.en.toLowerCase().replace(' ', '')}.jpg`
+				div.city(class=classes data-target=city.en style=`background-image: url(${imgUrl})`)
+					div.city__content
+						div.city__name
+							div.city__en #{city.en}
+							div.city__ch #{city.ch}
+		each city, idx in cities
+			- var mapUrl = `${imgPath}/location/maps-${city.en.toLowerCase().replace(' ', '')}.jpg`
+			div.clearfix.no-gutters.row--same-height.current-city(data-target=city.en style=(idx ? 'display: none' : ''))
+				div.col-lg-4.col-md-5.current-city__map(style=`background-image: url(${mapUrl})`)
+				div.col-lg-8.col-md-7
+					div.current-city__content
+						h1.current-city__name
+							+icon('checkin', 'blue')
+							| #{city.en} #{city.ch}
+						div.clearfix
+							div.col-lg-5.col-md-12.current-city__detail
+								p.current-city__ltd #{city.ltd}
+								p.current-city__address #{city.addressEn}
+								p.current-city__address #{city.addressCh}
+							div.col-lg-7.col-md-12.current-city__contact
+								ul.list-unstyled
+									li
+										+icon('phone', 'blue')
+										span.current-city__contact-info Operator:#{city.operator}
+										span.clearfix
+									li
+										+icon('message', 'blue')
+										span.current-city__contact-info Phone#{city.phone}
+										span.clearfix
+									li
+										+icon('fax', 'blue')
+										span.current-city__contact-info Fax:#{city.fax}
+										span.clearfix
+									li
+										+icon('mail', 'blue')
+										span.current-city__contact-info General Email Enquiry:#{city.email}
+										span.clearfix

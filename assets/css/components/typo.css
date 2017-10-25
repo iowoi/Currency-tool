@@ -1,0 +1,67 @@
+/* Reset heading title */
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+
+.description {
+	font-size: 16px;
+	font-weight: var(--font-light);
+	line-height: 2em;
+	letter-spacing: 1px;
+	margin-bottom: 32px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.basic-paragraph {
+	font-size: 16px;
+	line-height: 1.8em;
+	margin-bottom: 32px;
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.en-site {
+	& h1 {
+		font-family: var(--font-tungsten);
+		>* {
+			font-family: var(--font-tungsten);
+		}
+	}
+	& h2 {
+		font-family: var(--font-tungsten);
+		>* {
+			font-family: var(--font-tungsten);
+		}
+	}
+	& h3 {
+		font-family: var(--font-tungsten);
+		>* {
+			font-family: var(--font-tungsten);
+		}
+	}
+	& h4 {
+		font-family: var(--font-tungsten);
+		>* {
+			font-family: var(--font-tungsten);
+		}
+	}
+	& h5 {
+		font-family: var(--font-tungsten);
+		>* {
+			font-family: var(--font-tungsten);
+		}
+	}
+	& h6 {
+		font-family: var(--font-tungsten);
+		>* {
+			font-family: var(--font-tungsten);
+		}
+	}
+	& .description {
+		line-height: 1.6em;
+	}
+}

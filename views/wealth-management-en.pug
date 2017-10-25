@@ -1,0 +1,80 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	+banner(`${imgPath}/wealth-management/wealth-management-herobanner.jpg`, 'Wealth Management ')
+	+pageIntro
+		p.description As your dedicated global financial service partner, KVB offers our commercial and retail customers a comprehensive solution ranging from investment planning to wealth management to enjoy the benefit of globalized portfolio.
+	section.section.section--gray.section--wealth-management
+		+styledHeading('Our diversified Services', true)
+		div.container
+			div.row.row--same-height
+				div.col-sm-6
+					div.service-card
+						div.service-card__img(style=`background-image: url(${imgPath}/wealth-management/tile-wealth-manage-business.jpg)`)
+							div.service-card__title
+								img(src=`${imgPath}/numbers/1.png` alt="1")
+								h3.service-card__heading Commercial Wealth Management
+						div.service__down
+							div.service__arrow-up
+							div.service__list
+								div.service__list--title Foreign Currency Deposit
+								div.service__list--des Offers you currency deposits in common G5 currencies with competitive interest rates.
+							div.service__list
+								div.service__list--title Exchange Rate Related Investment
+								div.service__list--des Offers you dual currency deposit and exchange rate pegged deposit products. 
+							div.service__list
+								div.service__list--title Debenture Bonds
+								div.service__list--des Offers you Australia Government bonds and other internationally renowned corporate and bank debentures.
+							div.service__list
+								div.service__list--title Overseas Pledge of Stock Rights
+								div.service__list--des Offers you competitive pledge rates for easier and faster liquidity
+							div.service__list
+								div.service__list--title  Equity Investment
+								div.service__list--des Offers you customized equity investment opportunity to local Australian high-growth companies.
+				div.col-sm-6
+					div.service-card
+						div.service-card__img(style=`background-image: url(${imgPath}/wealth-management/tile-wealth-manage-personal.jpg)`)
+							div.service-card__title
+								img(src=`${imgPath}/numbers/2.png` alt="2")
+								h3.service-card__heading Personal Wealth Management
+						div.service__down
+							div.service__arrow-up
+							div.service__list
+								div.service__list--title Immigration Planning
+								div.service__list--des Offers you both local knowledge and matured investment partner to fulfill immigration requirement to start a new life abroad
+							div.service__list
+								div.service__list--title International Securities Investment
+								div.service__list--des Offers you complete access to stock markets in United States, Australia, New Zealand, Hong Kong, Japan, and Singapore.
+							div.service__list
+								div.service__list--title Industry Investment Fund
+								div.service__list--des Offers you convenient management for cross region and cross sector investment portfolio, including REITS and other Property Investment Fund
+							div.service__list
+								div.service__list--title Structured Investment
+								div.service__list--des Offers you customized investment planning to reduce market exposure and trading frequency.
+							div.service__list
+								div.service__list--title Overseas Family Trust
+								div.service__list--des Offers you access to setting up your own family trust to protect your wealth and to plan for generations to come.
+							div.service__list
+								div.service__list--title Private Equity Management
+								div.service__list--des Offers you private equity investment opportunity to overseas financial and tangible assets.
+							div.service__list
+								div.service__list--title Physical Metal Trading and Storage
+								div.service__list--des Offers you complete access to global physical gold and silver trading, secured storage and private delivery.
+							div.service__list
+								div.service__list--title Overseas Financial Advisory
+								div.service__list--des  Whether you are scouting for overseas business, training, sightseeing, setting up new homes, study abroad, philanthropy or even art collections, we have dedicated advisory capacity to assist you with local knowledge and a network of specialized agents.
+	section.section.more.section--gray
+		div.container
+			div.more__content
+				+styledHeading('Explore More')
+				div.more__list
+					div.more__item
+						div.more__info
+							h4.text-primary Check Out Our Portfolio Examples
+							p.description.text-muted Please note some services are only applicable in some countries and may only be opened up for “Professional or Sophisticataed Investors” only.
+						+readmore('more', 'blue', true, 'comprehensive-intro-en')
+						div.clearfix
+	+contactArea--en

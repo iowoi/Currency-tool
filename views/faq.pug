@@ -1,0 +1,50 @@
+extends layout
+
+include helpers/mixins
+
+mixin faqBlock(label, title)
+	div.faq__block(class=`faq__${label.toLowerCase()}`)
+		div.faq__heading #{title}
+		div.panel-group.faq__group(id=`faq${label}` role='tablist' aria-multiselectable='true')
+			block
+
+mixin faq(label, parentId, title)
+	div.panel.panel-default
+		div.panel-heading(id=label role='tab')
+			h4.panel-title
+				a(role='button' data-toggle='collapse' data-parent=parentId href=`#${label}Collapse` aria-expanded='false' aria-controls=`${label}Collapse`) #{title}
+					+icon('add', 'blue')
+					+icon('minus', 'blue')
+		div.panel-collapse.collapse(id=`${label}Collapse` role='tabpanel' aria-labelledby=label)
+			div.panel-body
+				p.description 我们不是银行，我们是一家专业的外汇金融公司，在新西兰的奥克兰、澳大利亚的悉尼、墨尔本、加拿大的多伦多设有全资金融公司，拥有个地区监管机构颁发的金融产品及服务牌照资质。和银行一样，我们直接与监管机构汇报，对资金的安全保障，我们与您一样关注。
+
+block content
+	+banner(`${imgPath}/faq/banner-faq.jpg`, '常见问题')
+	section.section.faq
+		div.container
+			div.total-result 共
+				strong 18
+				| 笔资料
+			+faqBlock('About', '关于 KVB')
+				+faq('about1', '#faqAbout', '你们是什幺类型的公司，是银行吗？')
+				+faq('about2', '#faqAbout', 'KVB 成立多长时间？我想知道更多 KVB 的信息。')
+			+faqBlock('Product', '产品相关')
+				+faq('product1', '#faqProduct', '在电汇交易之外，你们还提供其他服务吗？')
+				+faq('product2', '#faqProduct', 'KVB 成立多长时间？我想知道更多 KVB 的信息。')
+				+faq('product3', '#faqProduct', '远期汇率是如何确定的？')
+				+faq('product4', '#faqProduct', '存放在 KVB 的存款有没有任何利息？')
+			+faqBlock('Special', '特点优势')
+				+faq('special1', '#faqSpecial', '与银行相比，我为什幺要选择 KVB 昆仑国际？')
+				+faq('special2', '#faqSpecial', '在市场有许多这样的公司，KVB 的优势在哪里呢？')
+				+faq('special3', '#faqSpecial', 'KVB 和西联汇款的区别是什幺？')
+			+faqBlock('Service', '服务相关')
+				+faq('service1', '#faqService', '通过 KVB 进行兑换以及汇款是否安全？')
+				+faq('service2', '#faqService', '与 KVB 进行交易的时候，我是否要提供我的个人身分证明？')
+				+faq('service3', '#faqService', '联系了另外一家公司，发现提供的兑换报价较好，为什幺？')
+				+faq('service4', '#faqService', '是否可以取消已确定的外汇兑换合同？')
+				+faq('service5', '#faqService', '如果收款人未能及时收到汇款，应该怎幺办？')
+				+faq('service6', '#faqService', '我可以通过电话锁定查询的兑换汇率吗？')
+				+faq('service7', '#faqService', '电汇是否有费用产生？')
+				+faq('service8', '#faqService', '准备明日汇一笔款项到外地，目前资金还没到位，但怕明日的汇率会有很大的波动，请问可以怎样做？')
+				+faq('service9', '#faqService', '开一张 Order 有什幺要求？')

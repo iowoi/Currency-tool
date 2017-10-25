@@ -1,0 +1,55 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/product/FundsGolds-herobanner.jpg`, '基金、保险及黄金')
+	+pageIntro
+		p.description KVB昆仑国际加拿大分公司现已全面推出永明金融 (Sunlife Financial) 分红人寿保险、重病保险及其他投资产品。其中，永明分红人寿保险是一款集资产增值、资产保值、风险管理、税务规划和遗产策划于一体的产品。尤其作为安全投资目标的另类资产类别，除了着眼于保险保障外，更注重资产组合多元化，可作为您海外资产配置的工具之一，让您有机会享受到分红账户中稳键的投资回报。
+	+cardSection('gray', '昆仑保险的优势及产品特点')(class="product-card grid-stack--basic-mobile")
+		+card-2-1(0, 0, '', '产品优势', 'right')(style=`background-image: url(${imgPath}/grid-wall/05.jpg)`)
+			+checkList(['财富保全增值，优化资产配置', '税务优惠储蓄，规划无忧生活','财富传承，保障遗产最大化'])
+		+card-2-1(0, 1, '', '适用人群', 'left')(style=`background-image: url(${imgPath}/grid-wall/02.jpg)`)
+			+checkList(['寻求资产多样化，免税转移财富的高净值人士', '希望将家族产业最大化传承受益人的企业人士', '有退休计划，希望利用保单现金价值获得足够收益安享退休生活的人士'])
+		+card-1-2(2, 0, '', '合作伙伴')(style=`background-image: url(${imgPath}/grid-wall/04.jpg)`)
+			p.description 永明金融集团（Sunlife Financial）在加拿大金融服务界资力雄厚，拥百年历史，全球资产管理达 8910 亿加币。永明分红账户资产由其投资管理团队负责，采平稳化技巧，谨慎投资方针，使分红比例稳定，分红保单回报稳健，为业内翘楚。其分红保险产品着重长线投资策略和资产组合多元化，投资类别包括债券、股票、私募固定入息和商用房产等项目。
+	section.section.product
+		div.container
+			div.product__heading 通过昆仑企业
+			div.product__subheading 您将享受的产品及服务
+			div.row.product__item.product__item--content-left
+				div.product__index
+					img(src=`${imgPath}/product/1.png` alt="1")
+				div.col-md-6.col-md-offset-1.product__intro
+					div.product__mask
+					div.product__title 全球多个国际城市提供的实物黄金、白银交易
+					div.product__des 购买的实物贵金属均来自全球顶尖认可铸币商或精炼商，让购买产品享受最大程度市场流动性。
+			div.row.product__item.product__item--content-right.product__item--bg-blue
+				div.col-md-1.col-md-offset-4.product__index
+					img(src=`${imgPath}/product/2.png` alt="2")
+				div.col-md-6.product__intro
+					div.product__mask
+					div.product__title 全球知名安保仓储商
+					div.product__des 将您购买的贵金属放置在您的所有权下，并在仓储期内确保全额置换保险。
+			div.row.product__item.product__item--content-left
+				div.product__index
+					img(src=`${imgPath}/product/3.png` alt="3")
+				div.col-md-6.col-md-offset-1.product__intro
+					div.product__mask
+					div.product__title 知名国际货运品牌完成运输
+					div.product__des 您可选择将购买的实物黄金金条或银条配送至家中或办公室，亦会按照价值大小派送武装运输。
+			div.row.product__item.product__item--content-right.product__item--bg-green
+				div.col-md-1.col-md-offset-4.product__index
+					img(src=`${imgPath}/product/4.png` alt="4")
+				div.col-md-6.product__intro
+					div.product__mask
+					div.product__title 全球金库审计
+					div.product__des 每年全球 4 大审计师事务所之一做全球金库审计，确保您的仓储数量、质量得到最安全保证。
+			div.row.product__item.product__item--content-left
+				div.product__index
+					img(src=`${imgPath}/product/5.png` alt="5")
+				div.col-md-6.col-md-offset-1.product__intro
+					div.product__mask
+					div.product__title 国际化安保金库服务
+					div.product__des 目前可以选择使用加拿大多伦多、澳洲悉尼、墨尔本、中国香港、新加坡以及英国伦敦。收费信息请垂询 KVB 昆仑国际客服。
+	+contactArea

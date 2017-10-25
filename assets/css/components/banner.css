@@ -1,0 +1,124 @@
+.banner {
+	position: relative;
+	height: 448px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	color: white;
+	font-weight: var(--font-normal);
+	font-size: 52px;
+	z-index: 100;
+
+	@media (--below-small) {
+		font-size: 40px;
+	}
+	@media (--below-tablet) {
+		font-size: 28px;
+		height: 268px;
+	}
+	&.banner--text-s {
+		@media (--below-tablet) {
+			font-size: 20px;
+		}
+	}
+
+	& .banner__heading {
+		position: absolute false false 96px 50%;
+		transform: translateX(-50%);
+		text-align: center;
+		letter-spacing: 2px;
+		text-indent: 2px;
+		@media (--below-desktop) {
+			width: 80%;
+			bottom: 70px;
+		}
+		@media (--below-tablet) {
+			width: 100%;
+			padding: 0 16px;
+			bottom: auto;
+			top: 50%;
+		}
+	}
+
+	&.with-dropdown .banner__heading {
+		bottom: 120px;
+	}
+
+	& .dropdown {
+		position: absolute false false 52px 50%;
+		width: 320px;
+		border-bottom: 1px solid white;
+		transform: translateX(-50%);
+
+		& .dropdown-toggle {
+			padding: 12px 0;
+			text-align: center;
+			font-size: 18px;
+
+			&:hover,
+			&:active,
+			&:focus {
+				color: white;
+			}
+		}
+
+		& .dropdown-menu {
+			margin-top: 1px !important;
+			border-width: 0;
+			background-color: rgba(#fff, 0.8);
+
+			& .divider {
+				background-color: var(--gray-darker);
+			}
+
+			& a {
+				text-align: center;
+				font-weight: var(--font-normal);
+			}
+		}
+
+		@media (--below-tablet) {
+			width: 240px;
+			bottom: 32px;
+		}
+	}
+}
+
+.kvb-breadcrumb {
+	margin: calc(var(--nav-height) + 24px) 0 0 16px;
+	font-size: 16px;
+	font-weight: var(--font-light);
+	letter-spacing: 2px;
+	@media (--below-desktop) {
+		margin-top: 100px;
+	}
+	@media (--below-tablet) {
+		display: none;
+	}
+
+	& .kvb-breadcrumb__link .icon {
+		width: 14px;
+		height: 14px;
+	}
+
+	& .kvb-breadcrumb__link span {
+		color: white;
+	}
+
+	& .kvb-breadcrumb__arrow .icon {
+		width: 12px;
+		height: 12px;
+		margin: 0 8px;
+	}
+}
+
+/*EN-site*/
+.en-site {
+	& .banner__heading {
+		font-family: var(--font-tungsten);
+	}
+}
+/*JP-site*/
+.jp-site {
+
+}

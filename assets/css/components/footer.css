@@ -1,0 +1,136 @@
+.footer {
+	height: 744px;
+	border-top: 1px solid var(--blue);
+	padding-top: 64px;
+	background-image: url('../img/footer.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	@media (--below-tablet) {
+		padding-top: 0;
+		height: auto;
+		padding-bottom: 120px;
+		border-top: 1px solid var(--gray-dark);
+	}
+	& .footer__heading {
+		letter-spacing: 4px;
+		font-weight: var(--font-normal);
+		position: relative;
+		@media (--below-tablet) {
+			margin: 0;
+			padding: 19px 0;
+			font-size: 14px;
+			letter-spacing: 2px;
+			font-weight: var(--font-bold);
+		}
+		& .icon {
+			width: 10px;
+			height: 10px;
+			position: absolute;
+			top: calc(50% - 7px);
+			right: 0;
+			display: none;
+			&.is-active {
+				transform: rotate(180deg);
+				top: calc(50% - 4px);
+			}
+			@media (--below-tablet) {
+				display: block;
+			}
+		}
+	}
+
+	& .footer__links {
+		padding-top: 16px;
+		@media (--below-tablet) {
+			padding-top: 0;
+			display: none;
+		}
+	}
+
+	& .footer__links a {
+		color: var(--gray-darker);
+		font-weight: var(--font-light);
+		font-size: 16px;
+		line-height: 2em;
+		@media (--below-tablet) {
+			display: block;
+			font-size: 14px;
+			line-height: 1em;
+			padding: 12px 0;
+		}
+	}
+	& .col-md-2 {
+		@media (--below-small) {
+			width: 20%;
+			float: left;
+		}
+		@media (--below-tablet) {
+			border-bottom: 1px solid var(--gray-dark);
+			width: 100%;
+		}
+	}
+}
+
+.copyright {
+	margin-top: 56px;
+	padding-top: 32px;
+	border-top: 1px solid var(--blue-light);
+	@media (--below-tablet) {
+		padding-top: 16px;
+		margin-top: 0;
+		border-top: none;
+	}
+	& .copyright__heading {
+		font-weight: var(--font-normal);
+		@media (--below-tablet) {
+			font-size: 12px;
+		}
+	}
+
+	& .copyright__description {
+		padding-top: 16px;
+		font-size: 12px;
+		line-height: 1.5em;
+		font-weight: var(--font-light);
+		@media (--below-tablet) {
+			padding-top: 0;
+		}
+	}
+}
+/*EN-site*/
+.en-site
+ {
+	& .footer__heading {
+		letter-spacing: 0;
+	}
+	& .footer__links {
+		& a {
+			line-height: 1.3em;
+		}
+		& li {
+			margin-bottom: 8px;
+		}
+	}
+	& .promising__block {
+		& h4 {
+			margin-bottom: 8px;
+		}
+	}
+	& .description {
+		line-height: 1.5em;
+	}
+}
+/*JP-site*/
+.jp-site {
+	& .footer__heading {
+		letter-spacing: 0;
+	}
+	@media(--below-small) {
+		& .footer__links {
+			& a {
+				font-size: 14px;
+			}
+		}
+	}
+}

@@ -1,0 +1,350 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/exchange-rate/currency-tool-herobanner.jpg`, '汇率查询')
+	section.section.section--gray.section--mobile-white.section--mobile-no-bottom-spacing
+		div.container
+			+exchangeTools
+			div.row.dashboard
+				div.col-md-4.dashboard__panel.dashboard__sidebar
+					h2.dashboard__heading 实时汇率
+					ul.nav.nav-tabs.nav-justified.dashboard__tabs(role="tablist")
+						li.dashboard__tab.active(role="presentation")
+							a(href="#often" aria-controls="often" role="tab" data-toggle="tab") 常用汇率
+						li.dashboard__tab(role="presentation")
+							a(href="#customized" aria-controls="customized" role="tab" data-toggle="tab") 定制汇率排序
+					div.dashboard__list-heading
+						div.dashboard__currency-info
+							div.dashboard__currency 货币对
+							div.dashboard__price-list
+								div.dashboard__price 买入价
+								div.dashboard__price 卖出价
+					div.tab-content
+						div#often.tab-pane.active(role="tabpanel")
+							div.dashboard__list
+								div.dashboard__item.active
+									div.dashboard__item-content
+										div.dashboard__currency-info
+											div.dashboard__currency AUD - USD
+												+icon('down-rate', 'red2')
+											div.dashboard__price-list
+												div.dashboard__price
+													span BID&nbsp;
+													| 1.116
+												div.dashboard__price
+													span &nbsp;/ ASK&nbsp;
+													| 1.1164
+										div.dashboard__currrent 1.1408
+										div.dashboard__brief-ratio(data-status="down")
+											div
+												+icon('down-rate', 'red2')
+												| -0.0019
+											div -0.17%
+										span.dashboard__drag.dashboard__btn
+											+icon('drag', 'gray-darker')
+										div.clearfix
+									div.dashboard__mobile-chart
+										div.dashboard__period-tabs
+											div.dashboard__period(data-target="day") 24H
+											div.dashboard__period(data-target="week") 1W
+											div.dashboard__period.active(data-target="month") 1M
+											div.dashboard__period(data-target="year") 1Y
+										img(src="https://fakeimg.pl/1400x640/008FBC/FFFFFF?text=chart")
+								div.dashboard__item
+									div.dashboard__item-content
+										div.dashboard__currency-info
+											div.dashboard__currency AUD - USD
+												+icon('down-rate', 'red2')
+											div.dashboard__price-list
+												div.dashboard__price
+													span BID&nbsp;
+													| 1.116
+												div.dashboard__price
+													span &nbsp;/ ASK&nbsp;
+													| 1.1164
+										div.dashboard__currrent 1.1408
+										div.dashboard__brief-ratio(data-status="down")
+											div
+												+icon('down-rate', 'red2')
+												| -0.0019
+											div -0.17%
+										span.dashboard__drag.dashboard__btn
+											+icon('drag', 'gray-darker')
+									div.clearfix
+								div.dashboard__item
+									div.dashboard__item-content
+										div.dashboard__currency-info
+											div.dashboard__currency AUD - USD
+												+icon('down-rate', 'red2')
+											div.dashboard__price-list
+												div.dashboard__price
+													span BID&nbsp;
+													| 1.116
+												div.dashboard__price
+													span &nbsp;/ ASK&nbsp;
+													| 1.1164
+										div.dashboard__currrent 1.1408
+										div.dashboard__brief-ratio(data-status="down")
+											div
+												+icon('down-rate', 'red2')
+												| -0.0019
+											div -0.17%
+										span.dashboard__drag.dashboard__btn
+											+icon('drag', 'gray-darker')
+									div.clearfix
+								div.dashboard__item
+									div.dashboard__item-content
+										div.dashboard__currency-info
+											div.dashboard__currency AUD - USD
+												+icon('up-rate', 'green2')
+											div.dashboard__price-list
+												div.dashboard__price
+													span BID&nbsp;
+													| 1.116
+												div.dashboard__price
+													span &nbsp;/ ASK&nbsp;
+													| 1.1164
+										div.dashboard__currrent 1.1408
+										div.dashboard__brief-ratio(data-status="up")
+											div
+												+icon('up-rate', 'green2')
+												| -0.0019
+											div -0.17%
+										span.dashboard__drag.dashboard__btn
+											+icon('drag', 'gray-darker')
+									div.clearfix
+								div.dashboard__item
+									div.dashboard__item-content
+										div.dashboard__currency-info
+											div.dashboard__currency AUD - USD
+												+icon('down-rate', 'red2')
+											div.dashboard__price-list
+												div.dashboard__price
+													span BID&nbsp;
+													| 1.116
+												div.dashboard__price
+													span &nbsp;/ ASK&nbsp;
+													| 1.1164
+										div.dashboard__currrent 1.1408
+										div.dashboard__brief-ratio(data-status="down")
+											div
+												+icon('down-rate', 'red2')
+												| -0.0019
+											div -0.17%
+										span.dashboard__drag.dashboard__btn
+											+icon('drag', 'gray-darker')
+									div.clearfix
+								div.dashboard__item
+									div.dashboard__item-content
+										div.dashboard__currency-info
+											div.dashboard__currency AUD - USD
+												+icon('down-rate', 'red2')
+											div.dashboard__price-list
+												div.dashboard__price
+													span BID&nbsp;
+													| 1.116
+												div.dashboard__price
+													span &nbsp;/ ASK&nbsp;
+													| 1.1164
+										div.dashboard__currrent 1.1408
+										div.dashboard__brief-ratio(data-status="down")
+											div
+												+icon('down-rate', 'red2')
+												| -0.0019
+											div -0.17%
+										span.dashboard__drag.dashboard__btn
+											+icon('drag', 'gray-darker')
+									div.clearfix
+								div.dashboard__item
+									div.dashboard__item-content
+										div.dashboard__currency-info
+											div.dashboard__currency AUD - USD
+												+icon('down-rate', 'red2')
+											div.dashboard__price-list
+												div.dashboard__price
+													span BID&nbsp;
+													| 1.116
+												div.dashboard__price
+													span &nbsp;/ ASK&nbsp;
+													| 1.1164
+										div.dashboard__currrent 1.1408
+										div.dashboard__brief-ratio(data-status="down")
+											div
+												+icon('down-rate', 'red2')
+												| -0.0019
+											div -0.17%
+										span.dashboard__drag.dashboard__btn
+											+icon('drag', 'gray-darker')
+									div.clearfix
+								div.dashboard__item
+									div.dashboard__item-content
+										div.dashboard__currency-info
+											div.dashboard__currency AUD - USD
+												+icon('up-rate', 'green2')
+											div.dashboard__price-list
+												div.dashboard__price
+													span BID&nbsp;
+													| 1.116
+												div.dashboard__price
+													span &nbsp;/ ASK&nbsp;
+													| 1.1164
+										div.dashboard__currrent 1.1408
+										div.dashboard__brief-ratio(data-status="up")
+											div
+												+icon('up-rate', 'green2')
+												| -0.0019
+											div -0.17%
+										span.dashboard__drag.dashboard__btn
+											+icon('drag', 'gray-darker')
+									div.clearfix
+								div.dashboard__item
+									div.dashboard__item-content
+										div.dashboard__currency-info
+											div.dashboard__currency AUD - USD
+												+icon('down-rate', 'red2')
+											div.dashboard__price-list
+												div.dashboard__price
+													span BID&nbsp;
+													| 1.116
+												div.dashboard__price
+													span &nbsp;/ ASK&nbsp;
+													| 1.1164
+										div.dashboard__currrent 1.1408
+										div.dashboard__brief-ratio(data-status="down")
+											div
+												+icon('down-rate', 'red2')
+												| -0.0019
+											div -0.17%
+										span.dashboard__drag.dashboard__btn
+											+icon('drag', 'gray-darker')
+									div.clearfix
+								div.dashboard__item
+									div.dashboard__item-content
+										div.dashboard__currency-info
+											div.dashboard__currency AUD - USD
+												+icon('down-rate', 'red2')
+											div.dashboard__price-list
+												div.dashboard__price
+													span BID&nbsp;
+													| 1.116
+												div.dashboard__price
+													span &nbsp;/ ASK&nbsp;
+													| 1.1164
+										div.dashboard__currrent 1.1408
+										div.dashboard__brief-ratio(data-status="down")
+											div
+												+icon('down-rate', 'red2')
+												| -0.0019
+											div -0.17%
+										span.dashboard__drag.dashboard__btn
+											+icon('drag', 'gray-darker')
+									div.clearfix
+						div#customized.tab-pane(role="tabpanel")
+							div.dashboard__list
+								div.dashboard__nothing 目前没有资料
+							div.dashboard__add
+								+icon('add')
+								span 新增汇率
+				div.col-md-8.dashboard__panel.dashboard__main
+					div.dashboard__main-currency AUD - USD
+					// status up or down
+					div.dashboard__brief(data-status="down")
+						+icon('rate-down')
+						div.dashboard__current 1.1408
+						div.dashboard__brief-ratio
+							div -0.0019
+							div -0.17%
+					div
+						div.dashboard__time As of 11:20 PM EDT 7/2/2017
+						div.dashboard__period-tabs
+							div.dashboard__period(data-target="day") 24H
+							div.dashboard__period(data-target="week") 1W
+							div.dashboard__period.active(data-target="month") 1M
+							div.dashboard__period(data-target="year") 1Y
+						div.clearfix
+					div.dashboard__chart
+						img(src="https://fakeimg.pl/1400x864/008FBC/FFFFFF?text=chart")
+	+contactArea
+	div#exchangeModal.modal.fade.exchange-modal(tabindex="-1" role="dialog")
+		div.modal-dialog(role="document")
+			div.modal-content
+				div.modal-header
+					button.close.exchange-modal__close(type="button" data-dismiss="modal" aria-label="Close")
+						span(aria-hidden="true")
+							+icon('edit-delete', 'gray-darker')
+					div.modal-title.exchange-modal__title 选择实时汇率比
+				div.modal-body
+					div.exchange-modal__group
+						div.btn-group.exchange-modal__selection
+							div.btn-group
+								button#currencyFrom.btn.btn-primary--outline.btn-lg.btn-block.dropdown-toggle(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+									span.exchange-tools__selected(data-name="USD" data-symbol="$") USD 美元
+									span.caret: +icon('down', 'blue')
+								ul.dropdown-menu(aria-labelledby="currencyFrom")
+									li: a(data-name="EU" data-symbol="€") EU 欧元
+									li: a(data-name="USD" data-symbol="$") USD 美元
+									li: a(data-name="CNY" data-symbol="¥") CNY 人民币
+							div.clearfix
+						div.exchange-modal__divider -
+						div.btn-group.exchange-modal__selection
+							div.btn-group
+								button#currencyTo.btn.btn-primary--outline.btn-lg.btn-block.dropdown-toggle(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+									span.exchange-tools__selected(data-name="CNY" data-symbol="¥") CNY 人民币
+									span.caret: +icon('down', 'blue')
+								ul.dropdown-menu(aria-labelledby="currencyTo")
+									li: a(data-name="EU" data-symbol="€") EU 欧元
+									li: a(data-name="USD" data-symbol="$") USD 美元
+									li: a(data-name="CNY" data-symbol="¥") CNY 人民币
+							div.clearfix
+					button.btn.btn-primary.btn-lg.btn-block.exchange-modal__confirm
+						+icon('tick', 'white')
+						| 确认新增
+
+block templates
+	script#currencyItem(type="text/x-handlebars-template")
+		div.dashboard__item
+			div.dashboard__item-content
+				div.dashboard__currency-info
+					div.dashboard__currency {{from}} - {{to}}
+						| {{#if rising}}
+						+icon('up-rate', 'green2')
+						| {{^}}
+						+icon('down-rate', 'red2')
+						| {{/if}}
+					div.dashboard__price-list
+						div.dashboard__price
+							span BID&nbsp;
+							| {{bid}}
+						div.dashboard__price
+							span &nbsp;/ ASK&nbsp;
+							| {{ask}}
+				div.dashboard__currrent {{current}}
+				| {{#if rising}}
+				div.dashboard__brief-ratio(data-status="up")
+					div
+						+icon('up-rate', 'green2')
+						| {{rate}}
+					div {{percentage}}
+				| {{^}}
+				div.dashboard__brief-ratio(data-status="down")
+					div
+						+icon('down-rate', 'red2')
+						| {{rate}}
+					div {{percentage}}
+				| {{/if}}
+				span.dashboard__del.dashboard__btn
+					+icon('edit-delete', 'gray-darker')
+				span.dashboard__drag.dashboard__btn
+					+icon('drag', 'gray-darker')
+			div.clearfix
+
+	script#mobileChart(type="text/x-handlebars-template")
+		div.dashboard__mobile-chart
+			div.dashboard__period-tabs
+				div.dashboard__period(data-target="day") 24H
+				div.dashboard__period(data-target="week") 1W
+				div.dashboard__period.active(data-target="month") 1M
+				div.dashboard__period(data-target="year") 1Y
+			img(src="{{chart}}")

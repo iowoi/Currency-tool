@@ -1,0 +1,44 @@
+:root {
+	--black: #4A4A4A;
+	--gray: #FAFAFA;
+	--gray-dark: #EBEBEB;
+	--gray-dark2: #CECECE;
+	--gray-darker: #9B9B9B;
+	--blue-light: #D5E3EC;
+	--blue: #2068A6;
+	--blue-dark: #0E5D97;
+	--blue-darker: #132E4C;
+	--red: #E05A6C;
+	--red2: #A70202;
+	--green: #5BDEB9;
+	--green2: #4BA801;
+	--green-dark: #3CD7AB;
+	--green-darker: #45BDC3;
+	--orange: #F6944C;
+
+	--font-tungsten: 'Tungsten Book', 'Noto Sans SC', sans-serif;
+	--font-condensed: 'Roboto Condensed', 'Noto Sans SC', sans-serif;
+
+	--font-extralight: 100;
+	--font-light: 300;
+	--font-normal: 400;
+	--font-bold: 500;
+	--font-extrabold: 700;
+
+	--nav-height: 104px;
+	--nav-narrow-height: 80px;
+	--nav-mobile-height: 56px;
+}
+
+@custom-media --above-large (min-width: 1401px);
+@custom-media --below-large (max-width: 1400px);
+@custom-media --above-medium (min-width: 1281px);
+@custom-media --below-medium (max-width: 1280px);
+@custom-media --above-desktop (min-width: 1025px);
+@custom-media --below-desktop (max-width: 1024px);
+@custom-media --above-small (min-width: 851px);
+@custom-media --below-small (max-width: 850px);
+@custom-media --above-tablet (min-width: 768px);
+@custom-media --below-tablet (max-width: 767px);
+@custom-media --above-mobile (min-width: 551px);
+@custom-media --below-mobile (max-width: 550px);

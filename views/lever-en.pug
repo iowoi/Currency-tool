@@ -1,0 +1,194 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, 'Corporate FX Management')
+	+subNavbar--en(4)
+	+pageIntro
+		p.description Commercial customers are exposed to different foreign exchange risks and they may, subsequently, result in profit being diluted heavily due to adverse rate movement. Locking down your cost and tackle your exchange rate risks will increase your operational efficiency as well as increase your profit margin.
+	section.section.lever__outline.section--special(style=`background-image: url(${imgPath}/lever/forex-trading-feature-bg.png)`)
+		div.container
+			+styledHeading('LeveragedFXHedgin', true)
+			div.lever__features
+				div.feature__card
+					+icon('geometric-variety', 'green')
+					div.feature__title Variety of Products
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des Our leveraged forward contract will assist our commercial customers with hedging requirement up to 20 times of leverage ratio. This reduces margin funding pressure by as much as four times offered by traditional products.
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des Our offshore CNY leveraged products offers trading convenience for most Hong Kong based Chinese enterprises for hedging their overseas income.
+				div.feature__card
+					+icon('geometric-layers', 'green')
+					div.feature__title Trading Limits and Base Currency
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des Feel free to choose different currencies (for more information please consult with our customer service representative in Hong Kong) to suit your need. Your leveraged trading can be very flexible.
+				div.feature__card
+					+icon('geometric-circles', 'green')
+					div.feature__title Multi-currency Account
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des  Our trading limit is 50,000 (50K) USD or equivalent currencies. We support non-traditional trading lots to two decimal places.
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des Our base currency is in USD and margin ratio is also calculated in USD.
+				div.feature__card
+					+icon('geometric-hexagon', 'green')
+					div.feature__title Security
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des We are licensed by Hong Kong Securities and Futures Commission by only allowing deposits to our segregated fund account. Our system is encrypted and firewall-enabled to ensure the security of your trading and funds.
+	section.section
+		div.container
+			div.lever__trade-board--title Low Currency Spreads
+			table.table.table-striped.lever__trade-board--table
+				thead
+					tr
+						th Currency Pair
+						th One Week
+						th Two Weeks
+						th Three Weeks
+						th Four Weeks
+						th Overnight Swap Points
+				tbody
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td USDHKD
+						td -
+						td -
+						td -
+						td -
+						td -
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+			div.lever__trade-board--notice Please note: the above figures are represented in basis points. Major currency spreads and overnight swap points are for reference only. Figures may be adjusted up or down accordingly to the change of market conditions. Such change may include but not limited to reduced liquidity, market sentiment, as well as risk calculation.
+	section.section.section--gray
+		div.container
+			div.lever__trade-process
+				div.trade__time
+					div.trade__open
+						div.trade__intro
+							+icon('calendar', 'blue')
+							div.trade__title Trading Hours
+						div.trade__weekday
+							div.tarde__title
+								div.trade__title--des Provide all-day trading service, trading time is：
+							div.weekday__block
+								div.block__week
+									div.block__week--top Mon.
+									div.block__week--bottom Hong Kong time</br>05:00
+								div.block__week--dash
+								div.block__week
+									div.block__week--top Sat.
+									div.block__week--bottom Hong Kong time</br>05:00
+					div.trade__close
+						div.tarde__title
+							div.trade__title--des
+								| Trading service will be
+								span.trade__highlight  suspended during global public holidays
+								| ：
+						div.holiday__block
+							div.block__nyd
+								div.block__nyd--top 1 Jan.
+								div.block__nyd--bottom New Year’s Day
+							div.block__xmas
+								div.block__xmas--left
+									div.xmas__date 25 Dec.
+									div.xmas__name Christmas Day
+								div.block__xmas--right
+									div.xmas__start December 25th</br>13:00:00
+									div.xmas__dash
+									div.xmas__end December 26th</br>23:59:59
+				div.clearfix
+					div.trade__platform.col-sm-6
+						div.trade__intro
+							+icon('award', 'blue')
+							div.trade__title
+								| Leading Trading
+								br
+								|Platform
+						div.trade__des Our trading platform is easy to use. We offer advanced charting options and detailed daily reports, which shall be sent to your designated email address on daily basis.
+					div.trade__risk-management.col-sm-6
+						div.trade__intro
+							+icon('protect', 'blue')
+							div.trade__title
+								| Enhanced Risk
+								br
+								|
+								Management Tools
+						div.trade__des We offer complete and real time access to your trading accounts. You can place take-profit or stop-loss orders to better control your trading expectation.
+				div.trade__money-out
+					div.trade__intro
+						+icon('withdraw', 'blue')
+						div.trade__title Withdrawal
+					div.trade__step
+						div.row
+							div.money-out__step.col-md-4
+								h3.gradient-heading step 1.
+								div.trade__des  If you need to withdraw any part of your deposited balance from KVB, please download and fill in “withdrawal request form” from KVB Capital Market Ltd’s dedicated website
+							div.money-out__step.col-md-4
+								h3.gradient-heading step 2.
+								div.trade__des After the form is completed and endorsed, please send a scanned copy to us via email or fax. Our customer service representative will process your withdrawal request as soon as practicable.
+							div.money-out__step.col-md-4
+								h3.gradient-heading step 3.
+								div.trade__des Please note if your request is submitted passing the cut-off time of our servicing banks, we will handle your request the earliest possible on the next business day.
+				div.trade__money-in
+					div.trade__intro
+						+icon('deposit', 'blue')
+						div.trade__title Deposit
+					div.trade__step
+						div.row
+							div.money-in__step.col-md-4
+								h3.gradient-heading step 1.
+								div.trade__des You may choose to deposit your margin by electronic bank transfer. When such transfer is completed, please send to KVB customer service representative your transfer slip for reconciliation.
+							div.money-in__step.col-md-4
+								h3.gradient-heading step 2.
+								div.trade__des  After we confirm the funds are cleared, we will deposit the balance to your account. You will also receive an immediate notice from trading system on this deposit.
+							div.money-in__step.col-md-4
+								h3.gradient-heading step 3.
+								div.trade__des  If you find any discrepancy to the amount deposited, please contact our customer service representative immediately.
+	+foreignExchangeProduct--en
+	+contactArea--en

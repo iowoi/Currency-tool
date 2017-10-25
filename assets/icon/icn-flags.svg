@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="88px" height="88px" viewBox="0 0 88 88" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>icn-flags</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="2_Product" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icn-flags" stroke="#4286C6">
+            <g id="People" transform="translate(1.000000, 4.000000)">
+                <g id="Group" transform="translate(7.818182, 37.777778)">
+                    <polyline id="Shape" points="24.9064935 22.8888889 24.9064935 26.2222222 33.5064935 26.2222222 33.5064935 7.44444444 28.5922078 7.44444444"></polyline>
+                    <path d="M28.4805195,22.7777778 L25.0181818,26.2222222" id="Shape"></path>
+                    <rect id="Rectangle-path" x="2.23376623" y="3.88888889" width="26.3584416" height="18.7777778"></rect>
+                    <path d="M2.12207792,40.6666667 L2.23376623,3.88888889" id="Shape"></path>
+                    <ellipse id="Oval" cx="2.23376623" cy="1.88888889" rx="1.67532468" ry="1.66666667"></ellipse>
+                    <polyline id="Shape" points="13.625974 4.44444444 13.625974 13.3333333 2.79220779 13.3333333"></polyline>
+                    <path d="M0.558441558,40.8888889 L3.90909091,40.8888889" id="Shape"></path>
+                </g>
+                <g id="Group">
+                    <polyline id="Shape" points="27.9220779 20.1111111 19.0987013 13.7777778 27.9220779 7.44444444"></polyline>
+                    <polyline id="Shape" points="6.14285714 23 15.0779221 16.6666667 23.9012987 23"></polyline>
+                    <polyline id="Shape" points="2.23376623 7.44444444 11.0571429 13.7777778 2.23376623 20.1111111"></polyline>
+                    <polyline id="Shape" points="24.012987 4.55555556 15.0779221 10.8888889 6.14285714 4.55555556"></polyline>
+                    <polyline id="Shape" points="24.5714286 23.4444444 24.5714286 26.7777778 33.1714286 26.7777778 33.1714286 8 28.2571429 8"></polyline>
+                    <path d="M28.1454545,23.2222222 L24.6831169,26.6666667" id="Shape"></path>
+                    <rect id="Rectangle-path" x="1.8987013" y="4.33333333" width="26.3584416" height="18.7777778"></rect>
+                    <path d="M1.78701299,41.1111111 L1.8987013,4.44444444" id="Shape"></path>
+                    <ellipse id="Oval" cx="1.8987013" cy="2.44444444" rx="1.67532468" ry="1.66666667"></ellipse>
+                    <path d="M0.223376623,41.4444444 L3.57402597,41.4444444" id="Shape"></path>
+                </g>
+                <g id="Group" transform="translate(44.675325, 0.000000)">
+                    <polyline id="Shape" points="24.3480519 23.4444444 24.3480519 26.7777778 32.9480519 26.7777778 32.9480519 8 27.9220779 8"></polyline>
+                    <path d="M27.8103896,23.2222222 L24.4597403,26.6666667" id="Shape"></path>
+                    <rect id="Rectangle-path" x="1.67532468" y="4.33333333" width="26.3584416" height="18.7777778"></rect>
+                    <path d="M1.56363636,41.1111111 L1.67532468,4.44444444" id="Shape"></path>
+                    <ellipse id="Oval" cx="1.67532468" cy="2.44444444" rx="1.67532468" ry="1.66666667"></ellipse>
+                    <path d="M0,41.4444444 L3.35064935,41.4444444" id="Shape"></path>
+                    <path d="M10.387013,4.33333333 L10.387013,23.1111111" id="Shape"></path>
+                    <path d="M19.2103896,4.33333333 L19.2103896,23.1111111" id="Shape"></path>
+                </g>
+                <g id="Group" transform="translate(52.493506, 37.777778)">
+                    <path d="M14.8545455,13.2222222 L28.0337662,13.2222222" id="Shape"></path>
+                    <polygon id="Shape" points="1.78701299 3.77777778 1.78701299 22.5555556 14.9662338 13.2222222"></polygon>
+                    <ellipse id="Oval" cx="6.03116883" cy="13.2222222" rx="2.01038961" ry="2"></ellipse>
+                    <polyline id="Shape" points="24.4597403 22.8888889 24.4597403 26.2222222 33.0597403 26.2222222 33.0597403 7.44444444 28.1454545 7.44444444"></polyline>
+                    <path d="M28.0337662,22.7777778 L24.5714286,26.2222222" id="Shape"></path>
+                    <rect id="Rectangle-path" x="1.78701299" y="3.88888889" width="26.3584416" height="18.7777778"></rect>
+                    <path d="M1.67532468,40.6666667 L1.78701299,3.88888889" id="Shape"></path>
+                    <ellipse id="Oval" cx="1.78701299" cy="1.88888889" rx="1.67532468" ry="1.66666667"></ellipse>
+                    <path d="M0.111688312,40.8888889 L3.46233766,40.8888889" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

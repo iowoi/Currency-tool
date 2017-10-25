@@ -1,0 +1,164 @@
+extends layout
+
+include helpers/mixins
+
+mixin contactBlock
+	div.contact__block
+		block
+
+mixin contactMain
+	div.contact__col.contact__main
+		+icon('checkin', 'blue')
+		div.contact__addresss
+			block
+
+mixin contactDetail
+	div.contact__col.contact__detail
+		div.current-city__contact
+			ul.list-unstyled
+				block
+
+mixin contactItem(icon, text)
+	li
+		+icon(icon, 'blue')
+		span.current-city__contact-info #{text}
+		span.clearfix
+
+mixin contactQrCode(location, name, code)
+	div.contact__col.contact__qrcode
+		- var imgPath = isDev ? 'img/contact/qr-' : './assets/img/contact/qr-'
+		img(src=`${imgPath + location + '.png'}` alt='qrcode')
+		div #{name}
+		div #{code}
+		div.clearfix
+
+block content
+	+banner(`${imgPath}/contact/contact-us-herobanner.jpg`, '联系我们')
+	+pageIntro
+		p.description KVB 昆仑国际不断提升服务品质，无论您身处何地，敬请联系我们，我们将竭诚为您解答！
+	section.section.section--gray.section--mobile-white.contact
+		div.container
+			+styledHeading('全球公司及办事机构', true)
+			+contactBlock
+				+contactMain
+					div.contact__address-name 奥克兰 新西兰
+					div.contact__company
+						div KVB Global Markets Ltd
+					div.contact__address-detail Level 10, Tower 1, 205 Queen Street
+				+contactDetail
+					+contactItem('phone', '总机号码：+64 9 359 8988')
+					+contactItem('message', '中文专线（9:00am-5:00pm）：+64 9 359 8985')
+					+contactItem('fax', '传真：+64 9 359 8989')
+					+contactItem('mail', '邮箱：akl_gc@kvbkunlun.com')
+				+contactQrCode('auckland', '官方微信', 'KVBFXAKL')
+			+contactBlock
+				+contactMain
+					div.contact__address-name 悉尼 澳大利亚
+					div.contact__company
+						div KVB Global Markets Pty Ltd
+						div KVB Kunlun Wealth Management Pty Ltd
+					div.contact__address-detail Level 18, Citigroup Centre, 2 Park Street, Syndney, NSW 2000
+				+contactDetail
+					+contactItem('phone', '总机号码：1300 668 120（仅澳洲适用）')
+					+contactItem('earth-oversea', '海外客户：+61 2 8263 0188')
+					+contactItem('message', '中文专线（9:00am-5:00pm）：+61 2 8263 0184')
+					+contactItem('phone', '财富管理专线（9:00am-5:00pm）：+61 2 8263 0164')
+					+contactItem('fax', '传真：+61 2 8263 0189')
+					+contactItem('mail', '邮箱：akl_gc@kvbkunlun.com')
+				+contactQrCode('sydney', '官方微信', 'KVBFXSYD')
+			+contactBlock
+				+contactMain
+					div.contact__address-name 墨尔本 澳大利亚
+					div.contact__company
+						div KVB Global Markets Pty Ltd
+						div KVB Kunlun Wealth Management Pty Ltd
+					div.contact__address-detail Level 38, 120 Collins Street, Melbourne, VIC 3000
+				+contactDetail
+					+contactItem('phone', '总机号码：1300 668 120（仅澳洲适用）')
+					+contactItem('earth-oversea', '海外客户：+61 3 9660 1888')
+					+contactItem('message', '中文专线（9:00am-5:00pm）：+61 3 9660 1885')
+					+contactItem('phone', '财富管理专线（9:00am-5:00pm）：+61 3 9660 1891')
+					+contactItem('fax', '传真：+61 3 9660 1889')
+					+contactItem('mail', '邮箱：melcs@kvbkunlun.com')
+				+contactQrCode('melbourne', '官方微信', 'KVBFXMEL')
+			+contactBlock
+				+contactMain
+					div.contact__address-name 多伦多 加拿大
+					div.contact__company
+						div KVB Kunlun Canada Inc.
+					div.contact__address-detail Suite 3600, Level 36, Exchange Tower, 130 King St. West, Toronto, M5X 1B1 Ontario
+				+contactDetail
+					+contactItem('phone', '总机号码：+1 416 646 9188')
+					+contactItem('message', '中文专线：+1 416 646 9185')
+					+contactItem('fax', '传真：+1 416 646 9199')
+					+contactItem('mail', '邮箱：tor_gc@kvbkunlun.com')
+				+contactQrCode('toronto', '官方微信', 'KVBFXTOR')
+			+contactBlock
+				+contactMain
+					div.contact__address-name 香港 中国
+					div.contact__company
+						div KVB Kunlun Trading (Hong Kong) Limited, KVB Capital Markets Ltd
+					div.contact__address-detail Suite 6801, 68/F, International Commerce Centre, 1 Austin Road West, Kowloon
+				+contactDetail
+					+contactItem('phone', '总机号码：+852 3701 8188')
+					+contactItem('fax', '传真：+852 3701 8100')
+					+contactItem('mail', '邮箱：hk_gc@kvbkunlun.com')
+				+contactQrCode('wechat', '官方微信', 'KVBKUNLUN2006')
+			+contactBlock
+				+contactMain
+					div.contact__address-name 北京 中国
+					div.contact__company
+						div KVB 昆仑国际上市公司北京代表处
+					div.contact__address-detail 北京市新源南路 8 号北京启皓中心西塔 9 层 902
+				+contactDetail
+					+contactItem('phone', '总机号码：+86 19 5922 2088')
+					+contactItem('mail', '邮箱：bjinfo@kvbkunlun.com')
+				+contactQrCode('qq-china', 'QQ 在线客服')
+			+contactBlock
+				+contactMain
+					div.contact__address-name 台北
+					div.contact__company
+						div Banclogix System Co., Ltd
+					div.contact__address-detail 台北市信义区忠孝东路五段 68 号 36 楼
+				+contactDetail
+					+contactItem('phone', '总机号码：+886 2 7710 9888')
+					+contactItem('fax', '传真：+886 2 7710 9889')
+				+contactQrCode('banclogix', '官方网站', 'Banclogix System')
+	section.section.contact-section.contact-form
+		div.container
+			h2.contact-section__heading 我们竭诚为您服务！
+			p.description 若有疑问请留言，我们将会尽快与您联络。
+			div.row
+				div.col-xs-12.col-sm-6.col-md-3
+					div.form-group
+						input.form-control(type="text" placeholder="姓氏")
+					div.form-group
+						div.dropdown
+							button#productSelect.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+								span.contact-form__selected 咨询产品与服务
+								span.caret: +icon('down', 'white')
+							ul.dropdown-menu(aria-labelledby="productSelect")
+								li: a 项目一
+								li: a 项目二
+								li: a 项目三
+					div.form-group
+						input.form-control(type="text" placeholder="电话号码")
+				div.col-xs-12.col-sm-6.col-md-3
+					div.form-group
+						input.form-control(type="text" placeholder="名称")
+					div.form-group
+						div.dropdown
+							button#officeSelect.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+								span.contact-form__selected 想联系的办公室
+								span.caret: +icon('down', 'white')
+							ul.dropdown-menu(aria-labelledby="officeSelect")
+								li: a 项目一
+								li: a 项目二
+								li: a 项目三
+					div.form-group
+						input.form-control(type="text" placeholder="电邮地址")
+				div.col-sm-12.col-md-6.col-xs-12
+					div.form-group.contact-form--area
+						label 想咨询的问题
+						textarea.form-control(row="6")
+			div.btn.btn-middle.btn-default--outline.contact-section__btn 提交

@@ -1,0 +1,51 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+mixin faqBlock(label, title)
+	div.faq__block(class=`faq__${label.toLowerCase()}`)
+		div.faq__heading #{title}
+		div.panel-group.faq__group(id=`faq${label}` role='tablist' aria-multiselectable='true')
+			block
+
+mixin faq(label, parentId, title)
+	div.panel.panel-default
+		div.panel-heading(id=label role='tab')
+			h4.panel-title
+				a(role='button' data-toggle='collapse' data-parent=parentId href=`#${label}Collapse` aria-expanded='false' aria-controls=`${label}Collapse`) #{title}
+					+icon('add', 'blue')
+					+icon('minus', 'blue')
+		div.panel-collapse.collapse(id=`${label}Collapse` role='tabpanel' aria-labelledby=label)
+			div.panel-body
+				p.description No we are not a bank. We are a financial institution that specializes in foreign exchange. Our local offices in Auckland, Sydney, Melbourne, Hong Kong and Toronto are fully accredited and licensed financial institutions in their respective countries. We report directly to government regulatory agencies and are at the same level as all major banks do. We care your financial safety as much as you do.
+
+block content
+	+banner(`${imgPath}/faq/banner-faq.jpg`, 'FAQ')
+	section.section.faq
+		div.container
+			div.total-result Total
+				strong 18
+				| Files
+			+faqBlock('About', 'About KVB')
+				+faq('about1', '#faqAbout', 'What kind of financial institution are you? Are you a bank?')
+				+faq('about2', '#faqAbout', 'How long has your firm been established? Tell me more about your firm.')
+			+faqBlock('Product', 'About Products')
+				+faq('product1', '#faqProduct', 'Besides teletransfer, what other services do you offer?')
+				+faq('product2', '#faqProduct', 'How long has your firm been established? Tell me more about your firm.')
+				+faq('product3', '#faqProduct', 'How is forward rate calculated in my transaction?')
+				+faq('product4', '#faqProduct', 'Is there any interest provided for my deposited funds at KVB?')
+			+faqBlock('Special', 'Features and Advantages')
+				+faq('special1', '#faqSpecial', 'Why do I need to choose KVB when I have the option of choosing a bank to provide exchange service?')
+				+faq('special2', '#faqSpecial', 'There seem a lot of finance companies like yours, what’s your advantage?')
+				+faq('special3', '#faqSpecial', 'What’s the difference between KVB and Western Union?')
+			+faqBlock('Service', 'About Services')
+				+faq('service1', '#faqService', 'Is it safe to transfer/exchange fund with KVB?')
+				+faq('service2', '#faqService', 'Do I need to provide personal identification when I make a deal with KVB?')
+				+faq('service3', '#faqService', 'I have just called XXX, and their rates are higher (lower) than yours, why is that?')
+				+faq('service4', '#faqService', 'Can I cancel my foreign exchange contract?')
+				+faq('service5', '#faqService', 'If Beneficiary does not receive the payment, what should I do?')
+				+faq('service6', '#faqService', 'Can I lock down exchange rate via phone?')
+				+faq('service7', '#faqService', 'Will there be telegraphic charges for all electronic remittance?')
+				+faq('service8', '#faqService', 'I wish to remit some funds out tomorrow, however, the principle of the funds is not yet received and I am worried there will be rate fluctuation tomorrow. Is there anything that I can do?')
+				+faq('service9', '#faqService', 'Is there any requirement for opening up an order?')

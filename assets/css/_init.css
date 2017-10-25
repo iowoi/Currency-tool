@@ -1,0 +1,257 @@
+/* Tungsten Book */
+
+@font-face {
+  font-family: 'Tungsten Book';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/TungstenBook/Tungsten-Light.otf) format('opentype');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Tungsten Book';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/TungstenBook/Tungsten-Book.otf) format('opentype');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+/* Roboto */
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'),
+			 local('Roboto-Thin'),
+			 url(../fonts/Roboto/Roboto-Thin.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'),
+			 local('Roboto-Light'),
+			 url(../fonts/Roboto/Roboto-Light.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'),
+			 local('Roboto-Regular'),
+			 url(../fonts/Roboto/Roboto-Regular.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'),
+			 local('Roboto-Medium'),
+			 url(../fonts/Roboto/Roboto-Medium.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'),
+			 local('Roboto-Bold'),
+			 url(../fonts/Roboto/Roboto-Bold.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+/* Roboto Condensed */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Condensed Light'),
+			 local('RobotoCondensed-Light'),
+			 url(../fonts/RobotoCondensed/RobotoCondensed-Light.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'),
+			 local('RobotoCondensed-Regular'),
+			 url(../fonts/RobotoCondensed/RobotoCondensed-Regular.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+
+/* Noto Sans SC */
+
+@font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 100;
+	src: local('Noto Sans CJK SC Thin'),
+			 local('Noto Sans SC Thin'),
+			 local('Noto Sans SC'),
+			 url(../fonts/NotoSansSC/NotoSansSC-Thin.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Noto Sans CJK SC Light'),
+			 local('Noto Sans SC Light'),
+			 local('Noto Sans SC'),
+			 url(../fonts/NotoSansSC/NotoSansSC-Light.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Noto Sans CJK SC'),
+			 local('Noto Sans SC'),
+			 url(../fonts/NotoSansSC/NotoSansSC-Regular.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Noto Sans CJK SC Medium'),
+			 local('Noto Sans SC Medium'),
+			 local('Noto Sans SC'),
+			 url(../fonts/NotoSansSC/NotoSansSC-Medium.woff) format('woff');
+}
+
+@font-face {
+	font-family: 'Noto Sans SC';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Noto Sans CJK SC Bold'),
+			 local('Noto Sans SC Bold'),
+			 local('Noto Sans SC'),
+			 url(../fonts/NotoSansSC/NotoSansSC-Bold.woff) format('woff');
+}
+
+
+html, body {
+	font-weight: var(--font-normal);
+}
+
+body {
+	overflow-x: hidden;
+}
+
+img {
+	width: 100%;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+button {
+	background-color: transparent;
+	border: none;
+	&:focus {
+	  outline: none;
+	}
+}
+
+.nav-tabs.nav-justified > li > a,
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs-justified > .active > a:focus,
+.nav-tabs.nav-justified > .active > a:focus {
+	border-width: 0;
+}
+
+.row--same-height {
+	display: table;
+
+	& > [class*=col-] {
+		@media (--above-tablet) {
+			position: relative;
+			display: table-cell;
+			height: 100%;
+			float: none;
+			vertical-align: middle;
+		}
+	}
+}
+
+.no-gutters {
+	& > [class*=col-] {
+		&:first-child {
+			padding-left: 0;
+		}
+		&:last-child {
+			padding-right: 0;
+		}
+	}
+}
+
+.popover {
+	border-width: 0;
+	box-shadow: 0 0 16px rgba(var(--black), 0.16);
+
+	&.right {
+		margin-left: 16px;
+	}
+
+	&.right > .arrow {
+		border-right-color: rgba(var(--black), 0.05);
+	}
+}
+
+.panel-group {
+	margin-bottom: 0;
+
+	& .panel.panel-default {
+		border-width: 0;
+		box-shadow: none;
+	}
+
+	& .panel-heading {
+		padding: 0;
+    background-color: transparent;
+    border-color: transparent;
+	}
+
+	& .panel-heading + .panel-collapse > .panel-body {
+		border-top-width: 0;
+	}
+
+	& .panel-title a {
+		position: relative;
+		display: block;
+		width: 100%;
+		font-weight: var(--font-normal);
+	}
+}
+
+
+/* http://stackoverflow.com/a/42139892/711221
+	 Prevent webpage scale when using mobile keyboard
+*/
+@media (--below-tablet) and (-webkit-min-device-pixel-ratio: 0) {
+	input[type="email"]:hover,
+	input[type="number"]:hover,
+	input[type="search"]:hover,
+	input[type="text"]:not(.exchange-tools__input):hover,
+	input[type="tel"]:hover,
+	input[type="url"]:hover,
+	input[type="password"]:hover,
+	textarea:hover,
+	select:hover { font-size: initial; }
+}

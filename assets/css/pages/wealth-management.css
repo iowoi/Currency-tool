@@ -1,0 +1,131 @@
+.section--wealth-management {
+	padding-bottom: 40px;
+}
+.service__container {
+	& .service__title {
+		color: white;
+		font-size: 19px;
+		font-weight: 400;
+		letter-spacing: 2px;
+		line-height: 28px;
+		margin-bottom: 88px;
+	}
+}
+
+
+.service-card {
+	background-color: white;
+	box-shadow: 0 0 16px rgba(var(--black), 0.16);
+	color: var(--black);
+
+	@media (--below-tablet) {
+		margin-bottom: 24px;
+	}
+}
+
+@media (--above-tablet) {
+	.col-sm-6:first-child .service-card {
+		position: absolute 0;
+	}
+}
+
+.service-card__img {
+	height: 260px;
+	background-size: cover;
+	background-position: center;
+	position: relative;
+
+	& img {
+		display: block;
+		width: 64px;
+		height: 104px;
+		margin-bottom: 24px;
+		@media (--below-small) {
+			margin-bottom: 8px;
+		}
+		@media (--below-tablet) {
+			width: 32px;
+			height: 52px;
+		}
+	}
+
+	@media (max-width: 991px) {
+		height: 220px;
+	}
+}
+
+.service-card__title {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 40px 32px;
+	@media (--below-small) {
+		padding: 16px;
+	}
+}
+
+.service__top--left {
+	background-size: cover;
+	background-position: center;
+}
+.service-card__heading {
+	color: white;
+	font-size: 19px;
+	font-weight: 400;
+	letter-spacing: 2px;
+	margin: 0;
+}
+.service__down {
+	position: relative;
+	padding: 24px;
+	@media (--below-tablet) {
+		padding: 16px;
+	}
+}
+.service__list {
+	padding: 24px 8px;
+	border-bottom: 1px solid var(--gray-dark);
+	&:last-child {
+		border-bottom: 0;
+	}
+	@media (--below-small) {
+		padding: 16px 8px;
+	}
+}
+.service__list--title {
+	vertical-align: top;
+	font-size: 17px;
+	font-weight: var(--font-bold);
+	letter-spacing: 1px;
+	line-height: 1.8em;
+	margin-bottom: 16px;
+	padding: 0;
+	@media (--below-small) {
+		margin-bottom: 8px;
+	}
+}
+.service__list--des {
+	vertical-align: top;
+	font-size: 16px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	line-height: 24px;
+}
+.service__list{
+
+}
+.service__business {
+	margin-right: 32px;
+}
+.container__more {
+	padding: 0 152px;
+}
+.service__arrow-up {
+	position: absolute -12px 0 0 10px;
+	width: 0;
+  height: 0;
+  border-left: 24px solid transparent;
+  border-right: 24px solid transparent;
+  border-bottom: 24px solid white;
+}

@@ -1,0 +1,74 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, '法人外貨取引管理')
+	+subNavbar--jp(1)
+	+pageIntro
+		p.description KVB Kunlun Global Capital Limited のサービスの基盤は、法人外貨取引管理です。当社は、継続的に金融テクノロジーに投資し、世界規模の顧客向けにワンストップの外貨取引ソリューションを作り上げました。当社の目的は、法人に対し必要なヘッジを提案し、資金のリスクを減らすとともにキャッシュフロー管理の効率を上げることです。
+	section.section
+		div.container
+			+styledHeading('ワンストップの法人外貨取引管理ソリューション', true)
+			div.timeline.row
+				div.timeline__body.clearfix
+					div.timeline__square.col-sm-4
+						div.timeline__box 顧客ニーズ
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/first.png`, alt="1")
+						div.timeline__title 国際決済
+						div.timeline__icon--international
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 相談
+							div.timeline__card--des KVB はプロの名に相応しいヘッジを提案します。</br>KVB は多様な金融ツールを提示し経営の柔軟性を向上させます。
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 資金の決済
+							div.timeline__card--des KVB は迅速な国際通貨決済方法を提供します。</br>当社の世界規模の送金網により迅速かつ安全な決済システムが実現します。
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/second.png`, alt="2")
+						div.timeline__title 総合的な助言
+						div.timeline__icon--international
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 通貨交換
+							div.timeline__card--des  KVB は、競争力の高い法人用外貨交換レートを提示します。</br>当社はカスタマイズされたソリューションとツールにより経費削減を支援します。
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 市場監視
+							div.timeline__card--des  KVB はリアルタイムで市場を監視し重要な情報を提供します。</br>当社のディーリングルームは24時間体制で市場を監視し、法人顧客に対し過去からの動きと先の対策について助言します。
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/third.png`, alt="3")
+						div.timeline__title 先端の金融テクノロジー
+						div.timeline__icon--international
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 財務の強化
+							div.timeline__card--des KVB はCorpVisionというツールを提供し、顧客のERP統合を支援します。</br>顧客がリスクに晒される機会を限定しキャッシュフロー効率を高め、コスト分析を改善し社内のデータ通信を強化します。
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 経営管理
+							div.timeline__card--des  KVB は業界水準の財務管理基準を提供します。</br>ビジネスプロセスの強化、基準値の設定、重要な助言による財務管理強化
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/fourth.png`, alt="4")
+						div.timeline__title 業界をリードする海外投資
+						div.timeline__icon--international.single
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title ポートフォリオ
+							div.timeline__card--des KVB は世界規模の資産管理サービスを提供します。</br>カスタマイズされた資産計画により法人顧客及び個人顧客に対し、節目ごとに持続性のある財政状態改善を支えます。
+				div.timeline__body.clearfix
+					div.timeline__square.col-sm-4
+						div.timeline__box 総合的な法人外国為替取引管理ソリューション
+	+foreignExchangeProduct--jp
+	+contactArea--jp

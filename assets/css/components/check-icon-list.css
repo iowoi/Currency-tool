@@ -1,0 +1,23 @@
+.check-icon-list {
+	font-size: 0;
+}
+.check-icon-list__item {
+	margin-bottom: 8px;
+	font-size: 0;
+	&:last-child {
+		margin-bottom: 0;
+	}
+	& .icon {
+		width: 16px;
+		height: 16px;
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 16px;
+    transform: translateY(6px);
+	}
+	& .basic-paragraph {
+		display: inline-block;
+		width: calc(100% - 32px);
+		vertical-align: top;
+	}
+}

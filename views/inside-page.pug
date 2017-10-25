@@ -1,0 +1,62 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/inside-page/press-herobanner.jpg`, '跨境电商面临价格竞争与汇率风险双重考验')(class="banner--text-s")
+	section.section.section--gray.inside-page__outline
+		div.container.inside-page__container
+			div.share__block
+				div.share__text 分享
+				a(href='#')
+					+icon('mail-lineal', 'blue')
+				a(href='#')
+					+icon('share', 'blue')
+				div.flip-page__group
+					a.prev-page.disable(href='#')
+						+icon('arrow-left', 'white')
+					a.next-page(href='#')
+						+icon('arrow-right-white', 'white')
+			div.inside-page--content
+				p.inside-page__des.inside-page__first-des 金羊网讯 记者刘勇报道：“电商行业发展迅猛，有的企业每年交易量是上百亿的人民币，这当中是有非常大的汇率风险存在。”2017IEBE（广州）电子商务博览会参展商之一、KVB昆仑国际全球交易总监郑晓嵘日前向记者表示，如果电商没有做相应的汇率避险的话，未来将面对价格竞争与汇率波动双重压力。
+				img.inside-page__photo(src=`${imgPath}/inside-page/content-img-media-single.jpg`)
+				div.inside-page__title 汇率波动将加剧跨境电商竞争
+				p.inside-page__des 随着跨境电商进入“后红利时代”，货品监管趋严，平台红利消失，大型企业“强强联合”越做越大，跨境电商行业竞争加剧。
+				p.inside-page__des “一般跨境电商更多关注仓储、物流、定价、供应链等，但他们也面临因汇率波动带来的风险。”郑晓嵘说，“特别是对于中小企业，将会面临价格竞争与汇率波动的双重压力，稍不注意就有可能在市场整合中被淘汰出局。”
+				p.inside-page__des 2014年人民币双向波动汇率正式开启。据相关统计显示，从2008年—2014年，人民币每年涨3%，而2015、2016年人民币整体波动在8%左右。“人民币不可能退回每年波动3%，随着整体市场流动性越来越大，市场的波动性也会越来越大。”
+				p.inside-page__des 对于跨境电商而言，汇率波动带来的影响不容小觑。“以我们一个电商客户为例，一年的交易量是300亿人民币，按8%波动，就有24亿的汇率风险存在，对于一个企业而言是相当大的风险。汇率的波动可能吃掉整个企业一年盈利，甚至可能会亏损。”郑晓嵘表示，“汇率风险管控将是未来跨境电商的重点。”
+				div.inside-page__title 国内跨境电商领域汇率风险管理存在空白
+				p.inside-page__des 据郑晓嵘介绍，目前还有40%的电商完全还没有意识到汇率风险的问题。20%、30%已经有意识，开始逐步了解，只有10%—20%的电商已经在做汇率避险。
+				p.inside-page__des 对于很多跨境电商企业而言，汇率波动带来的影响其实并不可小觑。从订单到采购、发货再到支付资金，这个客观存在的时间差所产生的汇率变动，会给商品定价带来困难。郑晓嵘说，“跨境电商必须要考虑到应收、应付的款项周期，以及外汇的兑换风险。”郑晓嵘表示，国内还没有专门为跨境电商量身订作的整体避险方案，汇率风险管理主要依赖国内有相关资质的银行或者一些海外银行。但结算、汇率波动等环节的风险无法管控导致跨境电商在应对汇率风险方面呈现被动状态。
+				p.inside-page__des 今年，KVB昆仑国际参加2017 IEBE（广州）国际电子商务博览会所展示的一项新的服务，就是为跨境电商提供外汇避险解决方案。“外汇对中国还是比较新的话题，外汇避险对跨境电商也是新的课题，”郑晓嵘说，“这需要专业的团队整体方案，把外汇风险量化。”在他看来，人民币未来会向成熟、正常波动的货币去靠近。“汇率风险也会随之越来越成为跨境电商的一个痛点问题。”郑晓嵘说。
+			div.share__block
+				div.share__text
+					a(href='#') 分享
+				+icon('mail-lineal', 'blue')
+				+icon('share', 'blue')
+				div.flip-page__group
+					a.prev-page.disable(href='#')
+						+icon('arrow-left', 'white')
+					a.next-page(href='#')
+						+icon('arrow-right-white', 'white')
+		div.container.inside-page__bottom
+			a.inside-page__goback(href='#')
+				+icon('goback-grey', 'gray')
+				span 返回媒体聚焦
+	section.section.section--gray.more
+		div.container
+			div.more__content
+				+styledHeading('相关消息')
+				div.more__list.inside-page__list
+					div.more__item
+						div.more__info
+							h4.text-primary 跨境电商迎来行业洗牌期 O2O或成进口跨境电商新趋势
+							p.description.text-muted 羊城晚报讯 记者刘勇报道：在2015年出口和进口贸易总额双降的背景下⋯
+						+readmore('详情', 'blue', true)
+						div.clearfix
+					div.more__item
+						div.more__info
+							h4.text-primary 2016跨境电商行业面临重新洗牌 KVB昆仑国际倡导建设综合服务平台应对挑战
+							p.description.text-muted 2016年以“诚 · 智相伴”为主题的十五周年庆祝活动正于KVB昆仑国际⋯
+						+readmore('详情', 'blue', true)
+						div.clearfix

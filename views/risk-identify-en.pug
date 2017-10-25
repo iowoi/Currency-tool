@@ -1,0 +1,27 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, 'Corporate Risk Analytics')
+	+subNavbar--en(2)
+	+pageIntro
+		p.description For 15 years we have continuously helped our commercial customers to avoid market risks to the best extent possible. In this process we have accumulated valuable working experience and developed practical models for different business segments, including evaluation on different payment period, currencies involved, risk appetite, as well as settlement urgency. CorpVision, our analytics engine has assisted customers to dissect their risk exposure and to provide hedging strategies.
+	section.section
+		div.container
+			+styledHeading('Corporate Risk Analytics', true)
+			div.risk.row
+				img(src=`${imgPath}/risk-identify/forex-trading-infographic-english.png` alt="risk-infography").col-md-6.risk__img
+				div.risk__intro.col-md-6
+					div.risk__intro--top
+						div.risk__title
+							|
+							span.risk__title--english CorpVision
+							| CorpVision
+						div.risk__des CorpVision is an analytics engine/platform that manages physical orders and their related foreign exchange risks. It offers ERP integration so that orders of physical products can be automatically converted to foreign exchange exposures. Its embedded logics will also provide recommendation based on order currency and proposed delivery schedule. In this process we keep a close track of mark-to-market costs. Once a foreign exchange action is executed to fulfill a payment request, we will put a cost tag to that delivery bundle so we can evaluate the indicative profit and loss. Our commercial customer will enjoy the convenience of determining future pricing of that product based on actual costs taking account into foreign exchange, not just by face value.
+					div.risk__intro--bottom
+						div.risk__title What are the core benefits?
+						div.risk__des Our risk analytics models are more practical coming from a wide range of angle. Comparing with market offerings of often singular methodology, we excel in comprehensiveness and accuracy based on our in-house capacity as foreign exchange prime broker
+	+foreignExchangeProduct--en
+	+contactArea--en

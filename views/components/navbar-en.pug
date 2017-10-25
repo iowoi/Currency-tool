@@ -1,0 +1,120 @@
+include ../helpers/mixins
+include ../helpers/mixins-en
+
+- var devLink = isDev ? '' : '.html'
+nav.navbar.navbar-default.navbar-fixed-top.navbar-kvb
+	div.container
+		div.navbar-header
+			button.navbar-toggle
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand.hidden-sm.navbar__link(href=(isDev ? '/' : './index.html'))
+				span.navbar__text.navbar__logo
+					+icon('logo', 'white')
+			a.navbar-brand.hidden-xs.hidden-md.hidden-lg.navbar__link(href=(isDev ? '/' : './index.html'))
+				span.navbar__text.navbar__logo
+					+icon('logo-mini', 'white')
+		ul.nav.navbar-nav.navbar-right
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text About Us
+						span.caret
+				ul.dropdown-menu
+					li: +link('about-en', 'About KVB')
+					li: +link('legal-supervision-en', 'Accreditation')
+					li: +link('join-us-en', 'Join Us')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text Product & Services
+						span.caret
+				ul.dropdown-menu
+					li: +link('international-pay-en', 'Global Payment')
+					li: +link('one-stop-en', 'Corporate FX Management')
+					li: +link('foreign-exchange-solution-en', 'Cross-Border e-Commerce Solution')
+					li: +link('fintech-en', 'Fin-Tech Solution')
+					li: +link('wealth-management-en', 'Wealth Management')
+					li: +link('product-en', 'Fund,Insurance and PhysicalGold')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text Online Platform
+						span.caret
+				ul.dropdown-menu
+					li: +link('#', 'Online Account Opening')
+					li: +link('#', 'eFX Login')
+					li: +link('#', 'KVBPay Login')
+					li: +link('download-app-en', 'App Download')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text KVB Research
+						span.caret
+				ul.dropdown-menu
+					li: +link('#', 'FX World')
+					li: +link('monthly-news-en', 'Market Digest Magazine')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text Customer Support
+						span.caret
+				ul.dropdown-menu
+					li: +link('contact-en', 'ContactUs')
+					li: +link('downloads-en', 'Resources Download')
+					li: +link('faq-en', 'FAQ')
+			li: a.navbar__link(href="#")
+				span.navbar__text
+					+icon('wechat', 'white')
+			li.dropdown.nabvbar__lang
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aria-expanded="false")
+					span.navbar__text
+						+icon('earth', 'white')
+						span.caret
+						span.navbar__language English
+				ul.dropdown-menu
+					li: a(href="#" data-lang="cn") 简体中文
+					li: a(href="#" data-lang="en") English
+					li: a(href="#" data-lang="jp") 日本語
+		div.mobile-nav-cover
+		div.mobile-nav
+			ul.mobile-nav__list
+				li.mobile-nav__item
+					button.mobile-nav__trigger About Us
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('about-en', 'About KVB')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('legal-supervision-en', 'Accreditation')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('join-us-en', 'Join Us')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger Product & Services
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('international-pay-en', 'Global Payment')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('one-stop-en', 'Corporate FX Management')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('foreign-exchange-solution-en', 'Cross-Border e-Commerce Solution')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('fintech-en', 'Fin-Tech Solution')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('wealth-management-en', 'Wealth Management')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('product-en', 'Fund,Insurance and PhysicalGold')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger Online Platform
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('#', 'Online Account Opening')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('#', 'eFX Login')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('#', 'KVBPay Login')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('download-app-en', 'App Download')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger KVB Research
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('#', 'FX World')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('monthly-news-en', 'Market Digest Magazine')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger Customer Support
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('contact-en', 'ContactUs')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('downloads-en', 'Resources Download')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('faq-en', 'FAQ')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					a.mobile-nav__link(href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA5OTA0NzQxMg==&scene=124#wechat_redirect")
+						+icon('wechat')
+				li.mobile-nav__item.nabvbar__lang
+					button.mobile-nav__trigger
+						+icon('earth')
+					ul.mobile-submenu
+						li.mobile-submenu__item: a.mobile-submenu__link(href="#" data-lang="cn") 简体中文
+						li.mobile-submenu__item: a.mobile-submenu__link(href="#" data-lang="en") English
+						li.mobile-submenu__item: a.mobile-submenu__link(href="#" data-lang="jp") 日本語

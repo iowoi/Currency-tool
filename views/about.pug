@@ -1,0 +1,142 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	- var imgPath = isDev ? 'img' : './assets/img'
+	+banner(`${imgPath}/about/herobanner.jpg`, att, '公司简介')
+	section.section.section--no-bottom-spacing
+		div.container
+			+styledHeading('关于 KVB 昆仑国际环球资本', false)
+	section.section.section--narrow.section--two-blocks.media-section.section--two-blocks-reverse
+		div.container
+			div.section__left-block
+				img(src=`${imgPath}/about/discussion.jpg` alt="")
+			div.section__right-block
+				h1.section__heading 全面的金融服务体系
+				p.description 享负盛名的 KVB 昆仑国际为全球华人和企业提供具备多样性、专业性、前瞻性的金融产品与服务，业务范围包括外汇交易、外汇结算、证券投资、财资管理、基金管理、流动性解决方案、金融 IT 解决方案。经过快速与稳健的发展，集团现已在澳大利亚悉尼和墨尔本、新西兰奥克兰、加拿大多伦多、中国香港等多个国际城市设有全资公司或代表机构，并实现全球全天无间断 24 小时电子交易。
+				p.description KVB 昆仑国际集团是业界少数实现多国多牌照和跨地区上市双重监管资质和大洋洲区域内最具规模的华资金融机构之一（非银行），更是全球离岸人民币市场发展的理论先行者和人民币国际化的坚实推进者，在业界享有公认的领导地位。KVB 昆仑国际环球资本为 KVB 昆仑国际集团旗下全资子公司。
+			div.clearfix
+	section.section.section--narrow-top.section--two-blocks.media-section
+		div.container
+			div.section__left-block
+				img(src=`${imgPath}/about/trustworthy-brand.jpg` alt="")
+			div.section__right-block
+				h1.section__heading 您值得信赖的品牌
+				p.description 作为向集团提供主要驱动力的 “两驾马车” 之一，KVB 昆仑国际环球资本以凝聚全球百余种货币的外汇综合解决方案为基石，快速响应包含 “一带一路” 在国内的国际重大经济贸易举措，通过先进的金融科技平台及研发投入，打造出独有的聚合支付生态圈与企业外汇管理系统。我们将国际结算、企业外汇管理、跨境电商外汇解决方案、金融科技、全球资产与财富管理等多类别金融服务集于一身，为全球商业机构及高端投资客户提供一站式专业外汇解决方案。我们致力通过对行业的潜心研究，对市场需求的用心发掘和对客户的竭诚服务，成长为引领行业不断前行的企业外汇管理专家！
+			div.clearfix
+	section.magazine
+		div.container.clearfix
+			div.magazine__display-stand.col-md-4.col-sm-5
+				div.magazine__spotlight
+					img.magazine__cover(src=`${imgPath}/about/catalog.jpg` alt="magazine")
+					button.btn.btn-default.btn-lg.btn-block.btn-default--outline.magazine__download 下载 PDF
+			div.magazine__info.col-md-8.col-sm-7
+				div.magazine__info-content
+					+styledHeading('KVB 昆仑国际十五周年纪念册', false)
+					p.description.magazine__description 20 世纪初，凭借对「人民币国际化」和「中国离岸金融市场蓬勃发展」的准确预判，KVB 昆仑国际将全球先进的金融工具和服务理念进行创造性整合，打造出独具特色的领先金融服务品牌。以差异化产品和创新型交易，成功实现「以高品质的金融产品服务全球华人」。
+				div.magazine__btn
+					+readmore('在线浏览')
+	section.section.section--gray.kvb-history
+		div.container
+			div.clearfix.row--same-height
+				div.col-md-4.kvb-history__group
+					img(src=`${imgPath}/about/innocation.jpg` alt="innocation")
+					h3.kvb-history__heading 业务创新
+					dl.kvb-history__content
+						dt.kvb-history__year 2005
+						dd.kvb-history__info 在亚太地区首推「信息交易」ForexStar 掌上电脑交易平台
+						dt.kvb-history__year 2006
+						dd.kvb-history__info 领先全球实现离岸人民币兑澳元及离岸人民币兑纽元外汇保证金交叉盘交易
+						dt.kvb-history__year 2008
+						dd.kvb-history__info 全面营运香港证券业务
+						dt.kvb-history__year 2010
+						dd.kvb-history__info 「昆仑全球汇兑」首家贴牌合作机构在新西兰签约
+						dt.kvb-history__year 2012
+						dd.kvb-history__info 与中国中信银行合作，共同拓展离岸金融及高端私人银行服务
+						dt.kvb-history__year 2013
+						dd.kvb-history__info 成功推出大洋洲首个香港离岸人民币结算产品
+						dt.kvb-history__year 2015
+						dd.kvb-history__info 成功推出澳洲 SIV 移民资金全链条服务
+						dt.kvb-history__year 2016
+						dd.kvb-history__info 成功上线全球电子外汇 eFX 交易平台
+						dt.kvb-history__year 2016
+						dd.kvb-history__info 成功推出企业外汇管理平台「汽汇之星」
+				div.col-md-4.kvb-history__group
+					img(src=`${imgPath}/about/footprint.jpg` alt="footprint")
+					h3.kvb-history__heading 企业足迹
+					dl.kvb-history__content
+						dt.kvb-history__year 2001
+						dd.kvb-history__info 在「风帆之都」新西兰奥克兰正式成立
+						dt.kvb-history__year 2002
+						dd.kvb-history__info 澳大利亚悉尼公司正式成立
+						dt.kvb-history__year 2005
+						dd.kvb-history__info 香港公司、墨尔本公司全面营运
+						dt.kvb-history__year 2006
+						dd.kvb-history__info 集团中国北京代表处成立
+						dt.kvb-history__year 2007
+						dd.kvb-history__info 加拿大多伦多公司全面营运
+						dt.kvb-history__year 2013
+						dd.kvb-history__info 昆仑国际金融集团有限公司于香港联合交易所挂牌上市
+						dt.kvb-history__year 2015
+						dd.kvb-history__info 昆仑国际金融集团有限公司引入中信证券成为战略控股股东
+						dt.kvb-history__year 2016
+						dd.kvb-history__info 台北公司全面运营
+						dt.kvb-history__year 2017
+						dd.kvb-history__info 获得香港证券及期货事务监察委员会颁发的杠杆式外汇交易牌照
+				div.col-md-4.kvb-history__group
+					img(src=`${imgPath}/about/influence.jpg` alt="influence")
+					h3.kvb-history__heading 华社影响力
+					dl.kvb-history__content
+						dt.kvb-history__year 2006
+						dd.kvb-history__info 集团执行董事作为华人华侨代表，参加中国国务院的国庆招待会，庆祝中华人民共和国成立 57 周年
+						dt.kvb-history__year 2007
+						dd.kvb-history__info 与中国中央电视台联合推出「传承中华文化，服务全球华人」电视广告片
+						dt.kvb-history__year 2008
+						dd.kvb-history__info 与中国著名经济学家巴曙松联合出版《离岸金融市场发展研究 - 国际趋势和中国路径》专着
+						dt.kvb-history__year 2009
+						dd.kvb-history__info 荣膺香港澳洲商会「2009 年度商业成就奖」集团执行董事受邀出席中国国庆 60 周年招待会及天安门阅兵观礼
+						dt.kvb-history__year 2013
+						dd.kvb-history__info 荣膺新西兰中国贸易协会商业大奖
+						dt.kvb-history__year 2014
+						dd.kvb-history__info 习近平主席悉尼勉励华人企业家，集团执行董事受邀接见
+						dt.kvb-history__year 2016
+						dd.kvb-history__info 广州 IEBE 电商盛会「2015 年度极具价值跨境电商服务机构」
+						dt.kvb-history__year 2016
+						dd.kvb-history__info 携手凤凰卫视打造「外汇纵横」全新栏目
+						dt.kvb-history__year 2017
+						dd.kvb-history__info 广州 IEBE 电商盛会「2016 年度极具价值跨境电商服务机构」
+	section.section.section--gray.section--no-top-spacing.promising
+		+styledHeading('为什幺选择 KVB 昆仑国际环球资本', true)
+		div.container.promising__container
+			div.row
+				div.col-md-4.col-sm-6.promising__block
+					+icon('trustworthy')
+					div.promising__content
+						h4.text-center 可信赖的品牌
+						p.text-center.description 全球知名华资金融品牌，服务海外华人社区十余载，致力打造海外华资金融企业典范。
+				div.col-md-4.col-sm-6.promising__block
+					+icon('earthglobal')
+					div.promising__content
+						h4.text-center 全球持牌金融机构
+						p.text-center.description 我们在全球各个业务地区均持有最高级别金融服务牌照，为您提供最全面的金融产品及服务。
+				div.col-md-4.col-sm-6.promising__block
+					+icon('analytics')
+					div.promising__content
+						h4.text-center 多元化结算体系
+						p.text-center.description 为您提供包括电汇、现钞、支票、二维码支付、借记卡等多个结算方式，利用 KVB 昆仑国际全球支付网络满足您的全方位收付需求。
+				div.col-md-4.col-sm-6.promising__block
+					+icon('exchange')
+					div.promising__content
+						h4.text-center 最具优势的汇率
+						p.text-center.description 为您提供货币批发商专享汇率，让您在交易过程中节省成本、提升业务竞争力。
+				div.col-md-4.col-sm-6.promising__block
+					+icon('security')
+					div.promising__content
+						h4.text-center 资金的安全性
+						p.text-center.description 每一道业务流程均有专人审核。我们仅与拥有国际水准的金融对手进行合作，每年亦通过全球四大会计师事务所审计，确保您的资金安全。
+				div.col-md-4.col-sm-6.promising__block
+					+icon('handshake')
+					div.promising__content
+						h4.text-center 专业的咨询服务
+						p.text-center.description 分布全球各地区、超过 60 名业务及客户服务专员，可通过普通话、英文、广东话、日文为您提供最贴心的产品及服务体验。

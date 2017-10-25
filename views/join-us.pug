@@ -1,0 +1,60 @@
+extends layout
+
+include helpers/mixins
+
+mixin joinUs(label, parentId, title, subtitle)
+	div.panel.panel-default.join-us__block
+		div.panel-heading(id=label role='tab')
+			h4.panel-title
+				a(role='button' data-toggle='collapse' data-parent=parentId href=`#${label}Collapse` aria-expanded='false' aria-controls=`${label}Collapse`)
+					span.main-title #{title}
+					div.sub-title #{subtitle}
+					+icon('down-rate', 'black')
+					+icon('up-rate', 'black')
+		div.panel-collapse.collapse(id=`${label}Collapse` role='tabpanel' aria-labelledby=label)
+			div.panel-body.join-us__body
+				div.position__outline
+					div.position__title
+						+icon('briefcase', 'blue')
+						div.title Responsibilities:
+					ul.position__des
+						li Provide first-line local and global support for trading applications
+						li Monitor SLA metrics according to customers’ agreements and internal regulation
+						li Escalate technical issues to application support for troubleshooting
+						li Provide technical training, end-user training, and perform system administration
+						li Identify requirements, analyze and offer solutions to end-users
+						li Perform system installation, patch installation and system upgrade during non-trading hours
+						li Plan, execute and support the implementation activities such as assisting user acceptance test and pre-implementation trial, conducting user training, performing system installation, data conversion & cutover activities
+						li Work with on-shore and off-shore developers to design, develop, test and deploy financial applications
+				div.position__outline
+					div.position__title
+						+icon('fountain-pen', 'blue')
+						div.title Requirements:
+					ul.position__des
+						li University graduate in Computer Science/Information technology
+						li Minimum of 3 years of IT experience
+						li Working experience with Microsoft SQL server
+				div.position__bottom
+					div.position__intro We offer 5-day workweek, career prospects and attractive package for the right candidate.  If you would like to take the challenge to stretch your ability and form part of our team, please send your full career details, together with your current and expected salary by e-mail to: hr_nonfg@kvbkunlun.com.
+					div.position__warning Information provided will be treated in the strictest confidence and used only for recruitment related purposes. All applications will be destroyed after 6 months. Only short listed candidates will be contacted.
+				div.position__apply
+						button.apply__button APPLY
+block content
+	+banner(`${imgPath}/join-us/herobanner_JoinUs.jpg`, '加入我们')
+	section.section
+		div.container
+			+styledHeading('欢迎加入我们，KVB昆仑国际将为你提供施展才华的舞台！', true)
+			div.row
+				div.col-md-10.col-md-offset-1
+					p.description KVB昆仑国际是面向全球华人提供高端金融投资和外汇交易服务的华资跨国金融企业，目前在澳大利亚悉尼和墨尔本、新西兰奥克兰、中国北京和香港、加拿大多伦多等国际都市设有全资公司及代表机构。作为行业的领跑者，我们深知保持领先优势的关键是人才，所以，我们一直把人才视为公司最宝贵的财富。公司将提供具有竞争力的薪资福利待遇，良好的培训和个人发展机会。如果你对自身能力充满自信，愿意不断挑战自我，挑战未来，欢迎你加入我们的行列。
+	section.section.section--gray
+		div.container
+			div.join-us__heading 现有以下职位正在招聘
+			div.panel-group.joinUs__group(id='joinUs' role='tablist' aria-multiselectable='true')
+				+joinUs('join1', '#joinUs', 'Application Support Analyst', 'Hong Kong')
+				+joinUs('join2', '#joinUs', 'Dealing Manager (FX)', 'Hong Kong')
+				+joinUs('join3', '#joinUs', 'Dealer (FX)', 'Hong Kong')
+				+joinUs('join4', '#joinUs', 'Sales Manager / Business Development Manager', 'Canada')
+				+joinUs('join5', '#joinUs', 'Sales Executive/Assistant Sales Executive', 'Canada')
+				+joinUs('join6', '#joinUs', 'Investment Sales Manager', 'New Zealand')
+				+joinUs('join7', '#joinUs', 'Sr. Settlement Officer', 'New Zealand')

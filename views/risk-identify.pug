@@ -1,0 +1,26 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, '企业外汇管理', '企业外汇风险识别')
+	+subNavbar(2)
+	+pageIntro
+		p.description KVB 昆仑国际环球资本凭借超十五年服务全球贸易型企业的成功经验，通过深入了解企业各项需求（资金账期、涉及货币种类、风险承受度、结算时间要求等），运用独立研发的 CorpVision 企汇之星  电子管理系统运算管理模型，帮助企业充分识别外汇风险、准确定位风险敞口。
+	section.section
+		div.container
+			+styledHeading('企业外汇风险识别', true)
+			div.risk.row
+				img(src=`${imgPath}/risk-identify/forex-trading-infographic.png` alt="risk-infography").col-md-6.risk__img
+				div.risk__intro.col-md-6
+					div.risk__intro--top
+						div.risk__title
+							|
+							span.risk__title--english CorpVision
+							| 企汇之星
+						div.risk__des 专为电子商务及进出口企业打造的全新订单管理系统 – CorpVision企汇之星，运用最先进的云技术及互联网界面，让企业可无缝衔接现有ERP系统，将各类贸易订单转化为不同账期的外汇敞口需求。 透过专业的后台逻辑处理，将KVB全球交易室独特之外汇市场判断融入交易策略，提供专业的外汇成本逆向分析，让产品净成本一目了然，帮助企业准确定位外汇风险敞口、进行产品销售价格调整。
+					div.risk__intro--bottom
+						div.risk__title 企汇之星运算管理模型有哪些优势？
+						div.risk__des KVB昆仑国际独有的外汇风险管理模型，将市场与企业从多个维度进行综合分析，相比目前市场上的单一价格维度分析模型，更加全面、透彻、准确。我们的分析模型分别从历史季节性因素、价格走势及市场波动三方面剖析市场，并按科学比例对三方面因素进行加权运算，最终得出上升或下跌的精准概率。</br>贸易型企业一般较少留意汇率波动对利润产生的影响，透过KVB领先的外汇风险管理模型分析，可使企业大幅增强资金管理能力，大概率避免在外汇市场中遭遇“黑天鹅”侵袭（例如，瑞朗事件、英国脱欧、2017美国大选），使贸易型企业能专注发展自身贸易事业，实现企业的良性发展。
+	+foreignExchangeProduct
+	+contactArea

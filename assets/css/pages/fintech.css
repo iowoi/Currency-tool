@@ -1,0 +1,33 @@
+@import '_vars';
+
+.fintech__platform--outline {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.reverse .fintech__img {
+	text-align: right;
+}
+
+.fintech__data--outline {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.fintech__system--down {
+	border-top: 1px solid var(--gray-dark);
+	padding-top: 24px;
+}
+
+@media (--below-tablet) {
+	.fintech__img,
+	.reverse .fintech__img {
+		padding-bottom: 40px;
+		text-align: center;
+	}
+	.fintech__platform--img {
+		width: 240px;
+	}
+}

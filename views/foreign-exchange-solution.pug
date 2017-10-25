@@ -1,0 +1,88 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/foreign-exchange-solution/Cross-Border-e-Commerce-herobanner.jpg`, '跨境电商外汇解决方案')
+	+pageIntro
+		p.description KVB昆仑国际环球资本作为跨境电商优质外汇金融服务商以及各大电子商务协会理事会员单位，为跨境电商提供包括跨境贸易结算、多币种支付、远期避险、套期保值、隔夜拆借以及电子ERP系统对接等多元化产品及服务。我们借助极为优惠的贸易结算费率及外汇资金成本，以及最快可达当日到账的支付服务，为电商企业在同质化的竞争中获取先机，节省成本，并极大提升资金周转效率。
+	section.section.section--gray-dark
+		+styledHeading('我们提供的服务', true)
+		div.container
+			div.img-card-overlap-wrap
+				div.row.row--same-height
+					div.col-sm-4.img-card
+						div.img-card__img-wrap
+							div.img-card__img(style=`background-image: url(${imgPath}/foreign-exchange-solution/tile-service-1.jpg)`)
+						div.img-card__container
+							h3.img-card__heading 跨境贸易汇兑
+							p.description 支持全球100余种货币的交易结算，帮助进出口商业客户实现快速货币汇兑。
+					div.col-sm-4.img-card
+						div.img-card__img-wrap
+							div.img-card__img(style=`background-image: url(${imgPath}/foreign-exchange-solution/tile-service-2.jpg)`)
+						div.img-card__container
+							h3.img-card__heading 全球支付及结算
+							p.description 为跨境电商企业提供方便、快捷及安全的资金代收、代付、下发支付服务，最快可以T+0完成相关结算。
+					div.col-sm-4.img-card
+						div.img-card__img-wrap
+							div.img-card__img(style=`background-image: url(${imgPath}/foreign-exchange-solution/tile-service-3.jpg)`)
+						div.img-card__container
+							h3.img-card__heading 外汇避险及建议
+							p.description 为贸易客户提供符合账期的外汇避险产品，如远期、掉期、期权等，并提供相应咨询建议，辅助客户规避汇率波动风险。
+
+	section.section
+		+styledHeading('产品及服务三大优势', true)
+		div.container
+			div.clearfix
+				div.advantage__block.col-sm-4
+					+icon('flags', 'blue')
+					div.advantage__block--right
+						div.advantage__title 多币种
+						div.advantage__des 除主流货币外，更支持全球129个“一带一路”沿线小币种
+				div.advantage__block.col-sm-4
+					+icon('time-clock', 'blue')
+					div.advantage__block--right
+						div.advantage__title 高效率
+						div.advantage__des 充分利用独有全球银行结算网络实现大部份国家T+0当天到账服务
+				div.advantage__block.col-sm-4
+					+icon('pricetag', 'blue')
+					div.advantage__block--right
+						div.advantage__title 价格优
+						div.advantage__des 集合各贸易公司庞大交易量需求向银行取得最优惠的汇率批发价格
+	section.section.customer-diagram__background(style=`background-image: url(${imgPath}/foreign-exchange-solution/process-bg.jpg)`)
+		div.container
+			+styledHeading('客户服务流程图总览', true)
+			img(src=`${imgPath}/foreign-exchange-solution/process.jpg`, alt="process")
+	section.section.global-customer__outline
+		div.container
+			+styledHeading('不断增加的全球合作客户', true)
+			div.global-customer__wrap
+				div.global-customer__block
+					div.global-customer__block--title 电商出口企业
+					div.global-customer__block--des 有棵树集团 / 维康氏电子商务 / 敦煌网 / 中国好东西网海豚供应链
+				img.global-customer__img(src=`${imgPath}/foreign-exchange-solution/brands-1.png`, alt="alt")
+			div.global-customer__wrap
+				img.global-customer__img(src=`${imgPath}/foreign-exchange-solution/brands-2.png`, alt="alt")
+				div.global-customer__block
+					div.global-customer__block--title 外国进出口企业
+					div.global-customer__block--des QFlow International / AIC International Customer Care Service / Hobby Trend / Sunny Girl Online / TRI-WIN
+	section.section.cooperation-case.cooperation-case--without-background
+		div.container
+			+styledHeading('合作实例')
+			div.row
+				div.col-sm-5.col-md-4.cooperation-case__intro
+					div.cooperation-case__card
+						h4.cooperation-case__issue 实例一
+						div.cooperation-case__company 有棵树科技股份有限公司
+						div.description.cooperation-case__brief 深圳有棵树品牌创立于 2010 年，是新三板挂牌企业中唯一一家同时覆盖进口和出口的跨境电商企业，是进口供应链第一品牌。
+					div.cooperation-case__card
+						h4.cooperation-case__issue 实例二
+						div.cooperation-case__company 有棵树科技股份有限公司
+						div.description.cooperation-case__brief 深圳有棵树品牌创立于 2010 年，是新三板挂牌企业中唯一一家同时覆盖进口和出口的跨境电商企业，是进口供应链第一品牌。
+				div.col-sm-7.col-md-7.col-md-offset-1.cooperation-case__detail
+					div.cooperation-case__section
+						+icon('checkboard', 'black')
+						div.cooperation-case__content
+							div.cooperation-case__title 合作成果
+							div.description.cooperation-case__description 2016年上半财年营收超过10亿人民币，增长超过300%。 2017年，该企业估值已达到30亿人民币。有棵树透过KVB昆仑国际的全球服务体系，享受全套的企业外汇管理方案，量化监控外汇敞口，通过专业交易员团队提供的外汇市场报告，为其及时更新外汇市场动向及影响，提出相应的避险解决方案。 也将继续助力其在澳洲的更大发展。
+	+contactArea

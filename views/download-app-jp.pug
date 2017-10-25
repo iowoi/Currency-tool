@@ -1,0 +1,36 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	div.banner.app.app__banner(style=`background-image: url('${imgPath}/download-app/first-screen-bg.jpg')`)
+		div.container
+			div.kvb-breadcrumb
+				a.kvb-breadcrumb__link(href="/" title="首頁")
+					+icon('home', 'black')
+					span.kvb-breadcrumb__arrow
+						+icon('arrow-right', 'black')
+					span 携帯用アプリダウンロード
+			span.banner__heading KVB Global Markets
+			div.row.app__intro
+				p.app__des.col-md-8.col-md-offset-2 KVB Global Marketsの携帯用アプリをぜひお試しください。
+			div.app__platform
+				a.app__download(href="#" title="app store")
+					img(src=`${imgPath}/download-app/apple-app-store-icon.png`)
+				a.app__download(href="#" title="google play")
+					img(src=`${imgPath}/download-app/google-appstore-icon.png`)
+	section.section.section--no-top-spacing
+		div.container.download-app__container
+				img.app__feature(src=`${imgPath}/download-app/mobile-featuring.png` alt="big mobile image")
+	section.section.section--gray.coming-soon
+		img.coming-soon__bg-top(src=`${imgPath}/download-app/mobile-layer-top.png` alt="mobile image")
+		img.coming-soon__bg-bottom(src=`${imgPath}/download-app/mobile-layer-buttom.png` alt="mobile image")
+		div.container.coming-soon__content
+			p.coming-soon__heading より多くの機能が盛り込まれる予定です。ご期待ください。
+			p.coming-soon__subheading IOSダウンロードアンドロイドダウンロードご期待ください。
+			div.app__platform
+				a.app__download(href="#" title="app store")
+					img(src=`${imgPath}/download-app/apple-app-store-icon.png`)
+				a.app__download(href="#" title="google play")
+					img(src=`${imgPath}/download-app/google-appstore-icon.png`)

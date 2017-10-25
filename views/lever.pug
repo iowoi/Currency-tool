@@ -1,0 +1,186 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, '企业外汇管理', '杠杆式外汇衍生品避险')
+	+subNavbar(4)
+	+pageIntro
+		p.description 企业面对的外汇风险可能受到不同因素影响，包括账期、结算时间、支付频率等。无论如何，汇率波动会导致企业收入货币价值的升值或贬值。在业务过程中准确控制或锁定汇率风险，能够有效提升企业的贸易利润及成本控制效率。KVB 昆仑国际环球资本旗下香港子公司 – KVB Capital Markets Ltd 为客户提供一系列满足香港 SFC 监管要求的高杠杆式外汇衍生交易产品和避险服务。
+	section.section.lever__outline.section--special(style=`background-image: url(${imgPath}/lever/forex-trading-feature-bg.png)`)
+		div.container
+			+styledHeading('杠杆式外汇衍生品避险', true)
+			div.lever__features
+				div.feature__card
+					+icon('geometric-variety', 'green')
+					div.feature__title 交易产品丰富
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 提供不同货币杠杆式外汇远期产品，满足客户及机构锁定成本、套期保值的风险对冲需求，最大可至20倍杠杆，降低交易保证金压力。
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 亦推出离岸人民币杠杆式外汇交易，为与中国大陆业务相关的香港及外资企业提供便利一站式避险及交易服务。
+				div.feature__card
+					+icon('geometric-layers', 'green')
+					div.feature__title 交易限额及基础货币
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 您可选择不同货币（详情请咨询我们的客户服务专员）作为存储和结算的货币，不但能满足您的个性化需求，还能让您的保证金交易更具灵活性。
+				div.feature__card
+					+icon('geometric-circles', 'green')
+					div.feature__title 多币种帐户
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 杠杆式外汇交易最低交易额度为50K（5万）美金或等值其他货币，支持非整数仓位交易。
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 基准货币使用USD（美金）计算，而客户保证金亦将以USD（美金）货币计价。
+				div.feature__card
+					+icon('geometric-hexagon', 'green')
+					div.feature__title 资金及系统安全度高
+					div.feature__list
+						+icon('tick', 'green')
+						div.feature__list--des 我们受香港SFC严格监管，为客户提供资金隔离账户，并运用先进加密技术确保客户的信息安全、资金安全。
+	section.section
+		div.container
+			div.lever__trade-board--title 交易成本低
+			table.table.table-striped.lever__trade-board--table
+				thead
+					tr
+						th 货币对
+						th 一周
+						th 二周
+						th 三周
+						th 四周
+						th 隔夜掉期率
+				tbody
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+					tr
+						td USDHKD
+						td -
+						td -
+						td -
+						td -
+						td -
+					tr
+						td AUDUSD
+						td -2,0
+						td -4,0
+						td -6,1
+						td -8,-2
+						td 0/1
+			div.lever__trade-board--notice 注意：上述点数均以货币基准点（basis point, pips）计价，上述主要交易货币点差及隔夜掉期率信息只是用于参考。 点差及隔夜掉期率可能由于市场情况变化而上浮或下调，市场情况变化包括但不局限于流动性缩进、市场情绪、以及风险计算。
+	section.section.section--gray
+		div.container
+			div.lever__trade-process
+				div.trade__time
+					div.trade__open
+						div.trade__intro
+							+icon('calendar', 'blue')
+							div.trade__title 交易时间
+						div.trade__weekday
+							div.tarde__title
+								div.trade__title--des 提供全天候交易服务，交易时间为：
+							div.weekday__block
+								div.block__week
+									div.block__week--top Mon. 周ㄧ
+									div.block__week--bottom 香港时间</br>05:00
+								div.block__week--dash
+								div.block__week
+									div.block__week--top Sat. 周六
+									div.block__week--bottom 香港时间</br>05:00
+					div.trade__close
+						div.tarde__title
+							div.trade__title--des
+								| 全球性公众节假日将
+								span.trade__highlight 暂停在线交易服务
+								| ：
+						div.holiday__block
+							div.block__nyd
+								div.block__nyd--top 1 Jan.
+								div.block__nyd--bottom 元旦
+							div.block__xmas
+								div.block__xmas--left
+									div.xmas__date 25 Dec.
+									div.xmas__name 圣诞节
+								div.block__xmas--right
+									div.xmas__start 12月25日</br>13:00:00
+									div.xmas__dash
+									div.xmas__end 12月26日</br>23:59:59
+				div.clearfix
+					div.trade__platform.col-sm-6
+						div.trade__intro
+							+icon('award', 'blue')
+							div.trade__title 领先的外汇</br>交易平台
+						div.trade__des 系统简单易操作。提供专业技术分析指标图鉴，以及详细的账户信息汇总报告。
+					div.trade__risk-management.col-sm-6
+						div.trade__intro
+							+icon('protect', 'blue')
+							div.trade__title 强大的风险</br>管理机能
+						div.trade__des 实时账户交易，后台可查询每日及每月账户记录；拥有获利与止损挂单功能，提高风险管理效率。
+				div.trade__money-out
+					div.trade__intro
+						+icon('withdraw', 'blue')
+						div.trade__title 客户出金流程
+					div.trade__step
+						div.row
+							div.money-out__step.col-md-4
+								h3.gradient-heading step 1.
+								div.trade__des 当您通过银行转账方式存入交易或保证金资金，请在操作完成后，将银行电子转账凭条打印/截图，并发给我们的客户服务专员。
+							div.money-out__step.col-md-4
+								h3.gradient-heading step 2.
+								div.trade__des 我们在确认资金收讫后，会尽快完成入账动作。您会第一时间收到系统发出的入账交易单凭证。
+							div.money-out__step.col-md-4
+								h3.gradient-heading step 3.
+								div.trade__des 如果您发现入金金额有任何问题，可第一时间与客户服务专员联系。
+				div.trade__money-in
+					div.trade__intro
+						+icon('deposit', 'blue')
+						div.trade__title 客户入金流程
+					div.trade__step
+						div.row
+							div.money-in__step.col-md-4
+								h3.gradient-heading step 1.
+								div.trade__des 当您需要将资金从交易账户提取并安排支付时，请下载并填写“提款单”（可在网站“文件下载”页面下载使用）。
+							div.money-in__step.col-md-4
+								h3.gradient-heading step 2.
+								div.trade__des 签署完毕后，请将相应的表格扫描、邮件或者传真给我们，客户服务专员在收到您的申请后会尽快完成提款及支付动作。
+							div.money-in__step.col-md-4
+								h3.gradient-heading step 3.
+								div.trade__des 请注意，如果您的提款时间已经超过每天银行的最迟支付时间，我们会在下一个工作日优先帮您处理。
+	+foreignExchangeProduct
+	+contactArea

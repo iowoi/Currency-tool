@@ -1,0 +1,50 @@
+- var devLink = isDev ? '' : '.html'
+footer.footer
+	div.container
+		div.row
+			div.col-sm-2.col-md-2.col-md-offset-1
+				h4.text-primary.footer__heading 关于我们
+					+icon('down')
+				ul.list-unstyled.footer__links
+					li: +link('about', '公司简介')
+					li: +link('legal-supervision', '监管资质')
+					li: +link('company-news', '公司新闻')
+					li: +link('media-focus', '媒体聚焦')
+					li: +link('join-us', '加入我们')
+			div.col-sm-3.col-md-2
+				h4.text-primary.footer__heading 产品与服务
+					+icon('down')
+				ul.list-unstyled.footer__links
+					li: +link('international-pay', '国际结算与支付')
+					li: +link('foreign-exchange-process', '企业外汇管理')
+					li: +link('foreign-exchange-solution', '跨境电商外汇解决方案')
+					li: +link('fintech', '金融科技')
+					li: +link('wealth-management', '全球资产与财富管理')
+					li: +link('product', '基金、保险及黄金')
+			div.col-sm-2.col-md-2
+				h4.text-primary.footer__heading 线上平台
+					+icon('down')
+				ul.list-unstyled.footer__links
+					li: +link('#', '在线开户')
+					li: +link('#', 'eFX 登陆')
+					li: +link('#', 'KVBPay 登陆')
+					li: +link('download-app', 'APP 下载')
+			div.col-sm-3.col-md-2
+				h4.text-primary.footer__heading 外汇研究院
+					+icon('down')
+				ul.list-unstyled.footer__links
+					li: +link('expert-columns', '专家专栏')
+					li: +link('#', '外汇纵横')
+					li: +link('monthly-news', '电子双月刊')
+			div.col-sm-2.col-md-2
+				h4.text-primary.footer__heading 客户支援
+					+icon('down')
+				ul.list-unstyled.footer__links
+					li: +link('contact', '联系我们')
+					li: +link('downloads', '文档下载')
+					li: +link('faq', '常见问题')
+		div.footer__copyright.copyright
+			div.row
+				div.col-md-8.col-md-offset-2.text-muted
+					h4.text-center.copyright__heading © KVB Kunlun Global Capital Limited. 风险声明
+					p.copyright__description （KVB 昆仑国际集团，下称集团）所登文件仅为提供资料，任何改变都不会做出任何事前通知。集团并不担保此刊物所提供的准确性、可靠性或完整性。本文件所载资料并不构成金融或投资建议，也不对任何金融机构产品或服务构成要约、建议或销售邀请。相关资讯不考虑您的个人目标、财政状况、需要、经验或承担亏损之能力。外汇保证金、差价合约、证券及其他衍生工具属高险投资，亏损风险可以相当巨大，甚至超越所持现金和任何其他已作抵押资产的价值，阁下须以个人之财政状况及投资目标作出评估或咨询独立专业投资顾问。

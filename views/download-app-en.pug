@@ -1,0 +1,36 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	div.banner.app.app__banner(style=`background-image: url('${imgPath}/download-app/first-screen-bg.jpg')`)
+		div.container
+			div.kvb-breadcrumb
+				a.kvb-breadcrumb__link(href="/" title="首頁")
+					+icon('home', 'black')
+					span.kvb-breadcrumb__arrow
+						+icon('arrow-right', 'black')
+					span Online Platform
+			span.banner__heading KVB Global Markets
+			div.row.app__intro
+				p.app__des.col-md-8.col-md-offset-2 Welcome to try out our mobile App KVB Global Markets.
+			div.app__platform
+				a.app__download(href="#" title="app store")
+					img(src=`${imgPath}/download-app/apple-app-store-icon.png`)
+				a.app__download(href="#" title="google play")
+					img(src=`${imgPath}/download-app/google-appstore-icon.png`)
+	section.section.section--no-top-spacing
+		div.container.download-app__container
+				img.app__feature(src=`${imgPath}/download-app/mobile-featuring.png` alt="big mobile image")
+	section.section.section--gray.coming-soon
+		img.coming-soon__bg-top(src=`${imgPath}/download-app/mobile-layer-top.png` alt="mobile image")
+		img.coming-soon__bg-bottom(src=`${imgPath}/download-app/mobile-layer-buttom.png` alt="mobile image")
+		div.container.coming-soon__content
+			p.coming-soon__heading More functions coming soon, stay tuned.
+			p.coming-soon__subheading Stay tuned for iOS / Android version.
+			div.app__platform
+				a.app__download(href="#" title="app store")
+					img(src=`${imgPath}/download-app/apple-app-store-icon.png`)
+				a.app__download(href="#" title="google play")
+					img(src=`${imgPath}/download-app/google-appstore-icon.png`)

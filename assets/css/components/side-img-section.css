@@ -1,0 +1,127 @@
+.section {
+	& .side-img-section {
+		margin-bottom: 24px;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.side-img-section {
+	position: relative;
+	background: var(--gray);
+	&.reverse {
+		& .side-img-section__img-wrap {
+			float: right;
+		}
+		& .side-img-section__container {
+			float: left;
+			&:before {
+				transform: rotate(180deg);
+				left: auto;
+				right: -23px;
+				@media (--below-tablet) {
+					transform: rotate(90deg);
+					right: calc(50% - 12px);
+				}
+			}
+		}
+		& .side-img-section__container-wrap {
+			float: right;
+		}
+	}
+	&.section--white {
+		background: white;
+		& .side-img-section__container {
+			&:before {
+				border-right: 24px solid white;
+			}
+		}
+	}
+	&.side-img-section--small {
+		& .side-img-section__container {
+			padding:  24px;
+			min-height: auto;
+			@media (--below-tablet) {
+				padding:  16px;
+			}
+		}
+	}
+	&.box-shadow {
+		box-shadow: 0 2px 32px 0 rgba(0,0,0,0.05);
+	}
+}
+.side-img-section__img-wrap {
+	width: 33%;
+	float: left;
+	@media (--below-small) {
+		width: 40%;
+	}
+	@media (--below-tablet) {
+		width: 100%;
+
+	}
+}
+.side-img-section__img {
+	position: absolute;
+	width: 33%;
+	height: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	@media (--below-small) {
+		width: 40%;
+	}
+	@media (--below-tablet) {
+		width: 100%;
+		position: relative;
+		padding-top: 100%;
+	}
+}
+.side-img-section__container {
+	position: relative;
+	width: 67%;
+	float: right;
+	padding:  80px;
+	min-height: 510px;
+	@media (--below-small) {
+		width: 60%;
+		padding:  48px 32px;
+	}
+	@media (--below-tablet) {
+		width: 100%;
+		padding: 32px 24px;
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		top: 64px;
+		width: 0;
+		height: 0;
+		border-top: 24px solid transparent;
+	  border-bottom: 24px solid transparent;
+	  border-right: 24px solid var(--gray);
+		left: -23px;
+		@media (--below-tablet) {
+			transform: rotate(90deg);
+			top: -30px;
+			left: calc(50% - 12px);
+		}
+	}
+}
+
+.side-img-section__container-wrap {
+	max-width: 1200px;
+}
+
+.side-img-section__heading {
+	font-size: 18px;
+	font-weight: var(	--font-bold);
+	letter-spacing: 1px;
+	line-height: 1.5em;
+	margin-bottom: 24px;
+	@media (--below-tablet) {
+		font-size: 16px;
+		margin-bottom: 16px;
+	}
+}

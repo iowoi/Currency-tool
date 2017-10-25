@@ -1,0 +1,310 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+mixin fixedInvestment
+	section.section.section--gray-dark.fixed-investment.mobile-dropdown__content(data-panel="fixed-investment" data-target="fixed-investment")
+		div.container
+			div.row
+				div.col-lg-10.col-lg-offset-1
+					div.row.fixed-investment__intro
+						div.col-md-6
+							h2.comprehensive-intro__heading Fixed Income Investment
+							h3.comprehensive-intro__subheading Fixed income are defensive investment product in nature
+							div.row
+								div.col-sm-6.fixed-investment__workflow
+									div.fixed-investment__content
+										div.fixed-investment__workflow-start Fixed Value Day
+										+icon('l-arrow-down', 'blue')
+										div.fixed-investment__workflow-process
+											div.fixed-investment__workflow-cell Your purchased debenture
+												br
+												| will be paid to At an agreed time interval
+												br
+												| the payout is guaranteed you at issue price at an agreed future date
+										+icon('l-arrow-down', 'blue')
+										div.fixed-investment__workflow-end Guaranteed PrincipalRealized Income
+								div.col-sm-6.fixed-investment__workflow
+									div.fixed-investment__content
+										div.fixed-investment__workflow-start Fixed Pay Day
+										+icon('l-arrow-down', 'blue')
+										div.fixed-investment__workflow-process
+											div.fixed-investment__workflow-cell At an agreed time interval the payout is guaranteed
+												br
+												| the payout is guaranteed
+										+icon('l-arrow-down', 'blue')
+										div.fixed-investment__workflow-end Realized Income
+						div.col-md-6
+							div.fixed-investment__right-panel
+								h2.comprehensive-intro__heading Investment from various dimensions
+								h3.comprehensive-intro__subheading As for bond portfolio
+								div.row.fixed-investment__portfolio
+									div.col-xs-6
+										div.fixed-investment__portfolio-block
+											+icon('tick', 'blue')
+											span.fixed-investment__portfolio-type Types of bonds
+									div.col-xs-6
+										div.fixed-investment__portfolio-block
+											+icon('tick', 'blue')
+											span.fixed-investment__portfolio-type Categories of currency
+									div.col-xs-6
+										div.fixed-investment__portfolio-block
+											+icon('tick', 'blue')
+											span.fixed-investment__portfolio-type Different industries
+									div.col-xs-6
+										div.fixed-investment__portfolio-block
+											+icon('tick', 'blue')
+											span.fixed-investment__portfolio-type Expiry dates
+					div.side-img-section.section--white.side-img-section--small.clearfix
+						div.side-img-section__img-wrap
+							div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/advantage.jpg)`)
+						div.side-img-section__container
+							div.side-img-section__container-wrap
+								h2.side-img-section__heading Strength of Investment in fixed-income products
+								+checkList(['ROI higher than  fixed term deposits', ' Investment risk significantly lower than equity', 'Different types of bond will satisfy different types of investment needs: fixed return, floating return and protection from inflation ', 'Guaranteed principal – Payment of issuance principal on an agreed date', 'Liquidity – Bonds can be sold before due day and is likely to generate extra capital return', 'Cash flow transparency and predictability: fixed dividend pay day and inflation offsetting'])
+mixin longternInvestment
+	section.section.section--gray-dark.longtern-investment.mobile-dropdown__content(data-panel="longtern-investment" data-target="longtern-investment" style="display: none")
+		div.container
+			div.row
+				div.col-lg-10.col-lg-offset-1
+					h2.comprehensive-intro__heading guaranteed or down protected
+					div.side-img-section.section--white.side-img-section--small.clearfix
+						div.side-img-section__img-wrap
+							div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/stairs.jpg)`)
+						div.side-img-section__container
+							div.side-img-section__container-wrap
+								div.longtern-investment__item
+									div.longtern-investment__label Type of products
+									div.longtern-investment__info Guaranteed investment products, Australia’s 20 big blue chips.
+								div.longtern-investment__item
+									div.longtern-investment__label investment period
+									div.longtern-investment__info 4 years
+								div.longtern-investment__item
+									div.longtern-investment__label ROI
+									div.longtern-investment__info Cumulative return caps at 32% after 4-year period. If equity price falls below initial price, principal will be paid back.
+								div.longtern-investment__item
+									div.longtern-investment__label Past return rate
+									div.longtern-investment__info The cumulative rate of return exceeds 35% for the past 5 years
+					div.side-img-section.section--white.side-img-section--small.reverse.clearfix
+						div.side-img-section__img-wrap
+							div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/account.jpg)`)
+						div.side-img-section__container
+							div.side-img-section__container-wrap
+								h2.side-img-section__heading Advantages of Structured investment Products
+								div.longtern-investment__intro Passive investment in the Australian stock market: If you have characteristics mentioned below, KVB offers customized overseas stock markets investment products.
+								ul.check-icon-list.row
+									li.check-icon-list__item.col-md-6
+										+icon('tick', 'blue')
+										p.basic-paragraph Interested in Overseas Stock Market Investment
+									li.check-icon-list__item.col-md-6
+										+icon('tick', 'blue')
+										p.basic-paragraph Preferred Customized Investment Product
+									li.check-icon-list__item.col-md-6
+										+icon('tick', 'blue')
+										p.basic-paragraph Lock Down Fixed Income Pay Schedule
+									li.check-icon-list__item.col-md-6
+										+icon('tick', 'blue')
+										p.basic-paragraph Avoid Short Term Stock Market Fluctuation
+									li.check-icon-list__item.col-md-6
+										+icon('tick', 'blue')
+										p.basic-paragraph Wish to Obtain Short Term Investment Opportunity
+					div.side-img-section.section--white.side-img-section--small.clearfix
+						div.side-img-section__img-wrap
+							div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/success.jpg)`)
+						div.side-img-section__container
+							div.side-img-section__container-wrap
+								h2.side-img-section__heading Past Successful Cases: Obtained 10% p.a. return for investors
+								div.longtern-investment__table
+									div.longtern-investment__table-row
+										div.longtern-investment__label Name
+										div.longtern-investment__info KVB Apex 3
+									div.longtern-investment__table-row
+										div.longtern-investment__label Type
+										div.longtern-investment__info Closed Product with Conditional Guaranteed Principal and Interest
+									div.longtern-investment__table-row
+										div.longtern-investment__label Investment Object
+										div.longtern-investment__info Five blue chips in main-board market
+									div.longtern-investment__table-row
+										div.longtern-investment__label Breakeven Institution
+										div.longtern-investment__info Australian top investment banks
+									div.longtern-investment__table-row
+										div.longtern-investment__label Calculation Method
+										div.longtern-investment__info Principal X ( 1 + 10.0% )
+									div.longtern-investment__table-row
+										div.longtern-investment__label Duration
+										div.longtern-investment__info 12 months (fully closed)
+mixin ipo
+	section.section.section--gray-dark.ipo.mobile-dropdown__content(data-panel="ipo" data-target="ipo" style="display: none")
+		div.container
+			div.row
+				div.col-lg-10.col-lg-offset-1
+					h2.comprehensive-intro__heading Past Successful Cases
+					div.ipo__group
+						div.ipo__title 1. Primary Market Financial Institution Capital Notes
+						div.ipo__case
+							div.ipo__case-name
+								div
+									div.ipo__name-en
+										span NAB Capital Note
+							div.ipo__case-content
+								div.ipo__heading
+									+icon('checkboard')
+									| Result
+								ul.ipo__list
+									li On market from October 2016
+									li $100 face value annualized 6.7% rate of return
+									li Half year value rise over $106 with 9% half year rate of return
+						div.ipo__case
+							div.ipo__case-name
+								div
+									div.ipo__name-en
+										span Westpac Capital Note
+							div.ipo__case-content
+								div.ipo__heading
+									+icon('checkboard')
+									| Result
+								ul.ipo__list
+									li On market from September 2016
+									li $100 face value with annualized 6.7% rate of return
+									li Half year value rise over $106 with 9% half year rate of return
+					div.ipo__group
+						div.ipo__title 2. Primary Market IPO
+						div.ipo__block--outline
+							div.ipo__case
+								div.ipo__case-name
+									div.ipo__name-en
+										span OOh Media
+								div.ipo__case-content
+									div.ipo__heading
+										+icon('checkboard')
+										| Result
+									ul.ipo__list
+										li On market from December 2014
+										li IPO Priced at $1.93
+										li 1 Year listing value raise over $2.33, investment return surpassing 120%
+							div.ipo__case
+								div.ipo__case-name
+									div.ipo__name-en
+										span IDP Education
+								div.ipo__case-content
+									div.ipo__heading
+										+icon('checkboard')
+										| Result
+									ul.ipo__list
+										li On market from November 2015
+										li IPO Priced at $2.65, on the day of listing achieved nearly 30% gain
+										li Current listing price at $4.44, 1year investment return
+mixin siv
+	section.siv.mobile-dropdown__content(data-panel="siv" data-target="siv" style="display: none")
+		section.section.section--gray-dark.siv__about
+			div.container
+				div.row
+					div.col-lg-10.col-lg-offset-1
+						h2.comprehensive-intro__heading About SIV Investment Immigration
+						div.side-img-section.section--white.side-img-section--small.clearfix
+							div.side-img-section__img-wrap
+								div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/sydney-opera-house.jpg)`)
+							div.side-img-section__container
+								div.side-img-section__container-wrap
+									h2.side-img-section__heading Provides Excellent Investment Immigration Opportunities to Global High Net Worth Investors
+									ul.siv__list
+										li The shortcut for HNW investors to obtain permanent residence status in Australia
+										li Invest $ 5 million AUD into qualified investment portfolio for a required period of 4 years
+										li No restriction on investors’ age and language requirements
+						div.side-img-section.section--white.side-img-section--small.clearfix
+							div.side-img-section__img-wrap
+								div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/consulting.jpg)`)
+							div.side-img-section__container
+								div.side-img-section__container-wrap
+									h2.side-img-section__heading Alterations of SIV Investment Policies (Valid From 1/7/2015)
+									ul.siv__list
+										li No longer allow full amount of investment money to be put into low risk government bond or cash funds
+										li No longer allow second mortgage on invested property
+										liMedium-cap/small-cap equity funds and PE/VC funds will be included as investment targets
+		section.section.siv__plan
+			div.container
+				div.side-img-section.section--white.side-img-section--small.box-shadow.clearfix
+					div.side-img-section__img-wrap
+						div.side-img-section__img(style=`background-image: url(${imgPath}/comprehensive/invest＿plan.jpg)`)
+					div.side-img-section__container
+						div.side-img-section__container-wrap
+							h2.side-img-section__heading KVB offers You With Ideal SIV Investment Plans
+							ul.siv__list
+								li Assured to comply with the latest SIV investment requirements
+								li Proficient investment team that is trustworthy and with a track record of successes in SIV
+								li Relative stable portfolio with high probability of guaranteed principal
+								li One –stop solution for investment immigration, greatly simplifies entire procedures
+		section.section.section--gray-dark.siv__issue
+			div.container
+				h2.comprehensive-intro__heading 5 Million AUD Investment Category - SIV Sample
+				div.row
+					div.col-md-6
+						div.siv__issue-card
+							div.siv__issue-date
+								div
+									div.siv__issue-month September
+									div.siv__issue-year 2016
+							div.siv__issue-workflow
+								ul.siv__issue-step
+									li Mr. L, one candidate of 5M category, met with immigration lawyer for the first time
+									li where he was presented with details of the category and process of the application.
+					div.col-md-6
+						div.siv__issue-card
+							div.siv__issue-date
+								div
+									div.siv__issue-month October
+									div.siv__issue-year 2016
+							div.siv__issue-workflow
+								ul.siv__issue-step
+									li Mr. L met with KVB and determined on
+									li KVB his customized investment plan for the SIV application.
+					div.col-md-6
+						div.siv__issue-card
+							div.siv__issue-date
+								div
+									div.siv__issue-month November
+									div.siv__issue-year 2016
+							div.siv__issue-workflow
+								ul.siv__issue-step
+									li  Mr. L received invitation for investment
+									li and arranged 5 Million AUD transferred to the designated investment account.
+					div.col-md-6
+						div.siv__issue-card
+							div.siv__issue-date
+								div
+									div.siv__issue-month December
+									div.siv__issue-year 2016
+							div.siv__issue-workflow
+								ul.siv__issue-step
+									li Investment process completes.
+									li 10 days after this, Mr. L and his family obtained conditional permanent residence returning visa.
+
+block content
+	+banner(`${imgPath}/comprehensive/wealth-management-herobanner.jpg`, 'Some of Our Previous Portfolios')
+	section.section.section--gray.section--no-bottom-spacing.comprehensive__section
+		+styledHeading('Comprehensive Wealth Management Product and Services', true)
+		div.container.hidden-xs
+			div.comprehensive-tabs.row
+				div.col-sm-3
+					button.tab.active(data-category="fixed-investment") Fixed Income Fund
+				div.col-sm-3
+					button.tab(data-category="longtern-investment") Medium and long-term structured investment products
+				div.col-sm-3
+					button.tab(data-category="ipo") Overseas Primary Market IPO Subscription Service
+				div.col-sm-3
+					button.tab(data-category="siv") SIV Investment Immigration
+		div.dropdown.mobile-tabs.mobile-tabs--white.visible-xs
+			button#mobileTabs.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+				span.contact-form__selected Fixed Income Fund
+				span.caret: +icon('down', 'gray-darker')
+			ul.dropdown-menu(aria-labelledby="mobileTabs")
+				li: a(data-target="fixed-investment") Fixed Income Fund
+				li: a(data-target="longtern-investment") Medium and long-term structured investment products
+				li: a(data-target="ipo") Overseas Primary Market IPO Subscription Service
+				li: a(data-target="siv") SIV Investment Immigration
+	+fixedInvestment
+	+longternInvestment
+	+ipo
+	+siv
+	+contactArea--en

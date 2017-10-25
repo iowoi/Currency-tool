@@ -1,0 +1,8 @@
+.media-focus {
+	padding-bottom: 40px;
+	background: var(--gray-dark);
+
+	& .kvb-pagination {
+		margin: 40px 0 0;
+	}
+}

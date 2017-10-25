@@ -1,0 +1,53 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	+banner(`${imgPath}/international-pay/corporate-fx-herobanner.jpg`, '国際決済')
+	+pageIntro
+		p.description KVB Kunlun Global Capital Limitedは独自の国際決済ネットワークを有し、顧客に対し迅速で安全な外国送金サービスを提供しています。当社は、為替レートの変動が顧客に悪影響を及ぼすことを承知し、為替予約・ノンデリバラブルフォワード・スワップその他ヘッジ目的の派生商品など柔軟性に富む商品のリストを提供し、リスク選好度・マージン率・資金投与・決済緊急度などに関する個々の顧客の異なるニーズに対応してきました。
+		p.description 同時に、当社はインターネットを使用した発注から送金までシステム任せにできるプラットフォームを提供し、顧客が簡単に外貨の取引・支払い・決済を行い、世界のどこでも常時、インターネット上で口座を管理できるようなっております。
+	section.section.international-pay(style=`background-image: url(${imgPath}/international-pay/feature-bg.jpg)`)
+		+styledHeading('KVBを選ぶ理由', true)
+		div.container
+			div.text-center.international-pay__heading 当社は顧客に対して、柔軟でカスタマイズされた外貨取引ソリューションを提供します。顧客のビジネスの発展に合わせて世界規模の決済・支払い方法を提案し、個々のビジネス要件に対応します。
+			div.text-center.international-pay__subheading 当社は、単純なT+0タイプの一括支払い方法であろうと、段階的に行う複雑な支払い方法であろうと、外貨調達に伴うストレス軽減に向けて、種々の選択余地を提供するばかりでなく、コスト節約に繋がる支払い方法を提示します。
+			div.row
+				div.col-sm-6.col-md-6
+					div.international-pay__card
+						div.international-pay__card-title 当社のオンライン外貨取引プラットフォーム
+							br
+							| eFXで外為取引はより身近なものとなります。
+						div.international-pay__card-list
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 提示されたリアルタイムの取引可能交換レートを見ながらワンクリックで発注
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 取引通貨ごとにリアルタイムの残高・送金進捗状況・送金注文・取引の全履歴を照会
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 必要な時に常時市場にアクセス可能
+				div.col-sm-6.col-md-6
+					div.international-pay__card
+						div.international-pay__card-title 当社は外貨取引業界の専門家を揃え、顧客に対し、外国為替市場の変動が顧客のキャッシュフローにどのような影響を及ぼすかアドバイスいたします。
+							br
+							| 実際、これまでにも次のような形で顧客の便宜を図ってきました。
+						div.international-pay__card-list
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 最新鋭の決済ツールを使用し外国送金プロセスの時間を短縮
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text ヘッジ効果増進のため適切な派生商品を使用して利益幅を拡大
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text 世界規模の外国送金網を使用して取引資金の送金
+							div.international-pay__card-item
+								+icon('tick', 'green')
+								div.international-pay__text オフショア人民元をヘッジとして使いスプレッドより得られる利益を確保
+			div.service
+				div.text-center.service__title 当社の提案に興味のある方は
+				div.text-center.description.service__des 連絡先を頂ければ、こちらから連絡いたします
+				+link('contact-jp', 'お問い合わせ')(class="btn btn-middle btn-default--outline service__btn")

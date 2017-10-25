@@ -1,0 +1,73 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, '企业外汇管理', '服务简介')
+	+subNavbar(1)
+	+pageIntro
+		p.description KVB 昆仑国际环球资本以外汇综合解决方案为基石，通过先进科技平台及研发投入，为全球商业机构及高端投资客户提供一站式专业外汇解决方案。KVB通过提供强大的后台数据库服务，帮助企业量化仓位及账期风险，提供最优化的企业外汇管理方案及流程咨询，帮助更多企业控制资本风险，缓解资金周转压力，抵御汇价波动风险。
+	section.section
+		div.container
+			+styledHeading('一站式企业外汇管理方案', true)
+			div.timeline.row
+				div.timeline__body.clearfix
+					div.timeline__square.col-sm-4
+						div.timeline__box 客户需求
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/first.png`, alt="1")
+						div.timeline__title 国际结算支付
+						div.timeline__icon--international
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 账期确定
+							div.timeline__card--des KVB昆仑国际提供对冲衍生品交易的专业意见</br>提供专业外汇对冲和避险工具，增加企业对账期管理的灵活性
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 款项支付
+							div.timeline__card--des  KVB昆仑国际提供外币速汇收付</br>全球汇款网络和在线平台，为客户提供快速、安全及全面的外币速汇收付服务
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/second.png`, alt="2")
+						div.timeline__title 全面外汇方案
+						div.timeline__icon--international
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 货币转换
+							div.timeline__card--des KVB昆仑国际提供商业外汇交易</br>灵活多样的外汇结算方案和交易工具，有效协助企业控制营商成本
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 款项支付
+							div.timeline__card--des  KVB昆仑国际提供国际汇市咨询</br>24小时环球交易室密切监测外汇市场波动，为企业提供全面的市场回顾和预测
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/third.png`, alt="3")
+						div.timeline__title 先进金融科技
+						div.timeline__icon--international
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 财务优化
+							div.timeline__card--des KVB昆仑国际提供企汇之星科技平台</br>准确定位外汇风险敞口，提升财务效率，建制标准报表，加速信息互通
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 企业管理
+							div.timeline__card--des  KVB昆仑国际提供企业司库管理平台</br>优化内部流程，建立行业标准，提升企业综合外汇及司库管理能力
+				div.timeline__body.clearfix
+					div.col-sm-4
+						img.timeline__num(src=`${imgPath}/one-stop/fourth.png`, alt="4")
+						div.timeline__title 领先海外投资
+						div.timeline__icon--international.single
+							div.timeline__icon--inside
+					div.col-sm-4
+						div.timeline__card
+							div.timeline__card--title 资产配置
+							div.timeline__card--des KVB昆仑国际提供海外财富管理</br>度身定制的财富管理策划方案，满足企业与个人客户在不同阶段的财务需求
+				div.timeline__body.clearfix
+					div.timeline__square.col-sm-4
+						div.timeline__box 企业外汇管理 全流程解决方案
+	+foreignExchangeProduct
+	+contactArea

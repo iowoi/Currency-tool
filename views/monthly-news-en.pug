@@ -1,0 +1,114 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	+banner(`${imgPath}/monthly-news/herobanner-bimonthy.jpg`, 'Market Digest Magazine')
+	+pageIntro
+		p.description KVB offers best of its market insights and personal views of its leading market experts in this bi-monthly magazine. Our articles are aimed to provide to our customers educational reading as well as experience sharing in many foreign exchange related topics. We take pride in seeing our customers excel in their market position and business growth with our partnership. Your comments are also highly regarded in making this magazine better to suit your business need.
+	section.section.section--no-spacing.section--gray.mix-container
+		div.container.monthly-news__container.hidden-xs
+			ul.monthly-news__navbar.row
+				li: button(data-filter="all") All
+				li: button(data-filter=".year-2018") 2018
+				li: button(data-filter=".year-2017") 2017
+				li: button(data-filter=".year-2016") 2016
+				li: button(data-filter=".year-2015") 2015
+				li: button(data-filter=".year-2014") 2014
+		div.dropdown.mobile-tabs.mobile-tabs--gray-dark.visible-xs
+			button#mobileTabs.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+				span.contact-form__selected All
+				span.caret: +icon('down', 'gray-darker')
+			ul.dropdown-menu(aria-labelledby="mobileTabs")
+				li: button(data-filter="all") All
+				li: button(data-filter=".year-2018") 2018
+				li: button(data-filter=".year-2017") 2017
+				li: button(data-filter=".year-2016") 2016
+				li: button(data-filter=".year-2015") 2015
+				li: button(data-filter=".year-2014") 2014
+		div.container
+			div.monthly-news__outline
+				div.row
+					div.col-md-3.col-sm-6.mix.year-2018
+						div.monthly-news__book
+							a(href='#')
+								img.monthly-news__img(src=`${imgPath}/monthly-news/bimonthly-orange.jpg`, alt="alt")
+								div.monthly-news__book--info
+									div.monthly-news__date 2018 7-8 Monthly Publications
+									div.monthly-news__file PDF 3.16 MB
+									div.monthly-news__download
+										p.monthly-news__download--des download
+										+icon('download','blue')
+					div.col-md-3.col-sm-6.mix.year-2017
+						div.monthly-news__book
+							a(href='#')
+								img.monthly-news__img(src=`${imgPath}/monthly-news/bimonthly-blue.jpg`, alt="alt")
+								div.monthly-news__book--info
+									div.monthly-news__date 2017 7-8 Monthly Publications
+									div.monthly-news__file PDF 3.16 MB
+									div.monthly-news__download
+										p.monthly-news__download--des download
+										+icon('download','blue')
+					div.col-md-3.col-sm-6.mix.year-2016
+						div.monthly-news__book
+							a(href='#')
+								img.monthly-news__img(src=`${imgPath}/monthly-news/bimonthly-white.jpg`, alt="alt")
+								div.monthly-news__book--info
+									div.monthly-news__date 2016 7-8 Monthly Publications
+									div.monthly-news__file PDF 3.16 MB
+									div.monthly-news__download
+										p.monthly-news__download--des download
+										+icon('download','blue')
+					div.col-md-3.col-sm-6.mix.year-2015
+						div.monthly-news__book
+							a(href='#')
+								img.monthly-news__img(src=`${imgPath}/monthly-news/bimonthly-lightbluejpg.jpg`, alt="alt")
+								div.monthly-news__book--info
+									div.monthly-news__date 2015 7-8 Monthly Publications
+									div.monthly-news__file PDF 3.16 MB
+									div.monthly-news__download
+										p.monthly-news__download--des download
+										+icon('download','blue')
+					div.col-md-3.col-sm-6.mix.year-2014
+						div.monthly-news__book
+							a(href='#')
+								img.monthly-news__img(src=`${imgPath}/monthly-news/bimonthly-orange.jpg`, alt="alt")
+								div.monthly-news__book--info
+									div.monthly-news__date 2014 7-8 Monthly Publications
+									div.monthly-news__file PDF 3.16 MB
+									div.monthly-news__download
+										p.monthly-news__download--des download
+										+icon('download','blue')
+					div.col-md-3.col-sm-6.mix.year-2018
+						div.monthly-news__book
+							a(href='#')
+								img.monthly-news__img(src=`${imgPath}/monthly-news/bimonthly-blue.jpg`, alt="alt")
+								div.monthly-news__book--info
+									div.monthly-news__date 2018 7-8 Monthly Publications
+									div.monthly-news__file PDF 3.16 MB
+									div.monthly-news__download
+										p.monthly-news__download--des download
+										+icon('download','blue')
+					div.col-md-3.col-sm-6.mix.year-2017
+						div.monthly-news__book
+							a(href='#')
+								img.monthly-news__img(src=`${imgPath}/monthly-news/bimonthly-white.jpg`, alt="alt")
+								div.monthly-news__book--info
+									div.monthly-news__date 2017 7-8 Monthly Publications
+									div.monthly-news__file PDF 3.16 MB
+									div.monthly-news__download
+										p.monthly-news__download--des download
+										+icon('download','blue')
+					div.col-md-3.col-sm-6.mix.year-2016
+						div.monthly-news__book
+							a(href='#')
+								img.monthly-news__img(src=`${imgPath}/monthly-news/bimonthly-lightbluejpg.jpg`, alt="alt")
+								div.monthly-news__book--info
+									div.monthly-news__date 2016 7-8 Monthly Publications
+									div.monthly-news__file PDF 3.16 MB
+									div.monthly-news__download
+										p.monthly-news__download--des download
+										+icon('download','blue')
+			div.monthly-news__loading-outline
+				button.monthly-news__loading-button more

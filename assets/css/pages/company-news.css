@@ -1,0 +1,28 @@
+.loading-more__outline {
+	padding-top: 0;
+}
+.loading-more__area {
+	background-color: var(--gray);
+	display: table;
+	margin: 0 auto;
+	& .loading-more__btn {
+		display: table-cell;
+		vertical-align: middle;
+		width: 272px;
+		height: 64px;
+		border: 1px solid var(--blue);
+		font-size: 16px;
+		letter-spacing: 1px;
+		color: var(--blue);
+		text-align: center;
+		background-color: var(--gray);
+	}
+}
+
+.news .btn-readmore {
+	bottom: 16px;
+
+	@media (--below-desktop) {
+		bottom: 12px;
+	}
+}

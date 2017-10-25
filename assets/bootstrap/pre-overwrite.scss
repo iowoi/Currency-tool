@@ -1,0 +1,145 @@
+//== Colors
+
+$brand-primary: #2068A6;
+
+
+//== Scaffolding
+
+$text-color: #4A4A4A;
+
+$link-hover-decoration: none;
+
+
+//== Typography
+
+$font-family-sans-serif: 'Roboto', 'Noto Sans SC', sans-serif;
+
+
+//== Components
+
+$border-radius-base: 0;
+$border-radius-large: 0;
+$border-radius-small: 0;
+
+
+//== Tables
+
+
+//== Buttons
+
+
+//== Forms
+
+
+//== Dropdowns
+
+$dropdown-border: #EBEBEB;
+$dropdown-divider-bg: #EBEBEB;
+
+
+//== Media queries breakpoints
+
+
+//== Grid system
+
+$grid-gutter-width: 32px;
+
+
+//== Container sizes
+
+
+//== Navbar
+
+$navbar-height: 104px;
+$navbar-margin-bottom: 0;
+$navbar-border-radius: 0;
+
+$navbar-padding-vertical: 0;
+
+$navbar-default-color: #4A4A4A;
+$navbar-default-bg: transparent;
+$navbar-default-border: transparent;
+
+$navbar-default-toggle-hover-bg: transparent;
+$navbar-default-toggle-icon-bar-bg: $brand-primary;
+$navbar-default-toggle-border-color: transparent;
+
+
+//== Navs
+
+
+//== Tabs
+
+$nav-tabs-border-color: transparent !default;
+$nav-tabs-link-hover-border-color: transparent !default;
+
+$nav-tabs-active-link-hover-border-color: transparent !default;
+
+$nav-tabs-justified-link-border-color: transparent !default;
+$nav-tabs-justified-active-link-border-color :transparent !default;
+
+
+//== Pagination
+
+
+//== Pager
+
+
+//== Jumbotron
+
+
+//== Form states and alerts
+
+
+//== Tooltips
+
+
+//== Popovers
+
+
+//== Labels
+
+
+//== Modals
+
+
+//** Padding applied to the modal body
+$modal-inner-padding:         32px !default;
+
+//** Padding applied to the modal title
+$modal-title-padding:         24px !default;
+
+//** Modal backdrop background color
+$modal-backdrop-bg:           #4A4A4A !default;
+//** Modal backdrop opacity
+$modal-backdrop-opacity:      .5 !default;
+//** Modal header border color
+$modal-header-border-color:   #EBEBEB !default;
+
+//== Alerts
+
+
+//== Progress bars
+
+
+//== List group
+
+
+//== Panels
+
+
+//== Thumbnails
+
+
+//== Badges
+
+
+//== Breadcrumbs
+
+
+//== Close
+
+
+//== Type
+
+$text-muted: #9B9B9B;

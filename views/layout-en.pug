@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		meta(http-equiv="X-UA-Compatible", content="ie=edge,chrome=1")
+		title KVB Kunlun Global
+		- var imgPath = isDev ? 'img' : './assets/img'
+		link(rel="icon" type="image/x-icon" href=`${imgPath}/favicon.png`)
+		if(!isDev)
+			each filename in htmlWebpackPlugin.files.css
+				link(rel="stylesheet" href=filename)
+	body.en-site
+		include components/navbar-en
+		block content
+		include components/footer-en
+		script#exchangeToolsPopover(type="text/x-handlebars-template")
+			div.exchange-tools__popover
+				div.exchange-tools__popover-title {{from}} - {{to}}
+				// status up or down
+				div.exchange-tools__brief(data-status="down")
+					+icon('rate-down')
+					div.exchange-tools__current {{current}}
+					div.exchange-tools__brief-ratio
+						div {{rate}}
+						div {{percentage}}
+					div.clearfix
+				div.exchange-tools__time {{date}}
+		block templates
+		if(isDev)
+			script(src="vendor.bundle.js")
+			script(src="main.bundle.js")
+		else
+			each filename in htmlWebpackPlugin.files.js
+				script(src=filename)
+		block script

@@ -1,0 +1,21 @@
+.icon {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	fill: var(--black);
+
+	&.-white { fill: white; }
+	&.-green { fill: var(--green); }
+	&.-green2 { fill: var(--green2); }
+	&.-red { fill: var(--red); }
+	&.-red2 { fill: var(--red2); }
+	&.-orange { fill: var(--orange); }
+	&.-blue { fill: var(--blue); }
+	&.-gray-dark { fill: var(--gray-dark); }
+	&.-gray-darker { fill: var(--gray-darker); }
+}
+
+.icon > svg {
+	width: 100%;
+	height: 100%;
+}

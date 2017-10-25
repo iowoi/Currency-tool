@@ -1,0 +1,79 @@
+extends layout
+
+include helpers/mixins
+
+block content
+	+banner(`${imgPath}/wealth-management/wealth-management-herobanner.jpg`, '全球资产与财富管理')
+	+pageIntro
+		p.description 作为全球华人的海外桥头堡及忠实服务伙伴，KVB昆仑国际凭借国际业务网络和跨地区、跨行业专业团队，实现对全球趋势的精准把握。KVB昆仑国际为您提供从商业到个人的全链条资金规划、财富管理和资产配置的一站到位服务，助您运筹帷幄、把控全球。
+	section.section.section--gray
+		+styledHeading('提供的多样化服务', true)
+		div.container
+			div.row.row--same-height
+				div.col-sm-6
+					div.service-card
+						div.service-card__img(style=`background-image: url(${imgPath}/wealth-management/tile-wealth-manage-business.jpg)`)
+							div.service-card__title
+								img(src=`${imgPath}/numbers/1.png` alt="1")
+								h3.service-card__heading 商业金融及理财服务
+						div.service__down
+							div.service__arrow-up
+							div.service__list
+								div.service__list--title 外币存款
+								div.service__list--des 提供澳洲各大银行澳元，美元等主要货币大额存款优惠利率选择
+							div.service__list
+								div.service__list--title 汇率类投资产品
+								div.service__list--des 提供双货币存款、汇率挂钩存款等
+							div.service__list
+								div.service__list--title 债券类产品
+								div.service__list--des 澳洲联邦及州政府公债、澳洲及全球投资级公司债券、国际性银行债券
+							div.service__list
+								div.service__list--title 海外股权质押
+								div.service__list--des 海外上市股票特惠利率抵押，轻松获得流动资金
+							div.service__list
+								div.service__list--title 股权投资
+								div.service__list--des 定制化的澳洲当地优秀企业股权投资服务
+				div.col-sm-6
+					div.service-card
+						div.service-card__img(style=`background-image: url(${imgPath}/wealth-management/tile-wealth-manage-personal.jpg)`)
+							div.service-card__title
+								img(src=`${imgPath}/numbers/2.png` alt="2")
+								h3.service-card__heading 个人金融及理财服务
+						div.service__down
+							div.service__arrow-up
+							div.service__list
+								div.service__list--title 移民资金规划
+								div.service__list--des 深厚地方智慧和成熟合作渠道助您尽快前往海外，开启生活新篇章
+							div.service__list
+								div.service__list--title 国际股票投资
+								div.service__list--des 投资美国、澳洲、新西兰、香港、日本、新加坡等股票市场
+							div.service__list
+								div.service__list--title 环球产业基金
+								div.service__list--des 便捷管理多地域、跨产业投资组合，包括澳洲地产基金等稳定收益投资
+							div.service__list
+								div.service__list--title 结构化投资组合
+								div.service__list--des 订制化投资计划，有效降低市场风险
+							div.service__list
+								div.service__list--title 海外家族信托设立及管理
+								div.service__list--des 保障资产传承，享受海外资产增值的巨大潜力
+							div.service__list
+								div.service__list--title 私募基金设立及管理
+								div.service__list--des 通过私募形式投资海外金融及实物资产，轻松把控全球资产配置
+							div.service__list
+								div.service__list--title 实物贵金属买卖及仓储
+								div.service__list--des 提供实物黄金白银锭和钱币的买卖、交割、安保仓储及运输服务
+							div.service__list
+								div.service__list--title 海外生活金融服务
+								div.service__list--des 海外商务考察、培训、旅游、置业安家、子女留学、慈善捐助、文玩收藏等切合海外生活需求的各类服务
+	section.section.more.section--gray
+		div.container
+			div.more__content
+				+styledHeading('探索更多')
+				div.more__list
+					div.more__item
+						div.more__info
+							h4.text-primary 了解过往财富管理产品
+							p.description.text-muted 部分业务仅在某些国家或地区适用；部分业务仅对“专业或成熟投资者”适用
+						+readmore('详情', 'blue', true, 'comprehensive-intro')
+						div.clearfix
+	+contactArea

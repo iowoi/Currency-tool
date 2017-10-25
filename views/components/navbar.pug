@@ -1,0 +1,125 @@
+include ../helpers/mixins
+
+- var devLink = isDev ? '' : '.html'
+nav.navbar.navbar-default.navbar-fixed-top.navbar-kvb
+	div.container
+		div.navbar-header
+			button.navbar-toggle
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand.hidden-sm.navbar__link(href=(isDev ? '/' : './index.html'))
+				span.navbar__text.navbar__logo
+					+icon('logo', 'white')
+			a.navbar-brand.hidden-xs.hidden-md.hidden-lg.navbar__link(href=(isDev ? '/' : './index.html'))
+				span.navbar__text.navbar__logo
+					+icon('logo-mini', 'white')
+		ul.nav.navbar-nav.navbar-right
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text 关于我们
+						span.caret
+				ul.dropdown-menu
+					li: +link('about', '公司简介')
+					li: +link('legal-supervision', '监管资质')
+					li: +link('company-news', '公司新闻')
+					li: +link('media-focus', '媒体聚焦')
+					li: +link('join-us', '加入我们')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text 产品及服务
+						span.caret
+				ul.dropdown-menu
+					li: +link('international-pay', '国际结算与支付')
+					li: +link('one-stop', '企业外汇管理')
+					li: +link('foreign-exchange-solution', '跨境电商外汇解决方案')
+					li: +link('fintech', '金融科技')
+					li: +link('wealth-management', '全球资产与财富管理')
+					li: +link('product', '基金、保险及黄金')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text 线上平台
+						span.caret
+				ul.dropdown-menu
+					li: +link('#', '在线开户')
+					li: +link('#', 'eFX 登陆')
+					li: +link('#', 'KVBPay 登陆')
+					li: +link('download-app', 'APP 下载')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text 外汇研究院
+						span.caret
+				ul.dropdown-menu
+					li: +link('expert-columns', '专家专栏')
+					li: +link('#', '外汇纵横')
+					li: +link('monthly-news', '电子双月刊')
+			li.dropdown
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
+					span.navbar__text 客户支援
+						span.caret
+				ul.dropdown-menu
+					li: +link('contact', '联系我们')
+					li: +link('downloads', '文档下载')
+					li: +link('faq', '常见问题')
+			li: a.navbar__link(href="#")
+				span.navbar__text
+					+icon('wechat', 'white')
+			li.dropdown.nabvbar__lang
+				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aria-expanded="false")
+					span.navbar__text
+						+icon('earth', 'white')
+						span.caret
+						span.navbar__language 简体中文
+				ul.dropdown-menu
+					li: a(href="#" data-lang="cn") 简体中文
+					li: a(href="#" data-lang="en") English
+					li: a(href="#" data-lang="jp") 日本語
+		div.mobile-nav-cover
+		div.mobile-nav
+			ul.mobile-nav__list
+				li.mobile-nav__item
+					button.mobile-nav__trigger 关于我们
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('about', '公司简介')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('legal-supervision', '监管资质')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('company-news', '公司新闻')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('media-focus', '媒体聚焦')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('join-us', '加入我们')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger 产品及服务
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('international-pay', '国际结算与支付')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('one-stop', '企业外汇管理')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('foreign-exchange-solution', '跨境电商外汇解决方案')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('fintech', '金融科技')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('wealth-management', '全球资产与财富管理')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('product', '基金、保险及黄金')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger 线上平台
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('#', '在线开户')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('#', 'eFX 登陆')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('#', 'KVBPay 登陆')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('download-app', 'APP 下载')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger 外汇研究院
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('expert-columns', '专家专栏')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('#', '外汇纵横')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('monthly-news', '电子双月刊')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					button.mobile-nav__trigger 客户支援
+					ul.mobile-submenu
+						li.mobile-submenu__item: +link('contact', '联系我们')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('downloads', '文档下载')(class="mobile-submenu__link")
+						li.mobile-submenu__item: +link('faq', '常见问题')(class="mobile-submenu__link")
+				li.mobile-nav__item
+					a.mobile-nav__link(href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA5OTA0NzQxMg==&scene=124#wechat_redirect")
+						+icon('wechat')
+				li.mobile-nav__item.nabvbar__lang
+					button.mobile-nav__trigger
+						+icon('earth')
+					ul.mobile-submenu
+						li.mobile-submenu__item: a.mobile-submenu__link(href="#" data-lang="cn") 简体中文
+						li.mobile-submenu__item: a.mobile-submenu__link(href="#" data-lang="en") English
+						li.mobile-submenu__item: a.mobile-submenu__link(href="#" data-lang="jp") 日本語

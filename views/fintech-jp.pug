@@ -1,0 +1,45 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	+banner(`${imgPath}/fintech/Fintech-herobanner.jpg`, '金融テクノロジー・ソリューション')
+	+pageIntro
+		p.description KVB は従来の金融サービスに加えて、長年にわたり金融テクノロジーの開発に多大なリソースを投資しきました。そして早くも2011年には、精巧なリスク分析法と自動送金方式の組み合わせによる、第一世代の外国為替取引プラットフォームを完成させました。当社は、このプラットフォームを使用して、取引の効率を上げ顧客満足度を向上させることができました。また、自動管理方式を使い、市場の変動に対応する時間の短縮に努めてきました。
+	section.section.fintech__platform--outline.reverse(style=`background-image: url(${imgPath}/fintech/forex-bg.jpg)`)
+		div.container
+			div.row
+				div.col-sm-4.col-sm-offset-1.fintech__img
+					img.fintech__platform--img(src=`${imgPath}/fintech/imac.png` alt="")
+				div.col-sm-7
+					+styledHeading('オンライン外貨取引プラットフォームeFX 2.0')
+					p.basic-paragraph KVBのオンライン外貨取引プラットフォームは、他社のプラットフォームとは異なり、リアルタイムのトレードが出来るばかりかキャッシュフローの管理をすることも出来ます。顧客は、当社のeFXとKVBPayを組み合わせたプラットフォームを使えば、発注から決済までシステム任せにすることが出来ます。
+					p.basic-paragraph 当社の顧客は、法人であれ個人であれ、eFX システムを通して24時間、取引及び決済の助言を得ることが出来ます。顧客は、システムを使って自分のポジションを監視しカスタマイズされた事項の報告を受けることも出来ます。当社のプラットフォームは、スポット・先渡・スワップ・発注をサポートしています。
+	section.side-img-section.clearfix
+		div.side-img-section__img-wrap
+			div.side-img-section__img(style=`background-image: url(${imgPath}/fintech/tile-forexstar.jpg)`)
+		div.side-img-section__container
+			div.side-img-section__container-wrap
+				+styledHeading('独立した管理プラットフォームDealing Manager')
+				p.basic-paragraph 当社は、企業によっては複数地点の取引と管理のため従来よりも進化した管理方式を必要としていることを承知しております。Dealing Managerは、まさに、そうした要求に応えられるよう工夫されており、種々の企業やユーザーに対応した役割を果たします。
+				p.basic-paragraph Dealing Managerは、親会社と子会社の間の取引であれ、子会社とクライアントの間の取引であれ、法人顧客に対し、KVBが主要ブローカーとして長年蓄積した取引管理の経験を生かしたサービスを提供するものです。顧客は、Dealing Managerを使えば、発注から決済までシステム任せにして、透明性が高く効率の良い形で企業間の取引情報を処理出来ます。
+	section.section.fintech__data--outline(style=`background-image: url(${imgPath}/fintech/multiplatform-bg.jpg)`)
+		div.container
+			div.row
+				div.col-sm-4.fintech__img
+					img.fintech__platform--img(src=`${imgPath}/fintech/multidevice.png` alt="")
+				div.col-sm-7.col-sm-offset-1
+					+styledHeading('プラットフォームを通したデータフィード')
+					p.basic-paragraph KVBは認可されたマーケットメイカーとして、市場参加者に対しマーケットレートを提供出来るというのが強みです。当社のフィルタリング手法及び計算手法は、正確性でも一貫性でも業界随一です。当社は、プロの助言チームと経験豊かなディーラーが作成した市場分析・イベント予報・調査開発報告を提供します。
+	section.side-img-section.reverse.img-long.clearfix
+		div.side-img-section__img-wrap
+			div.side-img-section__img(style=`background-image: url(${imgPath}/fintech/light.jpg)`)
+		div.side-img-section__container
+			div.side-img-section__container-wrap
+				+styledHeading('進化したシステムKVB Treasury ')
+				p.basic-paragraph 顧客は、当社のTreasury Management System Offering (TMSO)を使い、元帳管理、オンラインのスイフト送信による決済、帳簿の照合、リスク分析、時価再評価などを自動的に行うことが出来ます。TMSOは、異なる時間帯・場所・通貨・企業に起因する煩雑さを解消し、為替取引・利率・利益損失・再評価を管理して、現金の流動性と透明性の確保を集中的に行いたいと望む企業向けのシステムです。
+				div.fintech__system--down
+					p.basic-paragraph TMSO は、顧客の事業効率を判定する精巧で効果的なツールです。当社は、顧客のビジネスを理解し、下記のような財務ソリューションを提供します。
+					+checkList(['外国為替・金利市場・株式・債券など総合的な資産クラスへのアクセス', '発注から決済まで一環したシステム','スイフト統合 ', '自動的元帳管理', 'アカウントERPの統合', '多層から成る承認マトリックス', '現金の透明性と予想を目的とするMT940アカウント情報走査', 'カスタマイズされたリスク分析', 'KVBのバックエンドシステムをサポートするクラウドベースの取引実施', 'KVBを流動性プロバイダーに指定すれば週5日・24時間の取引とカスタマーサービスが可能', '他のカスタマイズされた助言サービス'], 'blue')
+	+contactArea--jp

@@ -1,0 +1,106 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+mixin downloadItem(name, location, size)
+	div.downloads__item
+		div.downloads__name #{name}
+		div.downloads__info
+			div.downloads__location(data-location=location) #{location}
+			div.downloads__size PDF #{size} MB
+		a.downloads__link(href="#" title="download")
+			span 資料のダウンロード
+			+icon('download', 'blue')
+
+block content
+	- var imgPath = isDev ? 'img' : './assets/img'
+	+banner(`${imgPath}/banner/downloads.jpg`, '資料のダウンロード ')
+	+pageIntro
+		p.description 各資料をPDFでダウンロードできます。ダウンロードにはRDFリーダーが必要となります。
+	section.section.section--gray-dark.section--no-top-spacing.downloads
+		div.downloads__tabs.hidden-xs
+			div.container
+				div.downloads__tabs-content
+					div.downloads__tab.active(data-target="国際決済") 国際決済
+					div.downloads__tab(data-target="法人為替取引") 法人為替取引
+					div.downloads__tab(data-target="Eコマースソリューション") Eコマースソリューション
+					div.downloads__tab(data-target="フィンテックソリューション") フィンテックソリューション
+					div.downloads__tab(data-target="資産運用") 資産運用
+					div.downloads__tab(data-target="投資信託、保険商品、金現物取引") 投資信託、保険商品、金現物取引
+		div.dropdown.mobile-tabs.visible-xs
+			button#mobileTabs.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+				span.contact-form__selected 国際決済
+				span.caret: +icon('down', 'gray-darker')
+			ul.dropdown-menu(aria-labelledby="mobileTabs")
+				li: a(data-target="国際決済") 国際決済
+				li: a(data-target="法人為替取引") 法人為替取引
+				li: a(data-target="Eコマースソリューション") Eコマースソリューション
+				li: a(data-target="フィンテックソリューション") フィンテックソリューション
+				li: a(data-target="資産運用") 資産運用
+				li: a(data-target="投資信託、保険商品、金現物取引") 投資信託、保険商品、金現物取引
+		div.container
+			div.row.downloads__content.mobile-dropdown__content(data-target="国際決済")
+				div.col-md-offset-1.col-md-10
+					div.total-result Total
+						strong 15
+						| files
+					div.dropdown.downloads__filter
+						button#downloadFilter.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+							span.contact-form__selected Country or Region
+							span.caret: +icon('down', 'gray-darker')
+						ul.dropdown-menu(aria-labelledby="downloadFilter")
+							li: a Australia
+							li: a New Zealand
+							li: a Canada
+							li: a All
+					div.clearfix
+					div.downloads__list
+						+downloadItem('KVB Global Markets Pty Bank Account Information', 'Australia', 3.16)
+						+downloadItem('KVB Global Markets Pty PDS and FSG', 'Australia', 3.16)
+						+downloadItem('KVB Global Markets Ltd PDS', 'New Zealand', 3.16)
+						+downloadItem('KVB Global Markets Ltd Bank Account Information', 'New Zealand', 3.16)
+						+downloadItem('KVB Kunlun Canada Inc. Bank Account Information', 'Canada', 3.16)
+						+downloadItem(' KVB Kunlun Canada Inc. Commercial Account Opening Form', 'Canada', 3.16)
+						+downloadItem(' KVB Kunlun Canada Inc. Individual Account Opening – English/Chinese', 'Canada', 3.16)
+						+downloadItem('Canada: KVB Kunlun Canada Inc. Individual Account Opening - Japanese', 'Canada', 3.16)
+					+pagination(3)
+			div.row.downloads__content.mobile-dropdown__content(data-target="法人為替取引" style='display: none')
+				div.col-md-offset-1.col-md-10
+					div.total-result Total
+						strong 2
+						| files
+					div.dropdown.downloads__location-filter
+						button#downloadFilter.btn.btn-block.dropdown-toggle.simple(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+							span.contact-form__selected Country or Region
+							span.caret: +icon('down', 'gray-darker')
+						ul.dropdown-menu(aria-labelledby="downloadFilter")
+							li: a Australia
+							li: a New Zealand
+							li: a Canada
+							li: a All
+					div.clearfix
+					div.downloads__list
+						+downloadItem('KVB Global Markets Ltd Bank Account Information', 'Australia', 3.16)
+						+downloadItem('KVB Global Markets Ltd Product Disclosure Statement and Financial Services Guide', 'Australia', 3.16)
+			div.row.downloads__content.mobile-dropdown__content(data-target="Eコマースソリューション" style='display: none')
+				div.col-md-offset-1.col-md-10
+					div.downloads__empty
+						+icon('file-empty', 'gray-darker')
+						span No document available
+			div.row.downloads__content.mobile-dropdown__content(data-target="フィンテックソリューション" style='display: none')
+				div.col-md-offset-1.col-md-10
+					div.downloads__empty
+						+icon('file-empty', 'gray-darker')
+						span No document available
+			div.row.downloads__content.mobile-dropdown__content(data-target="資産運用" style='display: none')
+				div.col-md-offset-1.col-md-10
+					div.downloads__empty
+						+icon('file-empty', 'gray-darker')
+						span No document available
+			div.row.downloads__content.mobile-dropdown__content(data-target="投資信託、保険商品、金現物取引" style='display: none')
+				div.col-md-offset-1.col-md-10
+					div.downloads__empty
+						+icon('file-empty', 'gray-darker')
+						span No document available
+	+contactArea--jp

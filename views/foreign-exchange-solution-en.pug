@@ -1,0 +1,57 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	+banner(`${imgPath}/foreign-exchange-solution/Cross-Border-e-Commerce-herobanner.jpg`, 'Cross-Border e-Commerce Solution')
+	+pageIntro
+		p.description As a member participating in many leading cross-border e-Commerce associations, KVB has assisted many e-Commerce companies in carrying out cross border settlement of currencies, forward hedging, overnight swaps as well as ERP integration. Our competitive rates and costs, in particular our T+0 settlement facilities have helped them to gain that extra edge in today’s competitive business environment.
+	section.section.section--gray-dark
+		+styledHeading('Our Services', true)
+		div.container
+			div.img-card-overlap-wrap
+				div.row.row--same-height
+					div.col-sm-4.img-card
+						div.img-card__img-wrap
+							div.img-card__img(style=`background-image: url(${imgPath}/foreign-exchange-solution/tile-service-1.jpg)`)
+						div.img-card__container
+							h3.img-card__heading Cross-Border Currency Exchange
+							p.description  KVB offers currency exchange for over 120 major currencies catering different business/geographical need.
+					div.col-sm-4.img-card
+						div.img-card__img-wrap
+							div.img-card__img(style=`background-image: url(${imgPath}/foreign-exchange-solution/tile-service-2.jpg)`)
+						div.img-card__container
+							h3.img-card__heading Global Payment
+							p.description KVB offers secure and convenient payment/receipt services on behalf of cross-border e-Commerce companies. Our T+0 settlement facility is highly regarded by our customers.
+					div.col-sm-4.img-card
+						div.img-card__img-wrap
+							div.img-card__img(style=`background-image: url(${imgPath}/foreign-exchange-solution/tile-service-3.jpg)`)
+						div.img-card__container
+							h3.img-card__heading Risk Hedging and Advisory
+							p.description KVB offers forward hedging and derivative hedging products, such as swaps and options. Our professional advisory service will also assist customers to understand global markets better.
+
+	section.section
+		+styledHeading('Our Products and Key Advantage', true)
+		div.container
+			div.clearfix
+				div.advantage__block.col-sm-4
+					+icon('flags', 'blue')
+					div.advantage__block--right
+						div.advantage__title Multi-currencies
+						div.advantage__des 129 global currencies supported
+				div.advantage__block.col-sm-4
+					+icon('time-clock', 'blue')
+					div.advantage__block--right
+						div.advantage__title Enhanced Efficiency
+						div.advantage__des Our global banking network creates settlement eco-system that supports T+0 payment service
+				div.advantage__block.col-sm-4
+					+icon('pricetag', 'blue')
+					div.advantage__block--right
+						div.advantage__title Competitive Rates
+						div.advantage__des KVB extends its wholesale price to customers which gives them comparative advantage from traditional retail banking
+	section.section.customer-diagram__background(style=`background-image: url(${imgPath}/foreign-exchange-solution/process-bg.jpg)`)
+		div.container
+			+styledHeading('Our Process', true)
+			img(src=`${imgPath}/foreign-exchange-solution/process-eng.jpg`, alt="alt")
+	+contactArea--en

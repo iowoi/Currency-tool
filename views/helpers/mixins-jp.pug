@@ -1,0 +1,162 @@
+//-JP
+mixin exchangeTools--jp
+	div.exchange-tools
+		div.exchange-tools__switcher
+			div.pull-left.exchange-tools__currency-block.exchange-tools__from
+				div.btn-group.exchange-tools__select
+					div.btn-group(role="group")
+						button#currencySwitch1.btn.btn-primary.btn-block.btn-lg.dropdown-toggle(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+							span.exchange-tools__selected(data-name="USD" data-symbol="$") USD
+							span.caret: +icon('down', 'white')
+						ul.dropdown-menu(aria-labelledby="currencySwitch1")
+							li: a(data-name="EU" data-symbol="€") EU
+							li: a(data-name="USD" data-symbol="$") USD
+							li: a(data-name="CNY" data-symbol="¥") CNY
+					div.clearfix
+				input.exchange-tools__input(type="text" value="1000")
+				div.exchange-tools__currency
+					span.exchange-tools__rate 1 USD = 6.8385 CNY
+					span.exchange-tools__chart
+						+icon('sparkline-up')
+					span
+						span.exchange-tools__detail Trend
+			div.pull-left.exchange-tools__switch
+				+icon('switch', 'orange')
+			div.pull-left.exchange-tools__currency-block.exchange-tools__to
+				div.btn-group.exchange-tools__select
+					div.btn-group(role="group")
+						button#currencySwitch2.btn.btn-primary.btn-block.btn-lg.dropdown-toggle(data-toggle="dropdown" aria-haspopup="true" aria-expanded="true")
+							span.exchange-tools__selected(data-name="CNY" data-symbol="¥") CNY
+							span.caret: +icon('down', 'white')
+						ul.dropdown-menu(aria-labelledby="currencySwitch2")
+							li: a(data-name="EU" data-symbol="€") EU
+							li: a(data-name="USD" data-symbol="$") USD
+							li: a(data-name="CNY" data-symbol="¥") CNY
+					div.clearfix
+				input.exchange-tools__input(type="text" value="67801")
+				div.exchange-tools__currency
+					span.exchange-tools__rate 1 CNY = 0.1462 USD
+					span.exchange-tools__chart
+						+icon('sparkline-down')
+					span
+						span.exchange-tools__detail Trend
+			div.clearfix
+
+mixin contactArea--jp
+	section.section.contact-section
+		div.container
+			h2.text-center.contact-section__heading 当社の提案に興味のある方は
+			p.text-center.description.description--narrow.contact-section__description 連絡先を頂ければ、こちらから連絡いたします
+			+link('contact-jp', 'お問い合わせ')(class="btn btn-middle btn-default--outline contact-section__btn")
+
+mixin foreignExchangeProduct--jp
+	section.section
+		+styledHeading('主産物', true)
+		div.container
+			div.row
+				div.col-sm-6.col-md-4
+					div.foreign-exchange__card
+						img(src=`${imgPath}/foreignExchangeProduct/forex-risk.jpg` alt="法人リスク分析")
+						div.foreign-exchange__container
+							div.foreign-exchange__name 法人リスク分析
+							+readmore('詳細', 'blue', false, 'risk-identify-jp')
+				div.col-sm-6.col-md-4
+					div.foreign-exchange__card
+						img(src=`${imgPath}/foreignExchangeProduct/forex-management.jpg` alt="法人外国為替取引コンサルティング ")
+						div.foreign-exchange__container
+							div.foreign-exchange__name 法人外国為替取引コンサルティング
+							+readmore('詳細', 'blue', false, 'foreign-exchange-process-jp')
+				div.col-sm-6.col-md-4
+					div.foreign-exchange__card
+						img(src=`${imgPath}/foreignExchangeProduct/foreign-exchange-derivatives.jpg` alt="レバレッジを用いた外貨取引のヘッジ")
+						div.foreign-exchange__container
+							div.foreign-exchange__name レバレッジを用いた外貨取引のヘッジ
+							+readmore('詳細', 'blue', false, 'lever-jp')
+
+mixin subNavbar--jp(state)
+	nav.sub-navbar
+		div.container
+			button.sub-navbar__trigger
+				+icon('plus', iconColor)
+				+icon('minus-2', iconColor)(class="hide")
+			ul.sub-navbar__list
+				li.sub-navbar__item.toggle-button(class= (state === 1 ? 'active' : '')): +link('one-stop-jp', '法人外貨取引管理')
+				li.sub-navbar__item(class= (state === 2 ? 'active' : '')): +link('risk-identify-jp', '法人リスク分析')
+				li.sub-navbar__item(class= (state === 3 ? 'active' : '')): +link('foreign-exchange-process-jp', '法人外国為替取引コンサルティング')
+				li.sub-navbar__item(class= (state === 4 ? 'active' : '')): +link('lever-jp', 'レバレッジを用いた外貨取引のヘッジ')
+
+mixin cardSection--jp(bgColor, heading, extraClasses)
+	- var classes = `section--${bgColor} ${extraClasses || ''}`
+	section.section.card-section(class=classes)
+		- if (heading)
+			+styledHeading(heading, true)
+		div.container.jp-site
+			div.grid-stack.grid-stack-3&attributes(attributes)
+				block
+
+mixin card--jp
+	div.grid-stack-item&attributes(attributes)
+		div.grid-stack-item-content
+			block
+
+mixin card-3-1--jp(x, y, heading, contentPos)
+	+card(data-gs-width=3 data-gs-height=1 data-gs-x=x data-gs-y=y)
+		div.grid-stack__block.grid-stack__block--rectangle(class=`grid-stack__block--content-${contentPos}`)
+			div.grid-stack__background&attributes(attributes)
+			div.grid-stack__content
+				div.grid-stack__summary
+					- if (heading)
+						div.grid-stack__heading #{heading}
+					block
+			div.clearfix
+
+mixin card-1-1--jp(x, y, classification, heading, date, link)
+	+card(data-gs-width=1 data-gs-height=1 data-gs-x=x data-gs-y=y)
+		div.grid-stack__block.grid-stack__block--square&attributes(attributes)
+			div.grid-stack__summary
+				div.grid-stack__classification #{classification}
+				div.grid-stack__heading #{heading}
+				div.grid-stack__date #{date}
+				block
+			+readmore('詳細', 'white', false, link)
+
+mixin card-2-2--jp(classification, heading, link)
+	+card(data-gs-width=2 data-gs-height=2 data-gs-x=0 data-gs-y=0)
+		div.grid-stack__block.grid-stack__block--square&attributes(attributes)
+			div.grid-stack__summary
+				div.grid-stack__classification #{classification}
+				div.grid-stack__heading #{heading}
+				block
+			+readmore('詳細', 'white', false, link)
+
+mixin card-2-1--jp(x, y, classification, heading, contentPos, date, link)
+	+card(data-gs-width=2 data-gs-height=1 data-gs-x=x data-gs-y=y)
+		div.jp-site.grid-stack__block.grid-stack__block--rectangle(class=`grid-stack__block--content-${contentPos} grid-stack--short`)
+			div.grid-stack__background&attributes(attributes)
+			div.grid-stack__content
+				div.grid-stack__summary
+					- if (classification)
+						div.grid-stack__classification #{classification}
+					div.grid-stack__heading #{heading}
+					- if (date)
+						div.grid-stack__date #{date}
+					block
+				- if (classification)
+					+readmore('詳細', null, false, link)
+			div.clearfix
+
+mixin card-1-2--jp(x, y, classification, heading, contentStyle, date, link)
+	+card(data-gs-width=1 data-gs-height=2 data-gs-x=x data-gs-y=y)
+		div.grid-stack__block.grid-stack__block--rectangle(class='grid-stack--short')
+			div.grid-stack__background&attributes(attributes)
+			div.grid-stack__content
+				div.grid-stack__summary
+					- if (classification)
+						div.grid-stack__classification #{classification}
+					div.grid-stack__heading #{heading}
+					- if (date)
+						div.grid-stack__date #{date}
+					block
+				- if (classification)
+					+readmore('詳細', null, false, link)
+			div.clearfix

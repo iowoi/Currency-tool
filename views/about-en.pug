@@ -1,0 +1,143 @@
+extends layout-en
+
+include helpers/mixins
+include helpers/mixins-en
+
+block content
+	- var imgPath = isDev ? 'img' : './assets/img'
+	+banner(`${imgPath}/about/herobanner.jpg`, att, 'ABOUT US')
+	section.section.section--no-bottom-spacing
+		div.container
+			+styledHeading('ABOUT KVB Kunlun Global Capital Ltd', false)
+	section.section.section--narrow.section--two-blocks.media-section.section--two-blocks-reverse
+		div.container
+			div.section__left-block
+				img(src=`${imgPath}/about/discussion.jpg` alt="")
+			div.section__right-block
+				h1.section__heading Comprehensive Financial Services Framework
+				p.description KVB Kunlun Global Capital Ltd is a financial services company specializes in providing diversified financial products to overseas Asian community. Our products include foreign exchange, global settlement, securities investment, wealth management, fund management, as well as liquidity solution. We have established multiple licensed presences in Auckland New Zealand, Sydney and Melbourne Australia, Toronto Canada, Hong Kong China. By providing 24-hours-a-day electronic trading service, KVB aims to bring our customers a truly globalized service network.
+				p.description KVB Kunlun Group is one of the few multi-national non-banking financial institutions in the world that is both regulatory licensed around the world as well as with a listing presence. It is also a pioneer in establishing RMB globalization concept in Australasia region for many years. KVB Kunlun Global Capital Ltd is a fully owned subsidiary under KVB Kunlun Group.
+			div.clearfix
+	section.section.section--narrow-top.section--two-blocks.media-section
+		div.container
+			div.section__left-block
+				img(src=`${imgPath}/about/trustworthy-brand.jpg` alt="")
+			div.section__right-block
+				h1.section__heading Your Trusted Brand
+				p.description As one of the three business driving forces under the Group, KVB Kunlun Global Capital Limited builds its services upon the core advantage of more than 120 currencies settlement capability around the world. We are a leading responder for China’s “One Belt One Road” economic scheme. Through our dedicated resources into financial technology over the years, we are able to create an eco-system that takes our customers to a one-stop financial services hub. Whether it is global settlement/payment, cross-border e-commerce, fin-tech, asset management or global wealth management, we are able to provide top industry solution that is sound, secure, convenient and competitive.
+			div.clearfix
+	section.magazine
+		div.container.clearfix
+			div.magazine__display-stand.col-md-4.col-sm-5
+				div.magazine__spotlight
+					img.magazine__cover(src=`${imgPath}/about/catalog.jpg` alt="magazine")
+					button.btn.btn-default.btn-lg.btn-block.btn-default--outline.magazine__download Download PDF
+			div.magazine__info.col-md-8.col-sm-7
+				div.magazine__info-content
+					+styledHeading('15th Year Anniversary Brochure of KVB Kunlun', false)
+					p.description.magazine__description Since 2001, KVB’s foresight on Chinese RMB Internationalization and Chinese Offshore Market Development had proven to be ahead of its time. Establishing advanced financial services tools and service concepts, we have come up with our unique branding and specialization in this industry with avant-garde models and innovative trading systems. We have been proudly serving our global Asian customer base ever since then.
+				div.magazine__btn
+					+readmore('Browse Online')
+	section.section.section--gray.kvb-history
+		div.container
+			div.clearfix.row--same-height
+				div.col-md-4.kvb-history__group
+					img(src=`${imgPath}/about/innocation.jpg` alt="innocation")
+					h3.kvb-history__heading INNOVATION
+					dl.kvb-history__content
+						dt.kvb-history__year 2005
+						dd.kvb-history__info One of the first to launch mobile trading platform “ForexStar” in Australasia region
+						dt.kvb-history__year 2006
+						dd.kvb-history__info First in industry to roll out CNH against NZD/AUD cross-currency margin trading product
+						dt.kvb-history__year 2008
+						dd.kvb-history__info Hong Kong securities trading became operational
+						dt.kvb-history__year 2010
+						dd.kvb-history__info KVB’s first white-label institution became operational in New Zealand
+						dt.kvb-history__year 2012
+						dd.kvb-history__info Strategic alliance with CITIC Bank to rollout overseas private banking
+						dt.kvb-history__year 2013
+						dd.kvb-history__info First to rollout physical settled CNH product in Australasia market
+						dt.kvb-history__year 2015
+						dd.kvb-history__info Successfully rolled out Significant Investment Visa related financial services in Australia
+						dt.kvb-history__year 2016
+						dd.kvb-history__info Successfully rolled out eFX forex trading platform
+						dt.kvb-history__year 2016
+						dd.kvb-history__info Successfully rolled out commercial forex management console - CorpVision
+				div.col-md-4.kvb-history__group
+					img(src=`${imgPath}/about/footprint.jpg` alt="footprint")
+					h3.kvb-history__heading MILESTONES
+					dl.kvb-history__content
+						dt.kvb-history__year 2001
+						dd.kvb-history__info Established first presence in Auckland New Zealand
+						dt.kvb-history__year 2002
+						dd.kvb-history__info Established presence in Sydney Australia
+						dt.kvb-history__year 2005
+						dd.kvb-history__info Hong Kong and Melbourne office became operational
+						dt.kvb-history__year 2006
+						dd.kvb-history__info Established Beijing Representative Office
+						dt.kvb-history__year 2007
+						dd.kvb-history__info Toronto Canada office became operational
+						dt.kvb-history__year 2013
+						dd.kvb-history__info KVB Kunlun Financial Group Limited listed in Hong Kong Stock Exchange
+						dt.kvb-history__year 2015
+						dd.kvb-history__info KVB Kunlun Financial Group Ltd takes Citics Securities as its major shareholder
+						dt.kvb-history__year 2016
+						dd.kvb-history__info Established China Taipei office
+						dt.kvb-history__year 2017
+						dd.kvb-history__info Obtained Leverage Forex Trading license from Hong Kong Securities and Futures Commission
+				div.col-md-4.kvb-history__group
+					img(src=`${imgPath}/about/influence.jpg` alt="influence")
+					h3.kvb-history__heading INFLUENCE
+					dl.kvb-history__content
+						dt.kvb-history__year 2006
+						dd.kvb-history__info Group Executive Director invited to attend the 57th Anniversary of National Day held by State Department
+						dt.kvb-history__year 2007
+						dd.kvb-history__info China Central Television Station on Cultural Heritage, Global Financial Services
+						dt.kvb-history__year 2008
+						dd.kvb-history__info Jointly published “Offshore Financial Market Studies – Global Trend and China’s Path” with renowned economist Dr. Shusong Ba.
+						dt.kvb-history__year 2009
+						dd.kvb-history__info Proudly won Hong Kong Australia Business Association “2009 Annual Business Achievement award”  Group Executive Director invited to attend 60th Anniversary of National Day ceremony held by State Department
+						dt.kvb-history__year 2013
+						dd.kvb-history__info New Zealand China Commerce Association Grand Business Award
+						dt.kvb-history__year 2014
+						dd.kvb-history__info Invited as renowned overseas Chinese entrepreneurs representative to meet President Xi during state visit to Australia
+						dt.kvb-history__year 2016
+						dd.kvb-history__info Awarded by IEBE as ”Most Valued Cross-Border e-Commerce Service Provider“ in 2015
+						dt.kvb-history__year 2016
+						dd.kvb-history__info Joint media coverage with Phoenix TV and produced special program “Forex Digest”
+						dt.kvb-history__year 2017
+						dd.kvb-history__info Awarded by IEBE as ”Most Valued Cross-Border e-Commerce Service Provider“ in 2017 again
+	section.section.section--gray.section--no-top-spacing.promising
+		+styledHeading('Why do our customers choose KVB?', true)
+		div.container.promising__container
+			div.row
+				div.col-md-4.col-sm-6.promising__block
+					+icon('trustworthy')
+					div.promising__content
+						h4.text-center A Trusted Brand
+						p.text-center.description We are among one of the world’s renowned financial service brand, servicing international Asian community for more than 16 years, a true leader in international Forex industry.
+				div.col-md-4.col-sm-6.promising__block
+					+icon('earthglobal')
+					div.promising__content
+						h4.text-center Licensed Financial Institution
+						p.text-center.description We hold financial services license in each of our global offices, providing to you a diversified range of financial products ranging from basic to complex solutions.
+				div.col-md-4.col-sm-6.promising__block
+					+icon('analytics')
+					div.promising__content
+						h4.text-center Comprehensive Settlement Methods
+						p.text-center.description We offer you different choices of settlement method, including telegraphic transfer, cash, cheque, cellphone payment (Wechat/Alipay), as well as debit card. Our global banking networks will certainly satisfy your global need.
+				div.col-md-4.col-sm-6.promising__block
+					+icon('exchange')
+					div.promising__content
+						h4.text-center Competitive Exchange Rate
+						p.text-center.description We provide you with extremely competitive wholesale exchange rates to assist you to cut down costs and increase your business advantage.
+				div.col-md-4.col-sm-6.promising__block
+					+icon('security')
+					div.promising__content
+						h4.text-center Ensured Security
+						p.text-center.description Every stage of our business processes are audited and reconciled. We team up with internationally renowned counterparties and are audited globally by Big-Four auditing firm.
+				div.col-md-4.col-sm-6.promising__block
+					+icon('handshake')
+					div.promising__content
+						h4.text-center Professional Advisory
+						p.text-center.description Our professional team comprises of more than 60 industry elites around the world. We speak in Mandarin, English, Cantonese, and Japanese to suit your different advisory and business communication needs.

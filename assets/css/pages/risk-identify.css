@@ -1,0 +1,35 @@
+.process__navbar {
+	background-color: var(--gray);
+}
+.risk__intro--top {
+		border-bottom: 0.5px solid var(--gray-darker);
+		padding-bottom: 24px;
+	}
+.risk__intro--bottom {
+		padding-top: 24px;
+	}
+.risk__title {
+		font-size: 18px;
+		font-weight: var(--font-normal);
+		letter-spacing: 1px;
+		line-height: 1.8em;
+		margin-bottom: 24px;
+	}
+.risk__title--english {
+		font-size: 18px;
+		font-weight: var(--font-bold);
+		letter-spacing: 1px;
+		line-height: 1.8em;
+		margin-bottom: 24px;
+	}
+.risk__des {
+		font-size: 16px;
+		line-height: 32px;
+		font-weight: var(--font-light);
+	}
+
+.risk__img {
+	@media (--below-small) {
+		margin-bottom: 40px;
+	}
+}

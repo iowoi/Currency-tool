@@ -1,0 +1,53 @@
+.styled-heading {
+	color: var(--black);
+	font-size: 20px;
+	font-weight: var(--font-normal);
+	letter-spacing: 2px;
+	margin-bottom: 40px;
+	& span {
+		position: relative;
+			left: 28px;
+	}
+
+	& span::before {
+		content: '';
+		position: absolute 50% false false -36px;
+		width: 36px;
+		height: 36px;
+		background-image: url('../svg/icn-ribbon.svg');
+		background-size: contain;
+		transform: translateY(-50%);
+		vertical-align: middle;
+	}
+
+	& .reverse {
+		color: white;
+	}
+
+	@media (max-width: 640px) {
+		font-size: 16px;
+		line-height: 1.8em;
+		width: calc(100% - 28px);
+
+		& span {
+			transform: translateX(30px);
+		}
+
+		& span::before {
+			position: absolute 8px false false -30px;
+			width: 32px;
+			height: 32px;
+		}
+	}
+}
+
+.gradient-heading {
+	background: -moz-linear-gradient(left, rgba(129,220,202,1) 0%, rgba(129,220,202,1) 2%, rgba(152,216,232,1) 28%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, rgba(129,220,202,1) 0%,rgba(129,220,202,1) 2%,rgba(152,216,232,1) 28%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, rgba(129,220,202,1) 0%,rgba(129,220,202,1) 2%,rgba(152,216,232,1) 28%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#81dcca', endColorstr='#007db9e8',GradientType=1 );
+	padding: 10px 18px;
+	color: white;
+	margin: 0;
+	font-size: 20px;
+}

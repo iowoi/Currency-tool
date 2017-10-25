@@ -1,0 +1,113 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	+banner(`${imgPath}/legal-supervision/about-accreditation-herobanner.jpg`, '認定ライセンス')
+	section.section.section--gray.supervision
+		div.container
+			+styledHeading('認定ライセンス', true)
+			div.row.supervision__list
+				div.col-md-4.col-sm-6
+					div.supervision__card
+						div.logo.supervision__logo
+							div.logo__container
+								img(src=src=`${imgPath}/partner/logo_asic.jpg` alt="asic's logo")
+						div.supervision__content
+							div.supervision__title Australian Securities & Investment Commission
+							div.supervision__des オーストラリア金融サービス (AFS) ライセンス (No: 334293)
+				div.col-md-4.col-sm-6
+					div.supervision__card
+						div.logo.supervision__logo
+							div.logo__container
+								img(src=`${imgPath}/partner/logo_companies-office.jpg` alt="companies-office's logo")
+						div.supervision__content
+							div.supervision__title Companies Office – Financial Service Provider Register
+							div.supervision__des 金融業者登録 (FSPR) (No: FSP1782)
+				div.col-md-4.col-sm-6
+					div.supervision__card
+						div.logo.supervision__logo
+							div.logo__container
+								img(src=`${imgPath}/partner/logo_fintrac.jpg` alt="ftracc's logo")
+						div.supervision__content
+							div.supervision__title Financial Transactions Reports Analysis Centre of Canada
+							div.supervision__des 金融業務ライセンス(No: M08934674)
+				div.col-md-4.col-sm-6
+					div.supervision__card
+						div.logo.supervision__logo
+							div.logo__container
+								img(src=`${imgPath}/partner/logo_sfc.jpg` alt="sfc's logo")
+						div.supervision__content
+							div.supervision__title Securities and Futures Commission of Hong Kong
+							div.supervision__des レバレッジ使用外貨取引ライセンス (CE No: BHR931)
+				div.col-md-4.col-sm-6
+					div.supervision__card
+						div.logo.supervision__logo
+							div.logo__container
+								img(src=`${imgPath}/partner/logo_hkcustomsandexcise.jpg` alt="logo_hkcustomsandexcise's logo")
+						div.supervision__content
+							div.supervision__title Money Service Operator License of Hong Kong Customs and Excise Department
+							div.supervision__des 金融業者ライセンス(MSOL)
+				div.col-md-4.col-sm-6
+					div.supervision__card
+						div.logo.supervision__logo
+							div.logo__container
+								img(src=`${imgPath}/partner/logo_worldwidemap.jpg` alt="worldwidemap's logo")
+						div.supervision__content
+							div.supervision__title Global expansion is in progress.
+							div.supervision__des Please stay tuned.
+	section.section
+		div.container
+			div.row
+				div.col-md-8.agency
+					+styledHeading('提携先')
+					div.row.agency__list
+						div.col-sm-4.col-xs-6.agency__block
+							div.logo.agency__logo
+								div.logo__container
+									img(src=`${imgPath}/partner/logo_citibank.jpg` alt="citibank's logo")
+							div.agency__name Citibank
+						div.col-sm-4.col-xs-6.agency__block
+							div.logo.agency__logo
+								div.logo__container
+									img(src=`${imgPath}/partner/logo_ANZ.jpg` alt="ANZ's logo")
+							div.agency__name ANZ Bank
+						div.col-sm-4.col-xs-6.agency__block
+							div.logo.agency__logo
+								div.logo__container
+									img(src=`${imgPath}/partner/logo_commonwealth.jpg` alt="commonwealth's logo")
+							div.agency__name Commonwealth Bank of Australia
+						div.col-sm-4.col-xs-6.agency__block
+							div.logo.agency__logo
+								div.logo__container
+									img(src=`${imgPath}/partner/logo_bnz.jpg` alt="bnz's logo")
+							div.agency__name Bank of New Zealand
+						div.col-sm-4.col-xs-6.agency__block
+							div.logo.agency__logo
+								div.logo__container
+									img(src=`${imgPath}/partner/logo_bmo.jpg` alt="bmo's logo")
+							div.agency__name Bank of Montreal
+						div.col-sm-4.col-xs-6.agency__block
+							div.logo.agency__logo
+								div.logo__container
+									img(src=`${imgPath}/partner/logo_DBS.jpg` alt="DBS's logo")
+							div.agency__name DBS Bank
+						div.col-sm-4.col-xs-6.agency__block
+							div.logo.agency__logo
+								div.logo__container
+									img(src=`${imgPath}/partner/logo_CTBC_Bank.jpg` alt="CTBC_Bank's logo")
+							div.agency__name China CITIC Bank International
+						div.col-sm-4.col-xs-6.agency__block
+							div.logo.agency__logo
+								div.logo__container
+									img(src=`${imgPath}/partner/logo_chinacitibank.jpg` alt="chinacitibank's logo")
+							div.agency__name China CITIC Bank International
+				div.col-md-4.agency
+					+styledHeading('取引監査法人')
+					div.row.agency__list
+						div.col-sm-4.col-md-6.agency__block
+							div.logo.agency__logo
+								div.logo__container
+									img(src=`${imgPath}/partner/logo_pwc.jpg` alt="pwc's logo")
+							div.agency__name PricewaterhouseCoopers

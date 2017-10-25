@@ -1,0 +1,55 @@
+extends layout-jp
+
+include helpers/mixins
+include helpers/mixins-jp
+
+block content
+	- var imgPath = isDev ? 'img' : './assets/img'
+	+banner(`${imgPath}/foreign-exchange-process/forex-trading-herobanner.jpg`, '法人外国為替取引コンサルティング')
+	+subNavbar--jp(3)
+	+pageIntro
+		p.description 当社の見てきたところでは、輸入業者も輸出業者も経済とテクノロジーの急激な変化に起因する市場の競争激化に直面しています。従来の製造業界や販売業界との競争が激しさを増す一方で、資金調達・支払い・外国為替取引管理も企業にとって大きな重荷となっています。当社は、こうした法人顧客の痛みを熟知し、最新式の法人外国為替取引助言サービスを提供したいと考えます。
+		p.description 当社は、法人顧客が多国籍企業であると否とに拘わらず、当社の世界規模の取引・決済サービスを利用してキャッシュフローを改善する近道を見つけられるように助言します。当社の競争力の高い卸売りレートにより、外国為替取引のコストを下げられるだけでなく利益幅を拡大することが出来ます。当社は、過去16年間で数千社の法人顧客を支援してきましたが、さらに他の国々や地域に情報網を拡大していきます。
+	+cardSection('gray', '法人外国為替取引コンサルティング')(class="grid-stack--basic-mobile process-cards")
+		+card-3-1--jp(0, 0, '当社の外国為替取引管理プラットフォームの構成と長所 ', 'right')(style=`background-image: url(${imgPath}/grid-wall/05.jpg)`)
+			+checkList(['法人向けのインターネットをベースにした外国為替取引・管理プラットフォーム ', '主要モジュールは外国為替取引・取引先価格プール・ディーリングブック分析・決済承認、ノストロ・ボストロ対応、スイフト統合・会計原簿・リスク分析・再評価、プライムブローカー専用モジュールなどです。当社は、顧客の国際的な通貨決済・支払いのニーズを支えられる流動性を世界規模で確保できる真に信頼に足る企業です。', '顧客がモジュールを使えば、顧客の要件が満たされ、「ビッグバン」騒動を回避できます。', 'システム構築及び全システム導入に関連した安全確保助言サービス'])
+		+card-1-2--jp(0, 1, '', '当社のコンサルティングサービスの強み ')(style=`background-image: url(${imgPath}/grid-wall/01.jpg)`)
+			+checkList(['精巧なシステム構築', '最新の金融テクノロジー駆使能力', '経験豊かなビジネスアナリスト', 'トップ水準のビジネスコンサルタント'])
+		+card-2-1--jp(1, 1, '', '当社のサービスを利用するメリット', 'right')(style=`background-image: url(${imgPath}/grid-wall/02.jpg)`)
+			+checkList(['外国為替レート変動が経営に及ぼす影響を軽減', '予測できない市場イベントの影響を軽減', 'キャッシュフローと回転率の改善','人的な介入と手作業の軽減', '社内部門間の効率的なデータ共有'])
+		+card-2-1--jp(1, 2, '', '当社の柔軟性に富んだ管理ツール', 'left')(style=`background-image: url(${imgPath}/grid-wall/03.jpg)`)
+			+checkList(['スポット契約', '先渡契約', 'スワップ契約', 'ノンデリバラブルフォワード契約 ', '外国為替オプション', 'レバレッジを使用した外国為替取引契約'])
+	section.section.cooperation-case
+		div.container
+			+styledHeading('実例')
+			div.row
+				div.col-sm-5.col-md-4.cooperation-case__intro
+					div.cooperation-case__card
+						a.cooperation-case__issue(href='#') 実例一
+						div.cooperation-case__company オーストラリア海産物輸入業者
+						div.description.cooperation-case__brief この企業は2005年に操業を開始してから、1年後にKVBのサービスを受け始めました。扱う貨物の価値からして、外貨交換レートが不利に動くと同社は莫大な耐えがたい損失をこうむりました。この抑えようがないと思われる要因を如何にして抑えるかという問題が同社の大きな関心事となりました。
+					div.cooperation-case__card
+						a.cooperation-case__issue(href='#') 実例二
+						div.cooperation-case__company オーストラリア事務用品業者
+						div.description.cooperation-case__brief この企業の本社はメルボルンにありますが、同社の専門事業は、大企業向けの特注の事務用品の生産です。同社は製造材料を欧州から輸入し、メルボルンと上海の工場で組み立てています。製品を市場に出すまでの所要時間は多くの要因で左右され、その間、外貨交換レートの変動リスクに長い間晒されることがしばしばあります。
+					div.cooperation-case__card
+						a.cooperation-case__issue(href='#') 実例三
+						div.cooperation-case__company オーストラリア海産物輸入業者
+						div.description.cooperation-case__brief この企業は2005年に操業を開始してから、1年後にKVBのサービスを受け始めました。扱う貨物の価値からして、外貨交換レートが不利に動くと同社は莫大な耐えがたい損失をこうむりました。この抑えようがないと思われる要因を如何にして抑えるかという問題が同社の大きな関心事となりました。
+					div.cooperation-case__card
+						a.cooperation-case__issue(href='#') 実例四
+						div.cooperation-case__company オーストラリア事務用品業者
+						div.description.cooperation-case__brief この企業の本社はメルボルンにありますが、同社の専門事業は、大企業向けの特注の事務用品の生産です。同社は製造材料を欧州から輸入し、メルボルンと上海の工場で組み立てています。製品を市場に出すまでの所要時間は多くの要因で左右され、その間、外貨交換レートの変動リスクに長い間晒されることがしばしばあります。
+				div.col-sm-7.col-md-offset-1.cooperation-case__detail
+					div.cooperation-case__section
+						+icon('checklist', 'white')
+						div.cooperation-case__content
+							div.cooperation-case__title ソリューション
+							div.description.cooperation-case__description 同社の役員は過去10年間、ほぼ毎日のようにKVBの渉外マネジャーと話し合いを続けてきました。同社の役員は、KVBから市場の動きに関する情報を聞き取るだけでなく、個々の貨物に関するビジネス要件についてKVBに話しました。両者は、長期の先渡契約を組み合わせることにより、カスタマイズされたヘッジ戦略を構築しました。当社が顧客のビジネスを真に理解し、同社が適切な商品を選択し助言を受け入れた結果、同社は目覚ましい成長を遂げメルボルン最大の輸入業者となりました。
+					div.cooperation-case__section
+						+icon('checkboard', 'white')
+						div.cooperation-case__content
+							div.cooperation-case__title 結果
+							div.description.cooperation-case__description 同社はビジネスに真摯に向き合いKVBの支援を受け入れ、程なくメルボルンの市場で最大のシェアを占めるようになりました。KVBは引き続き、同社を支援し持続可能な将来の成長を目指します。
+	+foreignExchangeProduct--jp
+	+contactArea--jp

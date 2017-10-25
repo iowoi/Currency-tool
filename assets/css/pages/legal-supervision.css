@@ -1,0 +1,113 @@
+.logo {
+	display: table;
+	width: 100%;
+}
+.logo__container {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	& img {
+		width: auto;
+		max-width: 100%;
+	}
+}
+.supervision__list {
+	margin-top: 40px;
+	& .col-md-4:last-child {
+		& .supervision__card {
+			@media (--below-tablet) {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+.supervision__card {
+	width: 100%;
+	margin-bottom: 32px;
+	border: 1px solid var(--gray-dark);
+	padding: 0 16px 16px;
+	background: white;
+}
+.supervision__logo {
+	height: 216px;
+
+	@media (--below-tablet) {
+		display: table;
+		width: 100%;
+		min-height: 180px;
+		padding: 16px 0;
+	}
+}
+.supervision__content {
+	min-height: 152px;
+	border-top: 1px solid var(--gray-dark2);
+	padding: 16px 8px 0;
+	@media (--below-tablet) {
+		min-height: auto;
+	}
+}
+.supervision__title {
+	padding-bottom: 16px;
+	color: var(--black);
+	font-family: 'Roboto Condensed';
+	font-size: 24px;
+	font-weight: var(--font-normal);
+	line-height: 28px;
+	@media (--below-small) {
+		font-size: 20px;
+	}
+}
+.supervision__des {
+	color: var(--gray-darker);
+	font-size: 14px;
+	line-height: 22px;
+}
+
+.agency {
+	@media (--above-tablet) {
+		padding: 0 40px;
+	}
+	&:first-child {
+		border-right: 1px solid var(--gray-dark2);
+	}
+}
+
+.agency__list {
+	@media (--below-tablet) {
+		padding: 24px 0;
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+}
+
+.agency__block {
+	margin-bottom: 24px;
+	font-size: 16px;
+	line-height: 1.2em;
+	letter-spacing: 2px;
+	text-align: center;
+	text-indent: 1px;
+	@media (--below-tablet) {
+		height: 120px;
+	}
+}
+.agency__logo {
+	height: 104px;
+	@media (--below-tablet) {
+		height: 80px;
+	}
+}
+/*EN-site*/
+.en-site
+ {
+	& .agency__name {
+		letter-spacing: 0;
+	}
+}
+/*JP-site*/
+.jp-site {
+	& .agency__name {
+		letter-spacing: 0;
+	}
+}
