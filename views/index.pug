@@ -20,75 +20,48 @@ block content
 			div.clearfix
 				div.col-md-3.col-sm-6.col-xs-6.highlight__block
 					div.highlight__media
-						div.media
-							div.media-left.media__img
-								div.media-object.media__icon
-									+icon('member', 'blue')
-							div.media-body
-								div.media-heading.media__heading 在线开户
-								span.media__subheading 开立您的帐户
+						a(href='https://service.kvbgc.com/' target='_blank')
+							div.media
+								div.media-left.media__img
+									div.media-object.media__icon
+										+icon('member', 'blue')
+								div.media-body
+									div.media-heading.media__heading 在线开户
+									span.media__subheading 开立您的帐户
 				div.col-md-3.col-sm-6.col-xs-6.highlight__block
 					div.highlight__media
-						div.media
-							div.media-left.media__img
-								div.media-object.media__icon
-									+icon('payclick', 'blue')
-							div.media-body
-								div.media-heading.media__heading eFX 登陆
-								span.media__subheading 在线结算支付
+						a(href='https://efxgc.kvbgc.com/en_US/login.html' target='_blank')
+							div.media
+								div.media-left.media__img
+									div.media-object.media__icon
+										+icon('payclick', 'blue')
+								div.media-body
+									div.media-heading.media__heading eFX 登陆
+									span.media__subheading 在线结算支付
 				div.col-md-3.col-sm-6.col-xs-6.highlight__block
 					div.highlight__media
-						div.media
-							div.media-left.media__img
-								div.media-object.media__icon
-									+icon('outpay', 'blue')
-							div.media-body
-								div.media-heading.media__heading KVBPay 登陆
-								span.media__subheading 帐户入金/出金
+						a(href='https://kvbpay.com/' target='_blank')
+							div.media
+								div.media-left.media__img
+									div.media-object.media__icon
+										+icon('outpay', 'blue')
+								div.media-body
+									div.media-heading.media__heading KVBPay 登陆
+									span.media__subheading 帐户入金/出金
 				div.col-md-3.col-sm-6.col-xs-6.highlight__block
 					div.highlight__media
-						div.media
-							div.media-left.media__img
-								div.media-object.media__icon
-									+icon('downloadapp', 'blue')
-							div.media-body
-								div.media-heading.media__heading APP 下载
-								span.media__subheading 移动端应用
+						a(href='download-app.html' target='_blank')
+							div.media
+								div.media-left.media__img
+									div.media-object.media__icon
+										+icon('downloadapp', 'blue')
+								div.media-body
+									div.media-heading.media__heading APP 下载
+									span.media__subheading 移动端应用
 	section.section.section--gray.exchange-rate
 		div.container.exchange-rate__content
 			+styledHeading('通过汇率转换及报价工具，了解您的潜在兑换需求', true)
 			div.exchange-rate__list
-				//- each val in [1, 2, 3, 4]
-				//- 	div.exchange-brief.exchange-brief--fall
-				//- 		div.exchange-brief__info
-				//- 			h6.exchange-brief__target 欧元 / 美元
-				//- 			div.exchange-brief__compare
-				//- 				span.exchange-brief__name BID
-				//- 				span.exchange-brief__number 1.116
-				//- 			div.exchange-brief__compare
-				//- 				span.exchange-brief__name ASK
-				//- 				span.exchange-brief__number 1.11164
-				//- 			div.exchange-brief__summary
-				//- 				span.exchange-brief__percentage
-				//- 					| 0.151%
-				//- 					+icon('down-rate', 'red')
-				//- 				span.exchange-brief__chart
-				//- 					+icon('sparkline-down')
-				//- 	div.exchange-brief.exchange-brief--rising
-				//- 		div.exchange-brief__info
-				//- 			h6.exchange-brief__target 欧元 / 美元
-				//- 			div.exchange-brief__compare
-				//- 				span.exchange-brief__name BID
-				//- 				span.exchange-brief__number 1.116
-				//- 			div.exchange-brief__compare
-				//- 				span.exchange-brief__name ASK
-				//- 				span.exchange-brief__number 1.11164
-				//- 			div.exchange-brief__summary
-				//- 				span.exchange-brief__percentage
-				//- 					| 30.11%
-				//- 					+icon('up-rate', 'green')
-				//- 				span.exchange-brief__chart
-				//- 					+icon('sparkline-up')
 			div.exchange-rate__tools
 				+exchangeTools()
 			div.exchange-rate__caption
@@ -266,6 +239,7 @@ block templates
 					span.exchange-brief__chart
 						+icon('sparkline-down')
 						| {{/if}}
+
 	script#exchangeToolsPopover(type="text/x-handlebars-template")
 		div.exchange-tools__popover
 			div.exchange-tools__popover-title {{from}} - {{to}}

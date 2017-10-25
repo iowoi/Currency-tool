@@ -121,8 +121,9 @@ $('.exchange-modal__confirm').click(() => {
 $('.dashboard__tab').click((e) => {
 	const elm = $(e.target).attr('href')
 	const symbol = $(elm).find('.active .dashboard__currency').text().split(' - ')
-	getCurrentSymbolInfo(symbol)
-
+	if (customSymbols.length !== 0) {
+		getCurrentSymbolInfo(symbol)
+	}
 })
 
 
@@ -170,7 +171,7 @@ const getCurrentSymbolInfo = (_currentSymbol, custom) => {
 
 		$('#dashboardMain').html(html)
 		$('.dashboard__time').text(_Fn.DateTimeFormat(info.UpdateDate))
-			saveSymbolList('customSymbols');
+		saveSymbolList('customSymbols');
 
 	})
 
@@ -187,13 +188,13 @@ const $dashboardMain = $('#dashboardMain');
  */
 
 let commonSymbols = _Fn.getCookie('customCommonSymbols');
-let customSymbols = _Fn.getCookie('customSymbols');
+let customSymbols = _Fn.getCookie('customSymbols') ? _Fn.getCookie('customSymbols') : [];
 
 $(function () {
 	commonSymbols ?
 		commonSymbols = commonSymbols.split(",") :
 		commonSymbols = ["AUDUSD", "NZDUSD", "EURUSD", "USDJPY", "GBPUSD", "USDCAD", "USDHKD", "USDCNH", "USDCHF", "USDSGD"]
-	customSymbols ? customSymbols = customSymbols.split(",") :
+	customSymbols.length !== 0 ? customSymbols = customSymbols.split(",") :
 		commonSymbols
 	if (window.location.pathname.indexOf('/exchange-rate') > -1) {
 		LoadCurrencyList_finish();

@@ -20,9 +20,12 @@ footer.footer
 				h4.text-primary.footer__heading オンライン取引プラットフォーム
 					+icon('down')
 				ul.list-unstyled.footer__links
-					li: +link('#', 'オンライン口座開設')
-					li: +link('#', 'eFX ログイン')
-					li: +link('#', 'KVBPay ログイン')
+					li
+						a(href='https://service.kvbgc.com/' name='オンライン口座開設' target='_blank') オンライン口座開設
+					li
+						a(href='https://efxgc.kvbgc.com/en_US/login.html' name='eFX ログイン' target='_blank') eFX ログイン
+					li
+						a(href='https://kvbpay.com/' name='KVBPay ログイン' target='_blank') KVBPay ログイン
 					li: +link('download-app-jp', 'アプリダウンロード')
 			div.col-sm-3.col-md-2
 				h4.text-primary.footer__heading KVBリサーチ

@@ -40,9 +40,12 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-kvb
 					span.navbar__text Online Platform
 						span.caret
 				ul.dropdown-menu
-					li: +link('#', 'Online Account Opening')
-					li: +link('#', 'eFX Login')
-					li: +link('#', 'KVBPay Login')
+					li
+						a(href='https://service.kvbgc.com/' name='Online Account Opening' target='_blank') Online Account Opening
+					li
+						a(href='https://efxgc.kvbgc.com/en_US/login.html' name='eFX Login' target='_blank') eFX Login
+					li
+						a(href='https://kvbpay.com/' name='KVBPay Login' target='_blank') KVBPay Login
 					li: +link('download-app-en', 'App Download')
 			li.dropdown
 				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")

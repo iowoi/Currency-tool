@@ -23,9 +23,12 @@ footer.footer
 				h4.text-primary.footer__heading Online Platform
 					+icon('down')
 				ul.list-unstyled.footer__links
-					li: +link('#', 'Online Account Opening')
-					li: +link('#', 'eFX Login')
-					li: +link('#', 'KVBPay Login')
+					li
+						a(href='https://service.kvbgc.com/' name='Online Account Opening' target='_blank') Online Account Opening
+					li
+						a(href='https://efxgc.kvbgc.com/en_US/login.html' name='eFX Login' target='_blank') eFX Login
+					li
+						a(href='https://kvbpay.com/' name='KVBPay Login' target='_blank') KVBPay Login
 					li: +link('download-app-en', 'App Download')
 			div.col-sm-3.col-md-2
 				h4.text-primary.footer__heading KVB Research

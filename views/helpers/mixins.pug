@@ -1,9 +1,9 @@
 //-Globo
-mixin link(name, title)
+mixin link(name, title, target)
 	- var devLink = isDev ? '' : '.html'
 	- var currentLink = (name === '#') ? name : `./${name}${devLink}`
 	- currentLink = isDev ? currentLink : currentLink.replace(/-(en|jp)\.html/, '.html')
-	a(href=currentLink name=title)&attributes(attributes) #{title}
+	a(href=currentLink name=title target)&attributes(attributes) #{title}
 
 mixin icon(name, color)
 	- var colorClass = color ? `-${color}` : ''

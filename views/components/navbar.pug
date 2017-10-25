@@ -41,9 +41,12 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-kvb
 					span.navbar__text 线上平台
 						span.caret
 				ul.dropdown-menu
-					li: +link('#', '在线开户')
-					li: +link('#', 'eFX 登陆')
-					li: +link('#', 'KVBPay 登陆')
+					li
+						a(href='https://service.kvbgc.com/' name='在线开户' target='_blank') 在线开户
+					li
+						a(href='https://efxgc.kvbgc.com/en_US/login.html' name='eFX 登陆' target='_blank') eFX 登陆
+					li
+						a(href='https://kvbpay.com/' name='KVBPay 登陆' target='_blank') KVBPay 登陆
 					li: +link('download-app', 'APP 下载')
 			li.dropdown
 				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")

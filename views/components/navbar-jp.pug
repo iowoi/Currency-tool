@@ -38,9 +38,12 @@ nav.navbar.navbar-default.navbar-fixed-top.navbar-kvb
 					span.navbar__text オンライン取引</br>プラットフォーム
 						span.caret
 				ul.dropdown-menu
-					li: +link('#', 'オンライン口座開設')
-					li: +link('#', 'eFX ログイン')
-					li: +link('#', 'KVBPay ログイン')
+					li
+						a(href='https://service.kvbgc.com/' name='オンライン口座開設' target='_blank') オンライン口座開設
+					li
+						a(href='https://efxgc.kvbgc.com/en_US/login.html' name='eFX ログイン' target='_blank') eFX ログイン
+					li
+						a(href='https://kvbpay.com/' name='KVBPay ログイン' target='_blank') KVBPay ログイン
 					li: +link('download-app-jp', 'アプリダウンロード')
 			li.dropdown
 				a.dropdown-toggle.navbar__link(data-toggle="dropdown" role="buttton" aria-haspopup="true" aroa-expanded="false")
